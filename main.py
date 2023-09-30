@@ -51,6 +51,8 @@ def parse_addon_infos(input_filepath, output_filepath, **kwargs):
         if addon_info := parse(addon_id.strip(), addon_fullname.strip(), github_token=kwargs.get('github_token')):
             addon_infos.append(addon_info)
 
+    addon_infos.sort(key=lambda item: item['start_count'] if 'start_count' in item else 0, reverse=True)
+
     with open(output_filepath, "w") as json_file:
         json.dump(addon_infos, json_file)
 
