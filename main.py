@@ -74,7 +74,7 @@ def upload_json_to_release(github_repository, release_id, upload_file_name, uplo
             else:
                 print('upload release assets succeed')
     except Exception as e:
-        print(f'create release failed: {e}')
+        print(f'upload release assets failed: {e}')
 
 
 def create_release(github_repository, **kwargs):
@@ -102,7 +102,7 @@ def create_release(github_repository, **kwargs):
             release_id = create_release_info['id']
             return release_id
         else:
-            print(f'create release code: {upload_resp.status_code}')
+            print(f'create release code: {create_resp.status_code}')
     except Exception as e:
         print(f'create release failed: {e}')
 
