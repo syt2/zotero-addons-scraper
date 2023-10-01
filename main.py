@@ -92,7 +92,7 @@ def create_release(github_repository, **kwargs):
         'tag_name': f'{cur_time}',
         'target_commitish': 'master',
         'name': f'{cur_time}',
-        'body': 'body',
+        'body': 'publish addon_infos.json',
         'draft': False,
         'prerelease': False,
         'generate_release_notes': False,
