@@ -120,8 +120,6 @@ def create_release(github_repository, **kwargs):
         print(f'create release failed: {e}')
 
 
-parse_addon_infos('addons', 'addon_infos.json')
-kkkk
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='params')
     parser.add_argument('--github_repository', nargs='?', type=str, required=True, help='github repository')
