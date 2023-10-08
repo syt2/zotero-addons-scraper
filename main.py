@@ -24,7 +24,7 @@ def parse(addon_id, addon_fullname, **kwargs):
         start_count = repos_info['stargazers_count']
         if description:
             result['description'] = description
-        if start_count:
+        if start_count is not None:
             result['star'] = start_count
         try:
             release_resp = requests.get(f'{api_url}/releases/latest', headers=headers)
