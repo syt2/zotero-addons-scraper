@@ -41,7 +41,7 @@ def parse(addon_id, addon_fullname, **kwargs):
                         },
                         'currentVersion': release_info['tag_name']
                     }
-                    result['releases'] = release
+                    result['releases'] = [release]
                     break
 
         except Exception as e:
