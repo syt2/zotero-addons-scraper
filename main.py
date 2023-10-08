@@ -1,14 +1,17 @@
 import json
 import time
+import urllib.parse
 
 import requests
 import argparse
 
 
+# 输出格式参考 [zotero-chinese/zotero-plugins](https://github.com/zotero-chinese/zotero-plugins)
 def parse(addon_id, addon_fullname, **kwargs):
     result = {
         'id': addon_id,
-        'homepage': f'https://github.com/{addon_fullname}'
+        'name': addon_fullname.split('/')[-1],
+        'repo': addon_fullname,
     }
     api_url = f'https://api.github.com/repos/{addon_fullname}'
     headers = {}
@@ -18,19 +21,27 @@ def parse(addon_id, addon_fullname, **kwargs):
         repos_resp = requests.get(api_url, headers=headers)
         repos_info = json.loads(repos_resp.content)
         description = repos_info['description']
-        start_count = repos_info['watchers']
-        result['description'] = description
-        result['start_count'] = start_count
+        start_count = repos_info['stargazers_count']
+        if description:
+            result['description'] = description
+        if start_count:
+            result['star'] = start_count
         try:
             release_resp = requests.get(f'{api_url}/releases/latest', headers=headers)
             release_info = json.loads(release_resp.content)
-            release_info['assets']
             for asset in release_info['assets']:
-                if asset['name'].endswith('.xpi'):
+                if asset['content_type'] == 'application/x-xpinstall':
                     download_link = asset['browser_download_url']
-                    name = asset['name'][:-4]
-                    result['name'] = name
-                    result['download_link'] = download_link
+                    release = {
+                        'targetZoteroVersion': '7',
+                        'xpiDownloadUrl': {
+                            'github': download_link,
+                            'ghProxy': 'https://ghproxy.com/?q=' + urllib.parse.quote(download_link),
+                            'kgithub': download_link.replace('github.com', 'kgithub.com'),
+                        },
+                        'currentVersion': release_info['tag_name']
+                    }
+                    result['releases'] = release
                     break
 
         except Exception as e:
@@ -38,7 +49,7 @@ def parse(addon_id, addon_fullname, **kwargs):
     except Exception as e:
         print(f'request {api_url} failed: {e}')
 
-    if 'name' in result:
+    if 'releases' in result:
         return result
 
 
@@ -109,6 +120,8 @@ def create_release(github_repository, **kwargs):
         print(f'create release failed: {e}')
 
 
+parse_addon_infos('addons', 'addon_infos.json')
+kkkk
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='params')
     parser.add_argument('--github_repository', nargs='?', type=str, required=True, help='github repository')
