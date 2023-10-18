@@ -12,6 +12,7 @@ plugins = [
     ],
   },
   {
+    id: "better-bibtex@iris-advies.com",
     name: "Better BibTex for Zotero",
     repo: "retorquere/zotero-better-bibtex",
     releases: [
@@ -40,6 +41,7 @@ plugins = [
     ],
   },
   {
+    id: "delitemwithatt@redleaf.me",
     name: "Delitemwithatt",
     repo: "redleafnew/delitemwithatt",
     releases: [
@@ -54,6 +56,7 @@ plugins = [
     ],
   },
   {
+    id: "greenfrog@redleafnew.me",
     name: "Green Frog",
     repo: "redleafnew/zotero-updateifsE",
     releases: [
@@ -68,6 +71,7 @@ plugins = [
     ],
   },
   {
+    id: "jasminum@linxzh.com",
     name: "Jasminum",
     repo: "l0o0/jasminum",
     releases: [
@@ -122,6 +126,7 @@ plugins = [
     ],
   },
   {
+    id: "night@tefkah.com",
     name: "Night for Zotero",
     repo: "tefkah/zotero-night",
     releases: [
@@ -136,6 +141,7 @@ plugins = [
     ],
   },
   {
+    id: "notero@vanoni.dev",
     name: "Notero",
     repo: "dvanoni/notero",
     releases: [
@@ -150,6 +156,7 @@ plugins = [
     ],
   },
   {
+    id: "open-pdf@iris-advies.com",
     name: "Open PDF",
     repo: "retorquere/zotero-open-pdf",
     releases: [
@@ -164,6 +171,7 @@ plugins = [
     ],
   },
   {
+    id: "zoterofigure@polygon.org",
     name: "PDF Figure",
     repo: "MuiseDestiny/zotero-figure",
     releases: [
@@ -238,6 +246,7 @@ plugins = [
     ],
   },
   {
+    id: "betterauthors@github.com",
     name: "Zotero Better Authors",
     repo: "github-young/zotero-better-authors",
     releases: [
@@ -248,6 +257,7 @@ plugins = [
     ],
   },
   {
+    id: "Knowledge4Zotero@windingwind.com",
     name: "Zotero Better Notes",
     repo: "windingwind/zotero-better-notes",
     releases: [
@@ -286,6 +296,7 @@ plugins = [
     ],
   },
   {
+    id: "zoterofile@polygon.org",
     name: "Zotero File",
     repo: "MuiseDestiny/zotero-file",
     releases: [
@@ -310,6 +321,7 @@ plugins = [
     ],
   },
   {
+    id: "zoterogpt@polygon.org",
     name: "Zotero GPT",
     repo: "MuiseDestiny/zotero-gpt",
     releases: [
@@ -344,6 +356,7 @@ plugins = [
     ],
   },
   {
+    id: "pdfpreview@windingwind.com",
     name: "Zotero PDF Preview",
     repo: "windingwind/zotero-pdf-preview",
     releases: [
@@ -358,6 +371,7 @@ plugins = [
     ],
   },
   {
+    id: "zoteropdftranslate@euclpts.com",
     name: "Zotero PDF Translate",
     repo: "windingwind/zotero-pdf-translate",
     releases: [
@@ -372,6 +386,7 @@ plugins = [
     ],
   },
   {
+    id: "zoteroreference@polygon.org",
     name: "Zotero Reference",
     repo: "MuiseDestiny/zotero-reference",
     releases: [
@@ -386,6 +401,7 @@ plugins = [
     ],
   },
   {
+    id: "zoterostyle@polygon.org",
     name: "Zotero Style",
     repo: "MuiseDestiny/ZoteroStyle",
     releases: [
@@ -400,6 +416,7 @@ plugins = [
     ],
   },
   {
+    id: "zoterotag@euclpts.com",
     name: "Zotero Tag",
     repo: "windingwind/zotero-actions-tags",
     releases: [
@@ -483,6 +500,7 @@ testPlugins = [
     ],
   },
   {
+    id: "zotero-format-metadata@northword.cn",
     name: "Zotero Format Metadata",
     repo: "northword/zotero-format-metadata",
     releases: [
@@ -499,6 +517,28 @@ testPlugins = [
   {
     name: "Zotero 插件合集",
     repo: "syt2/zotero-addons",
+    releases: [
+      {
+        targetZoteroVersion: "7",
+        tagName: "latest",
+      },
+    ],
+  },
+  {
+    id: "zoterotldr@syt.com",
+    name: "Zotero TL;DR",
+    repo: "syt2/Zotero-TLDR",
+    releases: [
+      {
+        targetZoteroVersion: "7",
+        tagName: "latest",
+      },
+    ],
+  },
+  {
+    id: "zoterocitation@polygon.org",
+    name: "zotero-citation",
+    repo: "MuiseDestiny/zotero-citation",
     releases: [
       {
         targetZoteroVersion: "7",
