@@ -1,3 +1,4 @@
+import concurrent.futures
 import json
 import time
 import urllib.parse
@@ -99,12 +100,13 @@ def parse(plugin, **kwargs):
     return plugin
 
 
-# todo: support multiprocess
 def parse_addon_infos(plugins, output_filepath, **kwargs):
     addon_infos = []
-    for plugin in plugins:
-        if addon_info := parse(plugin, github_token=kwargs.get('github_token')):
-            addon_infos.append(addon_info)
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        futures = [executor.submit(parse, plugin, github_token=kwargs.get('github_token')) for plugin in plugins]
+        for future in concurrent.futures.as_completed(futures):
+            if addon_info := future.result():
+                addon_infos.append(addon_info)
 
     addon_infos.sort(key=lambda item: item[star] if star in item else 0, reverse=True)
 
