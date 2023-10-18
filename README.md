@@ -5,14 +5,21 @@ This is a script repository for scraping Zotero addon collections for [Zotero7+]
 The script utilizes the GitHub API and GitHub Actions to automatically scrape, parse, and publish corresponding addon information from the [addons](addons) file to the latest release.
 
 ## Contributing New Addons
-If you have new addons to parse, add a new line in the [addons](addons) file with the format 
+If you have new addons to parse, add a new line in the [addons](addons.py) file with the format 
 ```
-...
-ADDONID, OWNER/REPOSITORY
+{
+    name: "Zotero addons",
+    repo: "syt2/zotero-addons",
+    releases: [
+        {
+            targetZoteroVersion: "7",
+            tagName: "latest",
+        },
+    ],
+}
 ```
-where `ADDONID` is the id of the addon, and `OWNER/REPOSITORY` is the full name address of the addon's GitHub repository.
 
-## Addon Infomation Format
+## Addon Information Format
 
 The output format for add-on information follows the format specified in [zotero-chinese/zotero-plugins](https://github.com/zotero-chinese/zotero-plugins), which is as follows:
 ```ts

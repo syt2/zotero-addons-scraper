@@ -1,71 +1,115 @@
 import json
 import time
 import urllib.parse
-
 import requests
 import argparse
+from addons import *
 
 
 # 输出格式参考 [zotero-chinese/zotero-plugins](https://github.com/zotero-chinese/zotero-plugins)
-def parse(addon_id, addon_fullname, **kwargs):
-    result = {
-        'id': addon_id,
-        'name': addon_fullname.split('/')[-1],
-        'repo': addon_fullname,
-    }
-    api_url = f'https://api.github.com/repos/{addon_fullname}'
+def parse(plugin, **kwargs):
+    if repo not in plugin or releases not in plugin or len(plugin[releases]) <= 0:
+        return
+    if name not in plugin:
+        plugin[name] = plugin[repo].split('/')[-1]
+
     headers = {}
     if github_token := kwargs.get('github_token'):
         headers['Authorization'] = f'token {github_token}'
+
+    # fetch author info
+    author_url = f"https://api.github.com/users/{plugin[repo].split('/')[0]}"
     try:
-        repos_resp = requests.get(api_url, headers=headers)
-        repos_info = json.loads(repos_resp.content)
-        description = repos_info['description']
-        start_count = repos_info['stargazers_count']
-        if description:
-            result['description'] = description
-        if start_count is not None:
-            result['star'] = start_count
-        try:
-            release_resp = requests.get(f'{api_url}/releases/latest', headers=headers)
-            release_info = json.loads(release_resp.content)
-            for asset in release_info['assets']:
-                if asset['content_type'] == 'application/x-xpinstall':
-                    download_link = asset['browser_download_url']
-                    release = {
-                        'targetZoteroVersion': '7',
-                        'xpiDownloadUrl': {
-                            'github': download_link,
-                            'ghProxy': 'https://ghproxy.com/?q=' + urllib.parse.quote(download_link),
-                            'kgithub': download_link.replace('github.com', 'kgithub.com'),
-                        },
-                        'currentVersion': release_info['tag_name']
-                    }
-                    result['releases'] = [release]
-                    break
-
-        except Exception as e:
-            print(f'request {api_url}/releases/latest failed: {e}')
+        author_resp = requests.get(author_url, headers=headers)
+        author_resp_info = json.loads(author_resp.content)
+        plugin_author = {}
+        if 'name' in author_resp_info:
+            plugin_author[author] = author_resp_info['name']
+        if 'html_url' in author_resp_info:
+            plugin_author[url] = author_resp_info['html_url']
+        if 'avatar_url' in author_resp_info:
+            plugin_author[avatar] = author_resp_info['avatar_url']
+        if plugin_author.keys():
+            plugin[author] = plugin_author
     except Exception as e:
-        print(f'request {api_url} failed: {e}')
+        print(f'request {author_url} failed: {e}')
 
-    if 'releases' in result:
-        return result
+    # fetch repo info
+    repo_url = f'https://api.github.com/repos/{plugin[repo]}'
+    try:
+        repos_resp = requests.get(repo_url, headers=headers)
+        repos_info = json.loads(repos_resp.content)
+        if repos_info['description'] and description not in plugin:
+            plugin[description] = repos_info['description']
+        if repos_info['stargazers_count'] is not None:
+            plugin[star] = repos_info['stargazers_count']
+    except Exception as e:
+        print(f'request {repo_url} failed: {e}')
+
+    # fetch release info
+    release_infos = []
+    for release in plugin[releases]:
+        if tagName not in release:
+            continue
+        release_url = f'https://api.github.com/repos/{plugin[repo]}/releases'
+        if release[tagName] == 'latest':
+            release_url += '/latest'
+        elif release[tagName] != 'pre':
+            release_url += f'/tags/{release[tagName]}'
+
+        try:
+            release_resp = requests.get(release_url, headers=headers)
+            release_info = json.loads(release_resp.content)
+
+            if release[tagName] == 'pre':
+                release_info = [info for info in release_info if info['prerelease']]
+                if release_info:
+                    release_info = release_info[0]
+                else:
+                    continue
+            if 'tag_name' in release_info:
+                release[currentVersion] = release_info['tag_name']
+
+            if 'assets' not in release_info:
+                continue
+            release_assets = release_info['assets']
+            release_assets.sort(key=lambda item: item['updated_at'] if 'updated_at' in item else '', reverse=True)
+            release_assets = [asset for asset in release_assets if asset['content_type'] == 'application/x-xpinstall']
+            if not release_assets:
+                continue
+            release_asset = release_assets[0]
+            if 'browser_download_url' not in release_asset:
+                continue
+            if 'id' in release_asset:
+                release[assetId] = release_asset['id']
+            if 'download_count' in release_asset:
+                release[downloadCount] = release_asset['download_count']
+            release[releaseData] = release_asset['updated_at']
+            release[xpiDownloadUrl] = {
+                'github': release_asset['browser_download_url'],
+                'ghProxy': 'https://ghproxy.com/?q=' + urllib.parse.quote(release_asset['browser_download_url']),
+                'kgithub': release_asset['browser_download_url'].replace('github.com', 'kgithub.com'),
+            }
+            release_infos.append(release)
+        except Exception as e:
+            print(f'request {release_url} failed: {e}')
+
+    plugin[releases] = release_infos
+
+    return plugin
 
 
 # todo: support multiprocess
-def parse_addon_infos(input_filepath, output_filepath, **kwargs):
-    with open(input_filepath, 'r', encoding='utf-8') as file:
-        lines = [line.strip().split(',') for line in file.readlines()]
+def parse_addon_infos(plugins, output_filepath, **kwargs):
     addon_infos = []
-    for addon_id, addon_fullname in lines:
-        if addon_info := parse(addon_id.strip(), addon_fullname.strip(), github_token=kwargs.get('github_token')):
+    for plugin in plugins:
+        if addon_info := parse(plugin, github_token=kwargs.get('github_token')):
             addon_infos.append(addon_info)
 
-    addon_infos.sort(key=lambda item: item['start_count'] if 'start_count' in item else 0, reverse=True)
+    addon_infos.sort(key=lambda item: item[star] if star in item else 0, reverse=True)
 
     with open(output_filepath, "w") as json_file:
-        json.dump(addon_infos, json_file)
+        json.dump(addon_infos, json_file, ensure_ascii=False)
 
     return addon_infos
 
@@ -124,15 +168,18 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='params')
     parser.add_argument('--github_repository', nargs='?', type=str, required=True, help='github repository')
     parser.add_argument('--github_token', nargs='?', type=str, help='github token')
-    parser.add_argument('-i', '--input', nargs='?', type=str, default="addons", help='input addon files')
     parser.add_argument('-o', '--output', nargs='?', type=str, default="addon_infos.json", help='output addon infos')
+    parser.add_argument('--release', action='store_true', help='env')
 
     args = parser.parse_args()
+
     if not args.github_repository:
         raise 'Need specific github repository'
-    if not args.input:
-        raise 'need specific input addon file'
-    parse_addon_infos(args.input, args.output, github_token=args.github_token)
+    if args.release:
+        parse_addon_infos(plugins, args.output, github_token=args.github_token)
+    else:
+        parse_addon_infos(testPlugins, args.output, github_token=args.github_token)
+
     if release_id := create_release(args.github_repository, github_token=args.github_token):
         upload_json_to_release(args.github_repository,
                                release_id,
