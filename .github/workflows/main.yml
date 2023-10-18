@@ -25,7 +25,7 @@ jobs:
 
     - name: Run Script
       run: |
-        python main.py -o addon_infos.json --github_repository ${GITHUB_REPOSITORY} --github_token ${GITHUB_TOKEN}
+        python main.py -o addon_infos.json --github_repository ${GITHUB_REPOSITORY} --github_token ${GITHUB_TOKEN} --release
 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
