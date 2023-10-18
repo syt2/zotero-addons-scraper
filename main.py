@@ -1,10 +1,11 @@
 import concurrent.futures
 import json
+import os
 import time
 import urllib.parse
 import requests
 import argparse
-from addons import *
+from addon_keys import *
 
 
 # 输出格式参考 [zotero-chinese/zotero-plugins](https://github.com/zotero-chinese/zotero-plugins)
@@ -100,7 +101,15 @@ def parse(plugin, **kwargs):
     return plugin
 
 
-def parse_addon_infos(plugins, output_filepath, **kwargs):
+def parse_addon_infos(input_dir, output_filepath, **kwargs):
+    plugins = []
+    for addon_json_filename in os.listdir(input_dir):
+        if not addon_json_filename.endswith('.json'):
+            continue
+        addon_json_filepath = os.path.join(input_dir, addon_json_filename)
+        with open(addon_json_filepath, 'r') as file:
+            plugins.append(json.load(file))
+
     addon_infos = []
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(parse, plugin, github_token=kwargs.get('github_token')) for plugin in plugins]
@@ -170,17 +179,15 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='params')
     parser.add_argument('--github_repository', nargs='?', type=str, required=True, help='github repository')
     parser.add_argument('--github_token', nargs='?', type=str, help='github token')
-    parser.add_argument('-o', '--output', nargs='?', type=str, default="addon_infos.json", help='output addon infos')
-    parser.add_argument('--release', action='store_true', help='env')
+    parser.add_argument('-i', '--input', nargs='?', type=str, default="addons", help='input addon dir')
+    parser.add_argument('-o', '--output', nargs='?', type=str, default="addon_infos.json", help='output addon filepath')
 
     args = parser.parse_args()
 
     if not args.github_repository:
         raise 'Need specific github repository'
-    if args.release:
-        parse_addon_infos(plugins, args.output, github_token=args.github_token)
-    else:
-        parse_addon_infos(testPlugins, args.output, github_token=args.github_token)
+
+    parse_addon_infos(args.input, args.output, github_token=args.github_token)
 
     if release_id := create_release(args.github_repository, github_token=args.github_token):
         upload_json_to_release(args.github_repository,

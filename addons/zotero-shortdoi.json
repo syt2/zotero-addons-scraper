@@ -1,0 +1,10 @@
+{
+  "name": "Zotero ShortDOI",
+  "repo": "bwiernik/zotero-shortdoi",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

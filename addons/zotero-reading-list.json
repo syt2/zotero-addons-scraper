@@ -1,0 +1,10 @@
+{
+  "name": "Reading List for Zotero",
+  "repo": "Dominic-DallOsto/zotero-reading-list",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

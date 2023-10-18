@@ -1,0 +1,15 @@
+{
+  "id": "notero@vanoni.dev",
+  "name": "Notero",
+  "repo": "dvanoni/notero",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    },
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

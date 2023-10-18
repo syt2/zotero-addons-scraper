@@ -1,0 +1,10 @@
+{
+  "name": "ZotFile 汉化版",
+  "repo": "lychichem/zotfile",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

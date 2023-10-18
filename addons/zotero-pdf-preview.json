@@ -1,0 +1,15 @@
+{
+  "id": "pdfpreview@windingwind.com",
+  "name": "Zotero PDF Preview",
+  "repo": "windingwind/zotero-pdf-preview",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    },
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "pre"
+    }
+  ]
+}

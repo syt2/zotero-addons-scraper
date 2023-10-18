@@ -1,0 +1,15 @@
+{
+  "id": "zoterotag@euclpts.com",
+  "name": "Zotero Tag",
+  "repo": "windingwind/zotero-actions-tags",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "pre"
+    },
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

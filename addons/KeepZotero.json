@@ -1,0 +1,10 @@
+{
+  "name": "KeepZotero",
+  "repo": "yhmtsai/KeepZotero",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

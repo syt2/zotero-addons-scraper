@@ -1,0 +1,10 @@
+{
+  "name": "Zotero Citation Counts Manager",
+  "repo": "eschnett/zotero-citationcounts",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "night@tefkah.com",
+  "name": "Night for Zotero",
+  "repo": "tefkah/zotero-night",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "pre"
+    },
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

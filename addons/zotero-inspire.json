@@ -1,0 +1,10 @@
+{
+  "name": "Zotero Inspire",
+  "repo": "fkguo/zotero-inspire",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

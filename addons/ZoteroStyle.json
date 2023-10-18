@@ -1,0 +1,15 @@
+{
+  "id": "zoterostyle@polygon.org",
+  "name": "Zotero Style",
+  "repo": "MuiseDestiny/ZoteroStyle",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "pre"
+    },
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

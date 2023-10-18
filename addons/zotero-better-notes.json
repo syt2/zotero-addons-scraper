@@ -1,0 +1,15 @@
+{
+  "id": "Knowledge4Zotero@windingwind.com",
+  "name": "Zotero Better Notes",
+  "repo": "windingwind/zotero-better-notes",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "pre"
+    },
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

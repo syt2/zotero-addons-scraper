@@ -1,0 +1,11 @@
+{
+  "id": "zoterotldr@syt.com",
+  "name": "Zotero TL;DR",
+  "repo": "syt2/Zotero-TLDR",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}

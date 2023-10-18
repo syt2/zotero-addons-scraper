@@ -1,0 +1,10 @@
+{
+  "name": "Zotero 更新影响因子",
+  "repo": "redleafnew/zotero-updateifs",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

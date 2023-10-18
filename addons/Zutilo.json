@@ -1,0 +1,10 @@
+{
+  "name": "Zutilo Utility for Zotero",
+  "repo": "wshanks/Zutilo",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}
