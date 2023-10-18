@@ -27,6 +27,7 @@ plugins = [
     ],
   },
   {
+    id: "chartero@volatile.static",
     name: "Chartero",
     repo: "volatile-static/Chartero",
     releases: [
@@ -272,6 +273,7 @@ plugins = [
     ],
   },
   {
+    id: "zoterocitation@polygon.org",
     name: "Zotero Citation",
     repo: "MuiseDestiny/eaiser-citation",
     releases: [
@@ -307,6 +309,7 @@ plugins = [
     ],
   },
   {
+    id: "zotero-format-metadata@northword.cn",
     name: "Zotero Format Metadata",
     repo: "northword/zotero-format-metadata",
     releases: [
@@ -480,6 +483,17 @@ plugins = [
       },
     ],
   },
+  {
+    id: "zoterotldr@syt.com",
+    name: "Zotero TL;DR",
+    repo: "syt2/Zotero-TLDR",
+    releases: [
+      {
+        targetZoteroVersion: "7",
+        tagName: "latest",
+      },
+    ],
+  },
 ]
 
 
@@ -517,28 +531,6 @@ testPlugins = [
   {
     name: "Zotero 插件合集",
     repo: "syt2/zotero-addons",
-    releases: [
-      {
-        targetZoteroVersion: "7",
-        tagName: "latest",
-      },
-    ],
-  },
-  {
-    id: "zoterotldr@syt.com",
-    name: "Zotero TL;DR",
-    repo: "syt2/Zotero-TLDR",
-    releases: [
-      {
-        targetZoteroVersion: "7",
-        tagName: "latest",
-      },
-    ],
-  },
-  {
-    id: "zoterocitation@polygon.org",
-    name: "zotero-citation",
-    repo: "MuiseDestiny/zotero-citation",
     releases: [
       {
         targetZoteroVersion: "7",
