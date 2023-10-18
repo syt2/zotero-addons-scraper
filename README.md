@@ -2,7 +2,7 @@
 
 This is a script repository for scraping Zotero addon collections for [Zotero7+](https://www.zotero.org), intended for use with [Zotero addons](https://github.com/syt2/zotero-addons).
 
-Click [here](zotero://zoteroaddoncollection/configSource?source=source-zotero-chinese-github-backup) to switch the [Zotero addons](https://github.com/syt2/zotero-addons) data source to this repository.
+Switch to GitHub(back) source in [Zotero addons](https://github.com/syt2/zotero-addons) to use this repository.
 
 The script utilizes the GitHub API and GitHub Actions to automatically scrape, parse, and publish corresponding addon information from the [addons](addons) file to the latest release.
 
