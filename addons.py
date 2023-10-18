@@ -2,6 +2,7 @@ from addon_keys import *
 
 plugins = [
   {
+    id: "zoteroAddons@ytshen.com",
     name: "Zotero 插件合集",
     repo: "syt2/zotero-addons",
     releases: [
