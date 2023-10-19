@@ -1,0 +1,10 @@
+{
+  "name": "Sci-Hub Plugin for Zotero",
+  "repo": "ethanwillis/zotero-scihub",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

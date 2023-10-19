@@ -1,0 +1,31 @@
+name: Zotero Addons Scraping
+
+on:
+  workflow_dispatch: # 手动触发事件
+  schedule:
+    - cron: '0 3 * * *' # 每天早上3点执行
+
+jobs:
+  scrape_data:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@master
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.x
+
+    - name: Install Dependencies
+      run: |
+        pip install requests
+        pip install argparse
+
+    - name: Run Script
+      run: |
+        python main.py -i addons -o addon_infos.json --github_repository ${GITHUB_REPOSITORY} --github_token ${GITHUB_TOKEN}
+
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

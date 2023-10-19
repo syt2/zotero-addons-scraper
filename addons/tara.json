@@ -1,0 +1,10 @@
+{
+  "name": "Tara",
+  "repo": "l0o0/tara",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

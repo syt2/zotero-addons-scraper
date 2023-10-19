@@ -1,0 +1,15 @@
+{
+  "id": "zotero-format-metadata@northword.cn",
+  "name": "Zotero Format Metadata",
+  "repo": "northword/zotero-format-metadata",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    },
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "0.4.4"
+    }
+  ]
+}

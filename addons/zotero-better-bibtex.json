@@ -1,0 +1,15 @@
+{
+  "id": "better-bibtex@iris-advies.com",
+  "name": "Better BibTex for Zotero",
+  "repo": "retorquere/zotero-better-bibtex",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    },
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

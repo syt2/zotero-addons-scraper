@@ -1,0 +1,15 @@
+{
+  "id": "chartero@volatile.static",
+  "name": "Chartero",
+  "repo": "volatile-static/Chartero",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "1.3.3"
+    },
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}

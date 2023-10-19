@@ -1,0 +1,15 @@
+{
+  "id": "zoterocitation@polygon.org",
+  "name": "Zotero Citation",
+  "repo": "MuiseDestiny/eaiser-citation",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    },
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "0.3.1"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "zoteroAddons@ytshen.com",
+  "name": "Zotero 插件合集",
+  "repo": "syt2/zotero-addons",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}

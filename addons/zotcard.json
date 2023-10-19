@@ -1,0 +1,10 @@
+{
+  "name": "ZotCard",
+  "repo": "018/zotcard",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

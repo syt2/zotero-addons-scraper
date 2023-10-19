@@ -1,0 +1,15 @@
+{
+  "id": "zoteroreference@polygon.org",
+  "name": "Zotero Reference",
+  "repo": "MuiseDestiny/zotero-reference",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "pre"
+    },
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

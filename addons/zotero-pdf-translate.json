@@ -1,0 +1,15 @@
+{
+  "id": "zoteropdftranslate@euclpts.com",
+  "name": "Zotero PDF Translate",
+  "repo": "windingwind/zotero-pdf-translate",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "pre"
+    },
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

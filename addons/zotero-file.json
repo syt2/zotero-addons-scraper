@@ -1,0 +1,11 @@
+{
+  "id": "zoterofile@polygon.org",
+  "name": "Zotero File",
+  "repo": "MuiseDestiny/zotero-file",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}

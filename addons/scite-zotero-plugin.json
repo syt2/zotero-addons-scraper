@@ -1,0 +1,10 @@
+{
+  "name": "scite Plugin for Zotero",
+  "repo": "scitedotai/scite-zotero-plugin",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}
