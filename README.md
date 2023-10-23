@@ -1,15 +1,16 @@
 # Zotero Addons Scraper
 
 This is a script repository for scraping Zotero addon collections for [Zotero7+](https://www.zotero.org), intended for use with [Zotero addons](https://github.com/syt2/zotero-addons).
+
 *Switch to GitHub(backup) source in [Zotero addons](https://github.com/syt2/zotero-addons) to use this repository.*
 
-The script utilizes the GitHub API and GitHub Actions to automatically scrape, parse, and publish corresponding addon information from the [addons](addons) file to the latest release.
+The script utilizes the GitHub API and GitHub Actions to automatically scrape and parse addon information from the [addons](addons) folder, and publish to the latest release every day.
 
 ## Contributing New Addons
 If you have a new add-on to parse, add the json information of the add-on in the [addons](addons) folder with the format 
 ``` json
 {
-  "id": "zoteroAddons@ytshen.com",
+  "id": "zoteroAddons@ytshen.com", // optional
   "name": "Zotero 插件合集",
   "repo": "syt2/zotero-addons",
   "releases": [
@@ -26,6 +27,7 @@ If you have a new add-on to parse, add the json information of the add-on in the
 The output format for add-on information follows the format specified in [zotero-chinese/zotero-plugins](https://github.com/zotero-chinese/zotero-plugins), which is as follows:
 ```ts
 export interface PluginInfo {
+  id?: string;
   /**
    * 插件名称
    */
