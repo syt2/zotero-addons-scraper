@@ -90,7 +90,7 @@ def parse(plugin, **kwargs):
             release[xpiDownloadUrl] = {
                 'github': release_asset['browser_download_url'],
                 'ghProxy': 'https://ghproxy.com/?q=' + urllib.parse.quote(release_asset['browser_download_url']),
-                'kgithub': release_asset['browser_download_url'].replace('github.com', 'kgithub.com'),
+                'kgithub': release_asset['browser_download_url'].replace('github.com', 'kkgithub.com'),
             }
             release_infos.append(release)
         except Exception as e:
