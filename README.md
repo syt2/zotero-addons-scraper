@@ -7,11 +7,11 @@ This is a script repository for scraping Zotero addon collections for [Zotero](h
 The script utilizes the GitHub API and GitHub Actions to automatically scrape and parse addon information from the [addons](addons) folder, and publish to the latest release every day.
 
 ## Contributing New Addons
-If you have new add-ons to parse, add the json information of the add-on in the [addons](addons) folder with the format 
+If you have new add-ons to parse, add the json information of the add-on with the name format of `repo.replace('/', '#').json` in the [addons](addons) folder with the format 
 ``` json
 {
-  "id": "zoteroAddons@ytshen.com", # optional
-  "name": "Zotero 插件合集",
+  "id": "zoteroAddons@ytshen.com",
+  "name": "Zotero Addons",
   "repo": "syt2/zotero-addons",
   "releases": [
     {
