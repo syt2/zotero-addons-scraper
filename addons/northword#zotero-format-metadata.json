@@ -1,6 +1,6 @@
 {
   "id": "zotero-format-metadata@northword.cn",
-  "name": "Zotero Format Metadata",
+  "name": "Linter for Zotero",
   "repo": "northword/zotero-format-metadata",
   "releases": [
     {

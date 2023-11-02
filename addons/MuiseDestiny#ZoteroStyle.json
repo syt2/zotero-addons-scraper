@@ -1,7 +1,7 @@
 {
-  "id": "Knowledge4Zotero@windingwind.com",
-  "name": "Zotero Better Notes",
-  "repo": "windingwind/zotero-better-notes",
+  "id": "zoterostyle@polygon.org",
+  "name": "Ethereal Style",
+  "repo": "MuiseDestiny/ZoteroStyle",
   "releases": [
     {
       "targetZoteroVersion": "7",

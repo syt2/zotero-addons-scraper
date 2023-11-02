@@ -1,7 +1,7 @@
 {
-  "id": "zoteropdftranslate@euclpts.com",
-  "name": "Zotero PDF Translate",
-  "repo": "windingwind/zotero-pdf-translate",
+  "id": "Knowledge4Zotero@windingwind.com",
+  "name": "Better Notes for Zotero",
+  "repo": "windingwind/zotero-better-notes",
   "releases": [
     {
       "targetZoteroVersion": "7",
