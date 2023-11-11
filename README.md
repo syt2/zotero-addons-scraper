@@ -69,6 +69,17 @@ export interface PluginInfo {
     releaseData?: string;
     downloadCount?: number;
     assetId?: number;
+    
+    /**
+     * 从插件中解析的信息
+     *
+     * TODO：后续视 zotero-chinese/zotero-plugins 的情况更新
+     */
+    xpiInfo?: {
+      id?: string;
+      name?: string;
+      currentVersion?: string;
+    };
   }>;
 
   description?: string;
