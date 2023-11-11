@@ -19,6 +19,7 @@ star                                    = "star"
 author                                  = "author"
 url                                     = "url"
 avatar                                  = "avatar"
+xpiInfo                                 = "xpiInfo"
 
 
 # from https://github.com/zotero-chinese/zotero-plugins/blob/main/src/plugins.ts
@@ -64,6 +65,13 @@ avatar                                  = "avatar"
 #     releaseData?: string;
 #     downloadCount?: number;
 #     assetId?: number;
+#
+#     TODO：视 zotero-chinese/zotero-plugins情况更新
+#     xpiInfo?: {
+#       id?: string;
+#       name?: string;
+#       currentVersion?: string;
+#     };
 #   }>;
 #
 #   description?: string;

@@ -5,13 +5,19 @@ on:
   schedule:
     - cron: '0 3 * * *' # 每天早上3点执行
 
+permissions:
+  contents: write
+
+env:
+  TZ: Asia/Shanghai
+
 jobs:
   scrape_data:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@master
+      uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -20,12 +26,38 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        pip install requests
-        pip install argparse
+        pip install -r requirements.txt
+
+    - name: Cache Folder
+      uses: actions/cache@v3
+      with:
+        path: |
+          caches
+        key: ${{ runner.os }}-files-${{ hashFiles('caches/**') }}
+        restore-keys: |
+          ${{ runner.os }}-files-
 
     - name: Run Script
       run: |
-        python main.py -i addons -o addon_infos.json --github_repository ${GITHUB_REPOSITORY} --github_token ${GITHUB_TOKEN}
-
+        python main.py \
+          -i addons \
+          -o published/addon_infos.json \
+          --github_repository ${GITHUB_REPOSITORY} \
+          --github_token ${GITHUB_TOKEN} \
+          --cache_directory caches \
+          --runtime_xpi_directory xpis \
+          --previous_info_urls \
+              https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/publish/addon_infos.json \
+              https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/addon_infos.json
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Publish in Repository
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_branch: publish
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
+        publish_dir: ./published
+

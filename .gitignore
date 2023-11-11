@@ -1,4 +1,8 @@
 addon_infos.json
+xpis/
+caches/
+published/
+testAddons/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
