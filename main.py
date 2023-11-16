@@ -56,6 +56,8 @@ def parse(plugin, **kwargs):
         plugin_author = {}
         if 'name' in author_resp_info:
             plugin_author[name] = author_resp_info['name']
+        else:
+            plugin_author[name] = plugin[repo].split('/')[0]
         if 'html_url' in author_resp_info:
             plugin_author[url] = author_resp_info['html_url']
         if 'avatar_url' in author_resp_info:
