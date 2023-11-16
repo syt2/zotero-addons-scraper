@@ -33,9 +33,7 @@ jobs:
       with:
         path: |
           caches
-        key: ${{ runner.os }}-files-${{ hashFiles('caches/**') }}
-        restore-keys: |
-          ${{ runner.os }}-files-
+        key: ${{ runner.os }}-files
 
     - name: Run Script
       run: |
