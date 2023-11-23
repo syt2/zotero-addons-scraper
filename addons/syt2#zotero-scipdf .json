@@ -1,0 +1,11 @@
+{
+  "id": "scipdf@ytshen.com",
+  "name": "zotero-scipdf",
+  "repo": "syt2/zotero-scipdf",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}
