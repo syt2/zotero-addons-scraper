@@ -28,14 +28,22 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    - name: Cache Folder
-      uses: actions/cache@v3
+    - name: Store Cache Folder
+      uses: actions/cache/restore@v3
+      id: restore-cache
       with:
         path: |
           caches
-        key: ${{ runner.os }}-files-${{ hashFiles('caches/**') }}
+        key: ${{ runner.os }}-files-
         restore-keys: |
           ${{ runner.os }}-files-
+
+    - name: Get Cache Hash
+      id: get-cache-hash
+      run: |
+        echo "CACHE_HASH=$CACHE_HASH" >> "$GITHUB_OUTPUT"
+      env:
+        CACHE_HASH: ${{ hashFiles('caches/caches_lockfile') }}
 
     - name: Run Script
       run: |
@@ -46,6 +54,7 @@ jobs:
           --github_token ${GITHUB_TOKEN} \
           --cache_directory caches \
           --runtime_xpi_directory xpis \
+          --cache_lockfile caches_lockfile \
           --previous_info_urls \
               https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/publish/addon_infos.json \
               https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/addon_infos.json
@@ -60,4 +69,25 @@ jobs:
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
         publish_dir: ./published
+
+    - name: Check Cache Need Update
+      id: check-cache-update
+      run: |
+        if [[ "$PRE_CACHE_HASH" != "$CUR_CACHE_HASH" ]]; then
+          echo "SAVE_CACHE=true" >> "$GITHUB_OUTPUT"
+        else
+          echo "SAVE_CACHE=false" >> "$GITHUB_OUTPUT"
+        fi
+      env:
+        PRE_CACHE_HASH: ${{ steps.get-cache-hash.outputs.CACHE_HASH }}
+        CUR_CACHE_HASH: ${{ hashFiles('caches/caches_lockfile') }}
+
+    - name: Save Cache Folder
+      if: steps.check-cache-update.outputs.SAVE_CACHE == 'true'
+      uses: actions/cache/save@v3
+      id: save-cache
+      with:
+        path: |
+          caches
+        key: ${{ runner.os }}-files-${{ hashFiles('caches/caches_lockfile') }}
 
