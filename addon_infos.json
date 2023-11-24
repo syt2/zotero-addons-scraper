@@ -27,7 +27,7 @@
         "tagName": "latest",
         "currentVersion": "v1.0.25",
         "assetId": 118647337,
-        "downloadCount": 271447,
+        "downloadCount": 271454,
         "releaseData": "2023-07-26T01:25:02Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/windingwind/zotero-pdf-translate/releases/download/v1.0.25/zotero-pdf-translate.xpi",
@@ -59,7 +59,7 @@
         "tagName": "latest",
         "currentVersion": "v6.7.137",
         "assetId": 136684623,
-        "downloadCount": 23332,
+        "downloadCount": 23340,
         "releaseData": "2023-11-21T11:18:59Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/retorquere/zotero-better-bibtex/releases/download/v6.7.137/zotero-better-bibtex-6.7.137.xpi",
@@ -77,7 +77,7 @@
         "tagName": "latest",
         "currentVersion": "v6.7.137",
         "assetId": 136684623,
-        "downloadCount": 23332,
+        "downloadCount": 23341,
         "releaseData": "2023-11-21T11:18:59Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/retorquere/zotero-better-bibtex/releases/download/v6.7.137/zotero-better-bibtex-6.7.137.xpi",
@@ -127,7 +127,7 @@
         "tagName": "latest",
         "currentVersion": "v0.2.8",
         "assetId": 136854466,
-        "downloadCount": 15707,
+        "downloadCount": 15728,
         "releaseData": "2023-11-22T08:03:57Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/l0o0/jasminum/releases/download/v0.2.8/jasminum-v0.2.8.xpi",
@@ -177,7 +177,7 @@
         "tagName": "latest",
         "currentVersion": "1.0.4",
         "assetId": 112283888,
-        "downloadCount": 1085841,
+        "downloadCount": 1085873,
         "releaseData": "2023-06-11T17:23:55Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/windingwind/zotero-better-notes/releases/download/1.0.4/zotero-better-notes.xpi",
@@ -209,7 +209,7 @@
         "tagName": "latest",
         "currentVersion": "v5.1.2",
         "assetId": 80398828,
-        "downloadCount": 470959,
+        "downloadCount": 470963,
         "releaseData": "2022-10-08T20:48:14Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/jlegewie/zotfile/releases/download/v5.1.2/zotfile-5.1.2-fx.xpi",
@@ -259,7 +259,7 @@
         "tagName": "latest",
         "currentVersion": "0.2.9",
         "assetId": 114336349,
-        "downloadCount": 35353,
+        "downloadCount": 35354,
         "releaseData": "2023-06-26T04:39:26Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/MuiseDestiny/zotero-gpt/releases/download/0.2.9/zotero-gpt-129.xpi",
@@ -279,7 +279,7 @@
       "avatar": "https://avatars.githubusercontent.com/u/51939531?v=4"
     },
     "description": "GPT Meet Zotero.",
-    "star": 3220
+    "star": 3221
   },
   {
     "id": "scihub@example.com",
@@ -291,7 +291,7 @@
         "tagName": "latest",
         "currentVersion": "v1.4.4",
         "assetId": 61719348,
-        "downloadCount": 171545,
+        "downloadCount": 171547,
         "releaseData": "2022-04-06T12:15:35Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/ethanwillis/zotero-scihub/releases/download/v1.4.4/zotero-scihub-1.4.4.xpi",
@@ -391,7 +391,7 @@
         "tagName": "latest",
         "currentVersion": "v0.4.23",
         "assetId": 114388522,
-        "downloadCount": 63869,
+        "downloadCount": 63871,
         "releaseData": "2023-06-26T11:49:55Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/tefkah/zotero-night/releases/download/v0.4.23/night.xpi",
@@ -441,7 +441,7 @@
         "tagName": "latest",
         "currentVersion": "v0.4.13",
         "assetId": 127222975,
-        "downloadCount": 27148,
+        "downloadCount": 27149,
         "releaseData": "2023-09-22T08:44:48Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/dvanoni/notero/releases/download/v0.4.13/notero-0.4.13.xpi",
@@ -505,7 +505,7 @@
         "tagName": "pre",
         "currentVersion": "0.6.4",
         "assetId": 127027443,
-        "downloadCount": 9012,
+        "downloadCount": 9013,
         "releaseData": "2023-09-21T05:11:59Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/MuiseDestiny/zotero-reference/releases/download/0.6.4/zotero-reference.xpi",
@@ -523,7 +523,7 @@
         "tagName": "latest",
         "currentVersion": "0.5.8",
         "assetId": 106613043,
-        "downloadCount": 369205,
+        "downloadCount": 369224,
         "releaseData": "2023-05-04T03:53:59Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/MuiseDestiny/zotero-reference/releases/download/0.5.8/zotero-reference.xpi",
@@ -605,7 +605,7 @@
         "tagName": "latest",
         "currentVersion": "v0.3.0",
         "assetId": 85819857,
-        "downloadCount": 108146,
+        "downloadCount": 108147,
         "releaseData": "2022-11-24T12:35:33Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/windingwind/zotero-actions-tags/releases/download/v0.3.0/zotero-tag.xpi",
@@ -687,7 +687,7 @@
         "tagName": "pre",
         "currentVersion": "1.0.0-4",
         "assetId": 123289162,
-        "downloadCount": 14095,
+        "downloadCount": 14096,
         "releaseData": "2023-08-27T03:47:29Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/windingwind/zotero-pdf-preview/releases/download/1.0.0-4/zotero-pdf-preview.xpi",
@@ -783,7 +783,7 @@
         "tagName": "latest",
         "currentVersion": "0.4.2",
         "assetId": 126270701,
-        "downloadCount": 8235,
+        "downloadCount": 8236,
         "releaseData": "2023-09-16T00:24:05Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/MuiseDestiny/zotero-citation/releases/download/0.4.2/zotero-citation.xpi",
@@ -865,7 +865,7 @@
         "tagName": "latest",
         "currentVersion": "0.16.02",
         "assetId": 122411204,
-        "downloadCount": 50270,
+        "downloadCount": 50273,
         "releaseData": "2023-08-21T08:19:58Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/redleafnew/zotero-updateifsE/releases/download/0.16.02/greenfrog.xpi",
@@ -1029,7 +1029,7 @@
         "tagName": "latest",
         "currentVersion": "v2.8",
         "assetId": 112643833,
-        "downloadCount": 45540,
+        "downloadCount": 45541,
         "releaseData": "2023-06-14T01:41:22Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/018/zotcard/releases/download/v2.8/zotcard-2.8.1.xpi",
@@ -1093,7 +1093,7 @@
         "tagName": "latest",
         "currentVersion": "0.1.2",
         "assetId": 121848577,
-        "downloadCount": 46953,
+        "downloadCount": 46957,
         "releaseData": "2023-08-17T05:12:13Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/MuiseDestiny/zotero-figure/releases/download/0.1.2/zotero-figure.xpi",
@@ -1111,7 +1111,7 @@
         "tagName": "0.0.7",
         "currentVersion": "0.0.7",
         "assetId": 114328715,
-        "downloadCount": 3944,
+        "downloadCount": 3945,
         "releaseData": "2023-06-26T03:29:42Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/MuiseDestiny/zotero-figure/releases/download/0.0.7/zotero-figure.xpi",
@@ -1161,7 +1161,7 @@
         "tagName": "latest",
         "currentVersion": "2.2.0",
         "assetId": 137018637,
-        "downloadCount": 443,
+        "downloadCount": 445,
         "releaseData": "2023-11-23T05:28:49Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/volatile-static/Chartero/releases/download/2.2.0/chartero.xpi",
@@ -1275,7 +1275,7 @@
         "tagName": "latest",
         "currentVersion": "1.3.5",
         "assetId": 135858376,
-        "downloadCount": 4535,
+        "downloadCount": 4538,
         "releaseData": "2023-11-16T14:03:34Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/syt2/zotero-addons/releases/download/1.3.5/zotero-addons.xpi",
@@ -1293,7 +1293,7 @@
         "tagName": "0.6.0-3",
         "currentVersion": "0.6.0-3",
         "assetId": 133054178,
-        "downloadCount": 4418,
+        "downloadCount": 4419,
         "releaseData": "2023-10-30T12:34:02Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/syt2/zotero-addons/releases/download/0.6.0-3/zotero-addons.xpi",
@@ -1439,7 +1439,7 @@
         "tagName": "latest",
         "currentVersion": "v0.0.8",
         "assetId": 127684261,
-        "downloadCount": 4482,
+        "downloadCount": 4483,
         "releaseData": "2023-09-25T20:25:37Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/retorquere/zotero-open-pdf/releases/download/v0.0.8/zotero-open-pdf-0.0.8.xpi",
@@ -1457,7 +1457,7 @@
         "tagName": "latest",
         "currentVersion": "v0.0.8",
         "assetId": 127684261,
-        "downloadCount": 4482,
+        "downloadCount": 4484,
         "releaseData": "2023-09-25T20:25:37Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/retorquere/zotero-open-pdf/releases/download/v0.0.8/zotero-open-pdf-0.0.8.xpi",
