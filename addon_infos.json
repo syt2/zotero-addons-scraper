@@ -9,7 +9,7 @@
         "tagName": "pre",
         "currentVersion": "v1.1.0-21",
         "assetId": 132810432,
-        "downloadCount": 15472,
+        "downloadCount": 15475,
         "releaseData": "2023-10-28T17:28:32Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/windingwind/zotero-pdf-translate/releases/download/v1.1.0-21/zotero-pdf-translate.xpi",
@@ -27,7 +27,7 @@
         "tagName": "latest",
         "currentVersion": "v1.0.25",
         "assetId": 118647337,
-        "downloadCount": 271454,
+        "downloadCount": 271458,
         "releaseData": "2023-07-26T01:25:02Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/windingwind/zotero-pdf-translate/releases/download/v1.0.25/zotero-pdf-translate.xpi",
@@ -92,7 +92,7 @@
       }
     ],
     "author": {
-      "name": "Emiliano Heyns",
+      "name": "retorquere",
       "url": "https://github.com/retorquere",
       "avatar": "https://avatars.githubusercontent.com/u/132108?v=4"
     },
@@ -109,7 +109,7 @@
         "tagName": "pre",
         "currentVersion": "1.0.0-9",
         "assetId": 136735021,
-        "downloadCount": 1625,
+        "downloadCount": 1626,
         "releaseData": "2023-11-21T16:52:46Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/l0o0/jasminum/releases/download/1.0.0-9/jasminum.xpi",
@@ -120,24 +120,6 @@
           "id": "jasminum@linxzh.com",
           "name": "Jasminum",
           "currentVersion": "1.0.0-9"
-        }
-      },
-      {
-        "targetZoteroVersion": "6",
-        "tagName": "latest",
-        "currentVersion": "v0.2.8",
-        "assetId": 136854466,
-        "downloadCount": 15728,
-        "releaseData": "2023-11-22T08:03:57Z",
-        "xpiDownloadUrl": {
-          "github": "https://github.com/l0o0/jasminum/releases/download/v0.2.8/jasminum-v0.2.8.xpi",
-          "ghProxy": "https://ghproxy.com/?q=https%3A//github.com/l0o0/jasminum/releases/download/v0.2.8/jasminum-v0.2.8.xpi",
-          "kgithub": "https://kkgithub.com/l0o0/jasminum/releases/download/v0.2.8/jasminum-v0.2.8.xpi"
-        },
-        "xpiInfo": {
-          "id": "jasminum@linxzh.com",
-          "name": "Jasminum",
-          "currentVersion": "0.2.8"
         }
       }
     ],
@@ -209,7 +191,7 @@
         "tagName": "latest",
         "currentVersion": "v5.1.2",
         "assetId": 80398828,
-        "downloadCount": 470963,
+        "downloadCount": 470964,
         "releaseData": "2022-10-08T20:48:14Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/jlegewie/zotfile/releases/download/v5.1.2/zotfile-5.1.2-fx.xpi",
@@ -274,7 +256,7 @@
       }
     ],
     "author": {
-      "name": "Polygon",
+      "name": "MuiseDestiny",
       "url": "https://github.com/MuiseDestiny",
       "avatar": "https://avatars.githubusercontent.com/u/51939531?v=4"
     },
@@ -291,7 +273,7 @@
         "tagName": "latest",
         "currentVersion": "v1.4.4",
         "assetId": 61719348,
-        "downloadCount": 171547,
+        "downloadCount": 171548,
         "releaseData": "2022-04-06T12:15:35Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/ethanwillis/zotero-scihub/releases/download/v1.4.4/zotero-scihub-1.4.4.xpi",
@@ -323,7 +305,7 @@
         "tagName": "pre",
         "currentVersion": "3.2.3",
         "assetId": 133727107,
-        "downloadCount": 7413,
+        "downloadCount": 7414,
         "releaseData": "2023-11-03T07:10:40Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/MuiseDestiny/zotero-style/releases/download/3.2.3/zotero-style.xpi",
@@ -341,7 +323,7 @@
         "tagName": "latest",
         "currentVersion": "2.6.7",
         "assetId": 117935928,
-        "downloadCount": 65858,
+        "downloadCount": 65860,
         "releaseData": "2023-07-21T03:56:05Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/MuiseDestiny/zotero-style/releases/download/2.6.7/zotero-style-fulltext.xpi",
@@ -373,7 +355,7 @@
         "tagName": "pre",
         "currentVersion": "0.1.0-2",
         "assetId": 125663804,
-        "downloadCount": 4488,
+        "downloadCount": 4489,
         "releaseData": "2023-09-12T09:57:15Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/tefkah/zotero-night/releases/download/0.1.0-2/night-7.xpi",
@@ -391,7 +373,7 @@
         "tagName": "latest",
         "currentVersion": "v0.4.23",
         "assetId": 114388522,
-        "downloadCount": 63871,
+        "downloadCount": 63872,
         "releaseData": "2023-06-26T11:49:55Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/tefkah/zotero-night/releases/download/v0.4.23/night.xpi",
@@ -456,7 +438,7 @@
       }
     ],
     "author": {
-      "name": "David Hoff-Vanoni",
+      "name": "dvanoni",
       "url": "https://github.com/dvanoni",
       "avatar": "https://avatars.githubusercontent.com/u/299357?v=4"
     },
@@ -488,7 +470,7 @@
       }
     ],
     "author": {
-      "name": "Will Shanks",
+      "name": "wshanks",
       "url": "https://github.com/wshanks",
       "avatar": "https://avatars.githubusercontent.com/u/1178780?v=4"
     },
@@ -587,7 +569,7 @@
         "tagName": "pre",
         "currentVersion": "v1.0.0-25",
         "assetId": 136345508,
-        "downloadCount": 1124,
+        "downloadCount": 1125,
         "releaseData": "2023-11-19T08:23:41Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/windingwind/zotero-actions-tags/releases/download/v1.0.0-25/zotero-actions-tags.xpi",
@@ -605,7 +587,7 @@
         "tagName": "latest",
         "currentVersion": "v0.3.0",
         "assetId": 85819857,
-        "downloadCount": 108147,
+        "downloadCount": 108149,
         "releaseData": "2022-11-24T12:35:33Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/windingwind/zotero-actions-tags/releases/download/v0.3.0/zotero-tag.xpi",
@@ -637,7 +619,7 @@
         "tagName": "latest",
         "currentVersion": "v1.4.2",
         "assetId": 56712583,
-        "downloadCount": 151598,
+        "downloadCount": 151600,
         "releaseData": "2022-02-13T17:59:06Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/bwiernik/zotero-shortdoi/releases/download/v1.4.2/zotero-doi-manager-1.4.2.xpi",
@@ -669,7 +651,7 @@
         "tagName": "latest",
         "currentVersion": "0.3.7",
         "assetId": 81361523,
-        "downloadCount": 83013,
+        "downloadCount": 83014,
         "releaseData": "2022-10-18T02:51:43Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/windingwind/zotero-pdf-preview/releases/download/0.3.7/zotero-pdf-preview.xpi",
@@ -687,7 +669,7 @@
         "tagName": "pre",
         "currentVersion": "1.0.0-4",
         "assetId": 123289162,
-        "downloadCount": 14096,
+        "downloadCount": 14097,
         "releaseData": "2023-08-27T03:47:29Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/windingwind/zotero-pdf-preview/releases/download/1.0.0-4/zotero-pdf-preview.xpi",
@@ -766,7 +748,7 @@
       }
     ],
     "author": {
-      "name": "scite",
+      "name": "scitedotai",
       "url": "https://github.com/scitedotai",
       "avatar": "https://avatars.githubusercontent.com/u/38773741?v=4"
     },
@@ -816,7 +798,7 @@
       }
     ],
     "author": {
-      "name": "Polygon",
+      "name": "MuiseDestiny",
       "url": "https://github.com/MuiseDestiny",
       "avatar": "https://avatars.githubusercontent.com/u/51939531?v=4"
     },
@@ -833,7 +815,7 @@
         "tagName": "latest",
         "currentVersion": "v5.0.12",
         "assetId": 66297943,
-        "downloadCount": 17131,
+        "downloadCount": 17132,
         "releaseData": "2022-05-22T21:04:39Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/retorquere/zotero-storage-scanner/releases/download/v5.0.12/zotero-storage-scanner-5.0.12.xpi",
@@ -865,7 +847,7 @@
         "tagName": "latest",
         "currentVersion": "0.16.02",
         "assetId": 122411204,
-        "downloadCount": 50273,
+        "downloadCount": 50277,
         "releaseData": "2023-08-21T08:19:58Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/redleafnew/zotero-updateifsE/releases/download/0.16.02/greenfrog.xpi",
@@ -876,24 +858,6 @@
           "id": "greenfrog@redleafnew.me",
           "name": "Green Frog",
           "currentVersion": "0.16.02"
-        }
-      },
-      {
-        "targetZoteroVersion": "6",
-        "tagName": "0.13.0",
-        "currentVersion": "0.13.0",
-        "assetId": 112026168,
-        "downloadCount": 31824,
-        "releaseData": "2023-06-09T14:00:00Z",
-        "xpiDownloadUrl": {
-          "github": "https://github.com/redleafnew/zotero-updateifsE/releases/download/0.13.0/greenfrog.xpi",
-          "ghProxy": "https://ghproxy.com/?q=https%3A//github.com/redleafnew/zotero-updateifsE/releases/download/0.13.0/greenfrog.xpi",
-          "kgithub": "https://kkgithub.com/redleafnew/zotero-updateifsE/releases/download/0.13.0/greenfrog.xpi"
-        },
-        "xpiInfo": {
-          "id": "greenfrog@redleafnew.me",
-          "name": "Green Frog",
-          "currentVersion": "0.13.0"
         }
       }
     ],
@@ -915,7 +879,7 @@
         "tagName": "latest",
         "currentVersion": "0.2.4",
         "assetId": 121326469,
-        "downloadCount": 7071,
+        "downloadCount": 7072,
         "releaseData": "2023-08-13T13:09:04Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/redleafnew/delitemwithatt/releases/download/0.2.4/delitemwithatt.xpi",
@@ -933,7 +897,7 @@
         "tagName": "0.1.06",
         "currentVersion": "0.1.06",
         "assetId": 96145921,
-        "downloadCount": 12329,
+        "downloadCount": 12330,
         "releaseData": "2023-02-18T03:14:49Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/redleafnew/delitemwithatt/releases/download/0.1.06/delitemwithatt.xpi",
@@ -980,7 +944,7 @@
       }
     ],
     "author": {
-      "name": "Universitätsbibliothek Mannheim",
+      "name": "UB-Mannheim",
       "url": "https://github.com/UB-Mannheim",
       "avatar": "https://avatars.githubusercontent.com/u/7151175?v=4"
     },
@@ -1012,7 +976,7 @@
       }
     ],
     "author": {
-      "name": "Dae",
+      "name": "daeh",
       "url": "https://github.com/daeh",
       "avatar": "https://avatars.githubusercontent.com/u/12652166?v=4"
     },
@@ -1093,7 +1057,7 @@
         "tagName": "latest",
         "currentVersion": "0.1.2",
         "assetId": 121848577,
-        "downloadCount": 46957,
+        "downloadCount": 46960,
         "releaseData": "2023-08-17T05:12:13Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/MuiseDestiny/zotero-figure/releases/download/0.1.2/zotero-figure.xpi",
@@ -1111,7 +1075,7 @@
         "tagName": "0.0.7",
         "currentVersion": "0.0.7",
         "assetId": 114328715,
-        "downloadCount": 3945,
+        "downloadCount": 3946,
         "releaseData": "2023-06-26T03:29:42Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/MuiseDestiny/zotero-figure/releases/download/0.0.7/zotero-figure.xpi",
@@ -1258,7 +1222,7 @@
       }
     ],
     "author": {
-      "name": "Northword",
+      "name": "northword",
       "url": "https://github.com/northword",
       "avatar": "https://avatars.githubusercontent.com/u/44738481?v=4"
     },
@@ -1275,7 +1239,7 @@
         "tagName": "latest",
         "currentVersion": "1.3.5",
         "assetId": 135858376,
-        "downloadCount": 4538,
+        "downloadCount": 4542,
         "releaseData": "2023-11-16T14:03:34Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/syt2/zotero-addons/releases/download/1.3.5/zotero-addons.xpi",
@@ -1293,7 +1257,7 @@
         "tagName": "0.6.0-3",
         "currentVersion": "0.6.0-3",
         "assetId": 133054178,
-        "downloadCount": 4419,
+        "downloadCount": 4420,
         "releaseData": "2023-10-30T12:34:02Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/syt2/zotero-addons/releases/download/0.6.0-3/zotero-addons.xpi",
@@ -1340,7 +1304,7 @@
       }
     ],
     "author": {
-      "name": "Will Shanks",
+      "name": "wshanks",
       "url": "https://github.com/wshanks",
       "avatar": "https://avatars.githubusercontent.com/u/1178780?v=4"
     },
@@ -1372,7 +1336,7 @@
       }
     ],
     "author": {
-      "name": "Dominic D",
+      "name": "Dominic-DallOsto",
       "url": "https://github.com/Dominic-DallOsto",
       "avatar": "https://avatars.githubusercontent.com/u/26859884?v=4"
     },
@@ -1389,7 +1353,7 @@
         "tagName": "pre",
         "currentVersion": "0.3.6",
         "assetId": 135763390,
-        "downloadCount": 305,
+        "downloadCount": 306,
         "releaseData": "2023-11-16T01:21:26Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/fkguo/zotero-inspire/releases/download/0.3.6/zotero-inspire-dev.xpi",
@@ -1407,7 +1371,7 @@
         "tagName": "latest",
         "currentVersion": "0.2.19",
         "assetId": 135763235,
-        "downloadCount": 1006,
+        "downloadCount": 1008,
         "releaseData": "2023-11-16T01:20:06Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/fkguo/zotero-inspire/releases/download/0.2.19/zotero-inspire-0.2.19.xpi",
@@ -1439,7 +1403,7 @@
         "tagName": "latest",
         "currentVersion": "v0.0.8",
         "assetId": 127684261,
-        "downloadCount": 4483,
+        "downloadCount": 4484,
         "releaseData": "2023-09-25T20:25:37Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/retorquere/zotero-open-pdf/releases/download/v0.0.8/zotero-open-pdf-0.0.8.xpi",
@@ -1488,7 +1452,7 @@
         "tagName": "latest",
         "currentVersion": "v5.1.2.999",
         "assetId": 83116212,
-        "downloadCount": 17522,
+        "downloadCount": 17523,
         "releaseData": "2022-11-02T03:29:25Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/lychichem/zotfile/releases/download/v5.1.2.999/zotfile-v5.1.2.999-fx.xpi",
@@ -1520,7 +1484,7 @@
         "tagName": "latest",
         "currentVersion": "v0.0.2",
         "assetId": 60299047,
-        "downloadCount": 3256,
+        "downloadCount": 3257,
         "releaseData": "2022-03-22T23:36:13Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/yhmtsai/KeepZotero/releases/download/v0.0.2/keepzotero-0.0.2-fx.xpi",
@@ -1567,7 +1531,7 @@
       }
     ],
     "author": {
-      "name": "Emiliano Heyns",
+      "name": "retorquere",
       "url": "https://github.com/retorquere",
       "avatar": "https://avatars.githubusercontent.com/u/132108?v=4"
     },
@@ -1598,7 +1562,7 @@
       }
     ],
     "author": {
-      "name": "Y. Xu",
+      "name": "github-young",
       "url": "https://github.com/github-young",
       "avatar": "https://avatars.githubusercontent.com/u/19162282?v=4"
     },
@@ -1647,7 +1611,7 @@
         "tagName": "latest",
         "currentVersion": "1.0.0",
         "assetId": 137086794,
-        "downloadCount": 13,
+        "downloadCount": 14,
         "releaseData": "2023-11-23T14:31:17Z",
         "xpiDownloadUrl": {
           "github": "https://github.com/syt2/zotero-scipdf/releases/download/1.0.0/zotero-scipdf.xpi",
