@@ -1,7 +1,7 @@
 {
-  "id": "scipdf@ytshen.com",
-  "name": "Sci-PDF",
-  "repo": "syt2/zotero-scipdf",
+  "id": "zoplicate@chenglongma.com",
+  "name": "Zoplicate",
+  "repo": "ChenglongMa/zoplicate",
   "releases": [
     {
       "targetZoteroVersion": "7",
