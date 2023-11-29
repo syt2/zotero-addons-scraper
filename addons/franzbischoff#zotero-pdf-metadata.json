@@ -1,0 +1,10 @@
+{
+  "name": "Zotero PDF Metadata",
+  "repo": "franzbischoff/zotero-pdf-metadata",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}
