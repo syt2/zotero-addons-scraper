@@ -4,6 +4,8 @@ on:
   workflow_dispatch: # 手动触发事件
   schedule:
     - cron: '0 3 * * *' # 每天早上3点执行
+  push:
+    branches: [main]
 
 permissions:
   contents: write
