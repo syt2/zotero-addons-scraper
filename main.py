@@ -144,16 +144,36 @@ def parse(plugin, **kwargs):
                     details = addon_details(xpi_filepath)
                 except Exception as e:
                     print(f'fetch addon detail of {plugin[repo]} failed: {e}')
+            # 对齐zotero-chinese的格式
+            # if details:
+            #     xpi_info = {}
+            #     if "id" in details:
+            #         xpi_info[id] = details["id"]
+            #     if "name" in details:
+            #         xpi_info[name] = details["name"]
+            #     if "version" in details:
+            #         xpi_info[currentVersion] = details["version"]
+            #     if xpi_info:
+            #         release[xpiInfo] = xpi_info
+
             if details:
-                xpi_info = {}
-                if "id" in details:
-                    xpi_info[id] = details["id"]
-                if "name" in details:
-                    xpi_info[name] = details["name"]
-                if "version" in details:
-                    xpi_info[currentVersion] = details["version"]
-                if xpi_info:
-                    release[xpiInfo] = xpi_info
+                if detail_id := details.get('id'):
+                    if plugin.get(id) and plugin[id] != detail_id:
+                        print('🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘')
+                        print(f'Addon id not matched in {plugin[repo]}')
+                        print(f'{plugin[id]} <===> {detail_id}')
+                        print('🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘')
+                    plugin[id] = detail_id
+                if not plugin.get(name) and (detail_name := details.get('name')):
+                    plugin[name] = detail_name
+                if detail_version := details.get('version'):
+                    release[currentVersion] = detail_version
+                if not plugin.get(description) and (detail_desc := details.get('description')):
+                    if detail_desc != '__MSG_description__':
+                        plugin[description] = detail_desc
+                    else:
+                        # todo: read from i18n
+                        pass
             release_infos.append(release)
 
         except Exception as e:

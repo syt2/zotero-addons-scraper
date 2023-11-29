@@ -19,7 +19,7 @@ def addon_details(addon_path):
          'unpack':  False }                # whether to unpack the addon
     """
 
-    details = {"id": None, "unpack": False, "name": None, "version": None}
+    details = {"id": None, "unpack": False, "name": None, "version": None, "description": None}
 
     def get_namespace_id(doc, url):
         attributes = doc.documentElement.attributes
@@ -80,6 +80,7 @@ def addon_details(addon_path):
     if is_webext:
         details["version"] = manifest["version"]
         details["name"] = manifest["name"]
+        details["description"] = manifest["description"]
         # Bug 1572404 - we support two locations for gecko-specific
         # metadata.
         for location in ("applications", "browser_specific_settings"):
