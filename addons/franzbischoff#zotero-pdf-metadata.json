@@ -3,7 +3,7 @@
   "repo": "franzbischoff/zotero-pdf-metadata",
   "releases": [
     {
-      "targetZoteroVersion": "6",
+      "targetZoteroVersion": "7",
       "tagName": "latest"
     }
   ]
