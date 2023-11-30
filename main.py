@@ -233,7 +233,7 @@ def parse_addon_infos(input_dir, output_filepath, **kwargs):
     if dir and not os.path.exists(dir):
         os.makedirs(dir)
     with open(output_filepath, "w") as json_file:
-        json.dump(addon_infos, json_file, ensure_ascii=False, indent='  ')
+        json.dump(addon_infos, json_file, ensure_ascii=False)
 
     return addon_infos
 
