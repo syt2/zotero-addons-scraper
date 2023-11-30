@@ -12,6 +12,16 @@ from fallback_infos import fallback_if_need
 from moz_addons import addon_details
 
 
+def github_api_headers(**kwargs):
+    result = {
+        'Accept': 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28',
+    }
+    if github_token := kwargs.get('github_token'):
+        result['Authorization'] = f'token {github_token}'
+    return result
+
+
 def download_xpi(xpi_url: str, download_dir: str, unique_name: str, force_download: bool, **kwargs):
     try:
         download_filepath = os.path.join(download_dir, unique_name)
@@ -29,7 +39,7 @@ def download_xpi(xpi_url: str, download_dir: str, unique_name: str, force_downlo
             return download_filepath
 
         response = requests.get(xpi_url, stream=True)
-        print(f'download {unique_name} from {xpi_url}')  # TODO: comment
+        print(f'download {unique_name} from {xpi_url}')
         with open(download_filepath, "wb") as file:
             for chunk in response.iter_content(chunk_size=1024):
                 file.write(chunk)
@@ -45,9 +55,7 @@ def parse(plugin, **kwargs):
     if name not in plugin:
         plugin[name] = plugin[repo].split('/')[-1]
 
-    headers = {}
-    if github_token := kwargs.get('github_token'):
-        headers['Authorization'] = f'token {github_token}'
+    headers = github_api_headers(github_token=kwargs.get('github_token'))
 
     # fetch author info
     author_url = f"https://api.github.com/users/{plugin[repo].split('/')[0]}"
@@ -166,7 +174,7 @@ def parse(plugin, **kwargs):
                     plugin[id] = detail_id
                 if not plugin.get(name) and (detail_name := details.get('name')):
                     plugin[name] = detail_name
-                if detail_version := details.get('version'):
+                if not release.get(currentVersion) and (detail_version := details.get('version')):
                     release[currentVersion] = detail_version
                 if not plugin.get(description) and (detail_desc := details.get('description')):
                     if detail_desc != '__MSG_description__':
@@ -185,11 +193,8 @@ def parse(plugin, **kwargs):
 
 
 def fallback(addon_infos, previous_info_url, **kwargs):
-    headers = {}
-    if github_token := kwargs.get('github_token'):
-        headers['Authorization'] = f'token {github_token}'
     try:
-        repos_resp = requests.get(previous_info_url, headers=headers)
+        repos_resp = requests.get(previous_info_url, headers=github_api_headers(github_token=kwargs.get('github_token')))
         repos_info = json.loads(repos_resp.content)
         addon_infos = fallback_if_need(addon_infos, repos_info)
     except Exception as e:
@@ -234,13 +239,8 @@ def parse_addon_infos(input_dir, output_filepath, **kwargs):
 
 
 def upload_json_to_release(github_repository, release_id, upload_file_name, upload_file, **kwargs):
-    headers = {
-        'Accept': 'application/vnd.github+json',
-        'X-GitHub-Api-Version': '2022-11-28',
-        "Content-Type": "application/octet-stream",
-    }
-    if github_token := kwargs.get('github_token'):
-        headers['Authorization'] = f'token {github_token}'
+    headers = github_api_headers(github_token=kwargs.get('github_token'))
+    headers["Content-Type"] = "application/octet-stream"
     upload_url = f'https://uploads.github.com/repos/{github_repository}/releases/{release_id}/assets?name={upload_file_name}'
     try:
         with open(upload_file, "rb") as file:
@@ -254,12 +254,6 @@ def upload_json_to_release(github_repository, release_id, upload_file_name, uplo
 
 
 def create_release(github_repository, **kwargs):
-    headers = {
-        'Accept': 'application/vnd.github+json',
-        'X-GitHub-Api-Version': '2022-11-28',
-    }
-    if github_token := kwargs.get('github_token'):
-        headers['Authorization'] = f'token {github_token}'
     create_release_url = f'https://api.github.com/repos/{github_repository}/releases'
     cur_time = int(time.time())
     param = {
@@ -272,7 +266,7 @@ def create_release(github_repository, **kwargs):
         'generate_release_notes': False,
     }
     try:
-        create_resp = requests.post(create_release_url, json=param, headers=headers)
+        create_resp = requests.post(create_release_url, json=param, headers=github_api_headers(github_token=kwargs.get('github_token')))
         if create_resp.status_code == 201:
             create_release_info = json.loads(create_resp.content)
             release_id = create_release_info['id']
@@ -305,6 +299,30 @@ def update_cache(cache_directory, runtime_xpi_directory, cache_hash_filename):
         print(folder_hash)
     except Exception as e:
         print(f'update cache failed: {e}')
+
+
+def delete_cache(github_repository, github_token, remain_count=2):
+    headers = github_api_headers(github_token=github_token)
+    get_caches_url = f'https://api.github.com/repos/{github_repository}/actions/caches?per_page=100&sort=last_accessed_at&direction=desc'
+    try:
+        caches_resp = requests.get(get_caches_url, headers=headers)
+        caches = json.loads(caches_resp.content)
+        if caches.get('total_count', 0) < remain_count:
+            return
+        delete_cache_url = f'https://api.github.com/repos/{github_repository}/actions/caches/'
+        for cache in caches.get('actions_caches', [])[remain_count:]:
+            cache_key = cache.get('key')
+            if cache_id := cache.get('id'):
+                try:
+                    delete_cache_resp = requests.delete(f'{delete_cache_url}{cache_id}', headers=headers)
+                    if delete_cache_resp.status_code == 204:
+                        print(f'delete {cache_key} succeed')
+                    else:
+                        print(f'delete {cache_key} failed: {delete_cache_resp.text}')
+                except Exception as e:
+                    print(f'delete cache for {cache_key} failed: {e}')
+    except Exception as e:
+        print(f'get caches failed: {e}')
 
 
 if __name__ == '__main__':
@@ -347,3 +365,6 @@ if __name__ == '__main__':
                                github_token=args.github_token)
 
     update_cache(args.cache_directory, args.runtime_xpi_directory, args.cache_lockfile)
+
+    if args.github_token:
+        delete_cache(args.github_repository, args.github_token, remain_count=1)
