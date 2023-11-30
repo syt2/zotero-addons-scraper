@@ -321,8 +321,6 @@ def delete_cache(github_repository, github_token, remain_count=2):
                         print(f'delete {cache_key} failed: {delete_cache_resp.text}')
                 except Exception as e:
                     print(f'delete cache for {cache_key} failed: {e}')
-
-            print(cache)
     except Exception as e:
         print(f'get caches failed: {e}')
 
