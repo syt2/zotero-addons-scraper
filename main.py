@@ -166,7 +166,7 @@ def parse(plugin, **kwargs):
                     plugin[id] = detail_id
                 if not plugin.get(name) and (detail_name := details.get('name')):
                     plugin[name] = detail_name
-                if not release.get(currentVersion) and detail_version := details.get('version'):
+                if not release.get(currentVersion) and (detail_version := details.get('version')):
                     release[currentVersion] = detail_version
                 if not plugin.get(description) and (detail_desc := details.get('description')):
                     if detail_desc != '__MSG_description__':
