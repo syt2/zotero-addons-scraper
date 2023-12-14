@@ -260,7 +260,7 @@ def create_release(github_repository, **kwargs):
         'tag_name': f'{cur_time}',
         'target_commitish': 'master',
         'name': f'{cur_time}',
-        'body': 'publish addon_infos.json',
+        'body': f'![](https://img.shields.io/github/downloads/{github_repository}/{cur_time}/total?label=downloads)\npublish addon_infos.json',
         'draft': False,
         'prerelease': False,
         'generate_release_notes': False,
