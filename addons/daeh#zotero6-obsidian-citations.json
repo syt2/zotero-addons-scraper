@@ -1,10 +1,11 @@
 {
+  "id": "daeda@mit.edu",
   "name": "MarkDBConnect",
   "repo": "daeh/zotero-obsidian-citations",
   "releases": [
     {
-      "targetZoteroVersion": "7",
-      "tagName": "pre"
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
     }
   ]
 }
