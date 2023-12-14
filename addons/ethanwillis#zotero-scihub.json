@@ -1,5 +1,4 @@
 {
-  "id": "scihub@example.com",
   "name": "Sci-Hub Plugin for Zotero",
   "repo": "ethanwillis/zotero-scihub",
   "releases": [

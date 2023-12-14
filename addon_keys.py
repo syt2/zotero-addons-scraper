@@ -1,4 +1,3 @@
-id                                      = "id"
 name                                    = "name"
 repo                                    = "repo"
 releases                                = "releases"
@@ -14,6 +13,8 @@ kgithub                                 = "kgithub"
 releaseData                             = "releaseData"
 downloadCount                           = "downloadCount"
 assetId                                 = "assetId"
+id                                      = "id"
+xpiVersion                              = "xpiVersion"
 description                             = "description"
 star                                    = "star"
 author                                  = "author"
@@ -24,6 +25,7 @@ avatar                                  = "avatar"
 # from https://github.com/zotero-chinese/zotero-plugins/blob/main/src/plugins.ts
 # export interface PluginInfo {
 #   // plugin id
+#   // @deprecated This property is deprecated. Use the id in releases instead.
 #   id?: string;
 #
 #   // plugin name
@@ -43,7 +45,7 @@ avatar                                  = "avatar"
 #     // `pre`: Latest pre-release
 #     // `string`: Corresponding to the `git.tag_name` of the release;
 #     tagName: "latest" | "pre" | string;
-#
+#     // @deprecated This property is deprecated. Use tagName instead.
 #     currentVersion?: string;
 #     xpiDownloadUrl?: {
 #       github: string;
@@ -55,6 +57,10 @@ avatar                                  = "avatar"
 #     releaseData?: string;
 #     downloadCount?: number;
 #     assetId?: number;
+#     // plugin xpi id
+#     id?: string;
+#     // plugin xpi version
+#     xpiVersion?: string;
 #   }>;
 #
 #   description?: string;

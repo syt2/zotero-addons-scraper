@@ -108,6 +108,10 @@ def parse(plugin, **kwargs):
                 else:
                     continue
             if 'tag_name' in release_info:
+                release[tagName] = release_info['tag_name']
+                # todo: 删除currentVersion
+                #  zotero-addons插件相关：
+                #  等待影响降低后再删除 (影响2023-12-14日之前的版本)
                 release[currentVersion] = release_info['tag_name']
 
             if 'assets' not in release_info:
@@ -152,30 +156,18 @@ def parse(plugin, **kwargs):
                     details = addon_details(xpi_filepath)
                 except Exception as e:
                     print(f'fetch addon detail of {plugin[repo]} failed: {e}')
-            # 对齐zotero-chinese的格式
-            # if details:
-            #     xpi_info = {}
-            #     if "id" in details:
-            #         xpi_info[id] = details["id"]
-            #     if "name" in details:
-            #         xpi_info[name] = details["name"]
-            #     if "version" in details:
-            #         xpi_info[currentVersion] = details["version"]
-            #     if xpi_info:
-            #         release[xpiInfo] = xpi_info
 
             if details:
                 if detail_id := details.get('id'):
-                    if plugin.get(id) and plugin[id] != detail_id:
-                        print('🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘')
-                        print(f'Addon id not matched in {plugin[repo]}')
-                        print(f'{plugin[id]} <===> {detail_id}')
-                        print('🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘')
+                    release[id] = detail_id
+                    # todo: 删除plugin外层的id
+                    #  zotero-addons插件相关：
+                    #  等待影响降低后再删除 (影响2023-12-14日之前的版本)
                     plugin[id] = detail_id
                 if not plugin.get(name) and (detail_name := details.get('name')):
                     plugin[name] = detail_name
-                if not release.get(currentVersion) and (detail_version := details.get('version')):
-                    release[currentVersion] = detail_version
+                if detail_version := details.get('version'):
+                    release[xpiVersion] = detail_version
                 if not plugin.get(description) and (detail_desc := details.get('description')):
                     if detail_desc != '__MSG_description__':
                         plugin[description] = detail_desc
@@ -260,7 +252,7 @@ def create_release(github_repository, **kwargs):
         'tag_name': f'{cur_time}',
         'target_commitish': 'master',
         'name': f'{cur_time}',
-        'body': 'publish addon_infos.json',
+        'body': f'![](https://img.shields.io/github/downloads/{github_repository}/{cur_time}/total?label=downloads)\npublish addon_infos.json',
         'draft': False,
         'prerelease': False,
         'generate_release_notes': False,
