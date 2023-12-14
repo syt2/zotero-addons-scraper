@@ -5,10 +5,11 @@ fallback_associated_exclude_ids = 'p_exclude_associated_ids##073F5543-C70A-46AA-
 
 fallback_associated_map = {
     fallback_associated_unique_id: repo,
-    fallback_associated_exclude_ids: [],
+    fallback_associated_exclude_ids: [id],
     repo: {
       releases: {
           fallback_associated_unique_id: tagName,
+          fallback_associated_exclude_ids: [currentVersion],
       }
     }
 }
