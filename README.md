@@ -1,16 +1,22 @@
 # Zotero Addons Scraper
-![GitHub Build Status](https://img.shields.io/github/actions/workflow/status/syt2/zotero-addons-scraper/main.yml)
-![GitHub Last Commit Time](https://img.shields.io/github/last-commit/syt2/zotero-addons-scraper/publish)
+![GitHub Build Status](https://img.shields.io/github/actions/workflow/status/syt2/zotero-addons-scraper/main.yml?logo=githubactions)
+![GitHub Last Commit Time](https://img.shields.io/github/last-commit/syt2/zotero-addons-scraper/publish?logo=github)
+![jsdelivr hits](https://img.shields.io/jsdelivr/gh/hm/syt2/zotero-addons-scraper?logo=jsdelivr)
 
-This is a script repository for scraping Zotero addon collections for [Zotero](https://www.zotero.org), intended for use with [Zotero addons](https://github.com/syt2/zotero-addons).  
-> Switch to `(addon-scraper)` source in [Zotero addons](https://github.com/syt2/zotero-addons) to use this repository.
 
-The script utilizes the GitHub API and GitHub Actions to automatically scrape and parse addon information from the [addons](addons) folder, and publish to [`publish`](https://github.com/syt2/zotero-addons-scraper/blob/publish/addon_infos.json) branch and the latest release every day.
+This is a script repository for scraping [Zotero](https://www.zotero.org) add-ons, intended for use with [Zotero Addons](https://github.com/syt2/zotero-addons).  
+> Switch to `addon-scraper` source in [Zotero Addons](https://github.com/syt2/zotero-addons) to use this repository.
 
-## Contributing New Addons
-If you have a new add-on to add, add an add-on information file in the [addons](addons) folder.
+## Workflows
+This repository utilizes GitHub Actions workflow for automation. 
+including the following steps:
+- Retrieve [Zotero](https://www.zotero.org) add-on information specified in [addons](addons) folder
+- Parse add-on information into JSON data
+- Publish the JSON data to the [`publish`](https://github.com/syt2/zotero-addons-scraper/blob/publish/addon_infos.json) branch and the [latest release](https://github.com/syt2/zotero-addons-scraper/releases/latest)
 
-The file format should be as follows:  
+## Contributing
+Adding a new add-on entry `{owner}#{repo}.json` in the [addons](addons) folder.  
+e.g.,
 ``` json
 {
   "name": "Zotero Addons",
@@ -20,29 +26,35 @@ The file format should be as follows:
       "targetZoteroVersion": "7",
       "tagName": "latest"
     },
-    {   
+    {
       "targetZoteroVersion": "6", 
-      "tagName": "0.6.0-3"
+      "tagName": "0.6.0-6"
     }
   ]
 }
 ```
 
 - `name`(optional):  
-  The name of the plugin.  
-  If not provided, the name will be extracted automatically from the XPI provided in release.
+  Name of the add-on.  
+  If not provided, `name` will be extracted automatically from the XPI provided in release.  
 - `repo`(required):  
-  The GitHub repository address of the plugin.
+  GitHub repository of the plugin.  
 - `releases`(required):  
-  Information about the plugin's XPI releases.  
-  Provide at least one valid plugin release information.
+  XPI releases information of the Add-on.  
+  Provide at least one valid release information.
 - `targetZoteroVersion`(required):  
-  The Zotero compatibility version for the plugin.
+  Zotero compatibility version for the add-on.
   Supports `"6"` or `"7"`.
 - `tagName`(required):
-  The release information in the GitHub repository.  
-  Supports `"latest"`, `"pre"` or a specified tag name.  
-  If `"latest"` or `"pre"` is used, the script will automatically retrieve the latest release information.  
+  The release tag name in the GitHub repository.  
+  Supports `"latest"`, `"pre"` or `a specified tag name`.  
+  *If `"latest"` or `"pre"` is used, script will automatically retrieve the latest release tag.* 
+
+
+## Usage
+1. `fork` this repository
+2. Enable actions and scheduled workflow in `Actions` page of forked repository
+3. Add a `Deploy key` in forked repository and named it with `ACTIONS_DEPLOY_KEY`
 
 ## Generated Format
 The output format for add-on information follows the format specified in [zotero-chinese/zotero-plugins](https://github.com/zotero-chinese/zotero-plugins).

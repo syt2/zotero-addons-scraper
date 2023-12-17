@@ -317,6 +317,15 @@ def delete_cache(github_repository, github_token, remain_count=2):
         print(f'get caches failed: {e}')
 
 
+def rate_limit(github_token):
+    try:
+        resp = requests.get('https://api.github.com/rate_limit', headers=github_api_headers(github_token=github_token))
+        rate = json.loads(resp.content)
+        print(f'token rate {rate.get("rate")}')
+    except Exception as e:
+        print(f'get rate limit failed: {e}')
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='params')
     parser.add_argument('--github_repository', nargs='?', type=str, required=True, help='github repository')
@@ -333,6 +342,9 @@ if __name__ == '__main__':
 
     if not args.github_repository:
         raise 'Need specific github repository'
+
+    if args.github_token:
+        rate_limit(args.github_token)
 
     try:
         if not os.path.isdir(args.cache_directory):
