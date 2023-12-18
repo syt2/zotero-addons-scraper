@@ -11,6 +11,7 @@ ghProxy                                 = "ghProxy"
 jsdeliver                               = "jsdeliver"
 kgithub                                 = "kgithub"
 releaseData                             = "releaseData"
+releaseDate                             = "releaseDate"
 downloadCount                           = "downloadCount"
 assetId                                 = "assetId"
 id                                      = "id"
@@ -25,7 +26,7 @@ avatar                                  = "avatar"
 # from https://github.com/zotero-chinese/zotero-plugins/blob/main/src/plugins.ts
 # export interface PluginInfo {
 #   // plugin id
-#   // @deprecated This property is deprecated. Use the id in releases instead.
+#   // @deprecated This property is deprecated. Use `id` in releases instead.
 #   id?: string;
 #
 #   // plugin name
@@ -45,7 +46,7 @@ avatar                                  = "avatar"
 #     // `pre`: Latest pre-release
 #     // `string`: Corresponding to the `git.tag_name` of the release;
 #     tagName: "latest" | "pre" | string;
-#     // @deprecated This property is deprecated. Use tagName instead.
+#     // @deprecated This property is deprecated. Use `tagName` instead.
 #     currentVersion?: string;
 #     xpiDownloadUrl?: {
 #       github: string;
@@ -54,6 +55,8 @@ avatar                                  = "avatar"
 #       jsdeliver: string;
 #       kgithub: string;
 #     };
+#     releaseDate?: string;
+#     // @deprecated This property is deprecated. Use `releaseDate` instead.
 #     releaseData?: string;
 #     downloadCount?: number;
 #     assetId?: number;
