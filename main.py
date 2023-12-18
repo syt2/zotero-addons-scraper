@@ -111,7 +111,7 @@ def parse(plugin, **kwargs):
                 release[tagName] = release_info['tag_name']
                 # todo: 删除currentVersion
                 #  zotero-addons插件相关：
-                #  等待影响降低后再删除 (影响2023-12-14日之前的版本)
+                #  等待影响降低后再删除 (影响2023-12-14日[1.4.0]之前的版本)
                 release[currentVersion] = release_info['tag_name']
 
             if 'assets' not in release_info:
@@ -129,6 +129,10 @@ def parse(plugin, **kwargs):
                 release[assetId] = release_asset['id']
             if 'download_count' in release_asset:
                 release[downloadCount] = release_asset['download_count']
+            release[releaseDate] = release_asset['updated_at']
+            # todo: releaseData
+            #  zotero-addons插件相关：
+            #  等待影响降低后再删除 (影响2023-12-18日[1.4.1]之前的版本)
             release[releaseData] = release_asset['updated_at']
             release[xpiDownloadUrl] = {
                 'github': xpi_url,
@@ -162,7 +166,7 @@ def parse(plugin, **kwargs):
                     release[id] = detail_id
                     # todo: 删除plugin外层的id
                     #  zotero-addons插件相关：
-                    #  等待影响降低后再删除 (影响2023-12-14日之前的版本)
+                    #  等待影响降低后再删除 (影响2023-12-14日[1.4.0]之前的版本)
                     plugin[id] = detail_id
                 if not plugin.get(name) and (detail_name := details.get('name')):
                     plugin[name] = detail_name
