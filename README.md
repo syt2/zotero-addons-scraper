@@ -1,7 +1,7 @@
 # Zotero Addons Scraper
 ![GitHub Build Status](https://img.shields.io/github/actions/workflow/status/syt2/zotero-addons-scraper/main.yml?logo=githubactions)
 ![GitHub Last Commit Time](https://img.shields.io/github/last-commit/syt2/zotero-addons-scraper/publish?logo=github)
-![jsdelivr hits](https://img.shields.io/jsdelivr/gh/hm/syt2/zotero-addons-scraper?logo=jsdelivr)
+![jsdelivr hits](https://img.shields.io/jsdelivr/gh/hw/syt2/zotero-addons-scraper?logo=jsdelivr)
 
 
 This is a script repository for scraping [Zotero](https://www.zotero.org) add-ons, intended for use with [Zotero Addons](https://github.com/syt2/zotero-addons).  
