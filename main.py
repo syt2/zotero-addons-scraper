@@ -52,8 +52,6 @@ def download_xpi(xpi_url: str, download_dir: str, unique_name: str, force_downlo
 def parse(plugin, **kwargs):
     if repo not in plugin or len(plugin[repo].split('/')) != 2 or releases not in plugin or len(plugin[releases]) <= 0:
         return
-    if name not in plugin:
-        plugin[name] = plugin[repo].split('/')[-1]
 
     headers = github_api_headers(github_token=kwargs.get('github_token'))
 
@@ -184,6 +182,9 @@ def parse(plugin, **kwargs):
             print(f'handle {plugin[repo]} request {release_url} failed: {e}')
 
     plugin[releases] = release_infos
+    
+    if name not in plugin:
+        plugin[name] = plugin[repo].split('/')[-1]
 
     return plugin
 
