@@ -1,0 +1,9 @@
+{
+  "repo": "FrLars21/ZoteroCitationCountsManager",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "pre"
+    }
+  ]
+}
