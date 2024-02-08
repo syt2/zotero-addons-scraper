@@ -1,0 +1,9 @@
+{
+  "repo": "018/zotero-excalidraw",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}
