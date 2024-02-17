@@ -27,8 +27,10 @@ def fallback_if_need(current, previous, associate_map=None):
                     if current[key]:
                         fallback_if_need(current[key], value, associate_map.get(key, {}))
                     else:
+                        print(f'fallback {key}')
                         current[key] = value
                 elif key not in current:
+                    print(f'fallback {key}')
                     current[key] = value
 
         elif isinstance(current, list) and (uid := associate_map.get(fallback_associated_unique_id)):

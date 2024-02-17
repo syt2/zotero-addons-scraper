@@ -182,7 +182,7 @@ def parse(plugin, **kwargs):
             print(f'handle {plugin[repo]} request {release_url} failed: {e}')
 
     plugin[releases] = release_infos
-    
+
     if name not in plugin:
         plugin[name] = plugin[repo].split('/')[-1]
 
