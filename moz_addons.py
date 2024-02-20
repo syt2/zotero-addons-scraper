@@ -1,5 +1,5 @@
 import zipfile
-import json
+import commentjson as json
 import os
 from xml.dom import minidom
 
