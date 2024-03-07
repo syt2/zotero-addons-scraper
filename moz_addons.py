@@ -2,6 +2,7 @@ import zipfile
 import commentjson as json
 import os
 from xml.dom import minidom
+import re
 
 
 # modify from `https://github.com/mozilla/gecko-dev/blob/ac19e2c0d7c09a2deaedbe6afc4cdcf1a4561456/testing/mozbase/mozprofile/mozprofile/addons.py#L213`
@@ -78,13 +79,13 @@ def addon_details(addon_path):
         raise e
 
     if is_webext:
-        details["version"] = manifest["version"]
-        details["name"] = manifest["name"]
-        details["description"] = manifest["description"]
+        details["version"] = manifest.get("version")
+        details["name"] = manifest.get("name")
+        details["description"] = manifest.get("description")
         # Bug 1572404 - we support two locations for gecko-specific
         # metadata.
         for location in ("applications", "browser_specific_settings"):
-            for app in ("gecko", "zotero"):
+            for app in ("zotero", "gecko"):
                 try:
                     details["id"] = manifest[location][app]["id"]
                     break
@@ -93,6 +94,53 @@ def addon_details(addon_path):
         # if details["id"] is None:
         #     details["id"] = cls._gen_iid(addon_path)
         details["unpack"] = False
+
+        # handler for __MSG_{}__ items
+        def extract_MSG_placeholder(text):
+            if match := re.search(r'__MSG_(.*?)__', text):
+                return match.group(1)
+
+        def load_locale_for_MSG():
+            default_locale = manifest.get('default_locale')
+            locale_filename = f"_locales/{default_locale}/messages.json"
+            try:
+                if zipfile.is_zipfile(addon_path):
+                    # Bug 944361 - We cannot use 'with' together with zipFile because
+                    # it will cause an exception thrown in Python 2.6.
+                    try:
+                        compressed_file = zipfile.ZipFile(addon_path, "r")
+                        filenames = [f.filename for f in (compressed_file).filelist]
+                        if locale_filename in filenames:
+                            locale = compressed_file.read(locale_filename).decode()
+                            return json.loads(locale)
+                        else:
+                            raise KeyError(f"No {locale_filename}")
+                    finally:
+                        compressed_file.close()
+                elif os.path.isdir(addon_path):
+                    try:
+                        with open(os.path.join(addon_path, locale_filename)) as f:
+                            return json.loads(f.read())
+                    except IOError:
+                        raise KeyError(f"No {locale_filename}")
+                else:
+                    raise IOError(
+                        "Cannot found: %s" % locale_filename
+                    )
+            except (IOError, KeyError) as e:
+                # reraise(AddonFormatError, AddonFormatError(str(e)), sys.exc_info()[2])
+                raise e
+
+        locale_for_MSG = None
+        for key in details:
+            if isinstance(details[key], str) and (placeholder := extract_MSG_placeholder(details[key])):
+                if not locale_for_MSG:
+                    locale_for_MSG = load_locale_for_MSG()
+                if not locale_for_MSG:
+                    break
+                if value := locale_for_MSG.get(placeholder, {}).get('message'):
+                    details[key] = value
+
     else:
         try:
             doc = minidom.parseString(manifest)

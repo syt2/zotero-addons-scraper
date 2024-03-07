@@ -7,7 +7,7 @@ import requests
 import argparse
 import shutil
 import hashlib
-from addon_keys import *
+from addon_info import *
 from fallback_infos import fallback_if_need
 from moz_addons import addon_details
 
@@ -49,70 +49,60 @@ def download_xpi(xpi_url: str, download_dir: str, unique_name: str, force_downlo
 
 
 # 输出格式参考 [zotero-chinese/zotero-plugins](https://github.com/zotero-chinese/zotero-plugins)
-def parse(plugin, **kwargs):
-    if repo not in plugin or len(plugin[repo].split('/')) != 2 or releases not in plugin or len(plugin[releases]) <= 0:
+def parse(plugin: AddonInfo, **kwargs):
+    if not plugin.owner or not plugin.releases or len(plugin.releases) <= 0:
         return
-
+    plugin.name = plugin.repository
     headers = github_api_headers(github_token=kwargs.get('github_token'))
 
     # fetch author info
-    author_url = f"https://api.github.com/users/{plugin[repo].split('/')[0]}"
+    author_url = f"https://api.github.com/users/{plugin.owner}"
     try:
         author_resp = requests.get(author_url, headers=headers)
         author_resp_info = json.loads(author_resp.content)
-        plugin_author = {}
-        plugin_author[name] = author_resp_info['name'] if 'name' in author_resp_info and author_resp_info['name'] \
-            else plugin[repo].split('/')[0]
+
+        plugin.author.name = author_resp_info['name'] if 'name' in author_resp_info and author_resp_info['name'] else plugin.owner
         if 'html_url' in author_resp_info:
-            plugin_author[url] = author_resp_info['html_url']
+            plugin.author.url = author_resp_info['html_url']
         if 'avatar_url' in author_resp_info:
-            plugin_author[avatar] = author_resp_info['avatar_url']
-        if plugin_author.keys():
-            plugin[author] = plugin_author
+            plugin.author.avatar = author_resp_info['avatar_url']
     except Exception as e:
         print(f'request {author_url} failed: {e}')
 
     # fetch repo info
-    repo_url = f'https://api.github.com/repos/{plugin[repo]}'
+    repo_url = f'https://api.github.com/repos/{plugin.repo}'
     try:
         repos_resp = requests.get(repo_url, headers=headers)
         repos_info = json.loads(repos_resp.content)
-        if repos_info['description'] and description not in plugin:
-            plugin[description] = repos_info['description']
-        if repos_info['stargazers_count'] is not None:
-            plugin[stars] = repos_info['stargazers_count']
-            # todo: remove
-            plugin[star] = repos_info['stargazers_count']
+        if 'description' in repos_info and repos_info['description'] and not plugin.description:
+            plugin.description = repos_info['description']
+        if 'stargazers_count' in repos_info and repos_info['stargazers_count'] is not None:
+            plugin.stars = repos_info['stargazers_count']
     except Exception as e:
         print(f'request {repo_url} failed: {e}')
 
     # fetch release info
-    release_infos = []
-    for release in plugin[releases]:
-        if tagName not in release:
+    for release in plugin.releases:
+        if not release.tagName:
             continue
-        release_url = f'https://api.github.com/repos/{plugin[repo]}/releases'
-        if release[tagName] == 'latest':
+        release_url = f'https://api.github.com/repos/{plugin.repo}/releases'
+        if release.tagName == 'latest':
             release_url += '/latest'
-        elif release[tagName] != 'pre':
-            release_url += f'/tags/{release[tagName]}'
+        elif release.tagName != 'pre':
+            release_url += f'/tags/{release.tagName}'
 
         try:
             release_resp = requests.get(release_url, headers=headers)
             release_info = json.loads(release_resp.content)
 
-            if release[tagName] == 'pre':
+            if release.tagName == 'pre':
                 release_info = [info for info in release_info if info['prerelease']]
                 if release_info:
                     release_info = release_info[0]
                 else:
                     continue
             if 'tag_name' in release_info:
-                release[tagName] = release_info['tag_name']
-                # todo: 删除currentVersion
-                #  zotero-addons插件相关：
-                #  等待影响降低后再删除 (影响2023-12-14日[1.4.0]之前的版本)
-                release[currentVersion] = release_info['tag_name']
+                release.tagName = release_info['tag_name']
 
             if 'assets' not in release_info:
                 continue
@@ -125,24 +115,13 @@ def parse(plugin, **kwargs):
             if 'browser_download_url' not in release_asset:
                 continue
             xpi_url = release_asset['browser_download_url']
-            if 'id' in release_asset:
-                release[assetId] = release_asset['id']
-            if 'download_count' in release_asset:
-                release[downloadCount] = release_asset['download_count']
-            release[releaseDate] = release_asset['updated_at']
-            # todo: releaseData
-            #  zotero-addons插件相关：
-            #  等待影响降低后再删除 (影响2023-12-18日[1.4.1]之前的版本)
-            release[releaseData] = release_asset['updated_at']
-            release[xpiDownloadUrl] = {
+            release.releaseDate = release_asset['updated_at']
+            release.xpiDownloadUrl = {
                 'github': xpi_url,
                 'ghProxy': 'https://ghproxy.com/?q=' + urllib.parse.quote(xpi_url),
                 'kgithub': xpi_url.replace('github.com', 'kkgithub.com'),
             }
-
-            xpi_filename = f'{plugin[repo].replace("/", "#")}+' \
-                           f'{release.get(currentVersion, "0")}@' \
-                           f'{release.get(assetId, "0")}.xpi'
+            xpi_filename = f'{plugin.owner}#{plugin.repository}+{release.tagName}@{release_asset["id"]}.xpi'
             details = {}
             try:
                 xpi_filepath = download_xpi(xpi_url=xpi_url,
@@ -159,35 +138,20 @@ def parse(plugin, **kwargs):
                                                 force_download=True)
                     details = addon_details(xpi_filepath)
                 except Exception as e:
-                    print(f'fetch addon detail of {plugin[repo]} failed: {e}')
+                    print(f'fetch addon detail of {plugin.repo} with {xpi_url} failed: {e}')
 
             if details:
                 if detail_id := details.get('id'):
-                    release[id] = detail_id
-                    # todo: 删除plugin外层的id
-                    #  zotero-addons插件相关：
-                    #  等待影响降低后再删除 (影响2023-12-14日[1.4.0]之前的版本)
-                    plugin[id] = detail_id
-                if not plugin.get(name) and (detail_name := details.get('name')):
-                    plugin[name] = detail_name
+                    release.id = detail_id
+                if detail_name := details.get('name'):
+                    release.name = detail_name
                 if detail_version := details.get('version'):
-                    release[xpiVersion] = detail_version
-                if not plugin.get(description) and (detail_desc := details.get('description')):
-                    if detail_desc != '__MSG_description__':
-                        plugin[description] = detail_desc
-                    else:
-                        # todo: read from i18n
-                        pass
-            release_infos.append(release)
+                    release.xpiVersion = detail_version
+                if detail_desc := details.get('description'):
+                    release.description = detail_desc
 
         except Exception as e:
-            print(f'handle {plugin[repo]} request {release_url} failed: {e}')
-
-    plugin[releases] = release_infos
-
-    if name not in plugin:
-        plugin[name] = plugin[repo].split('/')[-1]
-
+            print(f'handle {plugin.repo} request {release_url} failed: {e}')
     return plugin
 
 
@@ -208,7 +172,10 @@ def parse_addon_infos(input_dir, output_filepath, **kwargs):
             continue
         addon_json_filepath = os.path.join(input_dir, addon_json_filename)
         with open(addon_json_filepath, 'r') as file:
-            plugins.append(json.load(file))
+            try:
+                plugins.append(AddonInfo(**json.load(file)))
+            except Exception as e:
+                print(f'parse initial addon info from {addon_json_filepath} failed: {e}')
 
     addon_infos = []
     with concurrent.futures.ThreadPoolExecutor() as executor:
@@ -223,10 +190,11 @@ def parse_addon_infos(input_dir, output_filepath, **kwargs):
             if addon_info := future.result():
                 addon_infos.append(addon_info)
 
+    addon_infos = [info.__dict__ for info in addon_infos]
     for previous_info_url in kwargs.get('previous_info_urls', []):
         addon_infos = fallback(addon_infos, previous_info_url, github_token=kwargs.get('github_token'))
 
-    addon_infos.sort(key=lambda item: item[stars] if stars in item else 0, reverse=True)
+    addon_infos.sort(key=lambda item: item.get('stars') if item.get('stars') else 0, reverse=True)
 
     dir = os.path.dirname(output_filepath)
     if dir and not os.path.exists(dir):

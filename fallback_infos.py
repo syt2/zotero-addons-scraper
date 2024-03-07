@@ -1,15 +1,13 @@
-from addon_keys import *
-
 fallback_associated_unique_id = 'p_unique_associated_id##80502300-9DE6-4510-8768-EC42B0EF14E6'
 fallback_associated_exclude_ids = 'p_exclude_associated_ids##073F5543-C70A-46AA-8529-E05168852D8F'
 
 fallback_associated_map = {
-    fallback_associated_unique_id: repo,
-    fallback_associated_exclude_ids: [id],
-    repo: {
-      releases: {
-          fallback_associated_unique_id: tagName,
-          fallback_associated_exclude_ids: [currentVersion],
+    fallback_associated_unique_id: 'repo',
+    fallback_associated_exclude_ids: ['id'],
+    'repo': {
+      'releases': {
+          fallback_associated_unique_id: 'tagName',
+          fallback_associated_exclude_ids: ['currentVersion'],
       }
     }
 }

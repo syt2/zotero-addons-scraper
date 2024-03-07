@@ -19,7 +19,6 @@ Adding a new add-on entry `{owner}#{repo}.json` in the [addons](addons) folder.
 e.g.,
 ``` json
 {
-  "name": "Zotero Addons",
   "repo": "syt2/zotero-addons",
   "releases": [
     {   
@@ -33,10 +32,7 @@ e.g.,
   ]
 }
 ```
-
-- `name`(optional):  
-  Name of the add-on.  
-  If not provided, `name` will be extracted automatically from the XPI provided in release.  
+ 
 - `repo`(required):  
   GitHub repository of the plugin.  
 - `releases`(required):  
@@ -48,7 +44,8 @@ e.g.,
 - `tagName`(required):
   The release tag name in the GitHub repository.  
   Supports `"latest"`, `"pre"` or `a specified tag name`.  
-  *If `"latest"` or `"pre"` is used, script will automatically retrieve the latest release tag.* 
+  *If `"latest"` is used, script will automatically retrieve the latest release tag.* 
+  *If `"pre"` is used, script will automatically retrieve the latest pre-release tag.* 
 
 
 ## Usage
