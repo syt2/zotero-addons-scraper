@@ -80,6 +80,8 @@ def parse(plugin, **kwargs):
         if repos_info['description'] and description not in plugin:
             plugin[description] = repos_info['description']
         if repos_info['stargazers_count'] is not None:
+            plugin[stars] = repos_info['stargazers_count']
+            # todo: remove
             plugin[star] = repos_info['stargazers_count']
     except Exception as e:
         print(f'request {repo_url} failed: {e}')
@@ -224,7 +226,7 @@ def parse_addon_infos(input_dir, output_filepath, **kwargs):
     for previous_info_url in kwargs.get('previous_info_urls', []):
         addon_infos = fallback(addon_infos, previous_info_url, github_token=kwargs.get('github_token'))
 
-    addon_infos.sort(key=lambda item: item[star] if star in item else 0, reverse=True)
+    addon_infos.sort(key=lambda item: item[stars] if stars in item else 0, reverse=True)
 
     dir = os.path.dirname(output_filepath)
     if dir and not os.path.exists(dir):

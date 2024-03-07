@@ -18,6 +18,7 @@ id                                      = "id"
 xpiVersion                              = "xpiVersion"
 description                             = "description"
 star                                    = "star"
+stars                                   = "stars"
 author                                  = "author"
 url                                     = "url"
 avatar                                  = "avatar"
@@ -67,7 +68,7 @@ avatar                                  = "avatar"
 #   }>;
 #
 #   description?: string;
-#   star?: number;
+#   stars?: number;
 #   author?: {
 #     name: string;
 #     url: string;
