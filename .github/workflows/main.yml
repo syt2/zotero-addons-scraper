@@ -58,9 +58,9 @@ jobs:
           --cache_directory caches \
           --runtime_xpi_directory xpis \
           --cache_lockfile caches_lockfile \
-          --previous_info_urls \
-              https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/publish/addon_infos.json \
-              https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/addon_infos.json
+#          --previous_info_urls \
+#              https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/publish/addon_infos.json \
+#              https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/addon_infos.json
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
