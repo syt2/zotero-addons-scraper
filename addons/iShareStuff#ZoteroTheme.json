@@ -1,0 +1,9 @@
+{
+  "repo": "iShareStuff/ZoteroTheme",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

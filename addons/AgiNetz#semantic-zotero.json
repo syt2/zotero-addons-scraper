@@ -1,0 +1,9 @@
+{
+  "repo": "AgiNetz/semantic-zotero",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

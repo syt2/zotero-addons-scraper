@@ -1,0 +1,9 @@
+{
+  "repo": "theRatramnus/Zotero-download-DigiVatLib-pdf",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}

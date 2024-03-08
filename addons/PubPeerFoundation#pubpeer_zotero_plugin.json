@@ -1,0 +1,9 @@
+{
+  "repo": "PubPeerFoundation/pubpeer_zotero_plugin",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

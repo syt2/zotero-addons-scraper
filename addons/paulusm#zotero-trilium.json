@@ -1,0 +1,9 @@
+{
+  "repo": "paulusm/zotero-trilium",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

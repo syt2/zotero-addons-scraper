@@ -1,0 +1,9 @@
+{
+  "repo": "frangoud/ZoteroDuplicatesMerger",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

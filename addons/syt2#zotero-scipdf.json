@@ -1,0 +1,9 @@
+{
+  "repo": "syt2/zotero-scipdf",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}

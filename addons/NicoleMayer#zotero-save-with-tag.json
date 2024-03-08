@@ -1,0 +1,9 @@
+{
+  "repo": "NicoleMayer/zotero-save-with-tag",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

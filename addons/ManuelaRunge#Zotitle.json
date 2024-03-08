@@ -1,0 +1,9 @@
+{
+  "repo": "ManuelaRunge/Zotitle",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

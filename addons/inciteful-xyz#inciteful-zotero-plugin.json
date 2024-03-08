@@ -1,0 +1,9 @@
+{
+  "repo": "inciteful-xyz/inciteful-zotero-plugin",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}

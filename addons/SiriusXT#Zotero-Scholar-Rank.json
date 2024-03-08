@@ -1,0 +1,9 @@
+{
+  "repo": "SiriusXT/Zotero-Scholar-Rank",
+  "releases": [
+    {
+      "targetZoteroVersion": "6",
+      "tagName": "latest"
+    }
+  ]
+}
