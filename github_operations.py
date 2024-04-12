@@ -111,6 +111,7 @@ def delete_release(github_repository, github_token, remain_count=2):
         releases = json.loads(releases_resp.content)
         if len(releases) < remain_count:
             return
+        releases.sort(key=lambda release: release['tag_name'], reverse=True)
         delete_release_url = f'https://api.github.com/repos/{github_repository}/releases/'
         for release in releases[remain_count:]:
             release_tag = release.get('tag_name')
@@ -136,6 +137,7 @@ def delete_tag(github_repository, github_token, remain_count=2):
         tags = json.loads(tags_response.content)
         if len(tags) < remain_count:
             return
+        tags.sort(key=lambda tag: tag['ref'], reverse=True)
         delete_tag_url = f'https://api.github.com/repos/{github_repository}/git/refs/tags/'
         for tag in tags[remain_count:]:
             if ref := tag.get('ref').replace('refs/tags/', ''):
