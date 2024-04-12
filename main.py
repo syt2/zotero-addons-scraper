@@ -221,6 +221,7 @@ if __name__ == '__main__':
     parser.add_argument('--cache_lockfile', nargs='?', default="caches_lockfile", type=str, help='hashfile for caches')
     parser.add_argument('--runtime_xpi_directory', nargs='?', default="xpis", type=str, help='folder for download xpi')
     parser.add_argument('--previous_info_urls', nargs='+', default=[], help='previous published info json to fallback')
+    parser.add_argument('--create_release', nargs='?', default=True, type=bool, help='create release in github')
 
     args = parser.parse_args()
 
@@ -246,7 +247,7 @@ if __name__ == '__main__':
                       runtime_xpi_directory=args.runtime_xpi_directory,
                       previous_info_urls=args.previous_info_urls)
 
-    if release_id := create_release(args.github_repository, github_token=args.github_token):
+    if args.create_release and (release_id := create_release(args.github_repository, github_token=args.github_token)):
         upload_json_to_release(args.github_repository,
                                release_id,
                                upload_file_name='addon_infos.json',

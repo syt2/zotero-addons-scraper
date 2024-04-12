@@ -58,6 +58,7 @@ jobs:
           --cache_directory caches \
           --runtime_xpi_directory xpis \
           --cache_lockfile caches_lockfile \
+          --create_release True \
 #          --previous_info_urls \
 #              https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/publish/addon_infos.json \
 #              https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/addon_infos.json
