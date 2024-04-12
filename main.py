@@ -22,6 +22,29 @@ def github_api_headers(**kwargs):
     return result
 
 
+def report_issue(repo: str, title: str, body: str, **kwargs):
+    if not repo:
+        print('report issue repo not found')
+        return
+    try:
+        response = requests.post(f'https://api.github.com/repos/{repo}/issues',
+                                 headers=github_api_headers(github_token=kwargs.get('github_token')),
+                                 json={
+                                     'title': title,
+                                     'body': body
+                                 })
+
+        # 检查响应
+        if response.status_code == 201:
+            print('Issue created successfully.')
+            print('Issue URL:', response.json()['html_url'])
+        else:
+            print('Failed to create issue.')
+            print('Response:', response.content)
+    except Exception as e:
+        print(f'report issue failed: {e}')
+
+
 def download_xpi(xpi_url: str, download_dir: str, unique_name: str, force_download: bool, **kwargs):
     try:
         download_filepath = os.path.join(download_dir, unique_name)
@@ -82,6 +105,7 @@ def parse(plugin: AddonInfo, **kwargs):
         print(f'request {repo_url} failed: {e}')
 
     # fetch release info
+    invalid_releases = []
     for release in plugin.releases:
         if not release.tagName:
             continue
@@ -129,15 +153,21 @@ def parse(plugin: AddonInfo, **kwargs):
                                             unique_name=xpi_filename,
                                             force_download=False,
                                             cache_dir=kwargs.get('cache_directory'))
-                details = addon_details(xpi_filepath)
+                details = addon_details(xpi_filepath, zotero_versions=[release.zotero_check_version])
             except:
                 try:
                     xpi_filepath = download_xpi(xpi_url=xpi_url,
                                                 download_dir=kwargs.get('runtime_xpi_directory'),
                                                 unique_name=xpi_filename,
                                                 force_download=True)
-                    details = addon_details(xpi_filepath)
+                    details = addon_details(xpi_filepath, zotero_versions=[release.zotero_check_version])
                 except Exception as e:
+                    report_issue(kwargs.get('github_repository'),
+                                 title=f'Parse xpi detail failed',
+                                 body=f'url:{xpi_url}\n'
+                                      f'repo:{plugin.repo}\n'
+                                      f'reason:{e}',
+                                 github_token=kwargs.get('github_token'))
                     print(f'fetch addon detail of {plugin.repo} with {xpi_url} failed: {e}')
 
             if details:
@@ -149,9 +179,20 @@ def parse(plugin: AddonInfo, **kwargs):
                     release.xpiVersion = detail_version
                 if detail_desc := details.get('description'):
                     release.description = detail_desc
+            if release.zotero_check_version not in details.get('zotero_versions', []):
+                invalid_releases.append(release)
 
         except Exception as e:
             print(f'handle {plugin.repo} request {release_url} failed: {e}')
+
+        for invalid_release in invalid_releases:
+            print(plugin.repo, 'invalid', invalid_release.zotero_check_version)
+            report_issue(kwargs.get('github_repository'),
+                         title=f'Invalid xpi with zotero version {invalid_release.zotero_check_version}',
+                         body=f'xpi:{plugin.repo}@{invalid_release.tagName}\n'
+                              f'expect zotero version:{invalid_release.zotero_check_version}\n',
+                         github_token=kwargs.get('github_token'))
+            plugin.releases.remove(invalid_release)
     return plugin
 
 
@@ -183,7 +224,8 @@ def parse_addon_infos(input_dir, output_filepath, **kwargs):
                                    plugin,
                                    github_token=kwargs.get('github_token'),
                                    cache_directory=kwargs.get('cache_directory'),
-                                   runtime_xpi_directory=kwargs.get('runtime_xpi_directory'))
+                                   runtime_xpi_directory=kwargs.get('runtime_xpi_directory'),
+                                   github_repository=kwargs.get('github_repository'))
                    for plugin in plugins]
 
         for future in concurrent.futures.as_completed(futures):
@@ -331,6 +373,7 @@ if __name__ == '__main__':
 
     parse_addon_infos(args.input,
                       args.output,
+                      github_repository=args.github_repository,
                       github_token=args.github_token,
                       cache_directory=args.cache_directory,
                       runtime_xpi_directory=args.runtime_xpi_directory,
