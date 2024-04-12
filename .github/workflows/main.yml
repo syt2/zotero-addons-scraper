@@ -3,7 +3,7 @@ name: Zotero Addons Scraping
 on:
   workflow_dispatch: # manual
   schedule:
-    - cron: '25 19 * * *' # 3:25(beijing)
+    - cron: '25 4,10,19 * * *' # +8(beijing)
   push:
     branches: [master]
 
