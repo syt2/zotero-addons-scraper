@@ -118,13 +118,43 @@ def delete_release(github_repository, github_token, remain_count=2):
                 try:
                     delete_release_resp = requests.delete(f'{delete_release_url}{release_id}', headers=headers)
                     if delete_release_resp.status_code == 204:
-                        print(f'delete {release_tag} succeed')
+                        print(f'delete release {release_tag} succeed')
                     else:
-                        print(f'delete {release_tag} failed: {delete_release_resp.text}')
+                        print(f'delete release {release_tag} failed: {delete_release_resp.text}')
                 except Exception as e:
-                    print(f'delete cache for {release_tag} failed: {e}')
+                    print(f'delete release for {release_tag} failed: {e}')
     except Exception as e:
         print(f'get releases failed: {e}')
+
+
+def delete_tag(github_repository, github_token, remain_count=2):
+    headers = github_api_headers(github_token=github_token)
+    get_tags_url = (f'https://api.github.com/repos/{github_repository}'
+                    f'/git/refs/tags')
+    try:
+        tags_response = requests.get(get_tags_url, headers=headers)
+        tags = json.loads(tags_response.content)
+        if len(tags) < remain_count:
+            return
+        delete_tag_url = f'https://api.github.com/repos/{github_repository}/git/refs/tags/'
+        for tag in tags[remain_count:]:
+            if ref := tag.get('ref').replace('refs/tags/', ''):
+                if len(ref) < 10:
+                    continue
+                try:  # automatically tag name is timestamp
+                    int(ref)
+                except ValueError:
+                    continue
+                try:
+                    delete_tag_resp = requests.delete(f'{delete_tag_url}{ref}', headers=headers)
+                    if delete_tag_resp.status_code == 204:
+                        print(f'delete tag {ref} succeed')
+                    else:
+                        print(f'delete tag {ref} failed: {delete_tag_resp.text}')
+                except Exception as e:
+                    print(f'delete tag for {ref} failed: {e}')
+    except Exception as e:
+        print(f'get tags failed: {e}')
 
 
 def rate_limit(github_token):
