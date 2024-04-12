@@ -34,6 +34,14 @@ class AddonInfoRelease:
         [setattr(self, key, value) for (key, value) in kwargs.items()]
 
     @property
+    def zotero_check_version(self) -> str:
+        if self.targetZoteroVersion == '6':
+            return '6.*'
+        elif self.targetZoteroVersion == '7':
+            return '7.*'
+        raise Exception(f'Invalid targetZoteroVersion({self.targetZoteroVersion})')
+
+    @property
     def __dict__(self):
         result = {}
         if self.targetZoteroVersion:
