@@ -248,13 +248,13 @@ if __name__ == '__main__':
                       previous_info_urls=args.previous_info_urls)
 
     if args.create_release and (release_id := create_release(args.github_repository, github_token=args.github_token)):
+        delete_release(args.github_repository, github_token=args.github_token)
+        delete_tag(args.github_repository, github_token=args.github_token)
         upload_json_to_release(args.github_repository,
                                release_id,
                                upload_file_name='addon_infos.json',
                                upload_file=args.output,
                                github_token=args.github_token)
-        delete_release(args.github_repository, github_token=args.github_token)
-        delete_tag(args.github_repository, github_token=args.github_token)
 
     update_cache(args.cache_directory, args.runtime_xpi_directory, args.cache_lockfile)
 
