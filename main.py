@@ -247,9 +247,9 @@ if __name__ == '__main__':
                       runtime_xpi_directory=args.runtime_xpi_directory,
                       previous_info_urls=args.previous_info_urls)
 
+    delete_release(args.github_repository, github_token=args.github_token)
+    delete_tag(args.github_repository, github_token=args.github_token)
     if args.create_release and (release_id := create_release(args.github_repository, github_token=args.github_token)):
-        delete_release(args.github_repository, github_token=args.github_token)
-        delete_tag(args.github_repository, github_token=args.github_token)
         upload_json_to_release(args.github_repository,
                                release_id,
                                upload_file_name='addon_infos.json',
