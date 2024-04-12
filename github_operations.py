@@ -56,7 +56,7 @@ def create_release(github_repository, **kwargs):
     cur_time = int(time.time())
     param = {
         'tag_name': f'{cur_time}',
-        'target_commitish': 'master',
+        'target_commitish': 'publish',
         'name': f'{cur_time}',
         'body': f'![](https://img.shields.io/github/downloads/{github_repository}/{cur_time}/total?label=downloads)\n'
                 f'publish addon_infos.json',
