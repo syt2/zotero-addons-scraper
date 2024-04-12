@@ -102,6 +102,31 @@ def delete_cache(github_repository, github_token, remain_count=2):
         print(f'get caches failed: {e}')
 
 
+def delete_release(github_repository, github_token, remain_count=2):
+    headers = github_api_headers(github_token=github_token)
+    get_release_url = (f'https://api.github.com/repos/{github_repository}'
+                       f'/releases?per_page=100&page=1')
+    try:
+        releases_resp = requests.get(get_release_url, headers=headers)
+        releases = json.loads(releases_resp.content)
+        if len(releases) < remain_count:
+            return
+        delete_release_url = f'https://api.github.com/repos/{github_repository}/releases/'
+        for release in releases[remain_count:]:
+            release_tag = release.get('tag_name')
+            if release_id := release.get('id'):
+                try:
+                    delete_release_resp = requests.delete(f'{delete_release_url}{release_id}', headers=headers)
+                    if delete_release_resp.status_code == 204:
+                        print(f'delete {release_tag} succeed')
+                    else:
+                        print(f'delete {release_tag} failed: {delete_release_resp.text}')
+                except Exception as e:
+                    print(f'delete cache for {release_tag} failed: {e}')
+    except Exception as e:
+        print(f'get releases failed: {e}')
+
+
 def rate_limit(github_token):
     try:
         resp = requests.get('https://api.github.com/rate_limit', headers=github_api_headers(github_token=github_token))

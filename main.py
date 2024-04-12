@@ -253,6 +253,7 @@ if __name__ == '__main__':
                                upload_file_name='addon_infos.json',
                                upload_file=args.output,
                                github_token=args.github_token)
+        delete_release(args.github_repository, github_token=args.github_token)
 
     update_cache(args.cache_directory, args.runtime_xpi_directory, args.cache_lockfile)
 
