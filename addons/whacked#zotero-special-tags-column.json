@@ -4,10 +4,6 @@
     {
       "targetZoteroVersion": "6",
       "tagName": "latest"
-    },
-    {
-      "targetZoteroVersion": "5",
-      "tagName": "latest"
     }
   ]
 }
