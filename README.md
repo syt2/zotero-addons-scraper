@@ -51,7 +51,6 @@ e.g.,
 ## Usage
 1. `fork` this repository
 2. Enable actions and scheduled workflow in `Actions` page of forked repository
-3. Add a `Deploy key` in forked repository and named it with `ACTIONS_DEPLOY_KEY`
 
 ## Generated Format
 The output format for add-on information follows the format specified in [zotero-chinese/zotero-plugins](https://github.com/zotero-chinese/zotero-plugins).

@@ -1,48 +1,11 @@
 import concurrent.futures
-import json
-import os
-import time
 import urllib.parse
-import requests
 import argparse
-import shutil
-import hashlib
 from addon_info import *
 from fallback_infos import fallback_if_need
 from moz_addons import addon_details
-
-
-def github_api_headers(**kwargs):
-    result = {
-        'Accept': 'application/vnd.github+json',
-        'X-GitHub-Api-Version': '2022-11-28',
-    }
-    if github_token := kwargs.get('github_token'):
-        result['Authorization'] = f'token {github_token}'
-    return result
-
-
-def report_issue(repo: str, title: str, body: str, **kwargs):
-    if not repo:
-        print('report issue repo not found')
-        return
-    try:
-        response = requests.post(f'https://api.github.com/repos/{repo}/issues',
-                                 headers=github_api_headers(github_token=kwargs.get('github_token')),
-                                 json={
-                                     'title': title,
-                                     'body': body
-                                 })
-
-        # 检查响应
-        if response.status_code == 201:
-            print('Issue created successfully.')
-            print('Issue URL:', response.json()['html_url'])
-        else:
-            print('Failed to create issue.')
-            print('Response:', response.content)
-    except Exception as e:
-        print(f'report issue failed: {e}')
+from github_operations import *
+from file_cache import *
 
 
 def download_xpi(xpi_url: str, download_dir: str, unique_name: str, force_download: bool, **kwargs):
@@ -247,102 +210,6 @@ def parse_addon_infos(input_dir, output_filepath, **kwargs):
     return addon_infos
 
 
-def upload_json_to_release(github_repository, release_id, upload_file_name, upload_file, **kwargs):
-    headers = github_api_headers(github_token=kwargs.get('github_token'))
-    headers["Content-Type"] = "application/octet-stream"
-    upload_url = f'https://uploads.github.com/repos/{github_repository}/releases/{release_id}/assets?name={upload_file_name}'
-    try:
-        with open(upload_file, "rb") as file:
-            upload_resp = requests.post(upload_url, data=file, headers=headers)
-            if upload_resp.status_code != 201:
-                print(f'upload release assets code: {upload_resp.status_code}')
-            else:
-                print('upload release assets succeed')
-    except Exception as e:
-        print(f'upload release assets failed: {e}')
-
-
-def create_release(github_repository, **kwargs):
-    create_release_url = f'https://api.github.com/repos/{github_repository}/releases'
-    cur_time = int(time.time())
-    param = {
-        'tag_name': f'{cur_time}',
-        'target_commitish': 'master',
-        'name': f'{cur_time}',
-        'body': f'![](https://img.shields.io/github/downloads/{github_repository}/{cur_time}/total?label=downloads)\npublish addon_infos.json',
-        'draft': False,
-        'prerelease': False,
-        'generate_release_notes': False,
-    }
-    try:
-        create_resp = requests.post(create_release_url, json=param, headers=github_api_headers(github_token=kwargs.get('github_token')))
-        if create_resp.status_code == 201:
-            create_release_info = json.loads(create_resp.content)
-            release_id = create_release_info['id']
-            return release_id
-        else:
-            print(f'create release code: {create_resp.status_code}')
-    except Exception as e:
-        print(f'create release failed: {e}')
-
-
-def folder_filename_hash(dir):
-    filenames = sorted(os.listdir(dir))
-    folder_hash = hashlib.new('sha256')
-    for filename in filenames:
-        hash_obj = hashlib.new('sha256')
-        hash_obj.update(filename.encode('utf-8'))
-        folder_hash.update(hash_obj.hexdigest().encode('utf-8'))
-    return folder_hash.hexdigest()
-
-
-def update_cache(cache_directory, runtime_xpi_directory, cache_hash_filename):
-    if not cache_directory or not runtime_xpi_directory or cache_directory == runtime_xpi_directory:
-        return
-    try:
-        shutil.rmtree(cache_directory)
-        shutil.move(runtime_xpi_directory, cache_directory)
-        folder_hash = folder_filename_hash(cache_directory)
-        with open(os.path.join(cache_directory, cache_hash_filename), 'w') as file:
-            file.write(folder_hash)
-        print(folder_hash)
-    except Exception as e:
-        print(f'update cache failed: {e}')
-
-
-def delete_cache(github_repository, github_token, remain_count=2):
-    headers = github_api_headers(github_token=github_token)
-    get_caches_url = f'https://api.github.com/repos/{github_repository}/actions/caches?per_page=100&sort=last_accessed_at&direction=desc'
-    try:
-        caches_resp = requests.get(get_caches_url, headers=headers)
-        caches = json.loads(caches_resp.content)
-        if caches.get('total_count', 0) < remain_count:
-            return
-        delete_cache_url = f'https://api.github.com/repos/{github_repository}/actions/caches/'
-        for cache in caches.get('actions_caches', [])[remain_count:]:
-            cache_key = cache.get('key')
-            if cache_id := cache.get('id'):
-                try:
-                    delete_cache_resp = requests.delete(f'{delete_cache_url}{cache_id}', headers=headers)
-                    if delete_cache_resp.status_code == 204:
-                        print(f'delete {cache_key} succeed')
-                    else:
-                        print(f'delete {cache_key} failed: {delete_cache_resp.text}')
-                except Exception as e:
-                    print(f'delete cache for {cache_key} failed: {e}')
-    except Exception as e:
-        print(f'get caches failed: {e}')
-
-
-def rate_limit(github_token):
-    try:
-        resp = requests.get('https://api.github.com/rate_limit', headers=github_api_headers(github_token=github_token))
-        rate = json.loads(resp.content)
-        print(f'token rate {rate.get("rate")}')
-    except Exception as e:
-        print(f'get rate limit failed: {e}')
-
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='params')
     parser.add_argument('--github_repository', nargs='?', type=str, required=True, help='github repository')
@@ -354,6 +221,7 @@ if __name__ == '__main__':
     parser.add_argument('--cache_lockfile', nargs='?', default="caches_lockfile", type=str, help='hashfile for caches')
     parser.add_argument('--runtime_xpi_directory', nargs='?', default="xpis", type=str, help='folder for download xpi')
     parser.add_argument('--previous_info_urls', nargs='+', default=[], help='previous published info json to fallback')
+    parser.add_argument('--create_release', nargs='?', default=True, type=bool, help='create release in github')
 
     args = parser.parse_args()
 
@@ -379,7 +247,9 @@ if __name__ == '__main__':
                       runtime_xpi_directory=args.runtime_xpi_directory,
                       previous_info_urls=args.previous_info_urls)
 
-    if release_id := create_release(args.github_repository, github_token=args.github_token):
+    if args.create_release and (release_id := create_release(args.github_repository, github_token=args.github_token)):
+        delete_release(args.github_repository, github_token=args.github_token)
+        delete_tag(args.github_repository, github_token=args.github_token)
         upload_json_to_release(args.github_repository,
                                release_id,
                                upload_file_name='addon_infos.json',
