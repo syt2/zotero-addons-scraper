@@ -204,6 +204,8 @@ def detail_from_manifest_rdf(manifest):
             except:
                 return
         extract_info(description, details)
+        if not details.get('id') or (details.get('id').startswith("__") and details.get('id').endswith("__")):
+            return
 
         def update_details(version_info):
             if version_info['id'] != 'zotero@chnm.gmu.edu':
