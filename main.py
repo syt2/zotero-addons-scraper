@@ -157,7 +157,6 @@ def parse(plugin: AddonInfo, **kwargs):
                                  title=f'Parse {plugin.repo} of zotero version failed',
                                  body=f'xpi:{plugin.repo}@{release.tagName} on {release.targetZoteroVersion}\n',
                                  github_token=kwargs.get('github_token'))
-            print(plugin.repo, release.targetZoteroVersion, xpi_filename, release.minZoteroVersion, release.maxZoteroVersion)
 
         except Exception as e:
             print(f'handle {plugin.repo} request {release_url} failed: {e}')

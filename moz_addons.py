@@ -215,6 +215,9 @@ def detail_from_manifest_rdf(manifest):
                 else:
                     details['min_version'] = min_version
 
+                if compare_versions(max_version.replace('*', '999'), '6.*') > 0:
+                    # rdf not support z7
+                    max_version = '6.*'
                 if exist_max_version := details['max_version']:
                     if compare_versions(max_version.replace('*', '999'), exist_max_version.replace('*', '0')) >= 0:
                         details['max_version'] = max_version
