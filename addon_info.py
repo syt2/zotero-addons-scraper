@@ -22,6 +22,7 @@ class AddonInfoRelease:
     def __init__(self, targetZoteroVersion: str, tagName: str,
                  xpiDownloadUrl: dict = None, releaseDate: str = None, id: str = None, xpiVersion: str = None,
                  name: str = None, description: str = None,
+                 minZoteroVersion: str = None, maxZoteroVersion: str = None,
                  **kwargs):
         self.targetZoteroVersion = targetZoteroVersion
         self.tagName = tagName
@@ -31,6 +32,8 @@ class AddonInfoRelease:
         self.xpiVersion = xpiVersion
         self.name = name
         self.description = description
+        self.minZoteroVersion = minZoteroVersion
+        self.maxZoteroVersion = maxZoteroVersion
         [setattr(self, key, value) for (key, value) in kwargs.items()]
 
     @property
@@ -60,6 +63,10 @@ class AddonInfoRelease:
             result["name"] = self.name
         if self.description:
             result["description"] = self.description
+        if self.minZoteroVersion:
+            result["minZoteroVersion"] = self.minZoteroVersion
+        if self.maxZoteroVersion:
+            result["maxZoteroVersion"] = self.maxZoteroVersion
         return result
 
 

@@ -37,6 +37,41 @@ def compare_versions(version1, version2):
     return 0
 
 
+class XpiDetail:
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.version = None
+        self.description = None
+        self.min_version = "*"
+        self.max_version = "*"
+
+    def _append_info(self, details: dict):
+        if id := details.get('id'):
+            if self.id and self.id != id:
+                print(f'Xpi ID not match? {self.id} <==> {id}')
+                return
+            self.id = id
+        if name := details.get('name'):
+            self.name = name
+        if version := details.get('version'):
+            self.version = version
+        if description := details.get('description'):
+            self.description = description
+        if (min_version := details.get('min_version')) and (max_version := details.get('max_version')):
+            if compare_versions(min_version.replace('*', '0'), self.min_version.replace('*', '999')) <= 0:
+                self.min_version = min_version
+            if compare_versions(max_version.replace('*', '999'), self.max_version.replace('*', '0')) >= 0:
+                self.max_version = max_version
+
+    def check_compatible_for_zotero_version(self, version: str | int):
+        if isinstance(version, int):
+            version = str(version) + '.*'
+        if (min_version := self.min_version.replace('*', '0')) and (max_version := self.max_version.replace('*', '999')):
+            return (compare_versions(min_version, version.replace('*', '999')) <= 0
+                    <= compare_versions(max_version, version.replace('*', '0')))
+
+
 def get_namespace_id(doc, url):
     attributes = doc.documentElement.attributes
     for i in range(attributes.length):
@@ -87,23 +122,22 @@ def manifest_from_rdf(addon_path):
         print(f'Invalid Addon Path {addon_path}: {e}')
 
 
-def detail_from_manifest_json(addon_path, manifest, **kwargs):
-    details = {"id": None, "name": manifest.get("name"), "version": manifest.get("version"),
-               "description": manifest.get("description")}
+def detail_from_manifest_json(addon_path, manifest):
+    details = {
+        "name": manifest.get("name"), "version": manifest.get("version"), "description": manifest.get("description"),
+        "id": None, "min_version": None, "max_version": None
+    }
     for location in ("applications", "browser_specific_settings"):
         if details["id"]:
             break
         for app in ("zotero", "gecko"):
-            details["id"] = manifest[location][app].get("id")
-
-            for version in kwargs.get('zotero_versions', []):
-                min_version = manifest[location][app].get("strict_min_version").replace('*', '0')
-                max_version = manifest[location][app].get("strict_max_version").replace('*', '999')
-                if (min_version and max_version and
-                        compare_versions(min_version, version.replace('*', '999')) <= 0 and
-                        compare_versions(version.replace('*', '0'), max_version) <= 0):
-                    details.setdefault('zotero_versions', []).append(version)
-            break
+            try:
+                details["id"] = manifest[location][app].get("id")
+                details["min_version"] = manifest[location][app].get("strict_min_version")
+                details["max_version"] = manifest[location][app].get("strict_max_version")
+                break
+            except KeyError:
+                continue
 
     # handler for __MSG_{}__ items
     def extract_msg_placeholder(text):
@@ -139,16 +173,14 @@ def detail_from_manifest_json(addon_path, manifest, **kwargs):
     return details
 
 
-def detail_from_manifest_rdf(manifest, **kwargs):
-    details = {"id": None, "name": None, "version": None, "description": None}
+def detail_from_manifest_rdf(manifest):
+    details = {"id": None, "name": None, "version": None, "description": None, "min_version": None, "max_version": None}
     try:
         doc = minidom.parseString(manifest)
 
         # Get the namespaces abbreviations
         em = get_namespace_id(doc, "http://www.mozilla.org/2004/em-rdf#")
-        rdf = get_namespace_id(
-            doc, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-        )
+        rdf = get_namespace_id(doc, "http://www.w3.org/1999/02/22-rdf-syntax-ns#")
 
         description = doc.getElementsByTagName(rdf + "Description").item(0)
         try:
@@ -159,65 +191,60 @@ def detail_from_manifest_rdf(manifest, **kwargs):
         except Exception as e:
             pass
 
-        def extract_info(root, result):
+        def extract_info(node, result):
             try:
-                for entry, value in root.attributes.items():
+                for entry, value in node.attributes.items():
                     entry = entry.replace(em, "")
                     if entry in result.keys():
                         result.update({entry: value})
-                for node in root.childNodes:
-                    entry = node.nodeName.replace(em, "")
+                for child_node in node.childNodes:
+                    entry = child_node.nodeName.replace(em, "")
                     if entry in result.keys():
-                        result.update({entry: get_text(node)})
+                        result.update({entry: get_text(child_node)})
             except:
                 return
-
         extract_info(description, details)
 
-        def check_version(version_info, version):
-            if (version_info['id'] == 'zotero@chnm.gmu.edu' and
-                    (min_version := version_info['minVersion']) and (max_version := version_info['maxVersion'])):
-                min_version = min_version.replace('*', '0')
-                max_version = max_version.replace('*', '999')
-                return (compare_versions(min_version, version.replace('*', '999')) <= 0 and
-                        compare_versions(version.replace('*', '0'), max_version) <= 0)
-            return False
+        def update_details(version_info):
+            if version_info['id'] != 'zotero@chnm.gmu.edu':
+                return
+            if (min_version := version_info['minVersion']) and (max_version := version_info['maxVersion']):
+                if exist_min_version := details['min_version']:
+                    if compare_versions(min_version.replace('*', '0'), exist_min_version.replace('*', '999')) <= 0:
+                        details['min_version'] = min_version
+                else:
+                    details['min_version'] = min_version
 
-        for version in kwargs.get('zotero_versions', []):
+                if exist_max_version := details['max_version']:
+                    if compare_versions(max_version.replace('*', '999'), exist_max_version.replace('*', '0')) >= 0:
+                        details['max_version'] = max_version
+                else:
+                    details['max_version'] = max_version
+
+
+        for targetApplication in description.getElementsByTagName(em + "targetApplication"):
             version_info = {'id': None, 'minVersion': None, 'maxVersion': None}
-            check_flag = True
-            for targetApplication in description.getElementsByTagName(em + "targetApplication"):
-                if not check_flag:
-                    break
-                extract_info(targetApplication, version_info)
-                if check_version(version_info, version):
-                    details.setdefault('zotero_versions', []).append(version)
-                    break
-                for node in targetApplication.childNodes:
-                    extract_info(node, version_info)
-                    if check_version(version_info, version):
-                        details.setdefault('zotero_versions', []).append(version)
-                        check_flag = False
-                        break
+            extract_info(targetApplication, version_info)
+            update_details(version_info)
+
+            for node in targetApplication.childNodes:
+                version_info = {'id': None, 'minVersion': None, 'maxVersion': None}
+                extract_info(node, version_info)
+                update_details(version_info)
 
         return details
     except Exception as e:
         raise e
 
 
-def addon_details(addon_path, **kwargs):
+def addon_details(addon_path) -> XpiDetail:
     if not os.path.exists(addon_path):
-        raise IOError("Add-on path does not exist: %s" % addon_path)
-    result = {}
+        raise IOError(f"Add-on path does not exist: {addon_path}")
+    xpi_detail = XpiDetail()
     if ((manifest := manifest_from_json(addon_path)) and
-            (details := detail_from_manifest_json(addon_path, manifest, zotero_versions=kwargs.get('zotero_versions')))):
-        result = details
+            (details := detail_from_manifest_json(addon_path, manifest))):
+        xpi_detail._append_info(details)
     if ((manifest := manifest_from_rdf(addon_path)) and
-            (details := detail_from_manifest_rdf(manifest, zotero_versions=kwargs.get('zotero_versions')))):
-        for key in details:
-            if key not in result:
-                result[key] = details[key]
-        result['zotero_versions'] = list(set(result.get('zotero_versions', []) + details.get('zotero_versions', [])))
-
-    return result
-
+            (details := detail_from_manifest_rdf(manifest))):
+        xpi_detail._append_info(details)
+    return xpi_detail

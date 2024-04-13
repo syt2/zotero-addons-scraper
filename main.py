@@ -47,7 +47,8 @@ def parse(plugin: AddonInfo, **kwargs):
         author_resp = requests.get(author_url, headers=headers)
         author_resp_info = json.loads(author_resp.content)
 
-        plugin.author.name = author_resp_info['name'] if 'name' in author_resp_info and author_resp_info['name'] else plugin.owner
+        plugin.author.name = author_resp_info['name'] if 'name' in author_resp_info and author_resp_info[
+            'name'] else plugin.owner
         if 'html_url' in author_resp_info:
             plugin.author.url = author_resp_info['html_url']
         if 'avatar_url' in author_resp_info:
@@ -109,21 +110,21 @@ def parse(plugin: AddonInfo, **kwargs):
                 'kgithub': xpi_url.replace('github.com', 'kkgithub.com'),
             }
             xpi_filename = f'{plugin.owner}#{plugin.repository}+{release.tagName}@{release_asset["id"]}.xpi'
-            details = {}
+            details = None
             try:
                 xpi_filepath = download_xpi(xpi_url=xpi_url,
                                             download_dir=kwargs.get('runtime_xpi_directory'),
                                             unique_name=xpi_filename,
                                             force_download=False,
                                             cache_dir=kwargs.get('cache_directory'))
-                details = addon_details(xpi_filepath, zotero_versions=[release.zotero_check_version])
+                details = addon_details(xpi_filepath)
             except:
                 try:
                     xpi_filepath = download_xpi(xpi_url=xpi_url,
                                                 download_dir=kwargs.get('runtime_xpi_directory'),
                                                 unique_name=xpi_filename,
                                                 force_download=True)
-                    details = addon_details(xpi_filepath, zotero_versions=[release.zotero_check_version])
+                    details = addon_details(xpi_filepath)
                 except Exception as e:
                     report_issue(kwargs.get('github_repository'),
                                  title=f'Parse xpi detail failed',
@@ -134,16 +135,29 @@ def parse(plugin: AddonInfo, **kwargs):
                     print(f'fetch addon detail of {plugin.repo} with {xpi_url} failed: {e}')
 
             if details:
-                if detail_id := details.get('id'):
+                if detail_id := details.id:
                     release.id = detail_id
-                if detail_name := details.get('name'):
+                if detail_name := details.name:
                     release.name = detail_name
-                if detail_version := details.get('version'):
+                if detail_version := details.version:
                     release.xpiVersion = detail_version
-                if detail_desc := details.get('description'):
+                if detail_desc := details.description:
                     release.description = detail_desc
-            if release.zotero_check_version not in details.get('zotero_versions', []):
-                invalid_releases.append(release)
+                if zotero_min_version := details.min_version:
+                    release.minZoteroVersion = zotero_min_version
+                if zotero_max_version := details.max_version:
+                    release.maxZoteroVersion = zotero_max_version
+
+                if not details.check_compatible_for_zotero_version(release.zotero_check_version):
+                    invalid_releases.append(release)
+
+                if ((not release.minZoteroVersion or release.minZoteroVersion == '*') and
+                        (not release.maxZoteroVersion or release.maxZoteroVersion == '*')):
+                    report_issue(kwargs.get('github_repository'),
+                                 title=f'Parse {plugin.repo} of zotero version failed',
+                                 body=f'xpi:{plugin.repo}@{release.tagName} on {release.targetZoteroVersion}\n',
+                                 github_token=kwargs.get('github_token'))
+            print(plugin.repo, release.targetZoteroVersion, xpi_filename, release.minZoteroVersion, release.maxZoteroVersion)
 
         except Exception as e:
             print(f'handle {plugin.repo} request {release_url} failed: {e}')
@@ -151,9 +165,11 @@ def parse(plugin: AddonInfo, **kwargs):
         for invalid_release in invalid_releases:
             print(plugin.repo, 'invalid', invalid_release.zotero_check_version)
             report_issue(kwargs.get('github_repository'),
-                         title=f'Invalid xpi with zotero version {invalid_release.zotero_check_version}',
+                         title=f'Invalid {plugin.repo} xpi with zotero version {invalid_release.zotero_check_version}',
                          body=f'xpi:{plugin.repo}@{invalid_release.tagName}\n'
-                              f'expect zotero version:{invalid_release.zotero_check_version}\n',
+                              f'min zotero Version:{invalid_release.minZoteroVersion}\n'
+                              f'max Zotero version:{invalid_release.maxZoteroVersion}'
+                              f'expect Zotero version:{invalid_release.zotero_check_version}\n',
                          github_token=kwargs.get('github_token'))
             plugin.releases.remove(invalid_release)
     return plugin
@@ -161,7 +177,8 @@ def parse(plugin: AddonInfo, **kwargs):
 
 def fallback(addon_infos, previous_info_url, **kwargs):
     try:
-        repos_resp = requests.get(previous_info_url, headers=github_api_headers(github_token=kwargs.get('github_token')))
+        repos_resp = requests.get(previous_info_url,
+                                  headers=github_api_headers(github_token=kwargs.get('github_token')))
         repos_info = json.loads(repos_resp.content)
         addon_infos = fallback_if_need(addon_infos, repos_info)
     except Exception as e:
