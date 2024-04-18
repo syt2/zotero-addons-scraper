@@ -127,6 +127,9 @@ def detail_from_manifest_json(addon_path, manifest):
         "name": manifest.get("name"), "version": manifest.get("version"), "description": manifest.get("description"),
         "id": None, "min_version": None, "max_version": None
     }
+    if icons := manifest.get('icons', {}):
+        details['icon_url'] = icons[max(icons.keys())]
+
     for location in ("applications", "browser_specific_settings"):
         if details["id"]:
             break
@@ -135,6 +138,7 @@ def detail_from_manifest_json(addon_path, manifest):
                 details["id"] = manifest[location][app].get("id")
                 details["min_version"] = manifest[location][app].get("strict_min_version")
                 details["max_version"] = manifest[location][app].get("strict_max_version")
+                details['update_url'] = manifest[location][app].get('update_url')
                 break
             except KeyError:
                 continue
@@ -174,7 +178,8 @@ def detail_from_manifest_json(addon_path, manifest):
 
 
 def detail_from_manifest_rdf(manifest):
-    details = {"id": None, "name": None, "version": None, "description": None, "min_version": None, "max_version": None}
+    details = {"id": None, "name": None, "version": None, "description": None,
+               "min_version": None, "max_version": None, "updateURL": None, "iconURL": None}
     try:
         doc = minidom.parseString(manifest)
 
@@ -206,6 +211,9 @@ def detail_from_manifest_rdf(manifest):
         extract_info(description, details)
         if not details.get('id') or (details.get('id').startswith("__") and details.get('id').endswith("__")):
             return
+
+        details['update_url'] = details['updateURL']
+        details['icon_url'] = details['iconURL']
 
         def update_details(version_info):
             if version_info['id'] != 'zotero@chnm.gmu.edu':
