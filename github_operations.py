@@ -1,6 +1,7 @@
 import json
 import time
 import requests
+from datetime import datetime, timedelta, UTC
 
 
 def github_api_headers(**kwargs):
@@ -18,6 +19,23 @@ def report_issue(github_repository: str, title: str, body: str, **kwargs):
         print('report issue repository not found')
         return
     try:
+        if issue_check_id := kwargs.get('id'):
+            body = f'{body}\n----{issue_check_id}'
+            try:
+                response = requests.get(f'https://api.github.com/repos/{github_repository}/issues',
+                                        headers=github_api_headers(github_token=kwargs.get('github_token')),
+                                        params={
+                                            'state': 'open',
+                                            'since': (datetime.now(UTC) - timedelta(days=10)).strftime('%Y-%m-%dT%H:%M:%S') + 'Z',
+                                            'per_page': 100,
+                                        })
+                exist_issues = response.json()
+                for issue in exist_issues:
+                    if issue.get('body').endswith(f'----{issue_check_id}'):
+                        return
+            except Exception as e:
+                print(f'fetch from exist issues failed: {e}')
+
         response = requests.post(f'https://api.github.com/repos/{github_repository}/issues',
                                  headers=github_api_headers(github_token=kwargs.get('github_token')),
                                  json={

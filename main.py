@@ -126,12 +126,6 @@ def parse(plugin: AddonInfo, **kwargs):
                                                 force_download=True)
                     details = addon_details(xpi_filepath)
                 except Exception as e:
-                    report_issue(kwargs.get('github_repository'),
-                                 title=f'Parse xpi detail failed',
-                                 body=f'url:{xpi_url}\n'
-                                      f'repo:{plugin.repo}\n'
-                                      f'reason:{e}',
-                                 github_token=kwargs.get('github_token'))
                     print(f'fetch addon detail of {plugin.repo} with {xpi_url} failed: {e}')
 
             if details:
@@ -156,12 +150,14 @@ def parse(plugin: AddonInfo, **kwargs):
                     report_issue(kwargs.get('github_repository'),
                                  title=f'Parse {plugin.repo} of zotero version failed',
                                  body=f'xpi:{plugin.repo}@{release.tagName} on {release.targetZoteroVersion}\n',
-                                 github_token=kwargs.get('github_token'))
+                                 github_token=kwargs.get('github_token'),
+                                 id=f'Parse min/max version failed: {plugin.repo}+{release.tagName}@{release.targetZoteroVersion}')
             else:
                 report_issue(kwargs.get('github_repository'),
                              title=f'Parse {plugin.repo} addon details failed',
                              body=f'xpi:{plugin.repo}@{release.tagName} on {release.targetZoteroVersion}\n',
-                             github_token=kwargs.get('github_token'))
+                             github_token=kwargs.get('github_token'),
+                             id=f'Parse details failed: {plugin.repo}+{release.tagName}@{release.targetZoteroVersion}')
 
 
         except Exception as e:
@@ -175,7 +171,8 @@ def parse(plugin: AddonInfo, **kwargs):
                               f'min zotero Version:{invalid_release.minZoteroVersion}\n'
                               f'max Zotero version:{invalid_release.maxZoteroVersion}'
                               f'expect Zotero version:{invalid_release.zotero_check_version}\n',
-                         github_token=kwargs.get('github_token'))
+                         github_token=kwargs.get('github_token'),
+                         id=f'Target zotero version not match: {plugin.repo}+{invalid_release.tagName}@{release.targetZoteroVersion}')
             plugin.releases.remove(invalid_release)
     return plugin
 
