@@ -39,9 +39,9 @@ class AddonInfoRelease:
     @property
     def zotero_check_version(self) -> str:
         if self.targetZoteroVersion == '6':
-            return '6.*'
+            return '6.0.*'
         elif self.targetZoteroVersion == '7':
-            return '7.*'
+            return '7.0.*'
         raise Exception(f'Invalid targetZoteroVersion({self.targetZoteroVersion})')
 
     @property
