@@ -2,6 +2,10 @@
   "repo": "jyjulianwong/PolarRec-Zotero-Plugin",
   "releases": [
     {
+      "targetZoteroVersion": "7",
+      "tagName": "pre"
+    },
+    {
       "targetZoteroVersion": "6",
       "tagName": "pre"
     }
