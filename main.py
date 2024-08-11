@@ -111,20 +111,23 @@ def parse(plugin: AddonInfo, **kwargs):
             }
             xpi_filename = f'{plugin.owner}#{plugin.repository}+{release.tagName}@{release_asset["id"]}.xpi'
             details = None
+            priority_sources = ['rdf', 'json']
+            if release.targetZoteroVersion == '6':
+                priority_sources = ['json', 'rdf']
             try:
                 xpi_filepath = download_xpi(xpi_url=xpi_url,
                                             download_dir=kwargs.get('runtime_xpi_directory'),
                                             unique_name=xpi_filename,
                                             force_download=False,
                                             cache_dir=kwargs.get('cache_directory'))
-                details = addon_details(xpi_filepath)
+                details = addon_details(xpi_filepath, priority_sources=priority_sources)
             except:
                 try:
                     xpi_filepath = download_xpi(xpi_url=xpi_url,
                                                 download_dir=kwargs.get('runtime_xpi_directory'),
                                                 unique_name=xpi_filename,
                                                 force_download=True)
-                    details = addon_details(xpi_filepath)
+                    details = addon_details(xpi_filepath, priority_sources=priority_sources)
                 except Exception as e:
                     print(f'fetch addon detail of {plugin.repo} with {xpi_url} failed: {e}')
 

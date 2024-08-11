@@ -67,7 +67,8 @@ class XpiDetail:
     def check_compatible_for_zotero_version(self, version: str | int):
         if isinstance(version, int):
             version = str(version) + '.*'
-        if (min_version := self.min_version.replace('*', '0')) and (max_version := self.max_version.replace('*', '999')):
+        if (min_version := self.min_version.replace('*', '0')) and (
+        max_version := self.max_version.replace('*', '999')):
             return (compare_versions(min_version, version.replace('*', '999')) <= 0
                     <= compare_versions(max_version, version.replace('*', '0')))
 
@@ -203,6 +204,7 @@ def detail_from_manifest_rdf(manifest):
                         result.update({entry: get_text(child_node)})
             except:
                 return
+
         extract_info(description, details)
         if not details.get('id') or (details.get('id').startswith("__") and details.get('id').endswith("__")):
             return
@@ -226,7 +228,6 @@ def detail_from_manifest_rdf(manifest):
                 else:
                     details['max_version'] = max_version
 
-
         for targetApplication in description.getElementsByTagName(em + "targetApplication"):
             version_info = {'id': None, 'minVersion': None, 'maxVersion': None}
             extract_info(targetApplication, version_info)
@@ -242,14 +243,19 @@ def detail_from_manifest_rdf(manifest):
         raise e
 
 
-def addon_details(addon_path) -> XpiDetail:
+def addon_details(addon_path, priority_sources=None) -> XpiDetail:
+    if priority_sources is None:
+        priority_sources = ['json', 'rdf']
     if not os.path.exists(addon_path):
         raise IOError(f"Add-on path does not exist: {addon_path}")
     xpi_detail = XpiDetail()
-    if ((manifest := manifest_from_json(addon_path)) and
-            (details := detail_from_manifest_json(addon_path, manifest))):
-        xpi_detail._append_info(details)
-    if ((manifest := manifest_from_rdf(addon_path)) and
-            (details := detail_from_manifest_rdf(manifest))):
-        xpi_detail._append_info(details)
+    for source in priority_sources:
+        if source == 'json':
+            if ((manifest := manifest_from_json(addon_path)) and
+                    (details := detail_from_manifest_json(addon_path, manifest))):
+                xpi_detail._append_info(details)
+        if source == 'rdf':
+            if ((manifest := manifest_from_rdf(addon_path)) and
+                    (details := detail_from_manifest_rdf(manifest))):
+                xpi_detail._append_info(details)
     return xpi_detail
