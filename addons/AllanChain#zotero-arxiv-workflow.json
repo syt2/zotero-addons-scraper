@@ -1,0 +1,9 @@
+{
+  "repo": "AllanChain/zotero-arxiv-workflow",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}
