@@ -1,0 +1,9 @@
+{
+  "repo": "syt2/Zotero-Addons-Scrape-To-GitHub",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "zotero-reference"
+    }
+  ]
+}
