@@ -1,0 +1,9 @@
+{
+  "repo": "Dominic-DallOsto/zotero-pin-items",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}

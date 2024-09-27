@@ -1,0 +1,9 @@
+{
+  "repo": "StevenGLee/zotero-author-browser",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}
