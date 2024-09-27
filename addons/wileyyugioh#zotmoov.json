@@ -3,7 +3,7 @@
   "releases": [
     {
       "targetZoteroVersion": "7",
-      "tagName": "pre"
+      "tagName": "latest"
     }
   ]
 }
