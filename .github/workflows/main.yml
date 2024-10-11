@@ -10,7 +10,8 @@ on:
 permissions:
   contents: write
   actions: write
-
+  issues: write
+  
 env:
   TZ: Asia/Shanghai
 
