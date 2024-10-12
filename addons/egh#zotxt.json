@@ -2,12 +2,12 @@
   "repo": "egh/zotxt",
   "releases": [
     {
-      "targetZoteroVersion": "6",
+      "targetZoteroVersion": "7",
       "tagName": "latest"
     },
     {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
+      "targetZoteroVersion": "6",
+      "tagName": "v6.0.3"
     }
   ]
 }

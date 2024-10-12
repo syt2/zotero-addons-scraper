@@ -152,13 +152,13 @@ def parse(plugin: AddonInfo, **kwargs):
                         (not release.maxZoteroVersion or release.maxZoteroVersion == '*')):
                     report_issue(kwargs.get('github_repository'),
                                  title=f'Parse {plugin.repo} of zotero version failed',
-                                 body=f'xpi:{plugin.repo}@{release.tagName} on {release.targetZoteroVersion}\n',
+                                 body=f'xpi: https://github.com/{plugin.repo} @{release.tagName} on {release.targetZoteroVersion}\n',
                                  github_token=kwargs.get('github_token'),
                                  id=f'Parse min/max version failed: {plugin.repo}+{release.tagName}@{release.targetZoteroVersion}')
             else:
                 report_issue(kwargs.get('github_repository'),
                              title=f'Parse {plugin.repo} addon details failed',
-                             body=f'xpi:{plugin.repo}@{release.tagName} on {release.targetZoteroVersion}\n',
+                             body=f'xpi: https://github.com/{plugin.repo} @{release.tagName} on {release.targetZoteroVersion}\n',
                              github_token=kwargs.get('github_token'),
                              id=f'Parse details failed: {plugin.repo}+{release.tagName}@{release.targetZoteroVersion}')
 
@@ -170,7 +170,7 @@ def parse(plugin: AddonInfo, **kwargs):
             print(plugin.repo, 'invalid', invalid_release.zotero_check_version)
             report_issue(kwargs.get('github_repository'),
                          title=f'Invalid {plugin.repo} xpi with zotero version {invalid_release.zotero_check_version}',
-                         body=f'xpi:{plugin.repo}@{invalid_release.tagName}\n'
+                         body=f'xpi: https://github.com/{plugin.repo} @{invalid_release.tagName}\n'
                               f'min zotero Version:{invalid_release.minZoteroVersion}\n'
                               f'max Zotero version:{invalid_release.maxZoteroVersion}'
                               f'expect Zotero version:{invalid_release.zotero_check_version}\n',
