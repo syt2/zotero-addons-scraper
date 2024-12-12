@@ -1,0 +1,9 @@
+{
+  "repo": "windfollowingheart/zotero-paper-agent",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}
