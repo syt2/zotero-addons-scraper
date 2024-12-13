@@ -1,0 +1,9 @@
+{
+  "repo": "alima-webdev/zotero-review-assistant",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}
