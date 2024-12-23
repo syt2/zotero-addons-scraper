@@ -1,0 +1,13 @@
+{
+  "repo": "diegodlh/zotero-cita",
+  "releases": [
+    {   
+      "targetZoteroVersion": "7",
+      "tagName": "pre"
+    },
+    {
+      "targetZoteroVersion": "6", 
+      "tagName": "v0.5.5"
+    }
+  ]
+}
