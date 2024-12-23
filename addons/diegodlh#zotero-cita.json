@@ -3,7 +3,7 @@
   "releases": [
     {   
       "targetZoteroVersion": "7",
-      "tagName": "1.0.0-beta.10"
+      "tagName": "pre"
     },
     {
       "targetZoteroVersion": "6", 
