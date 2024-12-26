@@ -204,7 +204,7 @@ def parse_xpi_detail(plugin: AddonInfo, release: AddonInfoRelease, release_asset
             for xpi_url in xpi_urls:
                 update_details = xpi_detail(xpi_url=xpi_url,
                                             xpi_filename=f'{plugin.owner}#{plugin.repository}+update{details.version}.xpi')
-                if update_details and update_details.check_compatible_for_zotero_version(release.zotero_check_version):
+                if update_details and update_details.id and update_details.check_compatible_for_zotero_version(release.zotero_check_version):
                     details = update_details
                     release.xpiDownloadUrl = {
                         'github': xpi_url,
