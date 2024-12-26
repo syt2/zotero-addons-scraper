@@ -192,22 +192,24 @@ def parse_xpi_detail(plugin: AddonInfo, release: AddonInfoRelease, release_asset
                          xpi_filename=f'{plugin.owner}#{plugin.repository}+{release.tagName}@{release_asset["id"]}.xpi')
 
     if details and details.update_url and details.id and details.version:
-        update_json_resp = requests.get(details.update_url,
-                                        headers=github_api_headers(github_token=kwargs.get('github_token')))
-        update_json_info = json.loads(update_json_resp.content)
+        try:
+            update_json_resp = requests.get(details.update_url,
+                                            headers=github_api_headers(github_token=kwargs.get('github_token')))
+            update_json_info = json.loads(update_json_resp.content)
 
-        updates = update_json_info.get('addons', {}).get(details.id, {}).get('updates', [])
-        xpi_urls = [e.get('update_link') for e in updates if compare_versions(e.get('version'), details.version) > 0]
+            updates = update_json_info.get('addons', {}).get(details.id, {}).get('updates', [])
+            xpi_urls = [e.get('update_link') for e in updates if compare_versions(e.get('version'), details.version) > 0]
 
-        for xpi_url in xpi_urls:
-            update_details = xpi_detail(xpi_url=xpi_url,
-                                        xpi_filename=f'{plugin.owner}#{plugin.repository}+update{details.version}.xpi')
-            if update_details and update_details.check_compatible_for_zotero_version(release.zotero_check_version):
-                details = update_details
-                release.xpiDownloadUrl = {
-                    'github': xpi_url,
-                }
-                break
+            for xpi_url in xpi_urls:
+                update_details = xpi_detail(xpi_url=xpi_url,
+                                            xpi_filename=f'{plugin.owner}#{plugin.repository}+update{details.version}.xpi')
+                if update_details and update_details.check_compatible_for_zotero_version(release.zotero_check_version):
+                    details = update_details
+                    release.xpiDownloadUrl = {
+                        'github': xpi_url,
+                    }
+                    break
+        except: pass
     return details
 
 
