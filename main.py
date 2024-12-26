@@ -3,7 +3,7 @@ import urllib.parse
 import argparse
 from addon_info import *
 from fallback_infos import fallback_if_need
-from moz_addons import addon_details
+from moz_addons import addon_details, compare_versions
 from github_operations import *
 from file_cache import *
 
@@ -25,11 +25,12 @@ def download_xpi(xpi_url: str, download_dir: str, unique_name: str, force_downlo
             return download_filepath
 
         response = requests.get(xpi_url, stream=True)
-        print(f'download {unique_name} from {xpi_url}')
-        with open(download_filepath, "wb") as file:
-            for chunk in response.iter_content(chunk_size=1024):
-                file.write(chunk)
-        return download_filepath
+        if response.status_code == 200:
+            print(f'download {unique_name} from {xpi_url}')
+            with open(download_filepath, "wb") as file:
+                for chunk in response.iter_content(chunk_size=1024):
+                    file.write(chunk)
+            return download_filepath
     except Exception as e:
         print(f'download {unique_name} from {xpi_url} failed: {e}')
 
@@ -102,34 +103,10 @@ def parse(plugin: AddonInfo, **kwargs):
             release_asset = release_assets[0]
             if 'browser_download_url' not in release_asset:
                 continue
-            xpi_url = release_asset['browser_download_url']
-            release.releaseDate = release_asset['updated_at']
-            release.xpiDownloadUrl = {
-                'github': xpi_url,
-                'ghProxy': 'https://ghproxy.com/?q=' + urllib.parse.quote(xpi_url),
-                'kgithub': xpi_url.replace('github.com', 'kkgithub.com'),
-            }
-            xpi_filename = f'{plugin.owner}#{plugin.repository}+{release.tagName}@{release_asset["id"]}.xpi'
-            details = None
-            priority_sources = ['rdf', 'json']
-            if release.targetZoteroVersion == '6':
-                priority_sources = ['json', 'rdf']
-            try:
-                xpi_filepath = download_xpi(xpi_url=xpi_url,
-                                            download_dir=kwargs.get('runtime_xpi_directory'),
-                                            unique_name=xpi_filename,
-                                            force_download=False,
-                                            cache_dir=kwargs.get('cache_directory'))
-                details = addon_details(xpi_filepath, priority_sources=priority_sources)
-            except:
-                try:
-                    xpi_filepath = download_xpi(xpi_url=xpi_url,
-                                                download_dir=kwargs.get('runtime_xpi_directory'),
-                                                unique_name=xpi_filename,
-                                                force_download=True)
-                    details = addon_details(xpi_filepath, priority_sources=priority_sources)
-                except Exception as e:
-                    print(f'fetch addon detail of {plugin.repo} with {xpi_url} failed: {e}')
+            details = parse_xpi_detail(
+                plugin=plugin, release=release, release_asset=release_asset,
+                **kwargs,
+            )
 
             if details:
                 if detail_id := details.id:
@@ -178,6 +155,63 @@ def parse(plugin: AddonInfo, **kwargs):
                          id=f'Target zotero version not match: {plugin.repo}+{invalid_release.tagName}@{release.targetZoteroVersion}')
             plugin.releases.remove(invalid_release)
     return plugin
+
+
+def parse_xpi_detail(plugin: AddonInfo, release: AddonInfoRelease, release_asset, **kwargs):
+    priority_sources = ['rdf', 'json']
+    if release.targetZoteroVersion == '6':
+        priority_sources = ['json', 'rdf']
+
+    def xpi_detail(xpi_url, xpi_filename):
+        try:
+            xpi_filepath = download_xpi(xpi_url=xpi_url,
+                                        download_dir=kwargs.get('runtime_xpi_directory'),
+                                        unique_name=xpi_filename,
+                                        force_download=False,
+                                        cache_dir=kwargs.get('cache_directory'))
+            details = addon_details(xpi_filepath, priority_sources=priority_sources)
+            return details
+        except:
+            try:
+                xpi_filepath = download_xpi(xpi_url=xpi_url,
+                                            download_dir=kwargs.get('runtime_xpi_directory'),
+                                            unique_name=xpi_filename,
+                                            force_download=True)
+                details = addon_details(xpi_filepath, priority_sources=priority_sources)
+                return details
+            except Exception as e:
+                print(f'fetch addon detail of {plugin.repo} with {xpi_url} failed: {e}')
+
+    github_xpi_url = release_asset['browser_download_url']
+    release.releaseDate = release_asset['updated_at']
+    release.xpiDownloadUrl = {
+        'github': github_xpi_url,
+        'ghProxy': 'https://ghproxy.com/?q=' + urllib.parse.quote(github_xpi_url),
+        'kgithub': github_xpi_url.replace('github.com', 'kkgithub.com'),
+    }
+    details = xpi_detail(xpi_url=github_xpi_url,
+                         xpi_filename=f'{plugin.owner}#{plugin.repository}+{release.tagName}@{release_asset["id"]}.xpi')
+
+    if details and details.update_url and details.id and details.version:
+        try:
+            update_json_resp = requests.get(details.update_url,
+                                            headers=github_api_headers(github_token=kwargs.get('github_token')))
+            update_json_info = json.loads(update_json_resp.content)
+
+            updates = update_json_info.get('addons', {}).get(details.id, {}).get('updates', [])
+            xpi_urls = [e.get('update_link') for e in updates if compare_versions(e.get('version'), details.version) > 0]
+
+            for xpi_url in xpi_urls:
+                update_details = xpi_detail(xpi_url=xpi_url,
+                                            xpi_filename=f'{plugin.owner}#{plugin.repository}+update{details.version}.xpi')
+                if update_details and update_details.id and update_details.check_compatible_for_zotero_version(release.zotero_check_version):
+                    details = update_details
+                    release.xpiDownloadUrl = {
+                        'github': xpi_url,
+                    }
+                    break
+        except: pass
+    return details
 
 
 def fallback(addon_infos, previous_info_url, **kwargs):

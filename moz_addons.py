@@ -43,6 +43,7 @@ class XpiDetail:
         self.name = None
         self.version = None
         self.description = None
+        self.update_url = None
         self.min_version = "*"
         self.max_version = "*"
 
@@ -58,6 +59,10 @@ class XpiDetail:
             self.version = version
         if description := details.get('description'):
             self.description = description
+        if update_url := details.get('updateURL'):
+            self.update_url = update_url
+        if update_url := details.get('update_url'):
+            self.update_url = update_url
         if (min_version := details.get('min_version')) and (max_version := details.get('max_version')):
             if compare_versions(min_version.replace('*', '0'), self.min_version.replace('*', '999')) <= 0:
                 self.min_version = min_version
@@ -68,7 +73,7 @@ class XpiDetail:
         if isinstance(version, int):
             version = str(version) + '.*'
         if (min_version := self.min_version.replace('*', '0')) and (
-        max_version := self.max_version.replace('*', '999')):
+                max_version := self.max_version.replace('*', '999')):
             return (compare_versions(min_version, version.replace('*', '999')) <= 0
                     <= compare_versions(max_version, version.replace('*', '0')))
 
@@ -125,8 +130,13 @@ def manifest_from_rdf(addon_path):
 
 def detail_from_manifest_json(addon_path, manifest):
     details = {
-        "name": manifest.get("name"), "version": manifest.get("version"), "description": manifest.get("description"),
-        "id": None, "min_version": None, "max_version": None
+        "name": manifest.get("name"),
+        "version": manifest.get("version"),
+        "description": manifest.get("description"),
+        "id": None,
+        "min_version": None,
+        "max_version": None,
+        "update_url": None,
     }
     for location in ("applications", "browser_specific_settings"):
         if details["id"]:
@@ -136,6 +146,7 @@ def detail_from_manifest_json(addon_path, manifest):
                 details["id"] = manifest[location][app].get("id")
                 details["min_version"] = manifest[location][app].get("strict_min_version")
                 details["max_version"] = manifest[location][app].get("strict_max_version")
+                details["update_url"] = manifest[location][app].get("update_url")
                 break
             except KeyError:
                 continue
@@ -175,7 +186,15 @@ def detail_from_manifest_json(addon_path, manifest):
 
 
 def detail_from_manifest_rdf(manifest):
-    details = {"id": None, "name": None, "version": None, "description": None, "min_version": None, "max_version": None}
+    details = {
+        "id": None,
+        "name": None,
+        "version": None,
+        "description": None,
+        "min_version": None,
+        "max_version": None,
+        "updateURL": None,
+    }
     try:
         doc = minidom.parseString(manifest)
 
@@ -237,6 +256,9 @@ def detail_from_manifest_rdf(manifest):
                 version_info = {'id': None, 'minVersion': None, 'maxVersion': None}
                 extract_info(node, version_info)
                 update_details(version_info)
+
+        if update_url := details.get('updateURL'):
+            details['update_url'] = update_url
 
         return details
     except Exception as e:
