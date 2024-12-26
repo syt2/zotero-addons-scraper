@@ -25,11 +25,12 @@ def download_xpi(xpi_url: str, download_dir: str, unique_name: str, force_downlo
             return download_filepath
 
         response = requests.get(xpi_url, stream=True)
-        print(f'download {unique_name} from {xpi_url}')
-        with open(download_filepath, "wb") as file:
-            for chunk in response.iter_content(chunk_size=1024):
-                file.write(chunk)
-        return download_filepath
+        if response.status_code == 200:
+            print(f'download {unique_name} from {xpi_url}')
+            with open(download_filepath, "wb") as file:
+                for chunk in response.iter_content(chunk_size=1024):
+                    file.write(chunk)
+            return download_filepath
     except Exception as e:
         print(f'download {unique_name} from {xpi_url} failed: {e}')
 
