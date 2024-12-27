@@ -95,9 +95,11 @@ def parse(plugin: AddonInfo, **kwargs):
 
             if 'assets' not in release_info:
                 continue
-            release_assets = release_info['assets']
-            release_assets.sort(key=lambda item: item['updated_at'] if 'updated_at' in item else '', reverse=True)
-            release_assets = [asset for asset in release_assets if asset['content_type'] == 'application/x-xpinstall']
+            all_release_assets = release_info['assets']
+            all_release_assets.sort(key=lambda item: item['updated_at'] if 'updated_at' in item else '', reverse=True)
+            release_assets = [asset for asset in all_release_assets if asset['content_type'] == 'application/x-xpinstall']
+            if not release_assets:
+                release_assets = [asset for asset in all_release_assets if asset['content_type'] == 'application/x-zip-compressed']
             if not release_assets:
                 continue
             release_asset = release_assets[0]
