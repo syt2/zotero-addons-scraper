@@ -1,0 +1,9 @@
+{
+  "repo": "SciImage/zotero-attachment-scanner",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}
