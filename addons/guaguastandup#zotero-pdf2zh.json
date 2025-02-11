@@ -1,0 +1,9 @@
+{
+  "repo": "guaguastandup/zotero-pdf2zh",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}
