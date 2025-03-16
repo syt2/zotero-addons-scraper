@@ -188,7 +188,7 @@ def parse_xpi_detail(plugin: AddonInfo, release: AddonInfoRelease, release_asset
     release.releaseDate = release_asset['updated_at']
     release.xpiDownloadUrl = {
         'github': github_xpi_url,
-        'ghProxy': 'https://ghproxy.com/?q=' + urllib.parse.quote(github_xpi_url),
+        'ghProxy': 'https://gh-proxy.com/' + urllib.parse.quote(github_xpi_url),
         'kgithub': github_xpi_url.replace('github.com', 'kkgithub.com'),
     }
     details = xpi_detail(xpi_url=github_xpi_url,
