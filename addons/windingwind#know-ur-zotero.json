@@ -1,0 +1,9 @@
+{
+  "repo": "windingwind/know-ur-zotero",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}
