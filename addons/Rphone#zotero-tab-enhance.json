@@ -1,0 +1,9 @@
+{
+  "repo": "Rphone/zotero-tab-enhance",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}
