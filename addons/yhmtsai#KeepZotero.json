@@ -1,9 +1,13 @@
 {
   "repo": "yhmtsai/KeepZotero",
   "releases": [
+    {   
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    },
     {
       "targetZoteroVersion": "6",
-      "tagName": "latest"
+      "tagName": "v0.0.2"
     }
   ]
 }
