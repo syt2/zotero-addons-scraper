@@ -1,0 +1,9 @@
+{
+  "repo": "nutstore/zotero-plugin-nutstore-sso",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}

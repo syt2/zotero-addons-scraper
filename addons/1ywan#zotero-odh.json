@@ -1,0 +1,9 @@
+{
+  "repo": "1ywan/zotero-odh",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "repo": "david3684/zotero-tab-limiter",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}
