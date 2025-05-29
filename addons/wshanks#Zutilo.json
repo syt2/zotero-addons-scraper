@@ -3,7 +3,11 @@
   "releases": [
     {
       "targetZoteroVersion": "6",
+      "tagName": "v3.10.0"
+    },
+    {
+      "targetZoteroVersion": "7",
       "tagName": "latest"
-    }
+    },
   ]
 }
