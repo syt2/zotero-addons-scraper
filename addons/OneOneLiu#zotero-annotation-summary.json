@@ -1,0 +1,9 @@
+{
+  "repo": "OneOneLiu/zotero-annotation-summary",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}

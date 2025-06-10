@@ -1,0 +1,9 @@
+{
+  "repo": "WilliamsLiang/zotero-skr",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}
