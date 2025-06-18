@@ -1,0 +1,9 @@
+{
+  "repo": "daeh/zotero-citation-tally",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}
