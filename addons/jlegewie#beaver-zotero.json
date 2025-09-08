@@ -1,0 +1,9 @@
+{
+  "repo": "jlegewie/beaver-zotero",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}
