@@ -1,0 +1,9 @@
+{
+  "repo": "occasional15/researchopia",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}
