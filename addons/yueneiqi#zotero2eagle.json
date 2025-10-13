@@ -1,0 +1,9 @@
+{
+  "repo": "yueneiqi/zotero2eagle",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}
