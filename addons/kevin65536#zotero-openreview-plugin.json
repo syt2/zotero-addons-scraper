@@ -1,0 +1,9 @@
+{
+  "repo": "kevin65536/zotero-openreview-plugin",
+  "releases": [
+    {
+      "targetZoteroVersion": "7",
+      "tagName": "latest"
+    }
+  ]
+}
