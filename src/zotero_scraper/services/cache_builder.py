@@ -232,10 +232,12 @@ class ReleaseCacheBuilder:
 
         if not tags_to_process:
             logger.debug(f"{repo}: No new releases to process")
-            # Only update last_checked if there were deleted releases
-            if deleted_tags:
+            # Check latest release's update_url for updates
+            update_found = self._check_latest_release_update_url(repo)
+            # Only update last_checked if there were actual changes
+            if deleted_tags or update_found:
                 self.cache.update_repo_checked_time(repo)
-            return {"new_releases": 0, "deleted_releases": len(deleted_tags)}
+            return {"new_releases": 0, "releases_deleted": len(deleted_tags), "update_url_updated": update_found}
 
         logger.info(f"{repo}: Processing {len(tags_to_process)} new releases")
 
@@ -265,11 +267,14 @@ class ReleaseCacheBuilder:
                 self.cache.add_release(repo, cached)
                 logger.debug(f"{repo}@{tag}: Parse failed, cached as failed")
 
+        # Check latest release's update_url for updates
+        update_found = self._check_latest_release_update_url(repo)
+
         # Only update last_checked if there were actual changes
-        if new_count > 0 or deleted_tags:
+        if new_count > 0 or deleted_tags or update_found:
             self.cache.update_repo_checked_time(repo)
 
-        return {"new_releases": new_count, "deleted_releases": len(deleted_tags)}
+        return {"new_releases": new_count, "deleted_releases": len(deleted_tags), "update_url_updated": update_found}
 
     def _parse_release(
         self, repo: str, release_data: dict[str, Any]
@@ -344,6 +349,7 @@ class ReleaseCacheBuilder:
             addon_description=details.description,
             min_zotero_version=details.min_version,
             max_zotero_version=details.max_version,
+            update_url=details.update_url,
             parse_success=True,
         )
 
@@ -430,3 +436,79 @@ class ReleaseCacheBuilder:
             logger.debug(f"Failed to check updates for {repo}: {e}")
 
         return None
+
+    def _check_latest_release_update_url(self, repo: str) -> bool:
+        """Check latest cached release's update_url for newer versions.
+
+        Args:
+            repo: Repository in "owner/name" format.
+
+        Returns:
+            True if an update was found and cache was updated.
+        """
+        repo_cache = self.cache.get_repo_cache(repo)
+        latest = repo_cache.get_latest_release()
+
+        if not latest or not latest.parse_success:
+            return False
+
+        if not latest.update_url or not latest.addon_id or not latest.addon_version:
+            return False
+
+        try:
+            response = requests.get(latest.update_url, timeout=30)
+            if response.status_code != 200:
+                return False
+
+            update_info = response.json()
+            updates = (
+                update_info.get("addons", {})
+                .get(latest.addon_id, {})
+                .get("updates", [])
+            )
+
+            # Find newer versions
+            newer_versions = [
+                u
+                for u in updates
+                if compare_versions(u.get("version", "0"), latest.addon_version) > 0
+            ]
+
+            if not newer_versions:
+                return False
+
+            owner, name = repo.split("/")
+
+            for update in newer_versions:
+                xpi_url = update.get("update_link")
+                if not xpi_url:
+                    continue
+
+                update_filename = f"{owner}#{name}+update_check_{latest.addon_version}.xpi"
+                update_path = self.downloader.download(xpi_url, update_filename)
+
+                if update_path:
+                    update_details = self.xpi_parser.parse(update_path)
+                    if update_details and update_details.id:
+                        logger.info(
+                            f"{repo}: Found update via update_url: "
+                            f"{latest.addon_version} -> {update_details.version}"
+                        )
+
+                        # Update the cached release with new info
+                        latest.addon_version = update_details.version
+                        latest.addon_name = update_details.name or latest.addon_name
+                        latest.addon_description = update_details.description or latest.addon_description
+                        latest.min_zotero_version = update_details.min_version
+                        latest.max_zotero_version = update_details.max_version
+                        latest.xpi_download_url = xpi_url
+                        latest.update_url = update_details.update_url or latest.update_url
+
+                        # Mark repo as dirty
+                        self.cache.add_release(repo, latest)
+                        return True
+
+        except Exception as e:
+            logger.debug(f"Failed to check update_url for {repo}: {e}")
+
+        return False

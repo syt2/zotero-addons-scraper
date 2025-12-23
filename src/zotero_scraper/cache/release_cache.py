@@ -27,6 +27,7 @@ class CachedRelease:
     addon_description: Optional[str] = None
     min_zotero_version: Optional[str] = None
     max_zotero_version: Optional[str] = None
+    update_url: Optional[str] = None
     # Parse status
     parse_success: bool = True
     parse_error: Optional[str] = None
@@ -50,6 +51,7 @@ class CachedRelease:
             addon_description=data.get("addon_description"),
             min_zotero_version=data.get("min_zotero_version"),
             max_zotero_version=data.get("max_zotero_version"),
+            update_url=data.get("update_url"),
             parse_success=data.get("parse_success", True),
             parse_error=data.get("parse_error"),
         )
@@ -169,6 +171,23 @@ class RepoCache:
         # Sort by published_at descending to get latest
         compatible.sort(key=lambda r: r.published_at, reverse=True)
         return compatible[0]
+
+    def get_latest_release(self) -> Optional[CachedRelease]:
+        """Get the latest release by published_at.
+
+        Returns:
+            Latest release or None if no releases.
+        """
+        if not self.checked_releases:
+            return None
+
+        # Sort by published_at descending
+        sorted_releases = sorted(
+            self.checked_releases,
+            key=lambda r: r.published_at,
+            reverse=True
+        )
+        return sorted_releases[0]
 
 
 class ReleaseCache:
