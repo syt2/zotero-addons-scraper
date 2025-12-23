@@ -1,0 +1,13 @@
+-r requirements.txt
+
+# Testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-mock>=3.10.0
+requests-mock>=1.11.0
+
+# Type checking
+mypy>=1.0.0
+
+# Linting
+ruff>=0.1.0
