@@ -60,29 +60,28 @@ class CachedRelease:
         """Check if this release is compatible with a Zotero version.
 
         Args:
-            zotero_version: Target version like "6" or "7".
+            zotero_version: Target version like "6" or "7" or "8".
 
         Returns:
             True if compatible.
         """
+        from ..utils.version import compare_versions
+
         if not self.parse_success or not self.min_zotero_version:
             return False
 
-        # Normalize versions
+        # Normalize versions - replace * with appropriate values
         min_ver = self.min_zotero_version.replace("*", "0")
         max_ver = (self.max_zotero_version or "999").replace("*", "999")
 
-        # Check version range
-        target_min = float(zotero_version)
-        target_max = target_min + 0.999
+        # Target version X.0 must be within [min_version, max_version]
+        # e.g., for target "7", check if 7.0 >= min_ver and 7.0 <= max_ver
+        target = f"{zotero_version}.0"
 
-        try:
-            min_float = float(min_ver.split(".")[0])
-            max_float = float(max_ver.split(".")[0]) if max_ver != "999" else 999
-        except ValueError:
-            return False
-
-        return min_float <= target_max and max_float >= target_min
+        return (
+            compare_versions(target, min_ver) >= 0
+            and compare_versions(target, max_ver) <= 0
+        )
 
 
 @dataclass
