@@ -232,7 +232,9 @@ class ReleaseCacheBuilder:
 
         if not tags_to_process:
             logger.debug(f"{repo}: No new releases to process")
-            self.cache.update_repo_checked_time(repo)
+            # Only update last_checked if there were deleted releases
+            if deleted_tags:
+                self.cache.update_repo_checked_time(repo)
             return {"new_releases": 0, "deleted_releases": len(deleted_tags)}
 
         logger.info(f"{repo}: Processing {len(tags_to_process)} new releases")
@@ -263,7 +265,9 @@ class ReleaseCacheBuilder:
                 self.cache.add_release(repo, cached)
                 logger.debug(f"{repo}@{tag}: Parse failed, cached as failed")
 
-        self.cache.update_repo_checked_time(repo)
+        # Only update last_checked if there were actual changes
+        if new_count > 0 or deleted_tags:
+            self.cache.update_repo_checked_time(repo)
 
         return {"new_releases": new_count, "deleted_releases": len(deleted_tags)}
 
