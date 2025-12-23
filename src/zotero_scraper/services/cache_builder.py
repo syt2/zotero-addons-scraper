@@ -5,6 +5,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any, Optional
 
+import requests
+
 from ..cache.release_cache import CachedRelease, ReleaseCache
 from ..clients.downloader import XPIDownloader
 from ..clients.github import GitHubClient, ReleaseAsset
@@ -12,6 +14,7 @@ from ..config.constants import ContentTypes
 from ..config.settings import ScraperConfig
 from ..parsers.xpi_parser import XPIParser
 from ..utils.logging import get_logger
+from ..utils.version import compare_versions
 
 logger = get_logger("services.cache_builder")
 
@@ -319,6 +322,12 @@ class ReleaseCacheBuilder:
                 parse_error="Parse failed or no addon ID",
             )
 
+        # Check for updates via update_url
+        updated = self._check_for_updates(repo, details)
+        if updated:
+            details = updated["details"]
+            xpi_url = updated["xpi_url"]
+
         return CachedRelease(
             tag=tag,
             published_at=published_at,
@@ -355,5 +364,65 @@ class ReleaseCacheBuilder:
         for asset in sorted_assets:
             if asset.get("name", "").endswith(".xpi"):
                 return asset
+
+        return None
+
+    def _check_for_updates(
+        self, repo: str, details: Any
+    ) -> Optional[dict[str, Any]]:
+        """Check for updates via update_url.
+
+        Args:
+            repo: Repository in "owner/name" format.
+            details: Parsed XPI details with update_url.
+
+        Returns:
+            Dict with 'details' and 'xpi_url' if update found, None otherwise.
+        """
+        if not details.update_url or not details.id or not details.version:
+            return None
+
+        try:
+            response = requests.get(details.update_url, timeout=30)
+            if response.status_code != 200:
+                return None
+
+            update_info = response.json()
+            updates = (
+                update_info.get("addons", {})
+                .get(details.id, {})
+                .get("updates", [])
+            )
+
+            # Find newer versions
+            newer_versions = [
+                u
+                for u in updates
+                if compare_versions(u.get("version", "0"), details.version) > 0
+            ]
+
+            for update in newer_versions:
+                xpi_url = update.get("update_link")
+                if not xpi_url:
+                    continue
+
+                owner, name = repo.split("/")
+                update_filename = f"{owner}#{name}+update{details.version}.xpi"
+                update_path = self.downloader.download(xpi_url, update_filename)
+
+                if update_path:
+                    update_details = self.xpi_parser.parse(update_path)
+                    if update_details and update_details.id:
+                        logger.info(
+                            f"{repo}: Found update via update_url: "
+                            f"{details.version} -> {update_details.version}"
+                        )
+                        return {
+                            "details": update_details,
+                            "xpi_url": xpi_url,
+                        }
+
+        except Exception as e:
+            logger.debug(f"Failed to check updates for {repo}: {e}")
 
         return None
