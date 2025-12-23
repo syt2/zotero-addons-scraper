@@ -35,7 +35,6 @@ class CacheConfig:
 
     cache_dir: Path = field(default_factory=lambda: Path("caches"))
     runtime_xpi_dir: Path = field(default_factory=lambda: Path("xpis"))
-    lockfile_name: str = "caches_lockfile"
 
 
 @dataclass(frozen=True)
@@ -70,7 +69,6 @@ class ScraperConfig:
             cache=CacheConfig(
                 cache_dir=Path(args.cache_directory),
                 runtime_xpi_dir=Path(args.runtime_xpi_directory),
-                lockfile_name=args.cache_lockfile,
             ),
             previous_info_urls=args.previous_info_urls or [],
             create_release=args.create_release,

@@ -23,6 +23,23 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
+    - name: Checkout publish branch (for release_cache)
+      uses: actions/checkout@v4
+      with:
+        ref: publish
+        path: publish_branch
+      continue-on-error: true
+
+    - name: Restore release_cache from publish branch
+      run: |
+        if [ -d "publish_branch/release_cache" ]; then
+          cp -r publish_branch/release_cache ./release_cache
+          echo "Restored release_cache from publish branch"
+          ls -la release_cache | head -20
+        else
+          echo "No release_cache found in publish branch, starting fresh"
+        fi
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
@@ -32,68 +49,30 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    - name: Store Cache Folder
-      uses: actions/cache/restore@v4
-      id: restore-cache
-      with:
-        path: |
-          caches
-        key: ${{ runner.os }}-files-${{ hashFiles('caches/caches_lockfile') }}
-        restore-keys: |
-          ${{ runner.os }}-files-
-
-    - name: Get Cache Hash
-      id: get-cache-hash
-      run: |
-        echo "CACHE_HASH=$CACHE_HASH" >> "$GITHUB_OUTPUT"
-      env:
-        CACHE_HASH: ${{ hashFiles('caches/caches_lockfile') }}
-
-    - name: Run Script
+    - name: Run Scraper
       run: |
         python main.py \
           -i addons \
           -o published/addon_infos.json \
-          --github_repository ${GITHUB_REPOSITORY} \
-          --github_token ${GITHUB_TOKEN} \
-          --cache_directory caches \
-          --runtime_xpi_directory xpis \
-          --cache_lockfile caches_lockfile \
-          --create_release True \
-#          --previous_info_urls \
-#              https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/publish/addon_infos.json \
-#              https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/addon_infos.json
+          --release-cache-dir release_cache \
+          --github_repository "${GITHUB_REPOSITORY}" \
+          --github_token "${GITHUB_TOKEN}" \
+          --create_release True
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Publish in Repository
+    - name: Copy release_cache to published folder
+      run: |
+        cp -r release_cache published/release_cache
+        echo "Contents of published folder:"
+        ls -la published
+
+    - name: Publish to publish branch
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-#        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_branch: publish
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
         publish_dir: ./published
-
-    - name: Check Cache Need Update
-      id: check-cache-update
-      run: |
-        if [[ "$PRE_CACHE_HASH" != "$CUR_CACHE_HASH" ]]; then
-          echo "SAVE_CACHE=true" >> "$GITHUB_OUTPUT"
-        else
-          echo "SAVE_CACHE=false" >> "$GITHUB_OUTPUT"
-        fi
-      env:
-        PRE_CACHE_HASH: ${{ steps.get-cache-hash.outputs.CACHE_HASH }}
-        CUR_CACHE_HASH: ${{ hashFiles('caches/caches_lockfile') }}
-
-    - name: Save Cache Folder
-      if: steps.check-cache-update.outputs.SAVE_CACHE == 'true'
-      uses: actions/cache/save@v4
-      id: save-cache
-      with:
-        path: |
-          caches
-        key: ${{ runner.os }}-files-${{ hashFiles('caches/caches_lockfile') }}
 
