@@ -124,45 +124,29 @@ class GitHubClient(BaseHTTPClient):
             return None
 
     def get_releases(
-        self, owner: str, repo: str, per_page: int = 100, max_pages: int = 10
+        self, owner: str, repo: str, per_page: int = 100
     ) -> list[dict[str, Any]]:
-        """Get all releases for a repository with pagination.
+        """Get releases for a repository (first page only).
 
         Args:
             owner: Repository owner.
             repo: Repository name.
-            per_page: Number of releases per page (max 100).
-            max_pages: Maximum number of pages to fetch.
+            per_page: Number of releases to fetch (max 100).
 
         Returns:
             List of release data dictionaries.
         """
         url = GitHubAPI.releases(owner, repo)
-        all_releases: list[dict[str, Any]] = []
-
         try:
-            for page in range(1, max_pages + 1):
-                response = self.get(
-                    url,
-                    headers=self._headers,
-                    params={"per_page": per_page, "page": page},
-                )
-                releases = response.json()
-
-                if not releases:
-                    break
-
-                all_releases.extend(releases)
-
-                # If we got fewer than per_page, we've reached the end
-                if len(releases) < per_page:
-                    break
-
-            logger.debug(f"Fetched {len(all_releases)} releases for {owner}/{repo}")
-            return all_releases
+            response = self.get(
+                url,
+                headers=self._headers,
+                params={"per_page": per_page},
+            )
+            return response.json()
         except Exception as e:
             logger.warning(f"Failed to get releases for {owner}/{repo}: {e}")
-            return all_releases if all_releases else []
+            return []
 
     def get_release(
         self, owner: str, repo: str, tag: str
