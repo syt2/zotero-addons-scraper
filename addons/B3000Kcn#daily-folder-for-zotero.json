@@ -1,9 +1,0 @@
-{
-  "repo": "B3000Kcn/daily-folder-for-zotero",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}

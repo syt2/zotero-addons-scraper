@@ -1,9 +1,0 @@
-{
-  "repo": "cookjohn/zotero-mcp",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}

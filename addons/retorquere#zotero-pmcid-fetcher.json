@@ -1,9 +1,0 @@
-{
-  "repo": "retorquere/zotero-pmcid-fetcher",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}

@@ -1,9 +1,0 @@
-{
-  "repo": "tefkah/zotero-night",
-  "releases": [
-    {
-      "targetZoteroVersion": "6",
-      "tagName": "latest"
-    }
-  ]
-}

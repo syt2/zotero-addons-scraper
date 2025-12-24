@@ -1,9 +1,0 @@
-{
-  "repo": "windingwind/zotero-pdf-preview",
-  "releases": [
-    {
-      "targetZoteroVersion": "6",
-      "tagName": "latest"
-    }
-  ]
-}

@@ -1,9 +1,0 @@
-{
-  "repo": "RoadToDream/ZotMeta",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}

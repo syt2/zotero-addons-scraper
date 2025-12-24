@@ -1,9 +1,0 @@
-{
-  "repo": "iShareStuff/ZoteroFields-Plugin-for-Zotero",
-  "releases": [
-    {
-      "targetZoteroVersion": "6",
-      "tagName": "latest"
-    }
-  ]
-}

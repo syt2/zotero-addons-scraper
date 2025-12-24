@@ -1,9 +1,0 @@
-{
-  "repo": "ET06731/zotero-paper2slides",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}

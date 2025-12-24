@@ -1,9 +1,0 @@
-{
-  "repo": "whacked/zotero-special-tags-column",
-  "releases": [
-    {
-      "targetZoteroVersion": "6",
-      "tagName": "latest"
-    }
-  ]
-}

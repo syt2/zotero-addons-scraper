@@ -1,9 +1,0 @@
-{
-  "repo": "retorquere/zotero-storage-scanner",
-  "releases": [
-    {
-      "targetZoteroVersion": "6",
-      "tagName": "latest"
-    }
-  ]
-}

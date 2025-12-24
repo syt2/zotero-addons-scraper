@@ -1,9 +1,0 @@
-{
-  "repo": "MuiseDestiny/zotero-attanger",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}

@@ -1,9 +1,0 @@
-{
-  "repo": "retorquere/zotero-folder-import",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}

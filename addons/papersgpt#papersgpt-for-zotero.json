@@ -1,9 +1,0 @@
-{
-  "repo": "papersgpt/papersgpt-for-zotero",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}

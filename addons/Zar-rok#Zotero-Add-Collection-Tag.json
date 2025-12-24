@@ -1,9 +1,0 @@
-{
-  "repo": "Zar-rok/Zotero-Add-Collection-Tag",
-  "releases": [
-    {
-      "targetZoteroVersion": "6",
-      "tagName": "latest"
-    }
-  ]
-}

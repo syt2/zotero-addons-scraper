@@ -1,9 +1,0 @@
-{
-  "repo": "redleafnew/zotero-updateifs",
-  "releases": [
-    {
-      "targetZoteroVersion": "6",
-      "tagName": "latest"
-    }
-  ]
-}

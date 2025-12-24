@@ -1,9 +1,0 @@
-{
-  "repo": "Dominic-DallOsto/zotero-annotations-count",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}

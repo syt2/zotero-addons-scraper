@@ -1,9 +1,0 @@
-{
-  "repo": "wbthomason/zotodo",
-  "releases": [
-    {
-      "targetZoteroVersion": "6",
-      "tagName": "latest"
-    }
-  ]
-}

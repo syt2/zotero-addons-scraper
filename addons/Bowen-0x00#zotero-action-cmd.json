@@ -1,9 +1,0 @@
-{
-  "repo": "Bowen-0x00/zotero-action-cmd",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}

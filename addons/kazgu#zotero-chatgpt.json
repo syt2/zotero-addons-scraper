@@ -1,9 +1,0 @@
-{
-  "repo": "kazgu/zotero-chatgpt",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}

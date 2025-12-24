@@ -1,9 +1,0 @@
-{
-  "repo": "zzlb0224/zotero-annotation-manage",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}

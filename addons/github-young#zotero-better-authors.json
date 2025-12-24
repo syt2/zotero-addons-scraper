@@ -1,9 +1,0 @@
-{
-  "repo": "github-young/zotero-better-authors",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}

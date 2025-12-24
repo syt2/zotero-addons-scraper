@@ -1,9 +1,0 @@
-{
-  "repo": "ethanwillis/zotero-scihub",
-  "releases": [
-    {
-      "targetZoteroVersion": "6",
-      "tagName": "latest"
-    }
-  ]
-}

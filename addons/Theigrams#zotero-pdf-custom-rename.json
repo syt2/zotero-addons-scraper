@@ -1,9 +1,0 @@
-{
-  "repo": "Theigrams/zotero-pdf-custom-rename",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}

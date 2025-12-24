@@ -1,6 +1,5 @@
 """Service for building and updating release cache."""
 
-import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any, Optional
@@ -162,21 +161,24 @@ class ReleaseCacheBuilder:
         return stats
 
     def _load_repos_from_input(self) -> list[str]:
-        """Load repository list from input directory."""
+        """Load repository list from input directory.
+
+        Reads repo names from filenames in format: owner@repo
+        Converts to owner/repo format.
+        """
         repos = []
 
         if not self.config.input_dir.exists():
             logger.error(f"Input directory not found: {self.config.input_dir}")
             return repos
 
-        for config_file in self.config.input_dir.glob("*.json"):
-            try:
-                with open(config_file, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-                if repo := data.get("repo"):
+        for config_file in self.config.input_dir.iterdir():
+            if config_file.is_file():
+                # Parse repo from filename: owner@repo -> owner/repo
+                filename = config_file.name
+                if "@" in filename:
+                    repo = filename.replace("@", "/")
                     repos.append(repo)
-            except Exception as e:
-                logger.error(f"Failed to load {config_file}: {e}")
 
         return repos
 

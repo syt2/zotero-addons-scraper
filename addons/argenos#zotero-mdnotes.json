@@ -1,9 +1,0 @@
-{
-  "repo": "argenos/zotero-mdnotes",
-  "releases": [
-    {
-      "targetZoteroVersion": "6",
-      "tagName": "latest"
-    }
-  ]
-}

@@ -1,9 +1,0 @@
-{
-  "repo": "etShaw-zh/zotracer",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}

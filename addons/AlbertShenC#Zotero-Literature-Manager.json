@@ -1,9 +1,0 @@
-{
-  "repo": "AlbertShenC/Zotero-Literature-Manager",
-  "releases": [
-    {
-      "targetZoteroVersion": "6",
-      "tagName": "latest"
-    }
-  ]
-}

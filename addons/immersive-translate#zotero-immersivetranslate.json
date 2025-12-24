@@ -1,9 +1,0 @@
-{
-  "repo": "immersive-translate/zotero-immersivetranslate",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}

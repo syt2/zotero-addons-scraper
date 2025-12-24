@@ -1,9 +1,0 @@
-{
-  "repo": "wshanks/lyz",
-  "releases": [
-    {
-      "targetZoteroVersion": "6",
-      "tagName": "latest"
-    }
-  ]
-}

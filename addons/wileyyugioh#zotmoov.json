@@ -1,9 +1,0 @@
-{
-  "repo": "wileyyugioh/zotmoov",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}

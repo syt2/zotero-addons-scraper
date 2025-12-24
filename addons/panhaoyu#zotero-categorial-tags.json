@@ -1,9 +1,0 @@
-{
-  "repo": "panhaoyu/zotero-categorial-tags",
-  "releases": [
-    {
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    }
-  ]
-}
