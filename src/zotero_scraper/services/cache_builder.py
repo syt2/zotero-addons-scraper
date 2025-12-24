@@ -64,7 +64,6 @@ class ReleaseCacheBuilder:
             "repos_processed": 0,
             "repos_failed": 0,
             "new_releases_parsed": 0,
-            "releases_deleted": 0,
             "errors": [],
         }
 
@@ -79,7 +78,6 @@ class ReleaseCacheBuilder:
                 )
                 stats["repos_processed"] += 1
                 stats["new_releases_parsed"] += result.get("new_releases", 0)
-                stats["releases_deleted"] += result.get("deleted_releases", 0)
             except Exception as e:
                 logger.error(f"Failed to process {repo}: {e}")
                 stats["repos_failed"] += 1
@@ -93,8 +91,7 @@ class ReleaseCacheBuilder:
 
         logger.info(
             f"Cache build complete: {stats['repos_processed']} repos, "
-            f"{stats['new_releases_parsed']} new releases, "
-            f"{stats['releases_deleted']} deleted releases"
+            f"{stats['new_releases_parsed']} new releases"
         )
 
         return stats
@@ -126,7 +123,6 @@ class ReleaseCacheBuilder:
             "repos_processed": 0,
             "repos_failed": 0,
             "new_releases_parsed": 0,
-            "releases_deleted": 0,
             "errors": [],
         }
 
@@ -147,7 +143,6 @@ class ReleaseCacheBuilder:
                     result = future.result()
                     stats["repos_processed"] += 1
                     stats["new_releases_parsed"] += result.get("new_releases", 0)
-                    stats["releases_deleted"] += result.get("deleted_releases", 0)
                     logger.info(
                         f"[{stats['repos_processed']}/{len(repos)}] "
                         f"Completed {repo}: {result.get('new_releases', 0)} new releases"
@@ -199,7 +194,7 @@ class ReleaseCacheBuilder:
             max_releases: Limit number of releases to process.
 
         Returns:
-            Statistics dict with new_releases and deleted_releases counts.
+            Statistics dict with new_releases count.
         """
         parts = repo.split("/")
         if len(parts) != 2:
@@ -211,15 +206,10 @@ class ReleaseCacheBuilder:
         releases = self.github.get_releases(owner, name)
         if not releases:
             logger.warning(f"No releases found for {repo}")
-            return {"new_releases": 0, "deleted_releases": 0}
+            return {"new_releases": 0}
 
-        # Get current tags from GitHub
+        # Get current tags from GitHub (first page only, so don't delete old cached releases)
         current_tags = {r.get("tag_name") for r in releases if r.get("tag_name")}
-
-        # Sync cache - remove deleted releases
-        deleted_tags = self.cache.sync_with_github(repo, current_tags)
-        if deleted_tags:
-            logger.info(f"{repo}: Removed {len(deleted_tags)} deleted releases: {deleted_tags}")
 
         # Get tags to process
         if full_rebuild:
@@ -234,10 +224,9 @@ class ReleaseCacheBuilder:
             logger.debug(f"{repo}: No new releases to process")
             # Check latest release's update_url for updates
             update_found = self._check_latest_release_update_url(repo)
-            # Only update last_checked if there were actual changes
-            if deleted_tags or update_found:
+            if update_found:
                 self.cache.update_repo_checked_time(repo)
-            return {"new_releases": 0, "releases_deleted": len(deleted_tags), "update_url_updated": update_found}
+            return {"new_releases": 0, "update_url_updated": update_found}
 
         logger.info(f"{repo}: Processing {len(tags_to_process)} new releases")
 
@@ -271,10 +260,10 @@ class ReleaseCacheBuilder:
         update_found = self._check_latest_release_update_url(repo)
 
         # Only update last_checked if there were actual changes
-        if new_count > 0 or deleted_tags or update_found:
+        if new_count > 0 or update_found:
             self.cache.update_repo_checked_time(repo)
 
-        return {"new_releases": new_count, "deleted_releases": len(deleted_tags), "update_url_updated": update_found}
+        return {"new_releases": new_count, "update_url_updated": update_found}
 
     def _parse_release(
         self, repo: str, release_data: dict[str, Any]
