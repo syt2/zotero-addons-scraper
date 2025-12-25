@@ -15,38 +15,7 @@ including the following steps:
 - Publish the JSON data to the [`publish`](https://github.com/syt2/zotero-addons-scraper/blob/publish/addon_infos.json) branch and the [latest release](https://github.com/syt2/zotero-addons-scraper/releases/latest)
 
 ## Contributing
-Adding a new add-on entry `{owner}#{repo}.json` in the [addons](addons) folder.  
-e.g.,
-``` json
-{
-  "repo": "syt2/zotero-addons",
-  "releases": [
-    {   
-      "targetZoteroVersion": "7",
-      "tagName": "latest"
-    },
-    {
-      "targetZoteroVersion": "6", 
-      "tagName": "0.6.0-6"
-    }
-  ]
-}
-```
- 
-- `repo`(required):  
-  GitHub repository of the plugin.  
-- `releases`(required):  
-  XPI releases information of the Add-on.  
-  Provide at least one valid release information.
-- `targetZoteroVersion`(required):  
-  Zotero compatibility version for the add-on.
-  Supports `"6"` or `"7"`.
-- `tagName`(required):
-  The release tag name in the GitHub repository.  
-  Supports `"latest"`, `"pre"` or `a specified tag name`.  
-  *If `"latest"` is used, script will automatically retrieve the latest release tag.* 
-  *If `"pre"` is used, script will automatically retrieve the latest pre-release tag.* 
-
+Adding a new add-on entry `{owner}@{repo}` in the [addons](addons) folder.
 
 ## Usage
 1. `fork` this repository
