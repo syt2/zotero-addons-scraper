@@ -1,0 +1,29 @@
+{
+  "last_checked": "2025-12-27T14:25:05.994298+00:00",
+  "checked_releases": [
+    {
+      "tag": "V1.0.0-beta.3",
+      "published_at": "2025-12-27T13:44:38Z",
+      "xpi_asset_id": 333461312,
+      "xpi_name": "pdf-ai-talk.xpi",
+      "xpi_download_url": "https://github.com/syt2/pdf-ai-talk/releases/download/V1.0.0-beta.3/pdf-ai-talk.xpi",
+      "addon_id": "pdf-ai-talk@zotero.plugin",
+      "addon_name": "PDF AI Talk",
+      "addon_version": "1.0.0-beta.3",
+      "addon_description": "Zotero PDF AI Talk - Chat with AI about your PDF documents in Zotero",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/syt2/pdf-ai-talk/releases/download/release/update-beta.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2025-12-27T12:44:42Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    }
+  ]
+}
