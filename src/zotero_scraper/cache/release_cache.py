@@ -79,6 +79,15 @@ class CachedRelease:
         # Target Zotero version range: [X.0, X.999]
         target_min = f"{zotero_version}.0"
         target_max = f"{zotero_version}.999"
+        if zotero_version == "6":
+            target_min = f"{zotero_version}.0"
+            target_max = f"{zotero_version}.2"
+        elif zotero_version == "7":
+            target_min = f"{zotero_version}.0"
+            target_max = f"{zotero_version}.8"
+        elif zotero_version == "8":
+            target_min = f"{zotero_version}.0"
+            target_max = f"{zotero_version}.999"
 
         # Check if there's overlap between [min_ver, max_ver] and [target_min, target_max]
         # Overlap exists if: min_ver < target_max AND max_ver > target_min
