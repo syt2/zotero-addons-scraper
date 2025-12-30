@@ -63,24 +63,29 @@ class CachedRelease:
             zotero_version: Target version like "6" or "7" or "8".
 
         Returns:
-            True if compatible.
+            True if compatible (any version in the X.x series works).
         """
         from ..utils.version import compare_versions
 
         if not self.parse_success or not self.min_zotero_version:
             return False
 
-        # Normalize versions - replace * with appropriate values
+        # Normalize versions - same as Zotero's logic:
+        # min: replace * with 0 (lowest)
+        # max: replace * with 999 (highest)
         min_ver = self.min_zotero_version.replace("*", "0")
         max_ver = (self.max_zotero_version or "999").replace("*", "999")
 
-        # Target version X.0 must be within [min_version, max_version]
-        # e.g., for target "7", check if 7.0 >= min_ver and 7.0 <= max_ver
-        target = f"{zotero_version}.*"
+        # Target Zotero version range: [X.0, X.999]
+        target_min = f"{zotero_version}.0"
+        target_max = f"{zotero_version}.999"
 
+        # Check if there's overlap between [min_ver, max_ver] and [target_min, target_max]
+        # Overlap exists if: min_ver < target_max AND max_ver > target_min
+        # Use strict comparison to exclude edge cases like min=6.999 for Zotero 6
         return (
-            compare_versions(target, min_ver) >= 0
-            and compare_versions(target, max_ver) <= 0
+            compare_versions(min_ver, target_max) < 0
+            and compare_versions(max_ver, target_min) > 0
         )
 
 
