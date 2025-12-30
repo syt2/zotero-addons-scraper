@@ -172,8 +172,14 @@ class RepoCache:
         if not compatible:
             return None
 
-        # Sort by published_at descending to get latest
-        compatible.sort(key=lambda r: r.published_at, reverse=True)
+        # Sort by addon_version descending to get highest version
+        from functools import cmp_to_key
+        from ..utils.version import compare_versions
+
+        def cmp_release(a: CachedRelease, b: CachedRelease) -> int:
+            return -compare_versions(a.addon_version or "0", b.addon_version or "0")
+
+        compatible.sort(key=cmp_to_key(cmp_release))
         return compatible[0]
 
     def get_latest_release(self) -> Optional[CachedRelease]:
