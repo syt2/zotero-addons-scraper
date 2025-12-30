@@ -76,7 +76,7 @@ class CachedRelease:
 
         # Target version X.0 must be within [min_version, max_version]
         # e.g., for target "7", check if 7.0 >= min_ver and 7.0 <= max_ver
-        target = f"{zotero_version}.0"
+        target = f"{zotero_version}.*"
 
         return (
             compare_versions(target, min_ver) >= 0

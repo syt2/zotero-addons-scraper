@@ -37,15 +37,27 @@ def compare_versions(version1: Union[str, int], version2: Union[str, int]) -> in
         if p1 == "*" or p2 == "*":
             continue
 
-        # Try numeric comparison
-        try:
+        # Check if parts are numeric
+        p1_is_num = p1.isdigit()
+        p2_is_num = p2.isdigit()
+
+        if p1_is_num and p2_is_num:
+            # Both numeric - compare as integers
             n1, n2 = int(p1), int(p2)
             if n1 < n2:
                 return -1
             elif n1 > n2:
                 return 1
-        except ValueError:
-            # Fall back to string comparison for non-numeric parts
+        elif p1_is_num and not p2_is_num:
+            # p1 is numeric (stable), p2 is pre-release (alpha/beta/rc)
+            # Stable > pre-release, so p1 > p2
+            return 1
+        elif not p1_is_num and p2_is_num:
+            # p1 is pre-release, p2 is numeric (stable)
+            # Pre-release < stable, so p1 < p2
+            return -1
+        else:
+            # Both non-numeric - string comparison
             if p1 < p2:
                 return -1
             elif p1 > p2:
