@@ -1,0 +1,35 @@
+{
+  "last_checked": "2025-12-23T11:25:00.855403+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.1",
+      "published_at": "2025-12-14T11:09:40Z",
+      "xpi_asset_id": 328510094,
+      "xpi_name": "paper2slide.xpi",
+      "xpi_download_url": "https://github.com/ET06731/zotero-paper2slides/releases/download/v1.0.1/paper2slide.xpi",
+      "addon_id": "paper2slide@ETET06731.gemini",
+      "addon_name": "Paper2Slide",
+      "addon_version": "2.0.0",
+      "addon_description": "Generate HTML slides and Markdown notes from PDF using LLM (DeepSeek, OpenAI, Gemini, SiliconFlow, OpenRouter)",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://raw.githubusercontent.com/ET06731/zotero-paper2slides/main/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.0.0",
+      "published_at": "2025-12-13T09:04:42Z",
+      "xpi_asset_id": 328176576,
+      "xpi_name": "paper2slide.xpi",
+      "xpi_download_url": "https://github.com/ET06731/zotero-paper2slides/releases/download/v1.0.0/paper2slide.xpi",
+      "addon_id": "paper2slide@antigravity.gemini",
+      "addon_name": "Paper2Slide",
+      "addon_version": "2.0.0",
+      "addon_description": "Generate HTML slides from PDF attachments using LLM (DeepSeek, OpenAI, Gemini)",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://raw.githubusercontent.com/antigravity/paper2slide/main/update.json",
+      "parse_success": true
+    }
+  ]
+}
