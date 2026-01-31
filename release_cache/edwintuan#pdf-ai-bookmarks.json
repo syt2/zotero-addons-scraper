@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-01-29T03:10:09.454191+00:00",
+  "checked_releases": [
+    {
+      "tag": "xpi",
+      "published_at": "2026-01-26T10:06:29Z",
+      "xpi_asset_id": 346019754,
+      "xpi_name": "pdf-ai-bookmarks.xpi",
+      "xpi_download_url": "https://github.com/edwintuan/pdf-ai-bookmarks/releases/download/xpi/pdf-ai-bookmarks.xpi",
+      "addon_id": "pdf-ai-bookmarks@edwintuan.com",
+      "addon_name": "PDF AI Bookmarks",
+      "addon_version": "1.0.0",
+      "addon_description": "Generate AI-powered bookmarks for PDFs using Gemini.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/edwintuan/pdf-ai-bookmarks/releases/download/xpi/pdf-ai-bookmarks.xpi",
+      "parse_success": true
+    }
+  ]
+}
