@@ -67,13 +67,14 @@ class GitHubAPI:
 class XPIProxy:
     """XPI download proxy URLs."""
 
-    GHPROXY_BASE = "https://gh-proxy.com/"
+    GHPROXY_BASE = "https://gh-proxy.org/"
     KKGITHUB_DOMAIN = "kkgithub.com"
 
     @staticmethod
     def ghproxy_url(github_url: str) -> str:
         """Get ghProxy URL for a GitHub download URL."""
-        return f"{XPIProxy.GHPROXY_BASE}?q={quote(github_url, safe='')}"
+        # return f"{XPIProxy.GHPROXY_BASE}/{quote(github_url, safe='')}"
+        return f"{XPIProxy.GHPROXY_BASE}/{github_url}"
 
     @staticmethod
     def kkgithub_url(github_url: str) -> str:
