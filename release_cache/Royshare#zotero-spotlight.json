@@ -1,0 +1,74 @@
+{
+  "last_checked": "2026-02-21T04:52:53.512200+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-01-27T14:18:58Z",
+      "xpi_asset_id": 346653308,
+      "xpi_name": "zotero-spotlight.xpi",
+      "xpi_download_url": "https://github.com/Royshare/zotero-spotlight/releases/download/v0.1.0/zotero-spotlight.xpi",
+      "addon_id": "zotero-spotlight@outlook.com",
+      "addon_name": "Zotero Spotlight",
+      "addon_version": "0.1.0",
+      "addon_description": "Zotero Spotlight",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/Royshare/zotero-spotlight/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-01-27T14:19:01Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "v0.2.0",
+      "published_at": "2026-02-14T04:32:58Z",
+      "xpi_asset_id": 355721405,
+      "xpi_name": "zotero-spotlight.xpi",
+      "xpi_download_url": "https://github.com/Royshare/zotero-spotlight/releases/download/v0.2.0/zotero-spotlight.xpi",
+      "addon_id": "zotero-spotlight@outlook.com",
+      "addon_name": "Zotero Spotlight",
+      "addon_version": "0.2.0",
+      "addon_description": "Zotero Spotlight",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/Royshare/zotero-spotlight/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.1",
+      "published_at": "2026-02-14T01:22:51Z",
+      "xpi_asset_id": 355651845,
+      "xpi_name": "zotero-spotlight.xpi",
+      "xpi_download_url": "https://github.com/Royshare/zotero-spotlight/releases/download/v0.1.1/zotero-spotlight.xpi",
+      "addon_id": "zotero-spotlight@outlook.com",
+      "addon_name": "Zotero Spotlight",
+      "addon_version": "0.1.1",
+      "addon_description": "Zotero Spotlight",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/Royshare/zotero-spotlight/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.3.0",
+      "published_at": "2026-02-21T00:28:45Z",
+      "xpi_asset_id": 359452653,
+      "xpi_name": "zotero-spotlight.xpi",
+      "xpi_download_url": "https://github.com/Royshare/zotero-spotlight/releases/download/v0.3.0/zotero-spotlight.xpi",
+      "addon_id": "zotero-spotlight@outlook.com",
+      "addon_name": "Zotero Spotlight",
+      "addon_version": "0.3.0",
+      "addon_description": "Zotero Spotlight",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/Royshare/zotero-spotlight/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}
