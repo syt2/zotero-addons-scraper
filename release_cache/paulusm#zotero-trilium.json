@@ -1,0 +1,49 @@
+{
+  "last_checked": "2026-02-04T14:39:21.287687+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0",
+      "published_at": "2025-03-01T21:28:46Z",
+      "xpi_asset_id": 233745551,
+      "xpi_name": "zotero-trilium-1.0.xpi",
+      "xpi_download_url": "https://github.com/paulusm/zotero-trilium/releases/download/v1.0/zotero-trilium-1.0.xpi",
+      "addon_id": "zotero-trilium@jellytussle.org",
+      "addon_name": "Zotero-Trilium",
+      "addon_version": "1.0",
+      "addon_description": "Send references and notes to Trilium Next",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.1.*",
+      "update_url": "https://www.zotero.org/download/plugins/zotero-trilium/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.0.1-beta",
+      "published_at": "2023-01-23T21:27:53Z",
+      "xpi_asset_id": 93305245,
+      "xpi_name": "zotero-trilium-0.0.1.xpi",
+      "xpi_download_url": "https://github.com/paulusm/zotero-trilium/releases/download/v0.0.1-beta/zotero-trilium-0.0.1.xpi",
+      "addon_id": "trilium@jellytussle.org",
+      "addon_name": "Zotero-Trilium",
+      "addon_version": "0.0.1",
+      "addon_description": "Export Zotero Citations and Notes to Trilium Notes",
+      "min_zotero_version": "5.0.79",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.1",
+      "published_at": "2026-02-04T13:57:41Z",
+      "xpi_asset_id": 350600153,
+      "xpi_name": "zotero-trilium-1.1.xpi",
+      "xpi_download_url": "https://github.com/paulusm/zotero-trilium/releases/download/v1.1/zotero-trilium-1.1.xpi",
+      "addon_id": "zotero-trilium@jellytussle.org",
+      "addon_name": "Zotero-Trilium",
+      "addon_version": "1.1",
+      "addon_description": "Send references and notes to Trilium Next",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.1.*",
+      "update_url": "https://www.zotero.org/download/plugins/zotero-trilium/updates.json",
+      "parse_success": true
+    }
+  ]
+}
