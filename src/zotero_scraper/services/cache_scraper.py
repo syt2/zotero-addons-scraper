@@ -17,7 +17,7 @@ from .publisher import PublisherService
 logger = get_logger("services.cache_scraper")
 
 # Target Zotero versions to generate releases for
-TARGET_ZOTERO_VERSIONS = ["8", "7", "6"]
+TARGET_ZOTERO_VERSIONS = ["9", "8", "7", "6"]
 
 
 class CacheScraper:
