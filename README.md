@@ -21,6 +21,3 @@ Adding a new add-on entry `{owner}@{repo}` in the [addons](addons) folder.
 1. `fork` this repository
 2. Enable actions and scheduled workflow in `Actions` page of forked repository
 
-## Generated Format
-The output format for add-on information follows the format specified in [zotero-chinese/zotero-plugins](https://github.com/zotero-chinese/zotero-plugins).
-
