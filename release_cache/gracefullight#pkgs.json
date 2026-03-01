@@ -1,0 +1,506 @@
+{
+  "last_checked": "2026-01-29T03:12:39.098720+00:00",
+  "checked_releases": [
+    {
+      "tag": "zotero-plugin-uts@0.1.2",
+      "published_at": "2026-01-28T12:02:29Z",
+      "xpi_asset_id": 347122489,
+      "xpi_name": "zotero-plugin-uts@0.1.2.xpi",
+      "xpi_download_url": "https://github.com/gracefullight/pkgs/releases/download/zotero-plugin-uts%400.1.2/zotero-plugin-uts%400.1.2.xpi",
+      "addon_id": "uts-citation@gracefullight.dev",
+      "addon_name": "UTS APA 7th Citation",
+      "addon_version": "0.1.2",
+      "addon_description": "Copy bibliography in UTS APA 7th format to clipboard",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "8.0.*",
+      "update_url": "https://raw.githubusercontent.com/gracefullight/pkgs/main/packages/zotero-plugin-uts/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "zotero-plugin-uts@0.1.1",
+      "published_at": "2026-01-27T14:13:54Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "opencode-plugin-mimic@0.1.11",
+      "published_at": "2026-01-27T13:09:25Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "opencode-plugin-mimic@0.1.10",
+      "published_at": "2026-01-24T01:29:39Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "opencode-plugin-mimic@0.1.9",
+      "published_at": "2026-01-23T18:08:18Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "opencode-plugin-mimic@0.1.8",
+      "published_at": "2026-01-23T10:33:19Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "opencode-plugin-mimic@0.1.7",
+      "published_at": "2026-01-23T08:03:47Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "opencode-plugin-mimic@0.1.6",
+      "published_at": "2026-01-23T02:06:41Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "opencode-plugin-mimic@0.1.5",
+      "published_at": "2026-01-22T23:18:48Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "opencode-plugin-mimic@0.1.4",
+      "published_at": "2026-01-22T22:01:46Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "opencode-plugin-mimic@0.1.3",
+      "published_at": "2026-01-22T14:34:30Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "opencode-plugin-mimic@0.1.2",
+      "published_at": "2026-01-22T14:21:17Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "opencode-plugin-mimic@0.1.1",
+      "published_at": "2026-01-22T12:40:40Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "create-fullstack-starter@0.2.2",
+      "published_at": "2026-01-22T06:52:52Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/validate-branch@1.1.2",
+      "published_at": "2026-01-22T22:01:45Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/validate-branch@1.1.1",
+      "published_at": "2026-01-22T06:52:51Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/saju@1.1.3",
+      "published_at": "2026-01-22T22:01:45Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/saju@1.1.2",
+      "published_at": "2026-01-22T06:52:51Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/ng-daum-address@1.0.1",
+      "published_at": "2026-01-22T06:52:52Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/mcp-cafe24-admin@0.2.1",
+      "published_at": "2026-01-22T06:56:53Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/mcp-cafe24-admin@0.1.4",
+      "published_at": "2026-01-22T06:52:53Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/biome-plugin@0.2.2",
+      "published_at": "2026-01-22T22:01:46Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/biome-plugin@0.2.1",
+      "published_at": "2026-01-22T06:56:53Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/biome-plugin@0.1.2",
+      "published_at": "2026-01-22T06:52:53Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/saju@1.1.1",
+      "published_at": "2026-01-21T09:17:03Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/mcp-cafe24-admin@0.1.3",
+      "published_at": "2026-01-21T11:18:16Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/mcp-cafe24-admin@0.1.2",
+      "published_at": "2026-01-21T09:17:03Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/mcp-cafe24-admin@0.1.1",
+      "published_at": "2026-01-21T08:56:40Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/biome-plugin@0.1.1",
+      "published_at": "2026-01-21T11:20:10Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/ng-daum-address@1.0.0",
+      "published_at": "2026-01-16T09:22:00Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "saju-dart@0.1.1",
+      "published_at": "2026-01-14T07:46:56Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "create-fullstack-starter@0.2.1",
+      "published_at": "2026-01-14T07:46:55Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/validate-branch@1.1.0",
+      "published_at": "2026-01-14T07:46:54Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/saju@1.1.0",
+      "published_at": "2026-01-14T07:46:54Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "create-fullstack-starter@0.2.0",
+      "published_at": "2026-01-13T05:23:22Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/validate-branch@1.0.1",
+      "published_at": "2026-01-12T12:48:17Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/validate-branch@1.0.0",
+      "published_at": "2026-01-12T12:40:58Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/saju@1.0.1",
+      "published_at": "2026-01-12T12:48:14Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/saju@1.0.0",
+      "published_at": "2026-01-11T02:49:01Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/saju@0.7.0",
+      "published_at": "2026-01-08T08:00:51Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/saju@0.6.0",
+      "published_at": "2026-01-08T06:26:05Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/saju@0.5.0",
+      "published_at": "2026-01-08T05:21:17Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/saju@0.4.2",
+      "published_at": "2026-01-08T04:21:45Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/saju@0.4.1",
+      "published_at": "2026-01-08T04:07:02Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/saju@0.3.0",
+      "published_at": "2026-01-08T02:11:44Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/react-share@0.1.1",
+      "published_at": "2026-01-29T12:33:30Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/react-share@0.1.2",
+      "published_at": "2026-01-30T09:14:08Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "saju-dart@0.1.2",
+      "published_at": "2026-02-01T06:24:04Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/saju@1.2.0",
+      "published_at": "2026-02-01T06:24:04Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/react-share@0.1.3",
+      "published_at": "2026-02-01T06:24:05Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/tems-trp-parser@0.1.1",
+      "published_at": "2026-02-03T13:43:53Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/mcp-cafe24-admin@0.2.2",
+      "published_at": "2026-02-04T00:03:16Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/react-share@0.1.4",
+      "published_at": "2026-02-13T10:53:26Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "saju-dart@0.1.3",
+      "published_at": "2026-02-21T05:57:31Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "@gracefullight/saju@1.3.0",
+      "published_at": "2026-02-21T05:57:30Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    }
+  ]
+}
