@@ -1,0 +1,59 @@
+{
+  "last_checked": "2026-01-29T03:14:55.731929+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.2",
+      "published_at": "2026-01-25T07:08:47Z",
+      "xpi_asset_id": 345558149,
+      "xpi_name": "ai-assistant.xpi",
+      "xpi_download_url": "https://github.com/jetxa/zotero-ai-assistant/releases/download/v1.0.2/ai-assistant.xpi",
+      "addon_id": "zotero-ai-assistant@jetxa.github.io",
+      "addon_name": "AI Assistant",
+      "addon_version": "1.0.2",
+      "addon_description": "AI Assistant for Zotero",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/jetxa/zotero-ai-assistant/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.0.1",
+      "published_at": "2026-01-24T14:39:02Z",
+      "xpi_asset_id": 345266999,
+      "xpi_name": "ai-assistant.xpi",
+      "xpi_download_url": "https://github.com/jetxa/zotero-ai-assistant/releases/download/v1.0.1/ai-assistant.xpi",
+      "addon_id": "zotero-ai-assistant@jetxa.github.io",
+      "addon_name": "AI Assistant",
+      "addon_version": "1.0.1",
+      "addon_description": "AI Assistant for Zotero",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/jetxa/zotero-ai-assistant/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.0.0",
+      "published_at": "2026-01-24T08:59:49Z",
+      "xpi_asset_id": 345194016,
+      "xpi_name": "ai-assistant.xpi",
+      "xpi_download_url": "https://github.com/jetxa/zotero-ai-assistant/releases/download/v1.0.0/ai-assistant.xpi",
+      "addon_id": "zotero-ai-assistant@jetxa.github.io",
+      "addon_name": "AI Assistant",
+      "addon_version": "1.0.0",
+      "addon_description": "AI Assistant for Zotero",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/jetxa/zotero-ai-assistant/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-01-24T08:59:52Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    }
+  ]
+}

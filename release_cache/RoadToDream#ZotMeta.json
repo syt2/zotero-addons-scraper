@@ -1,0 +1,35 @@
+{
+  "last_checked": "2025-12-23T11:30:18.079415+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.1",
+      "published_at": "2023-09-12T06:00:11Z",
+      "xpi_asset_id": 125636411,
+      "xpi_name": "zotmeta-1.1.xpi",
+      "xpi_download_url": "https://github.com/RoadToDream/ZotMeta/releases/download/v1.1/zotmeta-1.1.xpi",
+      "addon_id": "zotmeta@roadtodream.tech",
+      "addon_name": "ZotMeta",
+      "addon_version": "1.1",
+      "addon_description": "ZotMeta",
+      "min_zotero_version": "6.0",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://raw.githubusercontent.com/RoadToDream/ZotMeta/master/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.0",
+      "published_at": "2023-09-11T01:47:07Z",
+      "xpi_asset_id": 125455458,
+      "xpi_name": "zotmeta-1.0.xpi",
+      "xpi_download_url": "https://github.com/RoadToDream/ZotMeta/releases/download/v1.1/zotmeta-1.1.xpi",
+      "addon_id": "zotmeta@roadtodream.tech",
+      "addon_name": "ZotMeta",
+      "addon_version": "1.1",
+      "addon_description": "ZotMeta",
+      "min_zotero_version": "6.0",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://raw.githubusercontent.com/RoadToDream/ZotMeta/master/updates.json",
+      "parse_success": true
+    }
+  ]
+}
