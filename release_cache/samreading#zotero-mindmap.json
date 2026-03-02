@@ -1,0 +1,50 @@
+{
+  "last_checked": "2025-12-23T11:29:45.589440+00:00",
+  "checked_releases": [
+    {
+      "tag": "1.0.3",
+      "published_at": "2025-11-17T06:36:33Z",
+      "xpi_asset_id": 317335720,
+      "xpi_name": "zotero-mindmap-plugin.xpi",
+      "xpi_download_url": "https://github.com/samreading/zotero-mindmap/releases/download/1.0.3/zotero-mindmap-plugin.xpi",
+      "addon_id": "vboard@163.com",
+      "addon_name": "Zotero Mindmap Plugin",
+      "addon_version": "1.0.3",
+      "addon_description": "Zotero mindmap",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/samreading/zotero-mindmap/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "1.0.2",
+      "published_at": "2025-09-16T04:20:17Z",
+      "xpi_asset_id": 293698395,
+      "xpi_name": "zotero-mindmap-plugin.xpi",
+      "xpi_download_url": "https://github.com/samreading/zotero-mindmap/releases/download/1.0.2/zotero-mindmap-plugin.xpi",
+      "addon_id": "vboard@163.com",
+      "addon_name": "Zotero Mindmap Plugin",
+      "addon_version": "1.0.2",
+      "addon_description": "Zotero mindmap",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/samreading/zotero-mindmap/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "1.0.0",
+      "published_at": "2025-09-03T11:51:44Z",
+      "xpi_asset_id": 317335643,
+      "xpi_name": "zotero-mindmap-plugin.xpi",
+      "xpi_download_url": "https://github.com/samreading/zotero-mindmap/releases/download/1.0.0/zotero-mindmap-plugin.xpi",
+      "addon_id": "vboard@163.com",
+      "addon_name": "Zotero Mindmap Plugin",
+      "addon_version": "1.0.3",
+      "addon_description": "Zotero mindmap",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/samreading/zotero-mindmap/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}

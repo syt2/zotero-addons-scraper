@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-01-29T03:12:21.860327+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.0",
+      "published_at": "2026-01-24T08:35:44Z",
+      "xpi_asset_id": 345189843,
+      "xpi_name": "zotero-mcp-bridge-1.0.0.xpi",
+      "xpi_download_url": "https://github.com/introfini/mcp-server-zotero-dev/releases/download/v1.0.0/zotero-mcp-bridge-1.0.0.xpi",
+      "addon_id": "mcp-rdp@zotero.org",
+      "addon_name": "MCP Bridge for Zotero",
+      "addon_version": "1.0.0",
+      "addon_description": "Enables Remote Debugging Protocol for AI-assisted Zotero plugin development",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://raw.githubusercontent.com/introfini/mcp-server-zotero-dev/main/update.json",
+      "parse_success": true
+    }
+  ]
+}
