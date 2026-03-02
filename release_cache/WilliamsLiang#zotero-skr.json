@@ -1,0 +1,65 @@
+{
+  "last_checked": "2025-12-23T11:27:01.760626+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.1.1",
+      "published_at": "2025-06-28T10:18:17Z",
+      "xpi_asset_id": 268116594,
+      "xpi_name": "skr-win-zotero7-1.1.1.xpi",
+      "xpi_download_url": "https://github.com/WilliamsLiang/zotero-skr/releases/download/v1.1.1/skr-win-zotero7-1.1.1.xpi",
+      "addon_id": "SKR@zotero.org",
+      "addon_name": "Zotero-SKR",
+      "addon_version": "1.1.1",
+      "addon_description": "This is a tool used to generate a review based on the relevant literature provided by users.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.*.*",
+      "update_url": "https://raw.githubusercontent.com/WilliamsLiang/zotero-skr/master/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.1.0",
+      "published_at": "2025-06-05T08:37:42Z",
+      "xpi_asset_id": 261488473,
+      "xpi_name": "skr-win-zotero7-1.1.0.xpi",
+      "xpi_download_url": "https://github.com/WilliamsLiang/zotero-skr/releases/latest/download/skr-win-zotero7-1.1.1.xpi",
+      "addon_id": "SKR@zotero.org",
+      "addon_name": "Zotero-SKR",
+      "addon_version": "1.1.1",
+      "addon_description": "This is a tool used to generate a review based on the relevant literature provided by users.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.*.*",
+      "update_url": "https://raw.githubusercontent.com/WilliamsLiang/zotero-skr/master/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.0.1",
+      "published_at": "2025-06-05T08:24:46Z",
+      "xpi_asset_id": 261171109,
+      "xpi_name": "skr-win-zotero7-1.0.1.xpi",
+      "xpi_download_url": "https://github.com/WilliamsLiang/zotero-skr/releases/latest/download/skr-win-zotero7-1.1.1.xpi",
+      "addon_id": "SKR@zotero.org",
+      "addon_name": "Zotero-SKR",
+      "addon_version": "1.1.1",
+      "addon_description": "This is a tool used to generate a review based on the relevant literature provided by users.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.*.*",
+      "update_url": "https://raw.githubusercontent.com/WilliamsLiang/zotero-skr/master/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.0.0",
+      "published_at": "2025-05-21T13:10:01Z",
+      "xpi_asset_id": 256697447,
+      "xpi_name": "skr-win-zotero7-1.0.0.xpi",
+      "xpi_download_url": "https://github.com/WilliamsLiang/zotero-skr/releases/latest/download/skr-win-zotero7-1.1.1.xpi",
+      "addon_id": "SKR@zotero.org",
+      "addon_name": "Zotero-SKR",
+      "addon_version": "1.1.1",
+      "addon_description": "This is a tool used to generate a review based on the relevant literature provided by users.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.*.*",
+      "update_url": "https://raw.githubusercontent.com/WilliamsLiang/zotero-skr/master/updates.json",
+      "parse_success": true
+    }
+  ]
+}

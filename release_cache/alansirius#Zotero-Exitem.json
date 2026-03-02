@@ -1,0 +1,50 @@
+{
+  "last_checked": "2026-02-28T04:20:27.584886+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.3",
+      "published_at": "2026-02-27T15:10:58Z",
+      "xpi_asset_id": 363545442,
+      "xpi_name": "zotero-exitem.xpi",
+      "xpi_download_url": "https://github.com/alansirius/Zotero-Exitem/releases/download/v0.1.3/zotero-exitem.xpi",
+      "addon_id": "exitem@exitem.local",
+      "addon_name": "Zotero-Exitem",
+      "addon_version": "0.1.3",
+      "addon_description": "Zotero-Exitem",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/alansirius/Zotero-Exitem/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "new-bugfix",
+      "published_at": "2026-02-26T13:40:26Z",
+      "xpi_asset_id": 362848248,
+      "xpi_name": "zotero-exitem.xpi",
+      "xpi_download_url": "https://github.com/alansirius/Zotero-Exitem/releases/download/new-bugfix/zotero-exitem.xpi",
+      "addon_id": "exitem@exitem.local",
+      "addon_name": "Zotero-Exitem",
+      "addon_version": "3.1.0",
+      "addon_description": "Zotero-Exitem",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/alansirius/Zotero-Exitem/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "new",
+      "published_at": "2026-02-26T11:46:22Z",
+      "xpi_asset_id": 362797128,
+      "xpi_name": "zotero-exitem.xpi",
+      "xpi_download_url": "https://github.com/alansirius/Zotero-Exitem/releases/download/new/zotero-exitem.xpi",
+      "addon_id": "exitem@exitem.local",
+      "addon_name": "Zotero-Exitem",
+      "addon_version": "3.1.0",
+      "addon_description": "Zotero-Exitem",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/alansirius/Zotero-Exitem/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "last_checked": "2026-01-29T03:15:40.167624+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.0",
+      "published_at": "2025-09-25T08:53:56Z",
+      "xpi_asset_id": 297090566,
+      "xpi_name": "zotero-cite-preview-resizer.xpi",
+      "xpi_download_url": "https://github.com/jagaldol/zotero-cite-preview-resizer/releases/download/v1.0.0/zotero-cite-preview-resizer.xpi",
+      "addon_id": "zoterocitepreviewresizer@local",
+      "addon_name": "Zotero Cite Preview Resizer",
+      "addon_version": "1.0.0",
+      "addon_description": "Resize Zotero cite/preview popups with drag and prefs",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/jagaldol/zotero-cite-preview-resizer/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2025-09-25T08:53:59Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    }
+  ]
+}
