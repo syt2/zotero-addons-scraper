@@ -125,8 +125,15 @@ class RepoCache:
         )
 
     def get_checked_tags(self) -> set[str]:
-        """Get set of already checked tags."""
-        return {r.tag for r in self.checked_releases}
+        """Get set of already checked tags.
+
+        Excludes releases that failed due to download errors,
+        so they can be retried.
+        """
+        return {
+            r.tag for r in self.checked_releases
+            if not (not r.parse_success and r.parse_error == "Download failed")
+        }
 
     def get_release_by_tag(self, tag: str) -> Optional[CachedRelease]:
         """Get cached release by tag."""
