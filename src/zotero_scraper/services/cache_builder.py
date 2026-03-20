@@ -294,7 +294,8 @@ class ReleaseCacheBuilder:
 
         # Download XPI
         owner, name = repo.split("/")
-        filename = f"{owner}#{name}+{tag}@{xpi_id}.xpi"
+        safe_tag = tag.replace("/", "_")
+        filename = f"{owner}#{name}+{safe_tag}@{xpi_id}.xpi"
         xpi_path = self.downloader.download(xpi_url, filename)
 
         if not xpi_path:

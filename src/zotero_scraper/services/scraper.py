@@ -190,8 +190,9 @@ class AddonScraper:
         release.releaseDate = xpi_asset.updated_at
 
         # Download and parse XPI
+        safe_tag = release.tagName.replace("/", "_")
         xpi_filename = (
-            f"{plugin.owner}#{plugin.repository}+{release.tagName}@{xpi_asset.id}.xpi"
+            f"{plugin.owner}#{plugin.repository}+{safe_tag}@{xpi_asset.id}.xpi"
         )
 
         # Determine priority sources based on Zotero version
