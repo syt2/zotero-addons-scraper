@@ -1,0 +1,35 @@
+{
+  "last_checked": "2025-12-23T11:30:03.907804+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.1",
+      "published_at": "2024-12-04T08:48:03Z",
+      "xpi_asset_id": 210954602,
+      "xpi_name": "zotero-excalidraw-1.1.0.xpi",
+      "xpi_download_url": "https://github.com/018/zotero-excalidraw/releases/download/v1.1/zotero-excalidraw-1.1.0.xpi",
+      "addon_id": "zotero-excalidraw@zotero.org",
+      "addon_name": "ZoteroExcalidraw",
+      "addon_version": "1.1.0",
+      "addon_description": "Writing card is more smooth, reading card is more smooth.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.*.*",
+      "update_url": "https://raw.githubusercontent.com/018/zotero-excalidraw/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.0",
+      "published_at": "2023-12-27T08:53:38Z",
+      "xpi_asset_id": 180094849,
+      "xpi_name": "zotero-excalidraw-1.0.2.xpi",
+      "xpi_download_url": "https://github.com/018/zotero-excalidraw/releases/latest/download/zotero-excalidraw-1.1.0.xpi",
+      "addon_id": "zotero-excalidraw@zotero.org",
+      "addon_name": "ZoteroExcalidraw",
+      "addon_version": "1.1.0",
+      "addon_description": "Writing card is more smooth, reading card is more smooth.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.*.*",
+      "update_url": "https://raw.githubusercontent.com/018/zotero-excalidraw/main/updates.json",
+      "parse_success": true
+    }
+  ]
+}

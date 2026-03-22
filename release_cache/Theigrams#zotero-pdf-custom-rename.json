@@ -1,0 +1,80 @@
+{
+  "last_checked": "2025-12-23T11:27:28.007836+00:00",
+  "checked_releases": [
+    {
+      "tag": "1.0.0",
+      "published_at": "2024-08-24T08:50:30Z",
+      "xpi_asset_id": 188021296,
+      "xpi_name": "zotero-pdf-rename.xpi",
+      "xpi_download_url": "https://github.com/Theigrams/zotero-pdf-custom-rename/releases/download/1.0.0/zotero-pdf-rename.xpi",
+      "addon_id": "pdfrename@theigrams.com",
+      "addon_name": "Zotero PDF Rename",
+      "addon_version": "1.0.0",
+      "addon_description": "Custom rename pdf",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://raw.githubusercontent.com/Theigrams/zotero-pdf-custom-rename/main/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "0.2.2",
+      "published_at": "2023-06-23T16:25:43Z",
+      "xpi_asset_id": 114059255,
+      "xpi_name": "zotero-pdf-rename.xpi",
+      "xpi_download_url": "https://github.com/Theigrams/zotero-pdf-custom-rename/releases/latest/download/zotero-pdf-rename.xpi",
+      "addon_id": "pdfrename@theigrams.com",
+      "addon_name": "Zotero PDF Rename",
+      "addon_version": "1.0.0",
+      "addon_description": "Custom rename pdf",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://raw.githubusercontent.com/Theigrams/zotero-pdf-custom-rename/main/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "0.2.1",
+      "published_at": "2023-06-23T16:09:29Z",
+      "xpi_asset_id": 114057783,
+      "xpi_name": "zotero-pdf-rename.xpi",
+      "xpi_download_url": "https://github.com/Theigrams/zotero-pdf-custom-rename/releases/latest/download/zotero-pdf-rename.xpi",
+      "addon_id": "pdfrename@theigrams.com",
+      "addon_name": "Zotero PDF Rename",
+      "addon_version": "1.0.0",
+      "addon_description": "Custom rename pdf",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://raw.githubusercontent.com/Theigrams/zotero-pdf-custom-rename/main/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "0.2.0",
+      "published_at": "2023-06-22T21:26:03Z",
+      "xpi_asset_id": 113939006,
+      "xpi_name": "zotero-pdf-rename.xpi",
+      "xpi_download_url": "https://github.com/Theigrams/zotero-pdf-custom-rename/releases/latest/download/zotero-pdf-rename.xpi",
+      "addon_id": "pdfrename@theigrams.com",
+      "addon_name": "Zotero PDF Rename",
+      "addon_version": "1.0.0",
+      "addon_description": "Custom rename pdf",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://raw.githubusercontent.com/Theigrams/zotero-pdf-custom-rename/main/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "0.1.1",
+      "published_at": "2023-06-22T09:54:08Z",
+      "xpi_asset_id": 113860362,
+      "xpi_name": "zotero-pdf-rename.xpi",
+      "xpi_download_url": "https://github.com/Theigrams/zotero-pdf-custom-rename/releases/latest/download/zotero-pdf-rename.xpi",
+      "addon_id": "pdfrename@theigrams.com",
+      "addon_name": "Zotero PDF Rename",
+      "addon_version": "1.0.0",
+      "addon_description": "Custom rename pdf",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://raw.githubusercontent.com/Theigrams/zotero-pdf-custom-rename/main/update.json",
+      "parse_success": true
+    }
+  ]
+}

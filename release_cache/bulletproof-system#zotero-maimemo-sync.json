@@ -1,0 +1,89 @@
+{
+  "last_checked": "2026-01-29T03:13:03.687785+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.6",
+      "published_at": "2025-11-23T05:48:04Z",
+      "xpi_asset_id": 319834869,
+      "xpi_name": "zotero-maimemo-sync.xpi",
+      "xpi_download_url": "https://github.com/bulletproof-system/zotero-maimemo-sync/releases/download/v0.1.6/zotero-maimemo-sync.xpi",
+      "addon_id": "zoteromaimemosync@luotiantian.com",
+      "addon_name": "Zotero Maimemo Sync",
+      "addon_version": "0.1.6",
+      "addon_description": "A Zotero plugin that syncs highlighted words from Zotero notes to Maimemo, enabling seamless vocabulary learning.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://github.com/bulletproof-system/zotero-maimemo-sync/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.5",
+      "published_at": "2024-12-26T08:53:35Z",
+      "xpi_asset_id": 215939676,
+      "xpi_name": "zotero-maimemo-sync.xpi",
+      "xpi_download_url": "https://github.com/bulletproof-system/zotero-maimemo-sync/releases/download/v0.1.5/zotero-maimemo-sync.xpi",
+      "addon_id": "zoteromaimemosync@euclpts.com",
+      "addon_name": "Zotero Maimemo Sync",
+      "addon_version": "0.1.5",
+      "addon_description": "A Zotero plugin that syncs highlighted words from Zotero notes to Maimemo, enabling seamless vocabulary learning.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://github.com/bulletproof-system/zotero-maimemo-sync/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.4",
+      "published_at": "2024-10-06T06:29:19Z",
+      "xpi_asset_id": 197186872,
+      "xpi_name": "zotero-maimemo-sync.xpi",
+      "xpi_download_url": "https://github.com/bulletproof-system/zotero-maimemo-sync/releases/download/v0.1.4/zotero-maimemo-sync.xpi",
+      "addon_id": "zoteromaimemosync@euclpts.com",
+      "addon_name": "Zotero Maimemo Sync",
+      "addon_version": "0.1.4",
+      "addon_description": "A Zotero plugin that syncs highlighted words from Zotero notes to Maimemo, enabling seamless vocabulary learning.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://github.com/bulletproof-system/zotero-maimemo-sync/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.3",
+      "published_at": "2024-10-05T02:45:07Z",
+      "xpi_asset_id": 197004408,
+      "xpi_name": "zotero-maimeo-sync.xpi",
+      "xpi_download_url": "https://github.com/bulletproof-system/zotero-maimemo-sync/releases/download/v0.1.3/zotero-maimeo-sync.xpi",
+      "addon_id": "zoteromaimemosync@euclpts.com",
+      "addon_name": "Zotero Maimeo Sync",
+      "addon_version": "0.1.3",
+      "addon_description": "A Zotero plugin that syncs highlighted words from Zotero notes to Maimemo, enabling seamless vocabulary learning.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://github.com/bulletproof-system/zotero-maimemo-sync/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.2",
+      "published_at": "2024-10-02T07:11:10Z",
+      "xpi_asset_id": 196327462,
+      "xpi_name": "zotero-maimeo-sync.xpi",
+      "xpi_download_url": "https://github.com/bulletproof-system/zotero-maimemo-sync/releases/download/v0.1.2/zotero-maimeo-sync.xpi",
+      "addon_id": "zoteromaimemosync@euclpts.com",
+      "addon_name": "Zotero Maimeo Sync",
+      "addon_version": "0.1.2",
+      "addon_description": "A Zotero plugin that syncs highlighted words from Zotero notes to Maimemo, enabling seamless vocabulary learning.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://github.com/bulletproof-system/zotero-maimemo-sync/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2024-10-02T07:11:13Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    }
+  ]
+}
