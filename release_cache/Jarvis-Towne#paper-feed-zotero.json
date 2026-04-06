@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-04-03T08:40:57.982909+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-03-27T13:44:01Z",
+      "xpi_asset_id": 382905503,
+      "xpi_name": "paper-feed-v0.1.0.xpi",
+      "xpi_download_url": "https://github.com/Jarvis-Towne/paper-feed-zotero/releases/download/v0.1.0/paper-feed-v0.1.0.xpi",
+      "addon_id": "paper-feed@rss.local",
+      "addon_name": "Paper Feed",
+      "addon_version": "0.1.0",
+      "addon_description": "Automated literature filtering and delivery tool for Zotero.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "99.*",
+      "update_url": "https://github.com/Jarvis-Towne/paper-feed-zotero/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}
