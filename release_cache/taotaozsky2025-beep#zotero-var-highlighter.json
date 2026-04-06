@@ -1,0 +1,29 @@
+{
+  "last_checked": "2026-02-06T14:29:11.183670+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-02-02T10:55:15Z",
+      "xpi_asset_id": 349511140,
+      "xpi_name": "zotero-var-highlighter.xpi",
+      "xpi_download_url": "https://github.com/taotaozsky2025-beep/zotero-var-highlighter/releases/download/v0.1.0/zotero-var-highlighter.xpi",
+      "addon_id": "zotero-var-highlighter@zotero-var-highlighter",
+      "addon_name": "Zotero Var Highlighter",
+      "addon_version": "0.1.0",
+      "addon_description": "A Zotero plugin to highlight variables and trace their definitions in PDF reader.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/taotaozsky2025-beep/zotero-var-highlighter/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-02-02T10:55:18Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    }
+  ]
+}
