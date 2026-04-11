@@ -17,6 +17,24 @@ including the following steps:
 ## Contributing
 Adding a new add-on entry `{owner}@{repo}` in the [addons](addons) folder.
 
+Optionally, add tags by writing JSON content to the file:
+```json
+{"tags": ["reader"]}
+```
+
+Available tags:
+
+| Tag | Description |
+|---|---|
+| `ai` | AI-powered features (summarization, chat, translation via LLM) |
+| `metadata` | Metadata retrieval, citation counts, impact factor, formatting |
+| `reader` | PDF reading experience, annotation, highlighting |
+| `notes` | Note-taking, markdown export, knowledge management |
+| `attachment` | File management, attachment organization, OCR |
+| `interface` | UI enhancements, themes, column customization |
+| `integration` | Integration with external services (Notion, Obsidian, Word, etc.) |
+| `utility` | Zotero system tools (automation, deduplication, plugin management) |
+
 ## Usage
 1. `fork` this repository
 2. Enable actions and scheduled workflow in `Actions` page of forked repository
