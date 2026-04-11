@@ -211,3 +211,27 @@ class TestAddonInfo:
         data = {"repo": "owner/repo"}
         addon = AddonInfo.from_dict(data)
         assert addon.tags == []
+
+    def test_to_dict_includes_recommended_when_true(self):
+        """Test to_dict includes recommended field only when True."""
+        addon = AddonInfo(repo="owner/repo", recommended=True)
+        result = addon.to_dict()
+        assert result["recommended"] is True
+
+    def test_to_dict_omits_recommended_when_false(self):
+        """Test to_dict omits recommended key when False (backward compat)."""
+        addon = AddonInfo(repo="owner/repo", recommended=False)
+        result = addon.to_dict()
+        assert "recommended" not in result
+
+    def test_from_dict_parses_recommended(self):
+        """Test from_dict parses recommended field."""
+        data = {"repo": "owner/repo", "recommended": True}
+        addon = AddonInfo.from_dict(data)
+        assert addon.recommended is True
+
+    def test_from_dict_recommended_defaults_to_false(self):
+        """Test from_dict defaults recommended to False when key absent."""
+        data = {"repo": "owner/repo"}
+        addon = AddonInfo.from_dict(data)
+        assert addon.recommended is False

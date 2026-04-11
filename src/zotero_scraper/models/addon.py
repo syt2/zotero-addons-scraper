@@ -156,6 +156,7 @@ class AddonInfo:
     stars: Optional[int] = None
     author: Author = field(default_factory=Author)
     tags: list[str] = field(default_factory=list)
+    recommended: bool = False
 
     @property
     def owner(self) -> Optional[str]:
@@ -193,6 +194,8 @@ class AddonInfo:
                 result["author"] = author_dict
         if self.tags:
             result["tags"] = self.tags
+        if self.recommended:
+            result["recommended"] = True
         return result
 
     @classmethod
@@ -219,4 +222,5 @@ class AddonInfo:
             stars=data.get("stars"),
             author=author,
             tags=data.get("tags", []),
+            recommended=data.get("recommended", False),
         )

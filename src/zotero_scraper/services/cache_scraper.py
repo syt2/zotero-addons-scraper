@@ -72,8 +72,10 @@ class CacheScraper:
         for url in self.config.previous_info_urls:
             result = self.fallback.apply_fallback(result, url)
 
-        # Sort by stars (descending)
-        result.sort(key=lambda x: x.get("stars") or 0, reverse=True)
+        # Sort: recommended first, then by stars (descending)
+        result.sort(
+            key=lambda x: (not x.get("recommended", False), -(x.get("stars") or 0))
+        )
 
         # Save output
         self._save_output(result)
@@ -102,25 +104,24 @@ class CacheScraper:
 
         return repos
 
-    def _load_repo_tags(self, repo: str) -> list[str]:
-        """Load tags for a repository from its input file.
+    def _load_repo_config(self, repo: str) -> dict:
+        """Load metadata for a repository from its input file.
 
-        The file may contain JSON like {"tags": ["ai", "notes"]} or be empty.
-        Returns empty list if no tags are defined.
+        The file may contain JSON like {"tags": ["ai"], "recommended": true} or be empty.
+        Returns empty dict if no metadata is defined.
         """
         filename = repo.replace("/", "@", 1)
         config_file = self.config.input_dir / filename
         if not config_file.exists():
-            return []
+            return {}
         try:
             content = config_file.read_text(encoding="utf-8").strip()
             if not content:
-                return []
-            data = json.loads(content)
-            return data.get("tags", [])
+                return {}
+            return json.loads(content)
         except Exception as e:
-            logger.debug(f"Failed to parse tags from {config_file}: {e}")
-            return []
+            logger.debug(f"Failed to parse config from {config_file}: {e}")
+            return {}
 
     def _process_repo(self, repo: str) -> Optional[AddonInfo]:
         """Process a single repository using cache.
@@ -153,11 +154,13 @@ class CacheScraper:
             return None
 
         # Create AddonInfo
+        repo_config = self._load_repo_config(repo)
         addon_info = AddonInfo(
             repo=repo,
             releases=releases,
             name=name,
-            tags=self._load_repo_tags(repo),
+            tags=repo_config.get("tags", []),
+            recommended=repo_config.get("recommended", False),
         )
 
         # Fetch author info
