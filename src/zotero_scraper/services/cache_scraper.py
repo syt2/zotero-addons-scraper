@@ -102,6 +102,26 @@ class CacheScraper:
 
         return repos
 
+    def _load_repo_tags(self, repo: str) -> list[str]:
+        """Load tags for a repository from its input file.
+
+        The file may contain JSON like {"tags": ["ai", "notes"]} or be empty.
+        Returns empty list if no tags are defined.
+        """
+        filename = repo.replace("/", "@", 1)
+        config_file = self.config.input_dir / filename
+        if not config_file.exists():
+            return []
+        try:
+            content = config_file.read_text(encoding="utf-8").strip()
+            if not content:
+                return []
+            data = json.loads(content)
+            return data.get("tags", [])
+        except Exception as e:
+            logger.debug(f"Failed to parse tags from {config_file}: {e}")
+            return []
+
     def _process_repo(self, repo: str) -> Optional[AddonInfo]:
         """Process a single repository using cache.
 
@@ -137,6 +157,7 @@ class CacheScraper:
             repo=repo,
             releases=releases,
             name=name,
+            tags=self._load_repo_tags(repo),
         )
 
         # Fetch author info

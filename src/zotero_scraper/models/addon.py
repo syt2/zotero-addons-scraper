@@ -155,6 +155,7 @@ class AddonInfo:
     description: Optional[str] = None
     stars: Optional[int] = None
     author: Author = field(default_factory=Author)
+    tags: list[str] = field(default_factory=list)
 
     @property
     def owner(self) -> Optional[str]:
@@ -190,6 +191,8 @@ class AddonInfo:
             author_dict = self.author.to_dict()
             if author_dict:
                 result["author"] = author_dict
+        if self.tags:
+            result["tags"] = self.tags
         return result
 
     @classmethod
@@ -215,4 +218,5 @@ class AddonInfo:
             description=data.get("description"),
             stars=data.get("stars"),
             author=author,
+            tags=data.get("tags", []),
         )

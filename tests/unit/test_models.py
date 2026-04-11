@@ -187,3 +187,27 @@ class TestAddonInfo:
         assert len(addon.releases) == 2
         assert addon.releases[0].targetZoteroVersion == "7"
         assert addon.releases[1].tagName == "v1.0"
+
+    def test_to_dict_with_tags(self):
+        """Test to_dict includes tags when present."""
+        addon = AddonInfo(repo="owner/repo", tags=["ai", "reader"])
+        result = addon.to_dict()
+        assert result["tags"] == ["ai", "reader"]
+
+    def test_to_dict_omits_tags_when_empty(self):
+        """Test to_dict omits tags key when list is empty (backward compat)."""
+        addon = AddonInfo(repo="owner/repo")
+        result = addon.to_dict()
+        assert "tags" not in result
+
+    def test_from_dict_with_tags(self):
+        """Test from_dict parses tags field."""
+        data = {"repo": "owner/repo", "tags": ["metadata", "integration"]}
+        addon = AddonInfo.from_dict(data)
+        assert addon.tags == ["metadata", "integration"]
+
+    def test_from_dict_missing_tags_defaults_to_empty(self):
+        """Test from_dict defaults tags to empty list when key absent."""
+        data = {"repo": "owner/repo"}
+        addon = AddonInfo.from_dict(data)
+        assert addon.tags == []
