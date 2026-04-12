@@ -23,6 +23,8 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Checkout publish branch (for release_cache)
       uses: actions/checkout@v4
@@ -50,6 +52,40 @@ jobs:
       run: |
         pip install -r requirements.txt
 
+    - name: Determine changed addon files
+      id: changed_addons
+      if: github.event_name == 'push'
+      shell: bash
+      run: |
+        before_sha="${{ github.event.before }}"
+        if [ -z "$before_sha" ] || [ "$before_sha" = "0000000000000000000000000000000000000000" ]; then
+          files=$(git diff-tree --no-commit-id --name-only -r "${{ github.sha }}" -- addons || true)
+        else
+          files=$(git diff --name-only --diff-filter=AM "$before_sha" "${{ github.sha }}" -- addons || true)
+        fi
+
+        {
+          echo "changed_addons<<EOF"
+          echo "$files"
+          echo "EOF"
+        } >> "$GITHUB_OUTPUT"
+
+    - name: Validate changed addon tags
+      if: github.event_name == 'push' && steps.changed_addons.outputs.changed_addons != ''
+      shell: bash
+      env:
+        PYTHONPATH: src
+      run: |
+        mapfile -t files < <(printf '%s\n' "${{ steps.changed_addons.outputs.changed_addons }}" | sed '/^$/d')
+        if [ "${#files[@]}" -eq 0 ]; then
+          echo "No addon files changed"
+          exit 0
+        fi
+
+        python3 -m zotero_scraper.tag_review \
+          --files "${files[@]}" \
+          --summary-file "$GITHUB_STEP_SUMMARY"
+
     - name: Run Scraper
       run: |
         python main.py \
@@ -61,6 +97,7 @@ jobs:
           --create_release True
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PYTHONPATH: src
 
     - name: Copy release_cache to published folder
       run: |
@@ -77,4 +114,3 @@ jobs:
         user_email: 'github-actions[bot]@users.noreply.github.com'
         publish_dir: ./published
         force_orphan: true
-

@@ -26,6 +26,7 @@ dev = [
 
 [project.scripts]
 zotero-scraper = "zotero_scraper.__main__:main"
+zotero-tag-review = "zotero_scraper.tag_review:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -13,6 +13,7 @@ including the following steps:
 - Retrieve [Zotero](https://www.zotero.org) add-on information specified in [addons](addons) folder
 - Parse add-on information into JSON data
 - Publish the JSON data to the [`publish`](https://github.com/syt2/zotero-addons-scraper/blob/publish/addon_infos.json) branch and the [latest release](https://github.com/syt2/zotero-addons-scraper/releases/latest)
+- Validate changed addon tag metadata in CI
 
 ## Contributing
 Adding a new add-on entry `{owner}@{repo}` in the [addons](addons) folder.
@@ -35,7 +36,11 @@ Available tags:
 | `integration` | Integration with external services (Notion, Obsidian, Word, etc.) |
 | `utility` | Zotero system tools (automation, deduplication, plugin management) |
 
+### Tag validation in CI
+- `pull_request` on `addons/**`: validates changed addon files against the allowed tag taxonomy
+- `push` to `master`: validates changed addon files before the scraper publishes data
+- Each addon config must declare at least one tag, use only allowed tag values, avoid duplicates, and keep tags in canonical order
+
 ## Usage
 1. `fork` this repository
 2. Enable actions and scheduled workflow in `Actions` page of forked repository
-
