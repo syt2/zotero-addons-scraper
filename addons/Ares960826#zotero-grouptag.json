@@ -1,9 +1,0 @@
-{
-  "repo": "Ares960826/zotero-grouptag",
-  "releases": [
-    {
-      "targetZoteroVersion": "7,8,9",
-      "tagName": "latest"
-    }
-  ]
-}
