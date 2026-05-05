@@ -1,0 +1,50 @@
+{
+  "last_checked": "2026-05-05T23:42:08.046947+00:00",
+  "checked_releases": [
+    {
+      "tag": "V0.6.2",
+      "published_at": "2026-04-27T23:10:44Z",
+      "xpi_asset_id": 406938714,
+      "xpi_name": "reading-heatmap-0.6.2.xpi",
+      "xpi_download_url": "https://github.com/XiaoDuComrade/zotero-reading-heatmap/releases/download/V0.6.2/reading-heatmap-0.6.2.xpi",
+      "addon_id": "reading-heatmap@zotero-plugin.com",
+      "addon_name": "Reading Heatmap",
+      "addon_version": "0.6.2",
+      "addon_description": "Track your reading activity in Zotero and visualize it as a GitHub-style heatmap. Week/month view toggle, summary toggle, group sync with responsive legend, and Zotero Style data import.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.99.99",
+      "update_url": "https://github.com/zotero-reading-heatmap/releases",
+      "parse_success": true
+    },
+    {
+      "tag": "V0.6.11",
+      "published_at": "2026-04-29T17:42:38Z",
+      "xpi_asset_id": 408386921,
+      "xpi_name": "reading-heatmap-0.6.11.xpi",
+      "xpi_download_url": "https://github.com/XiaoDuComrade/zotero-reading-heatmap/releases/download/V0.6.11/reading-heatmap-0.6.11.xpi",
+      "addon_id": "reading-heatmap@zotero-plugin.com",
+      "addon_name": "Reading Heatmap",
+      "addon_version": "0.6.11",
+      "addon_description": "Track Zotero active-window time and visualize it as a GitHub-style heatmap. Week/month view toggle, summary toggle, group sync with responsive legend, and Zotero Style data import.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.99.99",
+      "update_url": "https://github.com/zotero-reading-heatmap/releases",
+      "parse_success": true
+    },
+    {
+      "tag": "V0.6.12",
+      "published_at": "2026-05-05T20:13:45Z",
+      "xpi_asset_id": 412936283,
+      "xpi_name": "reading-heatmap-0.6.12.xpi",
+      "xpi_download_url": "https://github.com/XiaoDuComrade/zotero-reading-heatmap/releases/download/V0.6.12/reading-heatmap-0.6.12.xpi",
+      "addon_id": "reading-heatmap@zotero-plugin.com",
+      "addon_name": "Reading Heatmap",
+      "addon_version": "0.6.12",
+      "addon_description": "Track Zotero active-window time and visualize it as a GitHub-style heatmap. Week/month view toggle, summary toggle, group sync with responsive legend, and Zotero Style data import.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.99.99",
+      "update_url": "https://github.com/zotero-reading-heatmap/releases",
+      "parse_success": true
+    }
+  ]
+}
