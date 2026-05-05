@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-04-30T13:04:47.531265+00:00",
+  "checked_releases": [
+    {
+      "tag": "V1",
+      "published_at": "2026-04-28T11:30:54Z",
+      "xpi_asset_id": 407347366,
+      "xpi_name": "ai-ocr.v1.xpi",
+      "xpi_download_url": "https://github.com/4965898/Zotero-AI-OCR/releases/download/V1/ai-ocr.v1.xpi",
+      "addon_id": "aiocr@zotero-plugin.com",
+      "addon_name": "AI OCR",
+      "addon_version": "1.1.0",
+      "addon_description": "AI OCR plugin for Zotero - AI-powered OCR recognition with PaddleOCR and MinerU",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/user/zotero-ai-ocr/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}

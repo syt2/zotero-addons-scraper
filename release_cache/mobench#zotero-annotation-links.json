@@ -1,0 +1,44 @@
+{
+  "last_checked": "2026-05-02T14:42:03.611731+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-03-26T14:28:01Z",
+      "xpi_asset_id": 382157387,
+      "xpi_name": "annotation-links.xpi",
+      "xpi_download_url": "https://github.com/mobench/zotero-annotation-links/releases/download/v0.1.0/annotation-links.xpi",
+      "addon_id": "annotation-links@mobench.dev",
+      "addon_name": "Annotation Links",
+      "addon_version": "0.1.0",
+      "addon_description": "Clickable cross-reference links between PDF annotations in Zotero. Support: buymeacoffee.com/mobench",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/mobench/zotero-annotation-links/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-03-26T16:06:28Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "v0.1.1",
+      "published_at": "2026-05-02T12:04:57Z",
+      "xpi_asset_id": 410506816,
+      "xpi_name": "annotation-links.xpi",
+      "xpi_download_url": "https://github.com/mobench/zotero-annotation-links/releases/download/v0.1.1/annotation-links.xpi",
+      "addon_id": "annotation-links@mobench.dev",
+      "addon_name": "Annotation Links",
+      "addon_version": "0.1.1",
+      "addon_description": "Clickable cross-reference links between PDF annotations in Zotero. Support: buymeacoffee.com/mobench",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.*",
+      "update_url": "https://github.com/mobench/zotero-annotation-links/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}

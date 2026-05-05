@@ -1,0 +1,74 @@
+{
+  "last_checked": "2026-01-27T10:51:33.070158+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.0.3",
+      "published_at": "2025-05-04T04:22:47Z",
+      "xpi_asset_id": 251696337,
+      "xpi_name": "set-horizontal-scroll.xpi",
+      "xpi_download_url": "https://github.com/qiwei-ma/zotero-pdf-setHorizontal/releases/download/v0.0.3/set-horizontal-scroll.xpi",
+      "addon_id": "pdfsethorizontalscroll@euclpts.com",
+      "addon_name": "Set HorizontalScroll",
+      "addon_version": "0.0.3",
+      "addon_description": "Set horizontal scrolling and zooming to the page height as defaults.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.*",
+      "update_url": "https://github.com/qiwei-ma/zotero-pdf-setHorizontal/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.0.2",
+      "published_at": "2025-04-20T15:11:28Z",
+      "xpi_asset_id": 247936353,
+      "xpi_name": "set-horizontal-scroll.xpi",
+      "xpi_download_url": "https://github.com/qiwei-ma/zotero-pdf-setHorizontal/releases/download/v0.0.3/set-horizontal-scroll.xpi",
+      "addon_id": "pdfsethorizontalscroll@euclpts.com",
+      "addon_name": "Set HorizontalScroll",
+      "addon_version": "0.0.3",
+      "addon_description": "Set horizontal scrolling and zooming to the page height as defaults.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.*",
+      "update_url": "https://github.com/qiwei-ma/zotero-pdf-setHorizontal/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.0.1",
+      "published_at": "2025-04-20T15:08:48Z",
+      "xpi_asset_id": 247935970,
+      "xpi_name": "set-horizontal-scroll.xpi",
+      "xpi_download_url": "https://github.com/qiwei-ma/zotero-pdf-setHorizontal/releases/download/v0.0.3/set-horizontal-scroll.xpi",
+      "addon_id": "pdfsethorizontalscroll@euclpts.com",
+      "addon_name": "Set HorizontalScroll",
+      "addon_version": "0.0.3",
+      "addon_description": "Set horizontal scrolling and zooming to the page height as defaults.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.*",
+      "update_url": "https://github.com/qiwei-ma/zotero-pdf-setHorizontal/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2025-04-20T15:08:51Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "v0.0.4",
+      "published_at": "2026-01-27T08:17:14Z",
+      "xpi_asset_id": 346516461,
+      "xpi_name": "set-horizontal-scroll.xpi",
+      "xpi_download_url": "https://github.com/qiwei-ma/zotero-pdf-setHorizontal/releases/download/v0.0.4/set-horizontal-scroll.xpi",
+      "addon_id": "pdfsethorizontalscroll@euclpts.com",
+      "addon_name": "Set HorizontalScroll",
+      "addon_version": "0.0.4",
+      "addon_description": "Set horizontal scrolling and zooming to the page height as defaults.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/qiwei-ma/zotero-pdf-setHorizontal/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}
