@@ -1,0 +1,59 @@
+{
+  "last_checked": "2026-04-24T14:52:53.368036+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-04-22T13:46:17Z",
+      "xpi_asset_id": 402550744,
+      "xpi_name": "zotero-random-read.xpi",
+      "xpi_download_url": "https://github.com/heimi98/zotero-random-read/releases/download/v0.1.0/zotero-random-read.xpi",
+      "addon_id": "zotero-random-read@xuan.dev",
+      "addon_name": "Zotero Random Read",
+      "addon_version": "0.1.0",
+      "addon_description": "Randomly open a readable attachment from selected Zotero collections.",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://github.com/heimi98/zotero-random-read/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.2.0",
+      "published_at": "2026-04-22T22:33:06Z",
+      "xpi_asset_id": 402903740,
+      "xpi_name": "zotero-random-read-0.2.0.xpi",
+      "xpi_download_url": "https://github.com/heimi98/zotero-random-read/releases/download/v0.2.0/zotero-random-read-0.2.0.xpi",
+      "addon_id": "zotero-random-read@xuan.dev",
+      "addon_name": "Zotero Random Read",
+      "addon_version": "0.2.0",
+      "addon_description": "Randomly open a readable attachment from selected Zotero collections.",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://github.com/heimi98/zotero-random-read/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-04-22T22:33:09Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "v0.3.0",
+      "published_at": "2026-04-24T11:06:36Z",
+      "xpi_asset_id": 404356931,
+      "xpi_name": "zotero-random-read.xpi",
+      "xpi_download_url": "https://github.com/heimi98/zotero-random-read/releases/download/v0.3.0/zotero-random-read.xpi",
+      "addon_id": "zotero-random-read@xuan.dev",
+      "addon_name": "Zotero Random Read",
+      "addon_version": "0.3.0",
+      "addon_description": "Randomly open a readable attachment from selected Zotero collections.",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://github.com/heimi98/zotero-random-read/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}
