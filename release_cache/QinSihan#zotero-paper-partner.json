@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-04-15T01:03:18.941922+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-04-14T13:17:09Z",
+      "xpi_asset_id": 396208322,
+      "xpi_name": "paper-partner.xpi",
+      "xpi_download_url": "https://github.com/QinSihan/zotero-paper-partner/releases/download/v0.1.0/paper-partner.xpi",
+      "addon_id": "paper-partner@qinsihan.github.io",
+      "addon_name": "Zotero Paper Partner",
+      "addon_version": "0.1.0",
+      "addon_description": "Async Q&A for Zotero notes — quietly answers your reading questions in the background.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://qinsihan.github.io/zotero-paper-partner/updates.json",
+      "parse_success": true
+    }
+  ]
+}

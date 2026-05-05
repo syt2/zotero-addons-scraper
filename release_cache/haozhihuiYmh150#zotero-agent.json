@@ -1,0 +1,44 @@
+{
+  "last_checked": "2026-04-23T13:12:17.123347+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.2.0",
+      "published_at": "2026-04-21T13:39:34Z",
+      "xpi_asset_id": 401603883,
+      "xpi_name": "zotero-agent.xpi",
+      "xpi_download_url": "https://github.com/haozhihuiYmh150/zotero-agent/releases/download/v0.2.0/zotero-agent.xpi",
+      "addon_id": "zotero-agent@haozhihuiYmh150",
+      "addon_name": "Zotero Agent",
+      "addon_version": "0.2.0",
+      "addon_description": "Zotero AI Agent - Search, download, and analyze papers with LLM",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/haozhihuiYmh150/zotero-agent/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-04-20T19:25:55Z",
+      "xpi_asset_id": 400975013,
+      "xpi_name": "zotero-agent.xpi",
+      "xpi_download_url": "https://github.com/haozhihuiYmh150/zotero-agent/releases/download/v0.1.0/zotero-agent.xpi",
+      "addon_id": "zotero-agent@haozhihuiYmh150",
+      "addon_name": "Zotero Agent",
+      "addon_version": "0.1.0",
+      "addon_description": "Zotero AI Agent - Search, download, and analyze papers with LLM",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/haozhihuiYmh150/zotero-agent/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-04-20T19:25:59Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    }
+  ]
+}
