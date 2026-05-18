@@ -17,9 +17,9 @@ including the following steps:
 ## Contributing
 Adding a new add-on entry `{owner}@{repo}` in the [addons](addons) folder.
 
-Optionally, add tags by writing JSON content to the file:
+Optionally, add up to two tags by writing JSON content to the file:
 ```json
-{"tags": ["reader"]}
+{"tags": ["reader", "utility"]}
 ```
 
 Available tags:
