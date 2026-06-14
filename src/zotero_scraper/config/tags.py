@@ -17,7 +17,7 @@ ADDON_TAGS: Final[dict[str, str]] = {
 }
 
 VALID_ADDON_TAGS: Final[tuple[str, ...]] = tuple(ADDON_TAGS.keys())
-MAX_ADDON_TAGS: Final[int] = 3
+MAX_ADDON_TAGS: Final[int] = 2
 
 
 def normalize_tags(tags: list[str]) -> list[str]:
