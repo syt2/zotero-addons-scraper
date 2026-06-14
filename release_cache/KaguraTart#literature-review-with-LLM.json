@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-06-14T13:45:28.181469+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-06-14T12:09:17Z",
+      "xpi_asset_id": 447271618,
+      "xpi_name": "literature-review-with-llm.xpi",
+      "xpi_download_url": "https://github.com/KaguraTart/literature-review-with-LLM/releases/download/v0.1.0/literature-review-with-llm.xpi",
+      "addon_id": "zotero-markdown-summary@diantao.local",
+      "addon_name": "Zotero Markdown Summary",
+      "addon_version": "0.1.0",
+      "addon_description": "Create Markdown summaries as linked attachments for Zotero items.",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://github.com/KaguraTart/literature-review-with-LLM/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}

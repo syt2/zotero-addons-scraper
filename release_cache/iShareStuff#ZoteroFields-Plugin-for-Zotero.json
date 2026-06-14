@@ -1,0 +1,61 @@
+{
+  "last_checked": "2025-12-23T11:22:39.867636+00:00",
+  "checked_releases": [
+    {
+      "tag": "1.1.4",
+      "published_at": "2022-05-03T07:08:07Z",
+      "xpi_asset_id": 64324492,
+      "xpi_name": "ZoteroFields-Plugin-for-Zotero.xpi",
+      "xpi_download_url": "https://github.com/iShareStuff/ZoteroFields-Plugin-for-Zotero/releases/download/1.1.4/ZoteroFields-Plugin-for-Zotero.xpi",
+      "addon_id": "ZoteroFields-Plugin-for-Zotero@iShareStuff.com",
+      "addon_name": "ZoteroFields-Plugin-for-Zotero",
+      "addon_version": "1.1.4",
+      "addon_description": "Update ZoteroFields",
+      "min_zotero_version": "5.0",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    },
+    {
+      "tag": "1.1.3",
+      "published_at": "2022-05-02T14:10:22Z",
+      "xpi_asset_id": 64257984,
+      "xpi_name": "ZoteroFields-Plugin-for-Zotero.xpi",
+      "xpi_download_url": "https://github.com/iShareStuff/ZoteroFields-Plugin-for-Zotero/releases/download/1.1.3/ZoteroFields-Plugin-for-Zotero.xpi",
+      "addon_id": "ZoteroFields-Plugin-for-Zotero@iShareStuff.com",
+      "addon_name": "ZoteroFields-Plugin-for-Zotero",
+      "addon_version": "1.1.3",
+      "addon_description": "Update ZoteroFields",
+      "min_zotero_version": "5.0",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    },
+    {
+      "tag": "1.1.1",
+      "published_at": "2022-04-29T11:34:52Z",
+      "xpi_asset_id": 64007663,
+      "xpi_name": "ZoteroFields-Plugin-for-Zotero.xpi",
+      "xpi_download_url": "https://github.com/iShareStuff/ZoteroFields-Plugin-for-Zotero/releases/download/1.1.1/ZoteroFields-Plugin-for-Zotero.xpi",
+      "addon_id": "ZoteroFields-Plugin-for-Zotero@iShareStuff.com",
+      "addon_name": "ZoteroFields-Plugin-for-Zotero",
+      "addon_version": "1.1.1",
+      "addon_description": "Update ZoteroFields",
+      "min_zotero_version": "5.0",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    },
+    {
+      "tag": "V1.1.0",
+      "published_at": "2022-04-28T03:01:44Z",
+      "xpi_asset_id": 63878442,
+      "xpi_name": "ZoteroFields-1.1.0-Win-Linux-Mac_Max.xpi",
+      "xpi_download_url": "https://github.com/iShareStuff/ZoteroFields-Plugin-for-Zotero/releases/download/V1.1.0/ZoteroFields-1.1.0-Win-Linux-Mac_Max.xpi",
+      "addon_id": "ZoteroFields-Plugin-for-Zotero@iShareStuff.github.io",
+      "addon_name": "ZoteroFields Plugin for Zotero",
+      "addon_version": "1.1.0",
+      "addon_description": "欢迎B站、知乎和公众号关注ShareStuff！该插件更新影响因子！",
+      "min_zotero_version": "5.0.0",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    }
+  ]
+}
