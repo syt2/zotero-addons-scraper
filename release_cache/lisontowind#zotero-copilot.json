@@ -1,0 +1,80 @@
+{
+  "last_checked": "2026-04-12T14:39:41.775428+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.3.26",
+      "published_at": "2026-04-10T17:48:27Z",
+      "xpi_asset_id": 393462503,
+      "xpi_name": "zotero-copilot.xpi",
+      "xpi_download_url": "https://github.com/lisontowind/zotero-copilot/releases/download/v0.3.26/zotero-copilot.xpi",
+      "addon_id": "zotero-copilot@example.com",
+      "addon_name": "Zotero Copilot",
+      "addon_version": "0.3.26",
+      "addon_description": "Chat with Zotero items in a Copilot view inside the right item pane and persist synced conversations.",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://raw.githubusercontent.com/lisontowind/zotero-copilot/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.3.10",
+      "published_at": "2026-04-07T00:04:30Z",
+      "xpi_asset_id": 390405632,
+      "xpi_name": "zotero-copilot.xpi",
+      "xpi_download_url": "https://github.com/lisontowind/zotero-copilot/releases/download/v0.3.10/zotero-copilot.xpi",
+      "addon_id": "zotero-copilot@example.com",
+      "addon_name": "Zotero Copilot",
+      "addon_version": "0.3.10",
+      "addon_description": "Chat with Zotero items in a Copilot view inside the right item pane and persist synced conversations.",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://raw.githubusercontent.com/lisontowind/zotero-copilot/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.2.78",
+      "published_at": "2026-04-06T11:21:54Z",
+      "xpi_asset_id": 389955561,
+      "xpi_name": "zotero-copilot.xpi",
+      "xpi_download_url": "https://github.com/lisontowind/zotero-copilot/releases/download/v0.2.78/zotero-copilot.xpi",
+      "addon_id": "zotero-copilot@example.com",
+      "addon_name": "Zotero Copilot",
+      "addon_version": "0.2.78",
+      "addon_description": "Chat with Zotero items in a Copilot view inside the right item pane and persist synced conversations.",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://raw.githubusercontent.com/lisontowind/zotero-copilot/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.2.77",
+      "published_at": "2026-04-06T10:00:14Z",
+      "xpi_asset_id": 389924803,
+      "xpi_name": "zotero-copilot.xpi",
+      "xpi_download_url": "https://github.com/lisontowind/zotero-copilot/releases/download/v0.2.77/zotero-copilot.xpi",
+      "addon_id": "zotero-copilot@example.com",
+      "addon_name": "Zotero Copilot",
+      "addon_version": "0.2.77",
+      "addon_description": "Chat with Zotero items in a Copilot view inside the right item pane and persist synced conversations.",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://raw.githubusercontent.com/lisontowind/zotero-copilot/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.3.27",
+      "published_at": "2026-04-12T13:08:41Z",
+      "xpi_asset_id": 394723471,
+      "xpi_name": "zotero-copilot.xpi",
+      "xpi_download_url": "https://github.com/lisontowind/zotero-copilot/releases/download/v0.3.27/zotero-copilot.xpi",
+      "addon_id": "zotero-copilot@example.com",
+      "addon_name": "Zotero Copilot",
+      "addon_version": "0.3.27",
+      "addon_description": "Chat with Zotero items in a Copilot view inside the right item pane and persist synced conversations.",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://raw.githubusercontent.com/lisontowind/zotero-copilot/main/updates.json",
+      "parse_success": true
+    }
+  ]
+}
