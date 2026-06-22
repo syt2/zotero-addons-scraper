@@ -458,11 +458,6 @@ def parse_args() -> argparse.Namespace:
         help="GitHub token for PR file, README, and comment access",
     )
     parser.add_argument(
-        "--comment-token",
-        default=os.getenv("TAG_REVIEW_COMMENT_TOKEN", ""),
-        help="Optional GitHub token used only for creating or updating PR comments",
-    )
-    parser.add_argument(
         "--github-api-url",
         default=os.getenv("GITHUB_API_URL", "https://api.github.com"),
         help="GitHub API base URL",
@@ -676,7 +671,7 @@ def main() -> int:
     if args.post_comment and args.pr_number:
         github = GitHubPullRequestClient(
             repository=args.repository,
-            token=args.comment_token or args.github_token,
+            token=args.github_token,
             api_url=args.github_api_url,
         )
         try:
