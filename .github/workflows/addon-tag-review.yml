@@ -9,7 +9,7 @@ on:
 
 permissions:
   contents: read
-  pull-requests: read
+  pull-requests: write
   issues: write
 
 jobs:
@@ -38,6 +38,7 @@ jobs:
       env:
         PYTHONPATH: src
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        TAG_REVIEW_COMMENT_TOKEN: ${{ secrets.TAG_REVIEW_COMMENT_TOKEN }}
         AI_REVIEW_BASE_URL: ${{ secrets.AI_REVIEW_BASE_URL }}
         AI_REVIEW_API_KEY: ${{ secrets.AI_REVIEW_API_KEY }}
         AI_REVIEW_MODEL: ${{ secrets.AI_REVIEW_MODEL }}

@@ -285,6 +285,11 @@ class GitHubPullRequestClient:
                 json={"body": body},
                 timeout=30,
             )
+        if not response.ok:
+            raise RuntimeError(
+                f"GitHub comment request failed with {response.status_code}: "
+                f"{response.text}"
+            )
         response.raise_for_status()
 
 
@@ -451,6 +456,11 @@ def parse_args() -> argparse.Namespace:
         "--github-token",
         default=os.getenv("GITHUB_TOKEN", ""),
         help="GitHub token for PR file, README, and comment access",
+    )
+    parser.add_argument(
+        "--comment-token",
+        default=os.getenv("TAG_REVIEW_COMMENT_TOKEN", ""),
+        help="Optional GitHub token used only for creating or updating PR comments",
     )
     parser.add_argument(
         "--github-api-url",
@@ -666,7 +676,7 @@ def main() -> int:
     if args.post_comment and args.pr_number:
         github = GitHubPullRequestClient(
             repository=args.repository,
-            token=args.github_token,
+            token=args.comment_token or args.github_token,
             api_url=args.github_api_url,
         )
         try:
