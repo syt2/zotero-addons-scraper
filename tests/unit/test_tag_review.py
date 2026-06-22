@@ -47,8 +47,8 @@ def test_review_rejects_unknown_tags(temp_dir):
     assert "Unknown tags" in result.messages[0]
 
 
-def test_review_rejects_non_canonical_order(temp_dir):
-    """Tags should follow the configured canonical order."""
+def test_review_accepts_any_tag_order(temp_dir):
+    """Tag order should not affect validation."""
     path = write_addon_file(
         temp_dir / "owner@repo",
         '{"tags": ["reader", "ai"]}\n',
@@ -57,8 +57,8 @@ def test_review_rejects_non_canonical_order(temp_dir):
 
     result = reviewer.review_file(path)
 
-    assert result.status == "failed"
-    assert "canonical order" in result.messages[0]
+    assert result.status == "ok"
+    assert result.current_tags == ["reader", "ai"]
 
 
 def test_review_accepts_valid_tags(temp_dir):

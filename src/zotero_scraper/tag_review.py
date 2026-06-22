@@ -130,7 +130,7 @@ class AddonTagReviewer:
             path=entry.path,
             repo=entry.repo,
             status="ok",
-            current_tags=normalize_tags(entry.tags),
+            current_tags=entry.tags,
             messages=[],
         )
 
@@ -170,10 +170,6 @@ class AddonTagReviewer:
 
         if len(entry.tags) > MAX_ADDON_TAGS:
             messages.append(f"At most {MAX_ADDON_TAGS} tags are allowed per addon")
-
-        normalized = normalize_tags(entry.tags)
-        if entry.tags != normalized:
-            messages.append(f"Tags should use canonical order: {normalized}")
 
         return messages
 
@@ -539,7 +535,11 @@ def render_summary(
             current_tags = result.current_tags if result else []
             current = ", ".join(current_tags) or "-"
             tags = ", ".join(suggestion.suggested_tags) or "-"
-            match = "yes" if current_tags == suggestion.suggested_tags else "no"
+            match = (
+                "yes"
+                if set(current_tags) == set(suggestion.suggested_tags)
+                else "no"
+            )
             if suggestion.error:
                 match = "-"
             note = suggestion.error or suggestion.reason or "-"
