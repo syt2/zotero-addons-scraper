@@ -669,7 +669,10 @@ def main() -> int:
             token=args.github_token,
             api_url=args.github_api_url,
         )
-        github.upsert_pr_comment(args.pr_number, f"{COMMENT_MARKER}\n{summary}")
+        try:
+            github.upsert_pr_comment(args.pr_number, f"{COMMENT_MARKER}\n{summary}")
+        except Exception as exc:
+            logger.warning(f"Failed to post PR comment: {exc}")
 
     failures = [result for result in results if not result.ok]
     return 1 if failures else 0
