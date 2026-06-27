@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-05-22T14:39:30.732708+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-05-21T12:21:21Z",
+      "xpi_asset_id": 426129653,
+      "xpi_name": "paperzorro.xpi",
+      "xpi_download_url": "https://github.com/Rafael-Silva-Oliveira/paperzorro/releases/download/v0.1.0/paperzorro.xpi",
+      "addon_id": "paperzorro@paperzorro.io",
+      "addon_name": "PaperZorro",
+      "addon_version": "0.1.0",
+      "addon_description": "AI-powered literature scout for Zotero. Search PubMed, arXiv and bioRxiv, filter with AI, and import to your library.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.*",
+      "update_url": "https://raw.githubusercontent.com/Rafael-Silva-Oliveira/paperzorro/master/update.json",
+      "parse_success": true
+    }
+  ]
+}
