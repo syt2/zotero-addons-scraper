@@ -1,0 +1,79 @@
+{
+  "last_checked": "2026-07-23T16:26:32.256056+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.2.47",
+      "published_at": "2026-07-23T13:34:44Z",
+      "xpi_asset_id": 487223136,
+      "xpi_name": "Zotero-Glass-0.2.47.xpi",
+      "xpi_download_url": "https://github.com/Avi7ii/Zotero-glass/releases/download/v0.2.47/Zotero-Glass-0.2.47.xpi",
+      "addon_id": "zotero-glass@avi7ii.github.io",
+      "addon_name": "Zotero Glass",
+      "addon_version": "0.2.47",
+      "addon_description": "Native macOS NSVisualEffectView glass for Zotero. macOS only.",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://raw.githubusercontent.com/Avi7ii/Zotero-glass/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.2.46",
+      "published_at": "2026-07-23T04:19:43Z",
+      "xpi_asset_id": 486760678,
+      "xpi_name": "Zotero-Glass-0.2.46.xpi",
+      "xpi_download_url": "https://github.com/Avi7ii/Zotero-glass/releases/download/v0.2.46/Zotero-Glass-0.2.46.xpi",
+      "addon_id": "zotero-glass@avi7ii.github.io",
+      "addon_name": "Zotero Glass",
+      "addon_version": "0.2.46",
+      "addon_description": "Native macOS NSVisualEffectView glass for Zotero. macOS only.",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://raw.githubusercontent.com/Avi7ii/Zotero-glass/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.2.45",
+      "published_at": "2026-07-16T15:18:16Z",
+      "xpi_asset_id": 479317068,
+      "xpi_name": "Zotero-Glass-0.2.45.xpi",
+      "xpi_download_url": "https://github.com/Avi7ii/Zotero-glass/releases/download/v0.2.45/Zotero-Glass-0.2.45.xpi",
+      "addon_id": "zotero-glass@avi7ii.github.io",
+      "addon_name": "Zotero Glass",
+      "addon_version": "0.2.45",
+      "addon_description": "Native macOS NSVisualEffectView glass for Zotero. macOS only.",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://raw.githubusercontent.com/Avi7ii/Zotero-glass/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.2.36",
+      "published_at": "2026-07-14T14:48:25Z",
+      "xpi_asset_id": 476811682,
+      "xpi_name": "Zotero-Glass-0.2.36.xpi",
+      "xpi_download_url": "https://github.com/Avi7ii/Zotero-glass/releases/download/v0.2.36/Zotero-Glass-0.2.36.xpi",
+      "addon_id": "zotero-glass@avi7ii.github.io",
+      "addon_name": "Zotero Glass",
+      "addon_version": "0.2.36",
+      "addon_description": "Native macOS NSVisualEffectView glass for Zotero. macOS only.",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://raw.githubusercontent.com/Avi7ii/Zotero-glass/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.2.35",
+      "published_at": "2026-07-14T12:26:29Z",
+      "xpi_asset_id": 476676097,
+      "xpi_name": "Zotero-Glass-0.2.35.xpi",
+      "xpi_download_url": "https://github.com/Avi7ii/Zotero-glass/releases/download/v0.2.35/Zotero-Glass-0.2.35.xpi",
+      "addon_id": "zotero-glass@avi7ii.github.io",
+      "addon_name": "Zotero Glass",
+      "addon_version": "0.2.35",
+      "addon_description": "Native macOS NSVisualEffectView glass for Zotero. macOS only.",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.*",
+      "parse_success": true
+    }
+  ]
+}

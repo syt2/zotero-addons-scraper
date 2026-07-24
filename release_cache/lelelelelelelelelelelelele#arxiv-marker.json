@@ -1,0 +1,44 @@
+{
+  "last_checked": "2026-06-07T08:31:43.754753+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.2.0",
+      "published_at": "2026-06-03T17:56:10Z",
+      "xpi_asset_id": 437495869,
+      "xpi_name": "arxiv-marker-0.2.0.xpi",
+      "xpi_download_url": "https://github.com/lelelelelelelelelelelelele/arxiv-marker/releases/download/v0.2.0/arxiv-marker-0.2.0.xpi",
+      "addon_id": "arxiv-marker@lele.dev",
+      "addon_name": "arxiv-marker",
+      "addon_version": "0.2.0",
+      "addon_description": "Resolve arXiv preprints to their real CS/ML venue (conference/journal) and CCF/CORE tier, then write the venue field back to the local library - so easyScholar / zotero-style light up. Deterministic: Semantic Scholar + DBLP, no LLM guessing.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.99.99",
+      "update_url": "https://github.com/lelelelelelelelelelelelele/arxiv-marker/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-06-03T17:56:49Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "v0.2.1",
+      "published_at": "2026-06-07T08:08:34Z",
+      "xpi_asset_id": 440781584,
+      "xpi_name": "arxiv-marker-0.2.1.xpi",
+      "xpi_download_url": "https://github.com/lelelelelelelelelelelelele/arxiv-marker/releases/download/v0.2.1/arxiv-marker-0.2.1.xpi",
+      "addon_id": "arxiv-marker@lele.dev",
+      "addon_name": "arxiv-marker",
+      "addon_version": "0.2.1",
+      "addon_description": "Resolve arXiv preprints to their real CS/ML venue (conference/journal) and CCF/CORE tier, then write the venue field back to the local library - so easyScholar / zotero-style light up. Deterministic: Semantic Scholar + DBLP, no LLM guessing.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "99.99.99",
+      "update_url": "https://github.com/lelelelelelelelelelelelele/arxiv-marker/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}
