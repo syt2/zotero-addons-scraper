@@ -1,0 +1,50 @@
+{
+  "last_checked": "2026-07-23T20:34:38.734986+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-07-22T14:52:49Z",
+      "xpi_asset_id": 486073361,
+      "xpi_name": "dual-title.xpi",
+      "xpi_download_url": "https://github.com/SHANGKAIJIE/zotero-dual-title/releases/download/v0.1.0/dual-title.xpi",
+      "addon_id": "dualtitle@dual-title.zotero",
+      "addon_name": "Dual Title",
+      "addon_version": "0.1.0",
+      "addon_description": "Dual Title for Zotero — Display translated titles as a second row in the item list",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.9.9",
+      "update_url": "https://github.com/SHANGKAIJIE/zotero-dual-title/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-07-22T14:55:01Z",
+      "xpi_asset_id": 486077318,
+      "xpi_name": "dual-title.xpi",
+      "xpi_download_url": "https://github.com/SHANGKAIJIE/zotero-dual-title/releases/download/release/dual-title.xpi",
+      "addon_id": "dualtitle@dual-title.zotero",
+      "addon_name": "Dual Title",
+      "addon_version": "0.1.0",
+      "addon_description": "Dual Title for Zotero — Display translated titles as a second row in the item list",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.9.9",
+      "update_url": "https://github.com/SHANGKAIJIE/zotero-dual-title/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.1",
+      "published_at": "2026-07-23T18:48:31Z",
+      "xpi_asset_id": 487516819,
+      "xpi_name": "dual-title.xpi",
+      "xpi_download_url": "https://github.com/SHANGKAIJIE/zotero-dual-title/releases/download/v0.1.1/dual-title.xpi",
+      "addon_id": "dualtitle@dual-title.zotero",
+      "addon_name": "Dual Title",
+      "addon_version": "0.1.1",
+      "addon_description": "Dual Title for Zotero — Display translated titles as a second row in the item list",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.9.9",
+      "update_url": "https://github.com/SHANGKAIJIE/zotero-dual-title/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}
