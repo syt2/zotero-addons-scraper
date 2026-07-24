@@ -1,0 +1,20 @@
+{
+  "last_checked": "2025-12-23T11:30:20.522091+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.2",
+      "published_at": "2025-04-13T07:15:25Z",
+      "xpi_asset_id": 245980586,
+      "xpi_name": "zotero-tab-limiter.xpi",
+      "xpi_download_url": "https://github.com/david3684/zotero-tab-limiter/releases/download/v1.0.2/zotero-tab-limiter.xpi",
+      "addon_id": "tablimiter@example.com",
+      "addon_name": "Zotero Tab Limiter",
+      "addon_version": "1.0.1",
+      "addon_description": "Zotero plugin to limit the maximum number of open tabs",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.*",
+      "update_url": "https://github.com/david3684/zotero-tab-limiter/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-06-04T06:51:00.073661+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.0",
+      "published_at": "2026-06-03T23:56:52Z",
+      "xpi_asset_id": 437769005,
+      "xpi_name": "zotero-pdf2md.xpi",
+      "xpi_download_url": "https://github.com/qingpy/zotero-pdf2md/releases/download/v1.0.0/zotero-pdf2md.xpi",
+      "addon_id": "zotero-pdf2md@qingpy.github.io",
+      "addon_name": "PDF to Markdown for Zotero",
+      "addon_version": "1.0.0",
+      "addon_description": "Convert PDF attachments to Markdown (via the MinerU API) and export attachments to a folder",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://raw.githubusercontent.com/qingpy/zotero-pdf2md/main/update.json",
+      "parse_success": true
+    }
+  ]
+}

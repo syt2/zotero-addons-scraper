@@ -1,0 +1,80 @@
+{
+  "last_checked": "2026-07-20T20:47:01.634263+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.0.3",
+      "published_at": "2026-07-20T08:20:28Z",
+      "xpi_asset_id": 483226873,
+      "xpi_name": "zotero-static-sync-v0.0.3.xpi",
+      "xpi_download_url": "https://github.com/Helloxiaolaodi/Zotero-StaticSync/releases/download/v0.0.3/zotero-static-sync-v0.0.3.xpi",
+      "addon_id": "staticsync@helloxiaolaodi.github.io",
+      "addon_name": "Zotero StaticSync",
+      "addon_version": "3.1.1",
+      "addon_description": "Sync Zotero collections to static websites or Supabase-backed sharing endpoints.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.*",
+      "update_url": "https://github.com/Helloxiaolaodi/Zotero-StaticSync/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.0.2",
+      "published_at": "2026-07-19T19:40:03Z",
+      "xpi_asset_id": 482673868,
+      "xpi_name": "zotero-static-sync-v0.0.2.xpi",
+      "xpi_download_url": "https://github.com/Helloxiaolaodi/Zotero-StaticSync/releases/download/v0.0.2/zotero-static-sync-v0.0.2.xpi",
+      "addon_id": "staticsync@helloxiaolaodi.github.io",
+      "addon_name": "Zotero StaticSync",
+      "addon_version": "3.1.1",
+      "addon_description": "Sync Zotero collections to static websites or Supabase-backed sharing endpoints.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.*",
+      "update_url": "https://github.com/Helloxiaolaodi/Zotero-StaticSync/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.0.1",
+      "published_at": "2026-07-19T19:18:24Z",
+      "xpi_asset_id": 482659795,
+      "xpi_name": "zotero-static-sync.xpi",
+      "xpi_download_url": "https://github.com/Helloxiaolaodi/Zotero-StaticSync/releases/download/v0.0.1/zotero-static-sync.xpi",
+      "addon_id": "staticsync@helloxiaolaodi.github.io",
+      "addon_name": "Zotero StaticSync",
+      "addon_version": "3.1.1",
+      "addon_description": "Sync Zotero collections to static websites or Supabase-backed sharing endpoints.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.*",
+      "update_url": "https://github.com/Helloxiaolaodi/Zotero-StaticSync/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "0.0.5",
+      "published_at": "2026-07-20T20:09:51Z",
+      "xpi_asset_id": 483853932,
+      "xpi_name": "zotero-static-sync-v0.0.5.xpi",
+      "xpi_download_url": "https://github.com/Helloxiaolaodi/Zotero-StaticSync/releases/download/0.0.5/zotero-static-sync-v0.0.5.xpi",
+      "addon_id": "staticsync@helloxiaolaodi.github.io",
+      "addon_name": "Zotero StaticSync",
+      "addon_version": "0.0.5",
+      "addon_description": "Sync Zotero collections to static websites or Supabase-backed sharing endpoints.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.*",
+      "update_url": "https://github.com/Helloxiaolaodi/Zotero-StaticSync/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "0.0.4",
+      "published_at": "2026-07-20T19:26:55Z",
+      "xpi_asset_id": 483812634,
+      "xpi_name": "zotero-static-sync-v0.0.4.xpi",
+      "xpi_download_url": "https://github.com/Helloxiaolaodi/Zotero-StaticSync/releases/download/0.0.4/zotero-static-sync-v0.0.4.xpi",
+      "addon_id": "staticsync@helloxiaolaodi.github.io",
+      "addon_name": "Zotero StaticSync",
+      "addon_version": "0.0.3",
+      "addon_description": "Sync Zotero collections to static websites or Supabase-backed sharing endpoints.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.*",
+      "update_url": "https://github.com/Helloxiaolaodi/Zotero-StaticSync/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}
