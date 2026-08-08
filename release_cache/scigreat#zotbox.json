@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-08-05T16:15:13.502842+00:00",
+  "checked_releases": [
+    {
+      "tag": "latest",
+      "published_at": "2026-08-05T13:22:52Z",
+      "xpi_asset_id": 502647013,
+      "xpi_name": "zotero-box.xpi",
+      "xpi_download_url": "https://github.com/scigreat/zotbox/releases/download/latest/zotero-box.xpi",
+      "addon_id": "zotbox@scigreat.com",
+      "addon_name": "Zotero Box",
+      "addon_version": "3.0.0",
+      "addon_description": "Make Zotero Better and Better",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.*",
+      "update_url": "https://gitee.com/scigreat/zotbox/raw/master/update.json",
+      "parse_success": true
+    }
+  ]
+}

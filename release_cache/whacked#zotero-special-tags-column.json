@@ -1,0 +1,75 @@
+{
+  "last_checked": "2025-12-23T11:30:53.350449+00:00",
+  "checked_releases": [
+    {
+      "tag": "0.0.5",
+      "published_at": "2022-09-02T10:11:21Z",
+      "xpi_asset_id": 76655974,
+      "xpi_name": "ZoteroSpecialTagsColumn.xpi",
+      "xpi_download_url": "https://github.com/whacked/zotero-special-tags-column/releases/download/0.0.5/ZoteroSpecialTagsColumn.xpi",
+      "addon_id": "zotero-special-tags-column@whacked.github.io",
+      "addon_name": "ZoteroSpecialTagsColumn",
+      "addon_version": "0.0.5",
+      "addon_description": "Create a separate column for special tags",
+      "min_zotero_version": "5.0",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    },
+    {
+      "tag": "0.0.4",
+      "published_at": "2022-05-19T17:43:48Z",
+      "xpi_asset_id": 66018337,
+      "xpi_name": "ZoteroSpecialTagsColumn.xpi",
+      "xpi_download_url": "https://github.com/whacked/zotero-special-tags-column/releases/download/0.0.4/ZoteroSpecialTagsColumn.xpi",
+      "addon_id": "zotero-special-tags-column@whacked.github.io",
+      "addon_name": "ZoteroSpecialTagsColumn",
+      "addon_version": "0.0.3",
+      "addon_description": "Create a separate column for special tags",
+      "min_zotero_version": "5.0",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    },
+    {
+      "tag": "0.0.3",
+      "published_at": "2022-05-18T06:03:20Z",
+      "xpi_asset_id": 65852301,
+      "xpi_name": "ZoteroSpecialTagsColumn.xpi",
+      "xpi_download_url": "https://github.com/whacked/zotero-special-tags-column/releases/download/0.0.3/ZoteroSpecialTagsColumn.xpi",
+      "addon_id": "zotero-special-tags-column@whacked.github.io",
+      "addon_name": "ZoteroSpecialTagsColumn",
+      "addon_version": "0.0.3",
+      "addon_description": "Create a separate column for special tags",
+      "min_zotero_version": "5.0",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    },
+    {
+      "tag": "0.0.2",
+      "published_at": "2021-12-02T16:10:55Z",
+      "xpi_asset_id": 50843997,
+      "xpi_name": "ZoteroSpecialTagsColumn.xpi",
+      "xpi_download_url": "https://github.com/whacked/zotero-special-tags-column/releases/download/0.0.2/ZoteroSpecialTagsColumn.xpi",
+      "addon_id": "zotero-special-tags-column@whacked.github.io",
+      "addon_name": "ZoteroSpecialTagsColumn",
+      "addon_version": "0.0.2",
+      "addon_description": "Create a separate column for special tags",
+      "min_zotero_version": "5.0",
+      "max_zotero_version": "5.*",
+      "parse_success": true
+    },
+    {
+      "tag": "0.0.1",
+      "published_at": "2021-06-20T05:35:45Z",
+      "xpi_asset_id": 38936810,
+      "xpi_name": "ZoteroSpecialTagsColumn.xpi",
+      "xpi_download_url": "https://github.com/whacked/zotero-special-tags-column/releases/download/0.0.1/ZoteroSpecialTagsColumn.xpi",
+      "addon_id": "zotero-special-tags-column@whacked.github.io",
+      "addon_name": "ZoteroSpecialTagsColumn",
+      "addon_version": "0.0.1",
+      "addon_description": "Create a separate column for special tags",
+      "min_zotero_version": "5.0",
+      "max_zotero_version": "5.*",
+      "parse_success": true
+    }
+  ]
+}
