@@ -1,0 +1,50 @@
+{
+  "last_checked": "2026-07-12T15:31:08.483757+00:00",
+  "checked_releases": [
+    {
+      "tag": "V0.2.8",
+      "published_at": "2026-07-11T11:49:16Z",
+      "xpi_asset_id": 473458380,
+      "xpi_name": "margin-notes-0.2.8.xpi",
+      "xpi_download_url": "https://github.com/XiaoDuComrade/Zotero-margin-notes/releases/download/V0.2.8/margin-notes-0.2.8.xpi",
+      "addon_id": "margin-notes@local.zotero",
+      "addon_name": "Margin Notes",
+      "addon_version": "0.2.8",
+      "addon_description": "Create widened PDF copies with real annotation margins for Zotero",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://github.com/local/zotero-margin-notes/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "V0.2.9",
+      "published_at": "2026-07-11T21:40:29Z",
+      "xpi_asset_id": 473805102,
+      "xpi_name": "margin-notes-0.2.9.xpi",
+      "xpi_download_url": "https://github.com/XiaoDuComrade/Zotero-margin-notes/releases/download/V0.2.9/margin-notes-0.2.9.xpi",
+      "addon_id": "margin-notes@local.zotero",
+      "addon_name": "Margin Notes",
+      "addon_version": "0.2.9",
+      "addon_description": "Create widened PDF copies with real annotation margins for Zotero",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://github.com/local/zotero-margin-notes/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "V0.3.0",
+      "published_at": "2026-07-12T13:55:57Z",
+      "xpi_asset_id": 474434479,
+      "xpi_name": "margin-notes-0.3.0.xpi",
+      "xpi_download_url": "https://github.com/XiaoDuComrade/Zotero-margin-notes/releases/download/V0.3.0/margin-notes-0.3.0.xpi",
+      "addon_id": "margin-notes@local.zotero",
+      "addon_name": "Margin Notes",
+      "addon_version": "0.3.0",
+      "addon_description": "Create widened PDF copies with real annotation margins for Zotero",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://github.com/local/zotero-margin-notes/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}
