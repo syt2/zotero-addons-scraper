@@ -1,0 +1,50 @@
+{
+  "last_checked": "2026-07-15T06:33:24.685389+00:00",
+  "checked_releases": [
+    {
+      "tag": "V0.1.1",
+      "published_at": "2026-07-11T11:51:13Z",
+      "xpi_asset_id": 473460110,
+      "xpi_name": "zotero-manual-sort-0.1.1.xpi",
+      "xpi_download_url": "https://github.com/XiaoDuComrade/zotero-manual-sort/releases/download/V0.1.1/zotero-manual-sort-0.1.1.xpi",
+      "addon_id": "manual-sort@local.zotero",
+      "addon_name": "Manual Sort for Zotero",
+      "addon_version": "0.1.1",
+      "addon_description": "Drag items to set a persistent manual order inside Zotero collections",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://github.com/local/zotero-manual-sort/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "V0.1.2",
+      "published_at": "2026-07-12T20:58:52Z",
+      "xpi_asset_id": 474721926,
+      "xpi_name": "zotero-manual-sort-0.1.2.xpi",
+      "xpi_download_url": "https://github.com/XiaoDuComrade/zotero-manual-sort/releases/download/V0.1.2/zotero-manual-sort-0.1.2.xpi",
+      "addon_id": "manual-sort@local.zotero",
+      "addon_name": "Manual Sort for Zotero",
+      "addon_version": "0.1.2",
+      "addon_description": "Drag items to set a persistent manual order inside Zotero collections",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://github.com/local/zotero-manual-sort/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "V0.2.0",
+      "published_at": "2026-07-15T00:21:10Z",
+      "xpi_asset_id": 477330322,
+      "xpi_name": "zotero-manual-sort-0.2.0.xpi",
+      "xpi_download_url": "https://github.com/XiaoDuComrade/zotero-manual-sort/releases/download/V0.2.0/zotero-manual-sort-0.2.0.xpi",
+      "addon_id": "manual-sort@local.zotero",
+      "addon_name": "Manual Sort for Zotero",
+      "addon_version": "0.2.0",
+      "addon_description": "Manually order Zotero collections and the items inside them",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://github.com/local/zotero-manual-sort/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-06-04T06:50:26.036266+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-06-03T13:53:56Z",
+      "xpi_asset_id": 437356698,
+      "xpi_name": "listen2papers-zotero-0.1.0.xpi",
+      "xpi_download_url": "https://github.com/ysqander/listen2papers-zotero/releases/download/v0.1.0/listen2papers-zotero-0.1.0.xpi",
+      "addon_id": "listen2papers@listen2papers.com",
+      "addon_name": "listen2papers for Zotero",
+      "addon_version": "0.1.0",
+      "addon_description": "Turn selected Zotero PDFs into audio with read-along text.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://listen2papers.com/zotero/updates.json",
+      "parse_success": true
+    }
+  ]
+}

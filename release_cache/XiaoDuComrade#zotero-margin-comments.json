@@ -1,0 +1,80 @@
+{
+  "last_checked": "2026-08-01T06:44:38.247689+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.7.4",
+      "published_at": "2026-07-28T23:00:38Z",
+      "xpi_asset_id": 493310815,
+      "xpi_name": "margin-comments-0.7.4.xpi",
+      "xpi_download_url": "https://github.com/XiaoDuComrade/zotero-margin-comments/releases/download/v0.7.4/margin-comments-0.7.4.xpi",
+      "addon_id": "margin-comments@local.zotero",
+      "addon_name": "Margin Comments",
+      "addon_version": "0.7.4",
+      "addon_description": "在 Zotero PDF 页边显示带引线、可直接编辑的批注评论",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://github.com/XiaoDuComrade/Zotero-margin-comments/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "V0.7.10",
+      "published_at": "2026-07-29T16:58:25Z",
+      "xpi_asset_id": 494290254,
+      "xpi_name": "margin-comments-0.7.10.xpi",
+      "xpi_download_url": "https://github.com/XiaoDuComrade/zotero-margin-comments/releases/download/V0.7.10/margin-comments-0.7.10.xpi",
+      "addon_id": "margin-comments@local.zotero",
+      "addon_name": "Margin Comments",
+      "addon_version": "0.7.10",
+      "addon_description": "在 Zotero PDF 页边显示带引线、可直接编辑的批注评论",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://github.com/XiaoDuComrade/Zotero-margin-comments/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "V0.8.1",
+      "published_at": "2026-07-30T09:45:39Z",
+      "xpi_asset_id": 495188295,
+      "xpi_name": "margin-comments-0.8.1.xpi",
+      "xpi_download_url": "https://github.com/XiaoDuComrade/zotero-margin-comments/releases/download/V0.8.1/margin-comments-0.8.1.xpi",
+      "addon_id": "margin-comments@local.zotero",
+      "addon_name": "Margin Comments",
+      "addon_version": "0.8.1",
+      "addon_description": "在 Zotero PDF 页边显示带引线、可直接编辑的批注评论",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://github.com/XiaoDuComrade/Zotero-margin-comments/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "V0.8.5",
+      "published_at": "2026-08-01T00:51:03Z",
+      "xpi_asset_id": 497365222,
+      "xpi_name": "margin-comments-0.8.5.xpi",
+      "xpi_download_url": "https://github.com/XiaoDuComrade/zotero-margin-comments/releases/download/V0.8.5/margin-comments-0.8.5.xpi",
+      "addon_id": "margin-comments@local.zotero",
+      "addon_name": "Margin Comments",
+      "addon_version": "0.8.5",
+      "addon_description": "在 Zotero PDF 页边显示带引线、可直接编辑的批注评论",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://github.com/XiaoDuComrade/Zotero-margin-comments/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "V0.8.4",
+      "published_at": "2026-08-01T00:32:53Z",
+      "xpi_asset_id": 497353071,
+      "xpi_name": "margin-comments-0.8.4.xpi",
+      "xpi_download_url": "https://github.com/XiaoDuComrade/zotero-margin-comments/releases/download/V0.8.4/margin-comments-0.8.4.xpi",
+      "addon_id": "margin-comments@local.zotero",
+      "addon_name": "Margin Comments",
+      "addon_version": "0.8.4",
+      "addon_description": "在 Zotero PDF 页边显示带引线、可直接编辑的批注评论",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://github.com/XiaoDuComrade/Zotero-margin-comments/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}
