@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-05-16T11:19:39.757205+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.2",
+      "published_at": "2026-05-11T18:16:14Z",
+      "xpi_asset_id": 417661682,
+      "xpi_name": "zotero-pdf-outline-builder-windows-v0.1.2.xpi",
+      "xpi_download_url": "https://github.com/xfl031129/zotero-pdf-outline-builder/releases/download/v0.1.2/zotero-pdf-outline-builder-windows-v0.1.2.xpi",
+      "addon_id": "zotero-pdf-outline-builder@xfl031129.github.io",
+      "addon_name": "PDF Outline Builder for Zotero",
+      "addon_version": "0.1.2",
+      "addon_description": "Generate PDF bookmarks/outlines for selected Zotero PDF attachments.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://github.com/xfl031129/zotero-pdf-outline-builder/releases/latest/download/updates.json",
+      "parse_success": true
+    }
+  ]
+}

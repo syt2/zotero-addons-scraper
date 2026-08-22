@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-08-15T05:20:43.737031+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.3.0",
+      "published_at": "2026-08-14T18:10:10Z",
+      "xpi_asset_id": 514735378,
+      "xpi_name": "bilingual-reader@local.xpi",
+      "xpi_download_url": "https://github.com/lss3765/Zotero-Bilingual-Reader-Public/releases/download/v0.3.0/bilingual-reader%40local.xpi",
+      "addon_id": "bilingual-reader@local",
+      "addon_name": "Zotero Bilingual Reader",
+      "addon_version": "0.3.0",
+      "addon_description": "Local bilingual reading view for PDF and structured articles.",
+      "min_zotero_version": "7.9.9",
+      "max_zotero_version": "10.9.9",
+      "update_url": "https://raw.githubusercontent.com/lss3765/Zotero-Bilingual-Reader-Public/main/update.json",
+      "parse_success": true
+    }
+  ]
+}
