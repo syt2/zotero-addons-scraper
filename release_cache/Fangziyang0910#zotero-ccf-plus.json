@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-05-22T14:43:20.848277+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.3.2",
+      "published_at": "2026-05-22T09:07:38Z",
+      "xpi_asset_id": 426934337,
+      "xpi_name": "zotero-ccf-plus.xpi",
+      "xpi_download_url": "https://github.com/Fangziyang0910/zotero-ccf-plus/releases/download/v0.3.2/zotero-ccf-plus.xpi",
+      "addon_id": "ccfplus@timetrapzz.site",
+      "addon_name": "Zotero CCF Plus",
+      "addon_version": "0.3.2",
+      "addon_description": "Zotero 7 Plugin for easily obtaining the CCF rating, corresponding conference/journal, and citation count of a paper using a cascading Semantic Scholar + DBLP engine.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.*",
+      "update_url": "https://github.com/Fangziyang0910/zotero-ccf-plus/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}
