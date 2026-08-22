@@ -62,7 +62,6 @@ def sample_addon_info_output() -> dict[str, Any]:
                 "xpiDownloadUrl": {
                     "github": "https://github.com/owner/repo/releases/download/v2.0.0/addon.xpi",
                     "ghProxy": "https://gh-proxy.com/?q=https%3A//github.com/owner/repo/releases/download/v2.0.0/addon.xpi",
-                    "kgithub": "https://kkgithub.com/owner/repo/releases/download/v2.0.0/addon.xpi",
                 },
                 "releaseDate": "2024-01-01T00:00:00Z",
                 "id": "test@addon.com",

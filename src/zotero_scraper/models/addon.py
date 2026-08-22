@@ -40,17 +40,18 @@ class XpiDownloadUrls:
     """XPI download URLs from multiple sources."""
 
     github: str
-    ghProxy: Optional[str] = None
-    kgithub: Optional[str] = None
+    proxies: dict[str, str] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, str]:
         """Convert to dictionary, excluding None values."""
-        result: dict[str, str] = {"github": self.github}
-        if self.ghProxy:
-            result["ghProxy"] = self.ghProxy
-        if self.kgithub:
-            result["kgithub"] = self.kgithub
-        return result
+        return {"github": self.github, **self.proxies}
+
+    @classmethod
+    def from_github_url(cls, github_url: str) -> "XpiDownloadUrls":
+        """Create download URLs using the centrally configured proxies."""
+        from ..config.constants import XPIProxy
+
+        return cls(github=github_url, proxies=XPIProxy.urls_for(github_url))
 
     @classmethod
     def from_dict(cls, data: Optional[dict[str, str]]) -> Optional["XpiDownloadUrls"]:
@@ -59,8 +60,7 @@ class XpiDownloadUrls:
             return None
         return cls(
             github=data["github"],
-            ghProxy=data.get("ghProxy"),
-            kgithub=data.get("kgithub"),
+            proxies={key: value for key, value in data.items() if key != "github"},
         )
 
 

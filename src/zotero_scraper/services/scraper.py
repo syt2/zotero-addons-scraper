@@ -7,7 +7,7 @@ from typing import Any, Optional
 
 from ..clients.downloader import XPIDownloader
 from ..clients.github import GitHubClient, ReleaseAsset
-from ..config.constants import ContentTypes, XPIProxy
+from ..config.constants import ContentTypes
 from ..config.settings import ScraperConfig
 from ..models.addon import AddonInfo, AddonRelease, Author, XpiDownloadUrls
 from ..parsers.xpi_parser import XPIParser
@@ -182,10 +182,8 @@ class AddonScraper:
             return None
 
         # Set download URLs
-        release.xpiDownloadUrl = XpiDownloadUrls(
-            github=xpi_asset.browser_download_url,
-            ghProxy=XPIProxy.ghproxy_url(xpi_asset.browser_download_url),
-            kgithub=XPIProxy.kkgithub_url(xpi_asset.browser_download_url),
+        release.xpiDownloadUrl = XpiDownloadUrls.from_github_url(
+            xpi_asset.browser_download_url
         )
         release.releaseDate = xpi_asset.updated_at
 

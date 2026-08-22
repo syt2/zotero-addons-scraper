@@ -56,14 +56,12 @@ class TestXpiDownloadUrls:
         """Test to_dict with all fields."""
         urls = XpiDownloadUrls(
             github="https://github.com/example.xpi",
-            ghProxy="https://gh-proxy.com/example.xpi",
-            kgithub="https://kkgithub.com/example.xpi",
+            proxies={"ghProxy": "https://gh-proxy.com/example.xpi"},
         )
         result = urls.to_dict()
         assert result == {
             "github": "https://github.com/example.xpi",
             "ghProxy": "https://gh-proxy.com/example.xpi",
-            "kgithub": "https://kkgithub.com/example.xpi",
         }
 
     def test_to_dict_minimal(self):
@@ -78,6 +76,15 @@ class TestXpiDownloadUrls:
         urls = XpiDownloadUrls.from_dict(data)
         assert urls is not None
         assert urls.github == "https://github.com/example.xpi"
+
+    def test_from_github_url_uses_configured_proxies(self):
+        """Test proxy URL generation uses the central builder registry."""
+        github_url = "https://github.com/owner/repo/releases/download/v1/addon.xpi"
+
+        assert XpiDownloadUrls.from_github_url(github_url).to_dict() == {
+            "github": github_url,
+            "ghProxy": f"https://gh-proxy.org/{github_url}",
+        }
 
     def test_from_dict_missing_github(self):
         """Test from_dict returns None if github is missing."""

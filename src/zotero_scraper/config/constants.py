@@ -1,6 +1,6 @@
 """Constants and API endpoints for the Zotero addons scraper."""
 
-from urllib.parse import quote
+from collections.abc import Callable
 
 
 class GitHubAPI:
@@ -67,19 +67,17 @@ class GitHubAPI:
 class XPIProxy:
     """XPI download proxy URLs."""
 
-    GHPROXY_BASE = "https://gh-proxy.org/"
-    KKGITHUB_DOMAIN = "kkgithub.com"
+    URL_BUILDERS: dict[str, Callable[[str], str]] = {
+        "ghProxy": lambda github_url: f"https://gh-proxy.org/{github_url}",
+    }
 
-    @staticmethod
-    def ghproxy_url(github_url: str) -> str:
-        """Get ghProxy URL for a GitHub download URL."""
-        # return f"{XPIProxy.GHPROXY_BASE}/{quote(github_url, safe='')}"
-        return f"{XPIProxy.GHPROXY_BASE}/{github_url}"
-
-    @staticmethod
-    def kkgithub_url(github_url: str) -> str:
-        """Get kkgithub URL for a GitHub download URL."""
-        return github_url.replace("github.com", XPIProxy.KKGITHUB_DOMAIN)
+    @classmethod
+    def urls_for(cls, github_url: str) -> dict[str, str]:
+        """Build all configured proxy URLs for a GitHub download URL."""
+        return {
+            name: build_url(github_url)
+            for name, build_url in cls.URL_BUILDERS.items()
+        }
 
 
 class ZoteroApp:

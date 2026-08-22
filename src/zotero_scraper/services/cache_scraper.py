@@ -7,7 +7,6 @@ from typing import Any, Optional
 
 from ..cache.release_cache import CachedRelease, ReleaseCache
 from ..clients.github import GitHubClient
-from ..config.constants import XPIProxy
 from ..config.settings import ScraperConfig
 from ..models.addon import AddonInfo, AddonRelease, Author, XpiDownloadUrls
 from ..utils.logging import get_logger
@@ -193,10 +192,8 @@ class CacheScraper:
         if not cached.parse_success:
             return None
 
-        xpi_download_url = XpiDownloadUrls(
-            github=cached.xpi_download_url,
-            ghProxy=XPIProxy.ghproxy_url(cached.xpi_download_url),
-            kgithub=XPIProxy.kkgithub_url(cached.xpi_download_url),
+        xpi_download_url = XpiDownloadUrls.from_github_url(
+            cached.xpi_download_url
         )
 
         return AddonRelease(
