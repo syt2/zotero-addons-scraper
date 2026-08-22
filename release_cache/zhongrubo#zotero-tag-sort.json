@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-08-18T21:41:06.732671+00:00",
+  "checked_releases": [
+    {
+      "tag": "ZoteroPlugin",
+      "published_at": "2026-08-18T17:21:47Z",
+      "xpi_asset_id": 519745895,
+      "xpi_name": "zotero-tag-sort.xpi",
+      "xpi_download_url": "https://github.com/zhongrubo/zotero-tag-sort/releases/download/ZoteroPlugin/zotero-tag-sort.xpi",
+      "addon_id": "zotero-tag-sort@zhongrubo.github.io",
+      "addon_name": "Zotero Tag Sort",
+      "addon_version": "1.0.1",
+      "addon_description": "Adds sorting options (by added time, name, or length) and a clean, framed, table-like layout to the Zotero tag selector, while keeping all native filtering behavior.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "11.*",
+      "update_url": "https://github.com/zhongrubo/zotero-tag-sort/releases/latest/download/update.json",
+      "parse_success": true
+    }
+  ]
+}

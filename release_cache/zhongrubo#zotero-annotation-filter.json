@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-08-18T12:40:27.198775+00:00",
+  "checked_releases": [
+    {
+      "tag": "ZoteroPlugin",
+      "published_at": "2026-08-18T11:08:35Z",
+      "xpi_asset_id": 519344254,
+      "xpi_name": "zotero-annotation-filter-0.1.xpi",
+      "xpi_download_url": "https://github.com/zhongrubo/zotero-annotation-filter/releases/download/ZoteroPlugin/zotero-annotation-filter-0.1.xpi",
+      "addon_id": "annotation-filter@zhongrubo.github.io",
+      "addon_name": "批注筛选 Annotation Filter",
+      "addon_version": "0.1",
+      "addon_description": "在 Zotero 阅读器左侧侧栏的“注释”列表底部添加工具栏，按批注类型（高亮/下划线/笔记/文本/选区/手写）筛选批注。Filter reader annotations by type.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "10.9.9",
+      "update_url": "https://raw.githubusercontent.com/zhongrubo/zotero-annotation-filter/main/update.json",
+      "parse_success": true
+    }
+  ]
+}
