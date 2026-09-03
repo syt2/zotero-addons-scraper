@@ -188,12 +188,25 @@ class RepoCache:
         if not compatible:
             return None
 
-        # Sort by addon_version descending to get highest version
+        # Prefer the highest add-on version. For duplicate add-on versions,
+        # prefer the most recently published GitHub release.
         from functools import cmp_to_key
         from ..utils.version import compare_versions
 
         def cmp_release(a: CachedRelease, b: CachedRelease) -> int:
-            return -compare_versions(a.addon_version or "0", b.addon_version or "0")
+            version_comparison = compare_versions(
+                a.addon_version or "0", b.addon_version or "0"
+            )
+            if version_comparison:
+                return -version_comparison
+
+            a_published_at = a.published_at or ""
+            b_published_at = b.published_at or ""
+            if a_published_at > b_published_at:
+                return -1
+            if a_published_at < b_published_at:
+                return 1
+            return 0
 
         compatible.sort(key=cmp_to_key(cmp_release))
         return compatible[0]
