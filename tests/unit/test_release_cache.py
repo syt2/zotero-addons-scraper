@@ -1,7 +1,7 @@
 """Tests for selecting and pruning releases from the persistent cache."""
 
 import json
-from unittest.mock import Mock, call
+from unittest.mock import Mock, call, patch
 
 import pytest
 
@@ -201,6 +201,42 @@ def test_release_page_observation_is_transient(temp_dir):
     data = json.loads((cache_dir / "owner#repo.json").read_text(encoding="utf-8"))
     assert "observed_release_tags" not in data
     assert cache.get_observed_release_tags("owner/repo") == {"v0.2"}
+
+
+def test_save_failure_preserves_existing_cache_and_propagates(temp_dir):
+    """A partial write cannot replace the last valid cache or look successful."""
+    repo = "owner/repo"
+    cache_dir = temp_dir / "release_cache"
+    cache_file = cache_dir / "owner#repo.json"
+    temp_file = cache_file.with_suffix(".json.tmp")
+    cache = ReleaseCache(cache_dir)
+    cache.add_release(
+        repo, make_release("v0.1", "0.1", "2026-08-29T00:00:00Z")
+    )
+    cache.save()
+    previous_contents = cache_file.read_text(encoding="utf-8")
+
+    cache.add_release(
+        repo, make_release("v0.2", "0.2", "2026-08-30T00:00:00Z")
+    )
+
+    def fail_after_partial_write(data, file, **kwargs):
+        file.write("{")
+        raise OSError("disk full")
+
+    with patch(
+        "zotero_scraper.cache.release_cache.json.dump",
+        side_effect=fail_after_partial_write,
+    ):
+        with pytest.raises(OSError, match="disk full"):
+            cache.save()
+
+    assert cache_file.read_text(encoding="utf-8") == previous_contents
+    assert not temp_file.exists()
+
+    cache.save()
+    reloaded = ReleaseCache(cache_dir).get_repo_cache(repo)
+    assert {release.tag for release in reloaded.checked_releases} == {"v0.1", "v0.2"}
 
 
 def test_selected_tag_absent_from_page_is_confirmed_before_output(temp_dir):

@@ -291,16 +291,23 @@ class ReleaseCache:
         if repo not in self._cache:
             return
 
+        cache_file = self._get_repo_file(repo)
+        temp_file = cache_file.with_suffix(f"{cache_file.suffix}.tmp")
         try:
             self.cache_dir.mkdir(parents=True, exist_ok=True)
-            cache_file = self._get_repo_file(repo)
 
-            with open(cache_file, "w", encoding="utf-8") as f:
+            with open(temp_file, "w", encoding="utf-8") as f:
                 json.dump(self._cache[repo].to_dict(), f, ensure_ascii=False, indent=2)
+            temp_file.replace(cache_file)
 
             self._dirty.discard(repo)
         except Exception as e:
             logger.error(f"Failed to save cache for {repo}: {e}")
+            try:
+                temp_file.unlink(missing_ok=True)
+            except OSError:
+                pass
+            raise
 
     def save(self) -> None:
         """Save all dirty (modified) repos."""
