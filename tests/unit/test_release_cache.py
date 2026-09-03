@@ -1,6 +1,16 @@
-"""Tests for selecting releases from the persistent release cache."""
+"""Tests for selecting and pruning releases from the persistent cache."""
 
-from zotero_scraper.cache.release_cache import CachedRelease, RepoCache
+import json
+from unittest.mock import Mock, call
+
+import pytest
+
+from zotero_scraper.cache.release_cache import CachedRelease, ReleaseCache, RepoCache
+from zotero_scraper.clients.github import GitHubClient
+from zotero_scraper.config.constants import GitHubAPI
+from zotero_scraper.config.settings import CacheConfig, GitHubConfig, ScraperConfig
+from zotero_scraper.services.cache_builder import ReleaseCacheBuilder
+from zotero_scraper.services.cache_scraper import CacheScraper
 
 
 def make_release(tag: str, version: str, published_at: str | None) -> CachedRelease:
@@ -16,6 +26,28 @@ def make_release(tag: str, version: str, published_at: str | None) -> CachedRele
         min_zotero_version="7.0",
         max_zotero_version="10.9.9",
     )
+
+
+def make_config(temp_dir) -> ScraperConfig:
+    """Create a scraper config whose writable paths stay inside the test directory."""
+    return ScraperConfig(
+        cache=CacheConfig(
+            cache_dir=temp_dir / "xpi_cache",
+            runtime_xpi_dir=temp_dir / "runtime_xpi",
+        )
+    )
+
+
+def make_builder(
+    temp_dir, cache: ReleaseCache, releases: list[dict] | None
+) -> ReleaseCacheBuilder:
+    """Create a builder focused on release-list cleanup rather than XPI parsing."""
+    builder = ReleaseCacheBuilder(make_config(temp_dir), cache)
+    builder.github = Mock()
+    builder.github.get_releases.return_value = releases
+    builder._check_latest_release_update_url = Mock(return_value=False)
+    cache.get_unchecked_tags = Mock(return_value=[])
+    return builder
 
 
 def test_best_release_prefers_newer_published_at_for_same_addon_version():
@@ -41,3 +73,225 @@ def test_best_release_treats_missing_published_at_as_oldest():
     )
 
     assert cache.get_best_release_for_zotero("10").tag == "published"
+
+
+@pytest.mark.parametrize("page_size", [2, 100])
+def test_builder_checks_only_missing_tags_at_or_after_page_cutoff(
+    temp_dir, page_size
+):
+    """Short and full pages use the same conservative cutoff and exact checks."""
+    cutoff = "2026-08-29T00:00:00Z"
+    releases = [
+        {"tag_name": f"visible-{index}", "published_at": cutoff}
+        for index in range(page_size)
+    ]
+    cache = ReleaseCache(temp_dir / "release_cache")
+    for release in [
+        make_release("older", "0.1", "2026-08-28T23:59:59Z"),
+        make_release("at-cutoff", "0.2", cutoff),
+        make_release("newer", "0.3", "2026-08-30T00:00:00Z"),
+        make_release("visible-0", "0.4", cutoff),
+    ]:
+        cache.add_release("owner/repo", release)
+    builder = make_builder(temp_dir, cache, releases)
+    builder.github.release_exists.return_value = False
+
+    builder._process_repo("owner/repo")
+
+    assert builder.github.release_exists.call_args_list == [
+        call("owner", "repo", "at-cutoff"),
+        call("owner", "repo", "newer"),
+    ]
+    assert {
+        release.tag for release in cache.get_repo_cache("owner/repo").checked_releases
+    } == {"older", "visible-0"}
+
+
+def test_builder_empty_page_checks_every_cached_tag_and_deletes_only_404(temp_dir):
+    """An empty successful page is evidence to check all tags, not delete them."""
+    cache = ReleaseCache(temp_dir / "release_cache")
+    for tag in ["deleted", "exists", "unknown"]:
+        cache.add_release(
+            "owner/repo", make_release(tag, "0.2", "2026-08-30T00:00:00Z")
+        )
+    builder = make_builder(temp_dir, cache, [])
+    results = {"deleted": False, "exists": True, "unknown": None}
+    builder.github.release_exists.side_effect = (
+        lambda owner, repo, tag: results[tag]
+    )
+
+    builder._process_repo("owner/repo")
+
+    assert builder.github.release_exists.call_args_list == [
+        call("owner", "repo", "deleted"),
+        call("owner", "repo", "exists"),
+        call("owner", "repo", "unknown"),
+    ]
+    assert {
+        release.tag for release in cache.get_repo_cache("owner/repo").checked_releases
+    } == {"exists", "unknown"}
+
+
+def test_builder_preserves_cache_when_release_request_fails(temp_dir):
+    """An unknown GitHub result must never be mistaken for an empty release list."""
+    cache = ReleaseCache(temp_dir / "release_cache")
+    cache.add_release(
+        "owner/repo", make_release("keep", "0.2", "2026-08-30T00:00:00Z")
+    )
+    cache.set_observed_release_tags("owner/repo", {"stale-observation"})
+    builder = make_builder(temp_dir, cache, None)
+
+    builder._process_repo("owner/repo")
+
+    assert [
+        release.tag for release in cache.get_repo_cache("owner/repo").checked_releases
+    ] == ["keep"]
+    assert cache.get_observed_release_tags("owner/repo") is None
+    builder.github.release_exists.assert_not_called()
+
+
+def test_builder_skips_cleanup_without_a_string_publication_cutoff(temp_dir):
+    """Malformed publication values cannot become an unsafe time boundary."""
+    cache = ReleaseCache(temp_dir / "release_cache")
+    cache.add_release(
+        "owner/repo", make_release("keep", "0.2", "2026-08-30T00:00:00Z")
+    )
+    releases = [
+        {"tag_name": "without-time", "published_at": None},
+        {"tag_name": "numeric-time", "published_at": 123},
+    ]
+    builder = make_builder(temp_dir, cache, releases)
+
+    builder._process_repo("owner/repo")
+
+    builder.github.release_exists.assert_not_called()
+    assert cache.get_repo_cache("owner/repo").get_release_by_tag("keep") is not None
+
+
+def test_builder_ignores_non_string_times_when_a_valid_cutoff_exists(temp_dir):
+    """A malformed time beside a valid one does not break candidate selection."""
+    cache = ReleaseCache(temp_dir / "release_cache")
+    cache.add_release(
+        "owner/repo", make_release("deleted", "0.2", "2026-08-30T00:00:00Z")
+    )
+    releases = [
+        {"tag_name": "valid", "published_at": "2026-08-29T00:00:00Z"},
+        {"tag_name": "numeric-time", "published_at": 123},
+    ]
+    builder = make_builder(temp_dir, cache, releases)
+    builder.github.release_exists.return_value = False
+
+    builder._process_repo("owner/repo")
+
+    builder.github.release_exists.assert_called_once_with("owner", "repo", "deleted")
+    assert cache.get_repo_cache("owner/repo").checked_releases == []
+
+
+def test_release_page_observation_is_transient(temp_dir):
+    """Release-list evidence stays in memory and never enters published cache JSON."""
+    cache_dir = temp_dir / "release_cache"
+    cache = ReleaseCache(cache_dir)
+    cache.add_release(
+        "owner/repo", make_release("v0.2", "0.2", "2026-08-30T00:00:00Z")
+    )
+    cache.set_observed_release_tags("owner/repo", {"v0.2"})
+
+    cache.save()
+
+    data = json.loads((cache_dir / "owner#repo.json").read_text(encoding="utf-8"))
+    assert "observed_release_tags" not in data
+    assert cache.get_observed_release_tags("owner/repo") == {"v0.2"}
+
+
+def test_selected_tag_absent_from_page_is_confirmed_before_output(temp_dir):
+    """A selected deleted tag is removed so the next compatible release wins."""
+    cache = ReleaseCache(temp_dir / "release_cache")
+    cache.add_release(
+        "owner/repo", make_release("deleted", "0.2", "2026-08-30T00:00:00Z")
+    )
+    cache.add_release("owner/repo", make_release("v0.1", "0.1", "2026-08-29T00:00:00Z"))
+    cache.set_observed_release_tags("owner/repo", {"v0.1"})
+    scraper = CacheScraper(make_config(temp_dir), cache)
+    scraper.github = Mock()
+    scraper.github.release_exists.return_value = False
+
+    selected = scraper._get_available_release("owner/repo", "owner", "repo", "10")
+
+    assert selected is not None
+    assert selected.tag == "v0.1"
+    scraper.github.release_exists.assert_called_once_with("owner", "repo", "deleted")
+
+
+def test_selected_tag_is_not_checked_without_same_run_page_observation(temp_dir):
+    """Skip-build and list failures cannot authorize persistent cache deletion."""
+    cache = ReleaseCache(temp_dir / "release_cache")
+    cache.add_release(
+        "owner/repo", make_release("keep", "0.2", "2026-08-30T00:00:00Z")
+    )
+    scraper = CacheScraper(make_config(temp_dir), cache)
+    scraper.github = Mock()
+    scraper.github.release_exists.return_value = False
+
+    selected = scraper._get_available_release("owner/repo", "owner", "repo", "10")
+
+    assert selected is not None
+    assert selected.tag == "keep"
+    assert cache.get_repo_cache("owner/repo").get_release_by_tag("keep") is not None
+    scraper.github.release_exists.assert_not_called()
+
+
+def test_release_existence_memo_is_reset_for_each_scrape(temp_dir):
+    """A prior scrape's exact-tag result cannot leak into the next scrape."""
+    cache = ReleaseCache(temp_dir / "release_cache")
+    scraper = CacheScraper(make_config(temp_dir), cache)
+    scraper._load_repos_from_input = Mock(return_value=[])
+    scraper._save_output = Mock()
+
+    scraper._release_existence[("owner/repo", "v0.2")] = False
+    scraper.scrape_all()
+    assert scraper._release_existence == {}
+
+    scraper._release_existence[("owner/repo", "v0.2")] = True
+    scraper.scrape_all()
+    assert scraper._release_existence == {}
+
+
+@pytest.mark.parametrize("bad_release", [None, {}, {"tag_name": ""}])
+def test_get_releases_rejects_an_entire_malformed_page(
+    requests_mock, bad_release
+):
+    """A malformed 100-item page cannot be mistaken for 99 authoritative tags."""
+    client = GitHubClient(GitHubConfig())
+    releases = [{"tag_name": f"v{index}"} for index in range(99)]
+    releases.append(bad_release)
+    requests_mock.get(GitHubAPI.releases("owner", "repo"), json=releases)
+
+    assert client.get_releases("owner", "repo") is None
+
+
+@pytest.mark.parametrize(
+    ("tag", "encoded"),
+    [
+        ("v1#build", "v1%23build"),
+        ("release/0.2", "release%2F0.2"),
+        ("literal%2Ftag", "literal%252Ftag"),
+    ],
+)
+def test_release_by_tag_encodes_the_complete_tag_path(tag, encoded):
+    """Exact release checks preserve special characters as one path segment."""
+    assert GitHubAPI.release_by_tag("owner", "repo", tag) == (
+        f"https://api.github.com/repos/owner/repo/releases/tags/{encoded}"
+    )
+
+
+def test_release_exists_distinguishes_404_from_other_responses(requests_mock):
+    """Only a GitHub 404 can authorize cache removal."""
+    client = GitHubClient(GitHubConfig())
+    url = "https://api.github.com/repos/owner/repo/releases/tags/deleted"
+    requests_mock.get(url, status_code=404)
+
+    assert client.release_exists("owner", "repo", "deleted") is False
+
+    requests_mock.get(url, status_code=500)
+
+    assert client.release_exists("owner", "repo", "deleted") is None

@@ -159,14 +159,21 @@ class RepoCache:
         Returns:
             List of removed tags.
         """
-        removed = []
-        new_releases = []
-        for release in self.checked_releases:
-            if release.tag in current_tags:
-                new_releases.append(release)
-            else:
-                removed.append(release.tag)
-        self.checked_releases = new_releases
+        missing_tags = {
+            release.tag
+            for release in self.checked_releases
+            if release.tag not in current_tags
+        }
+        return self.remove_releases(missing_tags)
+
+    def remove_releases(self, tags: set[str]) -> list[str]:
+        """Remove a known set of releases from this cache."""
+        removed = [
+            release.tag for release in self.checked_releases if release.tag in tags
+        ]
+        self.checked_releases = [
+            release for release in self.checked_releases if release.tag not in tags
+        ]
         return removed
 
     def get_best_release_for_zotero(
@@ -248,6 +255,7 @@ class ReleaseCache:
         self.cache_dir = cache_dir
         self._cache: dict[str, RepoCache] = {}
         self._dirty: set[str] = set()  # Track which repos need saving
+        self._observed_release_tags: dict[str, set[str]] = {}
 
     def _repo_to_filename(self, repo: str) -> str:
         """Convert repo name to filename."""
@@ -374,6 +382,26 @@ class ReleaseCache:
         """
         cache = self.get_repo_cache(repo)
         removed = cache.remove_deleted_releases(current_tags)
+        if removed:
+            self._dirty.add(repo)
+        return removed
+
+    def set_observed_release_tags(self, repo: str, tags: set[str]) -> None:
+        """Record a successful release-page response for the current run."""
+        self._observed_release_tags[repo] = set(tags)
+
+    def get_observed_release_tags(self, repo: str) -> Optional[set[str]]:
+        """Return current-run release tags, or None when no page was observed."""
+        return self._observed_release_tags.get(repo)
+
+    def clear_observed_release_tags(self, repo: str) -> None:
+        """Discard stale release-page evidence before a new request."""
+        self._observed_release_tags.pop(repo, None)
+
+    def remove_releases(self, repo: str, tags: set[str]) -> list[str]:
+        """Remove only releases confirmed deleted by GitHub."""
+        cache = self.get_repo_cache(repo)
+        removed = cache.remove_releases(tags)
         if removed:
             self._dirty.add(repo)
         return removed

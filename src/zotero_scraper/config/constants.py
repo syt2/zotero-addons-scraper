@@ -1,6 +1,7 @@
 """Constants and API endpoints for the Zotero addons scraper."""
 
 from collections.abc import Callable
+from urllib.parse import quote
 
 
 class GitHubAPI:
@@ -33,7 +34,7 @@ class GitHubAPI:
     @staticmethod
     def release_by_tag(owner: str, repo: str, tag: str) -> str:
         """Get release by tag endpoint."""
-        return f"{GitHubAPI.releases(owner, repo)}/tags/{tag}"
+        return f"{GitHubAPI.releases(owner, repo)}/tags/{quote(tag, safe='')}"
 
     @staticmethod
     def issues(owner: str, repo: str) -> str:

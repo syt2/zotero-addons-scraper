@@ -125,7 +125,7 @@ class GitHubClient(BaseHTTPClient):
 
     def get_releases(
         self, owner: str, repo: str, per_page: int = 100
-    ) -> list[dict[str, Any]]:
+    ) -> Optional[list[dict[str, Any]]]:
         """Get releases for a repository (first page only).
 
         Args:
@@ -134,7 +134,8 @@ class GitHubClient(BaseHTTPClient):
             per_page: Number of releases to fetch (max 100).
 
         Returns:
-            List of release data dictionaries.
+            List of release data dictionaries, an empty list when none exist,
+            or None when the request fails.
         """
         url = GitHubAPI.releases(owner, repo)
         try:
@@ -143,10 +144,43 @@ class GitHubClient(BaseHTTPClient):
                 headers=self._headers,
                 params={"per_page": per_page},
             )
-            return response.json()
+            data: Any = response.json()
+            if not isinstance(data, list):
+                logger.warning(f"Invalid release response for {owner}/{repo}")
+                return None
+
+            releases: list[dict[str, Any]] = []
+            for release in data:
+                if not isinstance(release, dict):
+                    logger.warning(f"Invalid release response for {owner}/{repo}")
+                    return None
+                tag = release.get("tag_name")
+                if not isinstance(tag, str) or not tag:
+                    logger.warning(f"Invalid release response for {owner}/{repo}")
+                    return None
+                releases.append(release)
+            return releases
         except Exception as e:
             logger.warning(f"Failed to get releases for {owner}/{repo}: {e}")
-            return []
+            return None
+
+    def release_exists(self, owner: str, repo: str, tag: str) -> Optional[bool]:
+        """Return whether a release tag exists, preserving failures as unknown.
+
+        A confirmed 404 means the release can be safely removed from the
+        persistent cache. Other failures must not cause cache deletion.
+        """
+        url = GitHubAPI.release_by_tag(owner, repo, tag)
+        try:
+            response = self.get(
+                url,
+                headers=self._headers,
+                allowed_status_codes={404},
+            )
+            return response.status_code != 404
+        except Exception as e:
+            logger.warning(f"Failed to check release {owner}/{repo}@{tag}: {e}")
+            return None
 
     def get_release(
         self, owner: str, repo: str, tag: str
@@ -169,7 +203,7 @@ class GitHubClient(BaseHTTPClient):
             elif tag == "pre":
                 # Find first prerelease
                 releases = self.get_releases(owner, repo)
-                prereleases = [r for r in releases if r.get("prerelease")]
+                prereleases = [r for r in releases or [] if r.get("prerelease")]
                 if not prereleases:
                     return None
                 data = prereleases[0]

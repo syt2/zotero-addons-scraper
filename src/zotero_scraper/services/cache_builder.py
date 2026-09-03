@@ -205,15 +205,22 @@ class ReleaseCacheBuilder:
         owner, name = parts
 
         # Get all releases from GitHub
+        self.cache.clear_observed_release_tags(repo)
         releases = self.github.get_releases(owner, name)
-        if not releases:
-            logger.warning(f"No releases found for {repo}")
+        if releases is None:
+            logger.warning(f"Failed to retrieve releases for {repo}")
             return {"new_releases": 0}
 
-        # Get current tags from GitHub (first page only, so don't delete old cached releases)
-        current_tags = {r.get("tag_name") for r in releases if r.get("tag_name")}
+        # GitHub returns at most one release page. Remember those tags so output
+        # generation can verify a selected cached tag only when it was not seen.
+        current_tags: set[str] = {
+            release["tag_name"] for release in releases
+        }
+        self.cache.set_observed_release_tags(repo, current_tags)
+        self._remove_missing_releases(repo, owner, name, current_tags, releases)
 
         # Get tags to process
+        tags_to_process: list[str]
         if full_rebuild:
             tags_to_process = list(current_tags)
         else:
@@ -236,7 +243,7 @@ class ReleaseCacheBuilder:
         new_count = 0
         for release_data in releases:
             tag = release_data.get("tag_name")
-            if tag not in tags_to_process:
+            if not isinstance(tag, str) or tag not in tags_to_process:
                 continue
 
             cached = self._parse_release(repo, release_data)
@@ -266,6 +273,67 @@ class ReleaseCacheBuilder:
             self.cache.update_repo_checked_time(repo)
 
         return {"new_releases": new_count, "update_url_updated": update_found}
+
+    def _remove_missing_releases(
+        self,
+        repo: str,
+        owner: str,
+        name: str,
+        current_tags: set[str],
+        releases: list[dict[str, Any]],
+    ) -> None:
+        """Confirm missing cached tags that could belong to the observed page.
+
+        For a non-empty page, its oldest valid publication time bounds the
+        candidates. An empty page has no boundary, so every cached tag is
+        checked. Only an exact tag endpoint's 404 authorizes removal.
+        """
+        repo_cache = self.cache.get_repo_cache(repo)
+        if not releases:
+            candidates = {
+                cached.tag
+                for cached in repo_cache.checked_releases
+                if isinstance(cached.tag, str) and cached.tag
+            }
+            self._remove_confirmed_deleted_releases(repo, owner, name, candidates)
+            return
+
+        published_times = []
+        for release in releases:
+            published_at = release.get("published_at")
+            if isinstance(published_at, str) and published_at:
+                published_times.append(published_at)
+        if not published_times:
+            return
+
+        cutoff = min(published_times)
+        candidates = {
+            cached.tag
+            for cached in repo_cache.checked_releases
+            if cached.tag not in current_tags
+            and isinstance(cached.published_at, str)
+            and cached.published_at >= cutoff
+        }
+        self._remove_confirmed_deleted_releases(repo, owner, name, candidates)
+
+    def _remove_confirmed_deleted_releases(
+        self,
+        repo: str,
+        owner: str,
+        name: str,
+        tags: set[str],
+    ) -> list[str]:
+        """Remove tags only after their individual GitHub endpoint returns 404."""
+        deleted_tags = set()
+        for tag in sorted(tags):
+            if self.github.release_exists(owner, name, tag) is False:
+                deleted_tags.add(tag)
+        if not deleted_tags:
+            return []
+
+        removed = self.cache.remove_releases(repo, deleted_tags)
+        logger.info(f"{repo}: Removed {len(removed)} confirmed deleted releases")
+        return removed
 
     def _parse_release(
         self, repo: str, release_data: dict[str, Any]

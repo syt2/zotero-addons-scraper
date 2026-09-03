@@ -56,6 +56,7 @@ class BaseHTTPClient(ABC):
         method: str,
         url: str,
         headers: Optional[dict[str, str]] = None,
+        allowed_status_codes: Optional[set[int]] = None,
         **kwargs: Any,
     ) -> requests.Response:
         """Execute HTTP request with error handling.
@@ -64,6 +65,7 @@ class BaseHTTPClient(ABC):
             method: HTTP method (GET, POST, DELETE, etc.).
             url: Request URL.
             headers: Optional request headers.
+            allowed_status_codes: Status codes to return without raising.
             **kwargs: Additional arguments passed to requests.
 
         Returns:
@@ -88,7 +90,11 @@ class BaseHTTPClient(ABC):
                     logger.error(f"Rate limit exceeded for {url}")
                     raise RateLimitError(f"Rate limit exceeded for {url}")
 
-            response.raise_for_status()
+            if (
+                not allowed_status_codes
+                or response.status_code not in allowed_status_codes
+            ):
+                response.raise_for_status()
             return response
 
         except requests.exceptions.Timeout:
@@ -108,10 +114,17 @@ class BaseHTTPClient(ABC):
         self,
         url: str,
         headers: Optional[dict[str, str]] = None,
+        allowed_status_codes: Optional[set[int]] = None,
         **kwargs: Any,
     ) -> requests.Response:
         """Execute GET request."""
-        return self._request("GET", url, headers=headers, **kwargs)
+        return self._request(
+            "GET",
+            url,
+            headers=headers,
+            allowed_status_codes=allowed_status_codes,
+            **kwargs,
+        )
 
     def post(
         self,

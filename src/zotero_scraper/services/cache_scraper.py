@@ -38,6 +38,7 @@ class CacheScraper:
         self.github = GitHubClient(config.github)
         self.fallback = FallbackService()
         self.publisher = PublisherService(self.github, config.github)
+        self._release_existence: dict[tuple[str, str], Optional[bool]] = {}
 
     def scrape_all(self) -> list[dict[str, Any]]:
         """Generate addon information from cache.
@@ -45,6 +46,7 @@ class CacheScraper:
         Returns:
             List of addon info dictionaries.
         """
+        self._release_existence.clear()
         repos = self._load_repos_from_input()
         logger.info(f"Generating addon info for {len(repos)} repositories")
 
@@ -78,6 +80,7 @@ class CacheScraper:
 
         # Save output
         self._save_output(result)
+        self.cache.save()
 
         return result
 
@@ -137,12 +140,13 @@ class CacheScraper:
             return None
 
         owner, name = parts
-        repo_cache = self.cache.get_repo_cache(repo)
 
         # Find best release for each Zotero version
         releases: list[AddonRelease] = []
         for zotero_version in TARGET_ZOTERO_VERSIONS:
-            cached_release = repo_cache.get_best_release_for_zotero(zotero_version)
+            cached_release = self._get_available_release(
+                repo, owner, name, zotero_version
+            )
             if cached_release:
                 release = self._cached_to_addon_release(cached_release, zotero_version)
                 if release:
@@ -176,6 +180,30 @@ class CacheScraper:
             addon_info.description = first_release.description
 
         return addon_info
+
+    def _get_available_release(
+        self, repo: str, owner: str, name: str, zotero_version: str
+    ) -> Optional[CachedRelease]:
+        """Choose a compatible release, dropping only tags GitHub confirms deleted."""
+        repo_cache = self.cache.get_repo_cache(repo)
+        observed_tags = self.cache.get_observed_release_tags(repo)
+
+        while cached_release := repo_cache.get_best_release_for_zotero(zotero_version):
+            if observed_tags is None or cached_release.tag in observed_tags:
+                return cached_release
+
+            cache_key = (repo, cached_release.tag)
+            if cache_key not in self._release_existence:
+                self._release_existence[cache_key] = self.github.release_exists(
+                    owner, name, cached_release.tag
+                )
+
+            if self._release_existence[cache_key] is not False:
+                return cached_release
+
+            self.cache.remove_releases(repo, {cached_release.tag})
+
+        return None
 
     def _cached_to_addon_release(
         self, cached: CachedRelease, zotero_version: str
