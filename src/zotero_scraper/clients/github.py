@@ -135,7 +135,7 @@ class GitHubClient(BaseHTTPClient):
 
         Returns:
             List of release data dictionaries, an empty list when none exist,
-            or None when the request fails.
+            or None when the request or response validation fails.
         """
         url = GitHubAPI.releases(owner, repo)
         try:
@@ -157,6 +157,20 @@ class GitHubClient(BaseHTTPClient):
                 tag = release.get("tag_name")
                 if not isinstance(tag, str) or not tag:
                     logger.warning(f"Invalid release response for {owner}/{repo}")
+                    return None
+                assets = release.get("assets")
+                if not isinstance(assets, list) or any(
+                    not isinstance(asset, dict)
+                    or type(asset.get("id")) is not int
+                    or not isinstance(asset.get("name"), str)
+                    or not isinstance(asset.get("browser_download_url"), str)
+                    or not isinstance(asset.get("content_type"), str)
+                    or not isinstance(asset.get("updated_at"), str)
+                    for asset in assets
+                ):
+                    logger.warning(
+                        f"Invalid release assets for {owner}/{repo}@{tag}"
+                    )
                     return None
                 releases.append(release)
             return releases

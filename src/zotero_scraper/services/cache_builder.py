@@ -63,6 +63,7 @@ class ReleaseCacheBuilder:
             "repos_processed": 0,
             "repos_failed": 0,
             "new_releases_parsed": 0,
+            "refreshed_releases": 0,
             "errors": [],
         }
 
@@ -77,6 +78,9 @@ class ReleaseCacheBuilder:
                 )
                 stats["repos_processed"] += 1
                 stats["new_releases_parsed"] += result.get("new_releases", 0)
+                stats["refreshed_releases"] += result.get(
+                    "refreshed_releases", 0
+                )
             except Exception as e:
                 logger.error(f"Failed to process {repo}: {e}")
                 stats["repos_failed"] += 1
@@ -90,7 +94,8 @@ class ReleaseCacheBuilder:
 
         logger.info(
             f"Cache build complete: {stats['repos_processed']} repos, "
-            f"{stats['new_releases_parsed']} new releases"
+            f"{stats['new_releases_parsed']} new releases, "
+            f"{stats['refreshed_releases']} refreshed releases"
         )
 
         return stats
@@ -122,6 +127,7 @@ class ReleaseCacheBuilder:
             "repos_processed": 0,
             "repos_failed": 0,
             "new_releases_parsed": 0,
+            "refreshed_releases": 0,
             "errors": [],
         }
 
@@ -140,11 +146,15 @@ class ReleaseCacheBuilder:
                 repo = futures[future]
                 try:
                     result = future.result()
+                    new_count = result.get("new_releases", 0)
+                    refreshed_count = result.get("refreshed_releases", 0)
                     stats["repos_processed"] += 1
-                    stats["new_releases_parsed"] += result.get("new_releases", 0)
+                    stats["new_releases_parsed"] += new_count
+                    stats["refreshed_releases"] += refreshed_count
                     logger.info(
                         f"[{stats['repos_processed']}/{len(repos)}] "
-                        f"Completed {repo}: {result.get('new_releases', 0)} new releases"
+                        f"Completed {repo}: {new_count} new, "
+                        f"{refreshed_count} refreshed releases"
                     )
                 except Exception as e:
                     logger.error(f"Failed to process {repo}: {e}")
@@ -155,7 +165,8 @@ class ReleaseCacheBuilder:
 
         logger.info(
             f"Cache build complete: {stats['repos_processed']} repos, "
-            f"{stats['new_releases_parsed']} new releases"
+            f"{stats['new_releases_parsed']} new releases, "
+            f"{stats['refreshed_releases']} refreshed releases"
         )
 
         return stats
@@ -196,7 +207,7 @@ class ReleaseCacheBuilder:
             max_releases: Limit number of releases to process.
 
         Returns:
-            Statistics dict with new_releases count.
+            Statistics dict with new and refreshed release counts.
         """
         parts = repo.split("/")
         if len(parts) != 2:
@@ -209,7 +220,7 @@ class ReleaseCacheBuilder:
         releases = self.github.get_releases(owner, name)
         if releases is None:
             logger.warning(f"Failed to retrieve releases for {repo}")
-            return {"new_releases": 0}
+            return {"new_releases": 0, "refreshed_releases": 0}
 
         # GitHub returns at most one release page. Remember those tags so output
         # generation can verify a selected cached tag only when it was not seen.
@@ -225,31 +236,45 @@ class ReleaseCacheBuilder:
             tags_to_process = list(current_tags)
         else:
             tags_to_process = self.cache.get_unchecked_tags(repo, list(current_tags))
+            changed_asset_tags = self._get_changed_asset_tags(repo, releases)
+            tags_to_process.extend(
+                tag for tag in changed_asset_tags if tag not in tags_to_process
+            )
 
         if max_releases:
             tags_to_process = tags_to_process[:max_releases]
 
         if not tags_to_process:
-            logger.debug(f"{repo}: No new releases to process")
+            logger.debug(f"{repo}: No new or changed releases to process")
             # Check latest release's update_url for updates
             update_found = self._check_latest_release_update_url(repo)
             if update_found:
                 self.cache.update_repo_checked_time(repo)
-            return {"new_releases": 0, "update_url_updated": update_found}
+            return {
+                "new_releases": 0,
+                "refreshed_releases": 0,
+                "update_url_updated": update_found,
+            }
 
-        logger.info(f"{repo}: Processing {len(tags_to_process)} new releases")
+        logger.info(f"{repo}: Processing {len(tags_to_process)} releases")
 
-        # Process each new release
+        # Process each new or changed release
         new_count = 0
+        refreshed_count = 0
+        repo_cache = self.cache.get_repo_cache(repo)
         for release_data in releases:
             tag = release_data.get("tag_name")
             if not isinstance(tag, str) or tag not in tags_to_process:
                 continue
 
+            was_cached = repo_cache.get_release_by_tag(tag) is not None
             cached = self._parse_release(repo, release_data)
             if cached:
                 self.cache.add_release(repo, cached)
-                new_count += 1
+                if was_cached:
+                    refreshed_count += 1
+                else:
+                    new_count += 1
                 logger.debug(f"{repo}@{tag}: Parsed successfully")
             else:
                 # Still add to cache with parse_success=False to avoid re-parsing
@@ -263,16 +288,51 @@ class ReleaseCacheBuilder:
                     parse_error="No XPI found or parse failed",
                 )
                 self.cache.add_release(repo, cached)
+                if was_cached:
+                    refreshed_count += 1
                 logger.debug(f"{repo}@{tag}: Parse failed, cached as failed")
 
         # Check latest release's update_url for updates
         update_found = self._check_latest_release_update_url(repo)
 
         # Only update last_checked if there were actual changes
-        if new_count > 0 or update_found:
+        if new_count > 0 or refreshed_count > 0 or update_found:
             self.cache.update_repo_checked_time(repo)
 
-        return {"new_releases": new_count, "update_url_updated": update_found}
+        return {
+            "new_releases": new_count,
+            "refreshed_releases": refreshed_count,
+            "update_url_updated": update_found,
+        }
+
+    def _get_changed_asset_tags(
+        self,
+        repo: str,
+        releases: list[dict[str, Any]],
+    ) -> list[str]:
+        """Return cached tags whose selected XPI asset has changed."""
+        repo_cache = self.cache.get_repo_cache(repo)
+        changed_tags = []
+
+        for release_data in releases:
+            tag = release_data.get("tag_name")
+            if not isinstance(tag, str):
+                continue
+
+            cached = repo_cache.get_release_by_tag(tag)
+            if cached is None:
+                continue
+
+            xpi_asset = self._find_xpi_asset(release_data.get("assets", []))
+            current_asset_id = xpi_asset.get("id", 0) if xpi_asset else 0
+            if current_asset_id != cached.xpi_asset_id:
+                changed_tags.append(tag)
+                logger.info(
+                    f"{repo}@{tag}: XPI asset changed "
+                    f"({cached.xpi_asset_id} -> {current_asset_id})"
+                )
+
+        return changed_tags
 
     def _remove_missing_releases(
         self,

@@ -28,6 +28,23 @@ def make_release(tag: str, version: str, published_at: str | None) -> CachedRele
     )
 
 
+def make_github_release(tag: str, asset_id: int) -> dict:
+    """Create the GitHub release fields used for XPI asset comparisons."""
+    return {
+        "tag_name": tag,
+        "published_at": "2026-09-03T04:37:42Z",
+        "assets": [
+            {
+                "id": asset_id,
+                "name": "addon.xpi",
+                "browser_download_url": "https://example.com/addon.xpi",
+                "content_type": "application/x-xpinstall",
+                "updated_at": "2026-09-03T04:37:42Z",
+            }
+        ],
+    }
+
+
 def make_config(temp_dir) -> ScraperConfig:
     """Create a scraper config whose writable paths stay inside the test directory."""
     return ScraperConfig(
@@ -73,6 +90,66 @@ def test_best_release_treats_missing_published_at_as_oldest():
     )
 
     assert cache.get_best_release_for_zotero("10").tag == "published"
+
+
+def test_builder_reprocesses_cached_tag_when_xpi_asset_changes(temp_dir):
+    """Replacing an XPI under the same tag refreshes the cached release."""
+    cache = ReleaseCache(temp_dir / "release_cache")
+    cache.add_release(
+        "owner/repo", make_release("v0.2", "0.2", "2026-08-30T16:34:41Z")
+    )
+    releases = [make_github_release("v0.2", asset_id=2)]
+    builder = make_builder(temp_dir, cache, releases)
+    refreshed = make_release("v0.2", "0.2", "2026-09-03T04:37:42Z")
+    refreshed.xpi_asset_id = 2
+    builder._parse_release = Mock(return_value=refreshed)
+
+    result = builder._process_repo("owner/repo")
+
+    builder._parse_release.assert_called_once_with("owner/repo", releases[0])
+    assert result["new_releases"] == 0
+    assert result["refreshed_releases"] == 1
+    cached = cache.get_repo_cache("owner/repo").get_release_by_tag("v0.2")
+    assert cached is refreshed
+
+
+def test_builder_skips_cached_tag_when_xpi_asset_is_unchanged(temp_dir):
+    """An unchanged asset ID must not cause another XPI download and parse."""
+    cache = ReleaseCache(temp_dir / "release_cache")
+    cache.add_release(
+        "owner/repo", make_release("v0.2", "0.2", "2026-08-30T16:34:41Z")
+    )
+    releases = [make_github_release("v0.2", asset_id=1)]
+    builder = make_builder(temp_dir, cache, releases)
+    builder._parse_release = Mock()
+
+    result = builder._process_repo("owner/repo")
+
+    builder._parse_release.assert_not_called()
+    assert result["new_releases"] == 0
+    assert result["refreshed_releases"] == 0
+
+
+def test_builder_replaces_cached_tag_when_xpi_asset_is_removed(temp_dir):
+    """Removing the selected XPI must not leave its stale cache entry active."""
+    cache = ReleaseCache(temp_dir / "release_cache")
+    cache.add_release(
+        "owner/repo", make_release("v0.2", "0.2", "2026-08-30T16:34:41Z")
+    )
+    release = make_github_release("v0.2", asset_id=1)
+    release["assets"] = []
+    builder = make_builder(temp_dir, cache, [release])
+    builder._parse_release = Mock(return_value=None)
+
+    result = builder._process_repo("owner/repo")
+
+    builder._parse_release.assert_called_once_with("owner/repo", release)
+    assert result["new_releases"] == 0
+    assert result["refreshed_releases"] == 1
+    cached = cache.get_repo_cache("owner/repo").get_release_by_tag("v0.2")
+    assert cached is not None
+    assert cached.xpi_asset_id == 0
+    assert cached.parse_success is False
 
 
 @pytest.mark.parametrize("page_size", [2, 100])
@@ -298,8 +375,52 @@ def test_get_releases_rejects_an_entire_malformed_page(
 ):
     """A malformed 100-item page cannot be mistaken for 99 authoritative tags."""
     client = GitHubClient(GitHubConfig())
-    releases = [{"tag_name": f"v{index}"} for index in range(99)]
+    releases = [
+        {"tag_name": f"v{index}", "assets": []} for index in range(99)
+    ]
     releases.append(bad_release)
+    requests_mock.get(GitHubAPI.releases("owner", "repo"), json=releases)
+
+    assert client.get_releases("owner", "repo") is None
+
+
+@pytest.mark.parametrize("bad_assets", [None, {}, [None], [{}]])
+def test_get_releases_rejects_malformed_assets(requests_mock, bad_assets):
+    """Malformed assets make the page unknown rather than emptying valid cache."""
+    client = GitHubClient(GitHubConfig())
+    releases = [{"tag_name": "v0.2", "assets": bad_assets}]
+    requests_mock.get(GitHubAPI.releases("owner", "repo"), json=releases)
+
+    assert client.get_releases("owner", "repo") is None
+
+
+def test_get_releases_accepts_well_formed_asset_fields(requests_mock):
+    """A complete GitHub asset remains valid after boundary validation."""
+    client = GitHubClient(GitHubConfig())
+    releases = [make_github_release("v0.2", asset_id=1)]
+    requests_mock.get(GitHubAPI.releases("owner", "repo"), json=releases)
+
+    assert client.get_releases("owner", "repo") == releases
+
+
+@pytest.mark.parametrize(
+    ("field", "bad_value"),
+    [
+        ("id", None),
+        ("id", True),
+        ("name", 42),
+        ("browser_download_url", {}),
+        ("content_type", []),
+        ("updated_at", None),
+    ],
+)
+def test_get_releases_rejects_malformed_asset_fields(
+    requests_mock, field, bad_value
+):
+    """Asset fields consumed downstream must have their documented JSON types."""
+    client = GitHubClient(GitHubConfig())
+    releases = [make_github_release("v0.2", asset_id=1)]
+    releases[0]["assets"][0][field] = bad_value
     requests_mock.get(GitHubAPI.releases("owner", "repo"), json=releases)
 
     assert client.get_releases("owner", "repo") is None
