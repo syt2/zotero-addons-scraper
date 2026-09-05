@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-08-18T09:28:24.097703+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.3.3",
+      "published_at": "2026-08-18T07:12:14Z",
+      "xpi_asset_id": 519091569,
+      "xpi_name": "zotero-browser-v0.3.3.xpi",
+      "xpi_download_url": "https://github.com/GinixStudy/zotero-browser/releases/download/v0.3.3/zotero-browser-v0.3.3.xpi",
+      "addon_id": "zotero-browser@ginixstudy.github.io",
+      "addon_name": "Zotero Browser",
+      "addon_version": "0.3.3",
+      "addon_description": "A lightweight embedded web browser for Zotero's Item Pane.",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://raw.githubusercontent.com/GinixStudy/zotero-browser/main/updates.json",
+      "parse_success": true
+    }
+  ]
+}

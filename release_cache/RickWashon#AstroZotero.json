@@ -1,0 +1,35 @@
+{
+  "last_checked": "2026-09-05T01:56:44.857466+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.3.1",
+      "published_at": "2026-09-05T01:22:26Z",
+      "xpi_asset_id": 545182722,
+      "xpi_name": "AstroZotero-0.3.1.xpi",
+      "xpi_download_url": "https://github.com/RickWashon/AstroZotero/releases/download/v0.3.1/AstroZotero-0.3.1.xpi",
+      "addon_id": "zot-nasa-ads@zot.nasa.ads",
+      "addon_name": "AstroZotero",
+      "addon_version": "0.3.1",
+      "addon_description": "Astronomy-focused Zotero workflow powered by NASA ADS: literature map, metadata enrichment, and PDF retrieval.",
+      "min_zotero_version": "7.0.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://raw.githubusercontent.com/RickWashon/AstroZotero/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.3",
+      "published_at": "2026-09-04T16:38:15Z",
+      "xpi_asset_id": 544611696,
+      "xpi_name": "AstroZotero-0.3.xpi",
+      "xpi_download_url": "https://github.com/RickWashon/AstroZotero/releases/download/v0.3/AstroZotero-0.3.xpi",
+      "addon_id": "zot-nasa-ads@zot.nasa.ads",
+      "addon_name": "AstroZotero",
+      "addon_version": "0.3",
+      "addon_description": "Astronomy-focused Zotero workflow powered by NASA ADS: literature map, metadata enrichment, and PDF retrieval.",
+      "min_zotero_version": "7.0.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://raw.githubusercontent.com/RickWashon/AstroZotero/main/updates.json",
+      "parse_success": true
+    }
+  ]
+}

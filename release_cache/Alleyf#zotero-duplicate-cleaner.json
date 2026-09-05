@@ -1,0 +1,29 @@
+{
+  "last_checked": "2026-09-05T01:58:16.812713+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.15.6",
+      "published_at": "2026-09-04T15:58:20Z",
+      "xpi_asset_id": 544563261,
+      "xpi_name": "zotero-dedup-plugin-0.15.6.xpi",
+      "xpi_download_url": "https://github.com/Alleyf/zotero-duplicate-cleaner/releases/download/v0.15.6/zotero-dedup-plugin-0.15.6.xpi",
+      "addon_id": "zotero-dedup@local.dev",
+      "addon_name": "Zotero Duplicate Cleaner",
+      "addon_version": "0.15.6",
+      "addon_description": "Review duplicate records and byte-identical orphan PDFs, preserving richer metadata.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "*",
+      "update_url": "https://www.zotero.org/",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.15.5",
+      "published_at": "2026-09-04T15:56:49Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    }
+  ]
+}
