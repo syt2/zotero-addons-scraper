@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-08-18T09:03:08.864303+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.0",
+      "published_at": "2026-04-23T15:55:05Z",
+      "xpi_asset_id": 403558508,
+      "xpi_name": "condense-info-view.xpi",
+      "xpi_download_url": "https://github.com/ppavlidis/condense-info-view/releases/download/v1.0.0/condense-info-view.xpi",
+      "addon_id": "condense-info-view@example.com",
+      "addon_name": "Condense Info View",
+      "addon_version": "1.0.0",
+      "addon_description": "Hides empty fields in the Info panel. Important fields for each item type are shown dimmed rather than hidden.",
+      "min_zotero_version": "7.0.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://raw.githubusercontent.com/pzoot/condense-info-view/main/updates.json",
+      "parse_success": true
+    }
+  ]
+}
