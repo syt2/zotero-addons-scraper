@@ -1,0 +1,50 @@
+{
+  "last_checked": "2025-12-23T11:27:32.743841+00:00",
+  "checked_releases": [
+    {
+      "tag": "1.0.2",
+      "published_at": "2025-09-04T05:27:08Z",
+      "xpi_asset_id": 289495863,
+      "xpi_name": "daily-folder-for-zotero-1.0.2.xpi",
+      "xpi_download_url": "https://github.com/B3000Kcn/daily-folder-for-zotero/releases/download/1.0.2/daily-folder-for-zotero-1.0.2.xpi",
+      "addon_id": "daily-folder-for-zotero@B3000Kcn.github.io",
+      "addon_name": "Daily Folder For Zotero",
+      "addon_version": "1.0.2",
+      "addon_description": "Quickly create and navigate to Zotero daily collections under the root Daily Folder.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "*",
+      "update_url": "https://raw.githubusercontent.com/B3000Kcn/daily-folder-for-zotero/main/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "1.0.1",
+      "published_at": "2025-09-04T05:18:19Z",
+      "xpi_asset_id": 289493859,
+      "xpi_name": "daily-folder-for-zotero-1.0.1.xpi",
+      "xpi_download_url": "https://github.com/B3000Kcn/daily-folder-for-zotero/releases/download/1.0.1/daily-folder-for-zotero-1.0.1.xpi",
+      "addon_id": "daily-folder-for-zotero@B3000Kcn.github.io",
+      "addon_name": "Daily Folder For Zotero",
+      "addon_version": "1.0.1",
+      "addon_description": "Quickly create and navigate to Zotero daily collections under the root Daily Folder.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "*",
+      "update_url": "https://github.com/B3000Kcn/daily-folder-for-zotero/releases/latest/download/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "1.0.0",
+      "published_at": "2025-09-04T02:08:15Z",
+      "xpi_asset_id": 289447718,
+      "xpi_name": "daily-folder-for-zotero-1.0.0.xpi",
+      "xpi_download_url": "https://github.com/B3000Kcn/daily-folder-for-zotero/releases/download/1.0.0/daily-folder-for-zotero-1.0.0.xpi",
+      "addon_id": "daily-folder-for-zotero@B3000Kcn.github.io",
+      "addon_name": "Daily Folder For Zotero",
+      "addon_version": "1.0.0",
+      "addon_description": "Quickly create and navigate to Zotero daily collections under the root Daily Folder.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "*",
+      "update_url": "https://github.com/B3000Kcn/daily-folder-for-zotero/releases/latest/download/update.json",
+      "parse_success": true
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "last_checked": "2026-09-10T21:42:50.138570+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.4.0",
+      "published_at": "2026-09-08T20:11:39Z",
+      "xpi_asset_id": 551217779,
+      "xpi_name": "jadense-in-zotero-v0.4.0.xpi",
+      "xpi_download_url": "https://github.com/jadense-ai/jadense-in-zotero/releases/download/v0.4.0/jadense-in-zotero-v0.4.0.xpi",
+      "addon_id": "jadense-in-zotero@jadense.cn",
+      "addon_name": "Jadense in Zotero",
+      "addon_version": "0.4.0",
+      "addon_description": "Local AI chat, PDF figure interpretation, structured annotations, reader translation, and Zotero-to-Jadense upload.",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://jadense.cn/plugins/zotero/jadense-in-zotero/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.4.1",
+      "published_at": "2026-09-09T06:55:06Z",
+      "xpi_asset_id": 552187865,
+      "xpi_name": "jadense-in-zotero-v0.4.1.xpi",
+      "xpi_download_url": "https://github.com/jadense-ai/jadense-in-zotero/releases/download/v0.4.1/jadense-in-zotero-v0.4.1.xpi",
+      "addon_id": "jadense-in-zotero@jadense.cn",
+      "addon_name": "Jadense in Zotero",
+      "addon_version": "0.4.1",
+      "addon_description": "Local AI chat, PDF figure interpretation, structured annotations, reader translation, and Zotero-to-Jadense upload.",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://jadense.cn/plugins/zotero/jadense-in-zotero/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.4.2",
+      "published_at": "2026-09-10T07:34:37Z",
+      "xpi_asset_id": 554500134,
+      "xpi_name": "jadense-in-zotero-v0.4.2.xpi",
+      "xpi_download_url": "https://github.com/jadense-ai/jadense-in-zotero/releases/download/v0.4.2/jadense-in-zotero-v0.4.2.xpi",
+      "addon_id": "jadense-in-zotero@jadense.cn",
+      "addon_name": "Jadense in Zotero",
+      "addon_version": "0.4.2",
+      "addon_description": "Local AI chat, PDF figure interpretation, structured annotations, reader translation, and Zotero-to-Jadense upload.",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://jadense.cn/plugins/zotero/jadense-in-zotero/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.4.3",
+      "published_at": "2026-09-10T17:32:20Z",
+      "xpi_asset_id": 555471236,
+      "xpi_name": "jadense-in-zotero-v0.4.3.xpi",
+      "xpi_download_url": "https://github.com/jadense-ai/jadense-in-zotero/releases/download/v0.4.3/jadense-in-zotero-v0.4.3.xpi",
+      "addon_id": "jadense-in-zotero@jadense.cn",
+      "addon_name": "Jadense in Zotero",
+      "addon_version": "0.4.3",
+      "addon_description": "Local AI chat, PDF figure interpretation, structured annotations, reader translation, and Zotero-to-Jadense upload.",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://jadense.cn/plugins/zotero/jadense-in-zotero/updates.json",
+      "parse_success": true
+    }
+  ]
+}

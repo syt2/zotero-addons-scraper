@@ -1,0 +1,80 @@
+{
+  "last_checked": "2026-09-12T08:44:26.850031+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.5",
+      "published_at": "2026-09-10T05:21:25Z",
+      "xpi_asset_id": 554310834,
+      "xpi_name": "zotero-js-bridge.xpi",
+      "xpi_download_url": "https://github.com/Sum-su/zotero-js-bridge/releases/download/v1.0.5/zotero-js-bridge.xpi",
+      "addon_id": "zoterojs-bridge@local",
+      "addon_name": "Zotero JS Bridge",
+      "addon_version": "1.0.5",
+      "addon_description": "Local-only endpoints for executing JavaScript inside Zotero. Rides on Zotero's own 127.0.0.1 server; every call needs X-ZoteroJS-Token.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.99.99",
+      "update_url": "https://raw.githubusercontent.com/Sum-su/zotero-js-bridge/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.0.4",
+      "published_at": "2026-09-10T04:56:26Z",
+      "xpi_asset_id": 554275056,
+      "xpi_name": "zotero-js-bridge.xpi",
+      "xpi_download_url": "https://github.com/Sum-su/zotero-js-bridge/releases/download/v1.0.4/zotero-js-bridge.xpi",
+      "addon_id": "zoterojs-bridge@local",
+      "addon_name": "Zotero JS Bridge",
+      "addon_version": "1.0.4",
+      "addon_description": "Local-only endpoints for executing JavaScript inside Zotero. Rides on Zotero's own 127.0.0.1 server; every call needs X-ZoteroJS-Token.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.99.99",
+      "update_url": "https://raw.githubusercontent.com/Sum-su/zotero-js-bridge/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.0.6",
+      "published_at": "2026-09-10T06:26:57Z",
+      "xpi_asset_id": 554405707,
+      "xpi_name": "zotero-js-bridge.xpi",
+      "xpi_download_url": "https://github.com/Sum-su/zotero-js-bridge/releases/download/v1.0.6/zotero-js-bridge.xpi",
+      "addon_id": "zoterojs-bridge@local",
+      "addon_name": "Zotero JS Bridge",
+      "addon_version": "1.0.6",
+      "addon_description": "Local-only endpoints for executing JavaScript inside Zotero. Rides on Zotero's own 127.0.0.1 server; every call needs X-ZoteroJS-Token.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.99.99",
+      "update_url": "https://raw.githubusercontent.com/Sum-su/zotero-js-bridge/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.0.11",
+      "published_at": "2026-09-12T05:07:53Z",
+      "xpi_asset_id": 558654661,
+      "xpi_name": "zotero-js-bridge.xpi",
+      "xpi_download_url": "https://github.com/Sum-su/zotero-js-bridge/releases/download/v1.0.11/zotero-js-bridge.xpi",
+      "addon_id": "zoterojs-bridge@local",
+      "addon_name": "Zotero JS Bridge",
+      "addon_version": "1.0.11",
+      "addon_description": "Local-only endpoints for executing JavaScript inside Zotero. Rides on Zotero's own 127.0.0.1 server; every call needs X-ZoteroJS-Token.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.99.99",
+      "update_url": "https://raw.githubusercontent.com/Sum-su/zotero-js-bridge/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.0.7",
+      "published_at": "2026-09-12T03:47:28Z",
+      "xpi_asset_id": 558548108,
+      "xpi_name": "zotero-js-bridge.xpi",
+      "xpi_download_url": "https://github.com/Sum-su/zotero-js-bridge/releases/download/v1.0.7/zotero-js-bridge.xpi",
+      "addon_id": "zoterojs-bridge@local",
+      "addon_name": "Zotero JS Bridge",
+      "addon_version": "1.0.7",
+      "addon_description": "Local-only endpoints for executing JavaScript inside Zotero. Rides on Zotero's own 127.0.0.1 server; every call needs X-ZoteroJS-Token.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.99.99",
+      "update_url": "https://raw.githubusercontent.com/Sum-su/zotero-js-bridge/main/updates.json",
+      "parse_success": true
+    }
+  ]
+}

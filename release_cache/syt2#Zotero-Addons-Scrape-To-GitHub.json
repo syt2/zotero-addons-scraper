@@ -1,0 +1,32 @@
+{
+  "last_checked": "2025-12-23T11:30:25.353680+00:00",
+  "checked_releases": [
+    {
+      "tag": "zotero-if-pro-max_cracked",
+      "published_at": "2024-08-14T15:34:00Z",
+      "xpi_asset_id": 243952045,
+      "xpi_name": "zotero-if-pro-max_cracked.xpi",
+      "xpi_download_url": "https://github.com/syt2/Zotero-Addons-Scrape-To-GitHub/releases/download/zotero-if-pro-max_cracked/zotero-if-pro-max_cracked.xpi",
+      "addon_id": "zoteroif@qnscholar",
+      "addon_version": "4.4.6",
+      "min_zotero_version": "5.0",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    },
+    {
+      "tag": "zotero-box",
+      "published_at": "2024-08-14T15:34:25Z",
+      "xpi_asset_id": 243952086,
+      "xpi_name": "zotero-box.xpi",
+      "xpi_download_url": "https://gitee.com/scigreat/zb/raw/master/zotero-box.xpi",
+      "addon_id": "zotbox@scigreat.com",
+      "addon_name": "Zotero Box",
+      "addon_version": "2.7.8",
+      "addon_description": "Make Zotero Better and Better",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://gitee.com/scigreat/zotbox/raw/master/update.json",
+      "parse_success": true
+    }
+  ]
+}

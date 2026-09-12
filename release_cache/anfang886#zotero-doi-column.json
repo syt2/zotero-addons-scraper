@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-08-11T11:39:49.833236+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.1",
+      "published_at": "2026-08-07T03:13:09Z",
+      "xpi_asset_id": 504560417,
+      "xpi_name": "doi-column.xpi",
+      "xpi_download_url": "https://github.com/anfang886/zotero-doi-column/releases/download/v0.1.1/doi-column.xpi",
+      "addon_id": "doi-column@anfang886.github.io",
+      "addon_name": "DOI Column",
+      "addon_version": "0.1.1",
+      "addon_description": "Adds a DOI column to the Zotero items list, so DOIs can be scanned and compared without opening each item.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "99.*",
+      "update_url": "https://anfang886.github.io/zotero-doi-column/update.json",
+      "parse_success": true
+    }
+  ]
+}

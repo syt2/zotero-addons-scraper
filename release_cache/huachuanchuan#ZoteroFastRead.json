@@ -1,0 +1,65 @@
+{
+  "last_checked": "2026-05-29T12:17:08.964243+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.4.0",
+      "published_at": "2026-05-29T07:10:01Z",
+      "xpi_asset_id": 432802360,
+      "xpi_name": "fastRead-Python.xpi",
+      "xpi_download_url": "https://github.com/huachuanchuan/ZoteroFastRead/releases/download/v0.4.0/fastRead-Python.xpi",
+      "addon_id": "fastread@example.com",
+      "addon_name": "fastRead",
+      "addon_version": "0.2.14",
+      "addon_description": "Moonlight-style split-view PDF translation with coordinate-mapped hover highlights for Zotero 7/8/9.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://example.com/fastread/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.3.0",
+      "published_at": "2026-05-11T12:26:41Z",
+      "xpi_asset_id": 417422290,
+      "xpi_name": "fastRead-Python.xpi",
+      "xpi_download_url": "https://github.com/huachuanchuan/ZoteroFastRead/releases/download/v0.3.0/fastRead-Python.xpi",
+      "addon_id": "fastread@example.com",
+      "addon_name": "fastRead",
+      "addon_version": "0.2.0",
+      "addon_description": "Moonlight-style split-view PDF translation with coordinate-mapped hover highlights for Zotero 7/8/9.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://example.com/fastread/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.2.0",
+      "published_at": "2026-03-04T03:45:28Z",
+      "xpi_asset_id": 366506780,
+      "xpi_name": "fastRead-Python.xpi",
+      "xpi_download_url": "https://github.com/huachuanchuan/ZoteroFastRead/releases/download/v0.2.0/fastRead-Python.xpi",
+      "addon_id": "fastread@example.com",
+      "addon_name": "fastRead",
+      "addon_version": "0.1.4",
+      "addon_description": "Moonlight-style split-view PDF translation with coordinate-mapped hover highlights for Zotero 7.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "7.1.*",
+      "update_url": "https://example.com/fastread/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-03-01T15:24:47Z",
+      "xpi_asset_id": 364691568,
+      "xpi_name": "fastRead-Python.xpi",
+      "xpi_download_url": "https://github.com/huachuanchuan/ZoteroFastRead/releases/download/v0.1.0/fastRead-Python.xpi",
+      "addon_id": "fastread@example.com",
+      "addon_name": "fastRead",
+      "addon_version": "0.1.4",
+      "addon_description": "Moonlight-style split-view PDF translation with coordinate-mapped hover highlights for Zotero 7.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "7.1.*",
+      "update_url": "https://example.com/fastread/updates.json",
+      "parse_success": true
+    }
+  ]
+}
