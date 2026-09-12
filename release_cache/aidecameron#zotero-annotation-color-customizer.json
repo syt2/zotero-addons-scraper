@@ -1,0 +1,35 @@
+{
+  "last_checked": "2025-12-24T11:31:58.770705+00:00",
+  "checked_releases": [
+    {
+      "tag": "1.1.2",
+      "published_at": "2025-10-21T05:05:48Z",
+      "xpi_asset_id": 306764699,
+      "xpi_name": "annotation-color-customizer-1.1.2.xpi",
+      "xpi_download_url": "https://github.com/aidecameron/zotero-annotation-color-customizer/releases/download/1.1.2/annotation-color-customizer-1.1.2.xpi",
+      "addon_id": "annotation-color-customizer@aidecameron.github.io",
+      "addon_name": "Annotation Color Customizer",
+      "addon_version": "1.1.2",
+      "addon_description": "Customize annotation color tooltips and right-click menu translations in Zotero 7",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://github.com/aidecameron/zotero-annotation-color-customizer/releases/latest/download/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "1.0.98",
+      "published_at": "2025-10-20T14:05:11Z",
+      "xpi_asset_id": 306493857,
+      "xpi_name": "annotation-color-customizer-1.0.98.xpi",
+      "xpi_download_url": "https://github.com/aidecameron/zotero-annotation-color-customizer/releases/download/1.0.98/annotation-color-customizer-1.0.98.xpi",
+      "addon_id": "annotation-color-customizer@aidecameron.github.io",
+      "addon_name": "Annotation Color Customizer",
+      "addon_version": "1.0.98",
+      "addon_description": "Customize annotation color tooltips and right-click menu translations in Zotero 7",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://github.com/aidecameron/zotero-annotation-color-customizer/releases/latest/download/updates.json",
+      "parse_success": true
+    }
+  ]
+}

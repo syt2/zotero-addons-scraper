@@ -1,0 +1,19 @@
+{
+  "last_checked": "2025-12-23T11:30:25.728927+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.0",
+      "published_at": "2023-08-19T13:21:51Z",
+      "xpi_asset_id": 122210791,
+      "xpi_name": "zotitle-1.0.0.xpi",
+      "xpi_download_url": "https://github.com/ManuelaRunge/Zotitle/releases/download/v1.0.0/zotitle-1.0.0.xpi",
+      "addon_id": "manuelarunge10@gmail.com",
+      "addon_name": "Zotero Title Manager",
+      "addon_version": "1.0.0",
+      "addon_description": "Fetch and change title case of selected items",
+      "min_zotero_version": "6.0",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    }
+  ]
+}
