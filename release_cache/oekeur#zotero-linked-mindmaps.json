@@ -1,0 +1,44 @@
+{
+  "last_checked": "2026-08-19T19:44:50.546270+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-08-17T17:27:52Z",
+      "xpi_asset_id": 518304616,
+      "xpi_name": "zotero-linked-mindmaps.xpi",
+      "xpi_download_url": "https://github.com/oekeur/zotero-linked-mindmaps/releases/download/v0.1.0/zotero-linked-mindmaps.xpi",
+      "addon_id": "zoterolinkedmindmaps@oekeur.github.io",
+      "addon_name": "Zotero Linked Mindmaps",
+      "addon_version": "0.1.0",
+      "addon_description": "Zotero 7 plugin for typed, named links between items and notes, organized into multiple named mindmaps.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.*",
+      "update_url": "https://github.com/oekeur/zotero-linked-mindmaps/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-08-17T17:27:53Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "v0.2.0",
+      "published_at": "2026-08-19T19:34:49Z",
+      "xpi_asset_id": 521267141,
+      "xpi_name": "zotero-linked-mindmaps.xpi",
+      "xpi_download_url": "https://github.com/oekeur/zotero-linked-mindmaps/releases/download/v0.2.0/zotero-linked-mindmaps.xpi",
+      "addon_id": "zoterolinkedmindmaps@oekeur.github.io",
+      "addon_name": "Zotero Linked Mindmaps",
+      "addon_version": "0.2.0",
+      "addon_description": "Zotero 7 plugin for typed, named links between items and notes, organized into multiple named mindmaps.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.*",
+      "update_url": "https://github.com/oekeur/zotero-linked-mindmaps/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}

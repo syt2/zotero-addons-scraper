@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-09-08T11:15:23.031771+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.0",
+      "published_at": "2026-09-07T08:19:41Z",
+      "xpi_asset_id": 548432228,
+      "xpi_name": "Rebootero.xpi",
+      "xpi_download_url": "https://github.com/chen7447/Rebootero/releases/download/v1.0.0/Rebootero.xpi",
+      "addon_id": "rebootero@chen7447.github.io",
+      "addon_name": "Rebootero",
+      "addon_version": "1.0.0",
+      "addon_description": "在 Zotero「文件」菜单底部的「退出」下方添加「重启 Zotero」按钮，点击后关闭并重新启动 Zotero。",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "10.*",
+      "update_url": "https://github.com/chen7447/Rebootero/releases/latest/download/updates.json",
+      "parse_success": true
+    }
+  ]
+}

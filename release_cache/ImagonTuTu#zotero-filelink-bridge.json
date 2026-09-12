@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-05-18T15:31:58.847077+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-05-18T14:38:00Z",
+      "xpi_asset_id": 423362193,
+      "xpi_name": "zotero-filelink-bridge.xpi",
+      "xpi_download_url": "https://github.com/ImagonTuTu/zotero-filelink-bridge/releases/download/v0.1.0/zotero-filelink-bridge.xpi",
+      "addon_id": "zotero-filelink-bridge@example.com",
+      "addon_name": "Zotero FileLink Bridge",
+      "addon_version": "0.1.0",
+      "addon_description": "A minimal Zotero desktop bridge for creating linked file attachments from trusted local HTTP clients.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.*",
+      "update_url": "https://github.com/ImagonTuTu/zotero-filelink-bridge/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}

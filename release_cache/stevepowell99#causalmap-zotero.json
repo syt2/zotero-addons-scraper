@@ -1,0 +1,50 @@
+{
+  "last_checked": "2026-06-23T09:40:45.117397+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.4.5",
+      "published_at": "2026-06-15T15:08:51Z",
+      "xpi_asset_id": 448285718,
+      "xpi_name": "causalmap-zotero.xpi",
+      "xpi_download_url": "https://github.com/stevepowell99/causalmap-zotero/releases/download/v0.4.5/causalmap-zotero.xpi",
+      "addon_id": "causalmap@causalmap.app",
+      "addon_name": "Causal Map for Zotero",
+      "addon_version": "0.4.5",
+      "addon_description": "Turn a Zotero item into a Causal Map project.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.*",
+      "update_url": "https://github.com/stevepowell99/causalmap-zotero/releases/latest/download/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.4.4",
+      "published_at": "2026-06-15T15:03:08Z",
+      "xpi_asset_id": 448281863,
+      "xpi_name": "causalmap-zotero.xpi",
+      "xpi_download_url": "https://github.com/stevepowell99/causalmap-zotero/releases/download/v0.4.4/causalmap-zotero.xpi",
+      "addon_id": "causalmap@causalmap.app",
+      "addon_name": "Causal Map for Zotero",
+      "addon_version": "0.4.4",
+      "addon_description": "Turn a Zotero item into a Causal Map project.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.*",
+      "update_url": "https://github.com/stevepowell99/causalmap-zotero/releases/latest/download/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.4.3",
+      "published_at": "2026-06-08T08:54:00Z",
+      "xpi_asset_id": 441567918,
+      "xpi_name": "causalmap-zotero.xpi",
+      "xpi_download_url": "https://github.com/stevepowell99/causalmap-zotero/releases/download/v0.4.3/causalmap-zotero.xpi",
+      "addon_id": "causalmap@causalmap.app",
+      "addon_name": "Causal Map for Zotero",
+      "addon_version": "0.4.3",
+      "addon_description": "Turn a Zotero item into a Causal Map project.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.*",
+      "update_url": "https://github.com/stevepowell99/causalmap-zotero/releases/latest/download/update.json",
+      "parse_success": true
+    }
+  ]
+}

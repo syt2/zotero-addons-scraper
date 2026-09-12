@@ -1,0 +1,61 @@
+{
+  "last_checked": "2025-12-23T11:26:30.024979+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.2.0",
+      "published_at": "2025-04-13T22:26:10Z",
+      "xpi_asset_id": 246091170,
+      "xpi_name": "keepzotero-0.2.0-fx.xpi",
+      "xpi_download_url": "https://github.com/yhmtsai/KeepZotero/releases/download/v0.2.0/keepzotero-0.2.0-fx.xpi",
+      "addon_id": "keepzotero@yhmtsai",
+      "addon_name": "KeepZotero",
+      "addon_version": "0.2.0",
+      "addon_description": "Keep Zotero from accidental close",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://raw.githubusercontent.com/yhmtsai/KeepZotero/master/keepzotero-update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.0",
+      "published_at": "2025-03-30T22:20:49Z",
+      "xpi_asset_id": 242117113,
+      "xpi_name": "keepzotero-0.1.0-fx.xpi",
+      "xpi_download_url": "https://github.com/yhmtsai/KeepZotero/releases/download/v0.2.0/keepzotero-0.2.0-fx.xpi",
+      "addon_id": "keepzotero@yhmtsai",
+      "addon_name": "KeepZotero",
+      "addon_version": "0.2.0",
+      "addon_description": "Keep Zotero from accidental close",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://raw.githubusercontent.com/yhmtsai/KeepZotero/master/keepzotero-update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.0.2",
+      "published_at": "2022-03-22T23:36:36Z",
+      "xpi_asset_id": 60299047,
+      "xpi_name": "keepzotero-0.0.2-fx.xpi",
+      "xpi_download_url": "https://github.com/yhmtsai/KeepZotero/releases/download/v0.0.2/keepzotero-0.0.2-fx.xpi",
+      "addon_id": "keepzotero@yhmtsai",
+      "addon_name": "KeepZotero",
+      "addon_version": "0.0.2",
+      "min_zotero_version": "5.0.0",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.0.1",
+      "published_at": "2022-03-21T23:09:36Z",
+      "xpi_asset_id": 60182402,
+      "xpi_name": "keepzotero-0.0.1-fx.xpi",
+      "xpi_download_url": "https://github.com/yhmtsai/KeepZotero/releases/download/v0.0.1/keepzotero-0.0.1-fx.xpi",
+      "addon_id": "keepzotero@yhmtsai",
+      "addon_name": "KeepZotero",
+      "addon_version": "0.0.1",
+      "min_zotero_version": "5.0.0",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    }
+  ]
+}
