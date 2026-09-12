@@ -1,0 +1,35 @@
+{
+  "last_checked": "2025-12-23T11:28:40.343067+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.0",
+      "published_at": "2023-12-24T15:09:16Z",
+      "xpi_asset_id": 142262958,
+      "xpi_name": "digivatlibpdf.xpi",
+      "xpi_download_url": "https://github.com/theRatramnus/Zotero-download-DigiVatLib-pdf/releases/download/v1.0.0/digivatlibpdf.xpi",
+      "addon_id": "DigiVatLibpdf@patzold.net",
+      "addon_name": "Download DigiVatLib pdf",
+      "addon_version": "1.0.0",
+      "addon_description": "Download pdf files of whole DigiVatLib manuscripts.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://raw.githubusercontent.com/theRatramnus/Zotero-download-DigiVatLib-pdf/main/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.0.1",
+      "published_at": "2023-12-24T09:02:37Z",
+      "xpi_asset_id": 142237137,
+      "xpi_name": "zotero-addon-template.xpi",
+      "xpi_download_url": "https://github.com/theRatramnus/Zotero-download-DigiVatLib-pdf/releases/download/v0.0.1/zotero-addon-template.xpi",
+      "addon_id": "addontemplate@euclpts.com",
+      "addon_name": "Zotero Addon Template",
+      "addon_version": "1.1.0",
+      "addon_description": "Zotero Addon Template",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://raw.githubusercontent.com/windingwind/zotero-addon-template/main/update.json",
+      "parse_success": true
+    }
+  ]
+}

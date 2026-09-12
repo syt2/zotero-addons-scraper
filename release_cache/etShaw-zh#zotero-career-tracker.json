@@ -1,0 +1,29 @@
+{
+  "last_checked": "2026-02-26T04:31:28.633435+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.3",
+      "published_at": "2026-02-24T12:45:58Z",
+      "xpi_asset_id": 361446679,
+      "xpi_name": "career-tracker.xpi",
+      "xpi_download_url": "https://github.com/etShaw-zh/zotero-career-tracker/releases/download/v1.0.3/career-tracker.xpi",
+      "addon_id": "careertracker@zotero.org",
+      "addon_name": "Career Tracker",
+      "addon_version": "1.0.3",
+      "addon_description": "Track your research career with Zotero library statistics",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/etShaw-zh/zotero-career-tracker/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-02-24T12:46:01Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    }
+  ]
+}
