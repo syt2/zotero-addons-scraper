@@ -1,0 +1,19 @@
+{
+  "last_checked": "2025-12-23T11:26:30.432521+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.2",
+      "published_at": "2022-04-29T11:44:54Z",
+      "xpi_asset_id": 64008261,
+      "xpi_name": "Backup-Plugin-for-Zotero.xpi",
+      "xpi_download_url": "https://github.com/iShareStuff/Backup-Plugin-for-Zotero/releases/download/v1.0.2/Backup-Plugin-for-Zotero.xpi",
+      "addon_id": "Backup-Plugin-for-Zotero@iShareStuff.com",
+      "addon_name": "Backup-Plugin-for-Zotero",
+      "addon_version": "1.0.2",
+      "addon_description": "Backup ZoteroData",
+      "min_zotero_version": "5.0",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    }
+  ]
+}
