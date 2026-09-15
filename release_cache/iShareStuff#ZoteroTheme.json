@@ -1,0 +1,19 @@
+{
+  "last_checked": "2025-12-23T11:26:00.525159+00:00",
+  "checked_releases": [
+    {
+      "tag": "0.0.9",
+      "published_at": "2022-10-16T16:31:24Z",
+      "xpi_asset_id": 81209818,
+      "xpi_name": "zotero-theme.xpi",
+      "xpi_download_url": "https://github.com/iShareStuff/ZoteroTheme/releases/download/0.0.9/zotero-theme.xpi",
+      "addon_id": "ZoteroTheme@iShareStuff.com",
+      "addon_name": "Zotero Theme",
+      "addon_version": "0.0.9",
+      "addon_description": "Zotero Themes",
+      "min_zotero_version": "5.0",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    }
+  ]
+}
