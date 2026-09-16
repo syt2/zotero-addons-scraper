@@ -1,0 +1,80 @@
+{
+  "last_checked": "2026-08-21T14:57:46.938336+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.0",
+      "published_at": "2026-08-13T05:25:59Z",
+      "xpi_asset_id": 512550733,
+      "xpi_name": "li-yue-1.0.0.xpi",
+      "xpi_download_url": "https://github.com/xiaoxiao937/li-yue-zotero/releases/download/v1.0.0/li-yue-1.0.0.xpi",
+      "addon_id": "ai-batch-reader@example.com",
+      "addon_name": "狸阅",
+      "addon_version": "1.0.0",
+      "addon_description": "用同一个 Prompt 独立阅读多篇 Zotero PDF，并把回答分别保存到各自条目的笔记。",
+      "min_zotero_version": "9.0.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://raw.githubusercontent.com/xiaoxiao937/li-yue-zotero/main/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.1.1",
+      "published_at": "2026-08-13T09:05:43Z",
+      "xpi_asset_id": 512756123,
+      "xpi_name": "li-yue-1.1.1.xpi",
+      "xpi_download_url": "https://github.com/xiaoxiao937/li-yue-zotero/releases/download/v1.1.1/li-yue-1.1.1.xpi",
+      "addon_id": "ai-batch-reader@example.com",
+      "addon_name": "狸阅",
+      "addon_version": "1.1.1",
+      "addon_description": "用同一个 Prompt 独立阅读多篇 Zotero PDF，并把回答分别保存到各自条目的笔记。",
+      "min_zotero_version": "9.0.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://raw.githubusercontent.com/xiaoxiao937/li-yue-zotero/main/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.1.0",
+      "published_at": "2026-08-13T08:50:37Z",
+      "xpi_asset_id": 512740322,
+      "xpi_name": "li-yue-1.1.0.xpi",
+      "xpi_download_url": "https://github.com/xiaoxiao937/li-yue-zotero/releases/download/v1.1.0/li-yue-1.1.0.xpi",
+      "addon_id": "ai-batch-reader@example.com",
+      "addon_name": "狸阅",
+      "addon_version": "1.1.0",
+      "addon_description": "用同一个 Prompt 独立阅读多篇 Zotero PDF，并把回答分别保存到各自条目的笔记。",
+      "min_zotero_version": "9.0.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://raw.githubusercontent.com/xiaoxiao937/li-yue-zotero/main/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.2.0",
+      "published_at": "2026-08-15T05:04:46Z",
+      "xpi_asset_id": 515346732,
+      "xpi_name": "li-yue-1.2.0.xpi",
+      "xpi_download_url": "https://github.com/xiaoxiao937/li-yue-zotero/releases/download/v1.2.0/li-yue-1.2.0.xpi",
+      "addon_id": "ai-batch-reader@example.com",
+      "addon_name": "狸阅",
+      "addon_version": "1.2.0",
+      "addon_description": "用同一个 Prompt 独立阅读多篇 Zotero PDF，并把回答分别保存到各自条目的笔记。",
+      "min_zotero_version": "9.0.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://raw.githubusercontent.com/xiaoxiao937/li-yue-zotero/main/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.3.0",
+      "published_at": "2026-08-21T14:24:44Z",
+      "xpi_asset_id": 523840079,
+      "xpi_name": "li-yue-1.3.0.xpi",
+      "xpi_download_url": "https://github.com/xiaoxiao937/li-yue-zotero/releases/download/v1.3.0/li-yue-1.3.0.xpi",
+      "addon_id": "ai-batch-reader@example.com",
+      "addon_name": "狸阅",
+      "addon_version": "1.3.0",
+      "addon_description": "用同一个 Prompt 独立阅读多篇 Zotero PDF，并把回答分别保存到各自条目的笔记。",
+      "min_zotero_version": "9.0.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://raw.githubusercontent.com/xiaoxiao937/li-yue-zotero/main/update.json",
+      "parse_success": true
+    }
+  ]
+}
