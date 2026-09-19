@@ -1,0 +1,33 @@
+{
+  "last_checked": "2025-12-23T11:26:00.926620+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.1",
+      "published_at": "2023-08-24T18:30:43Z",
+      "xpi_asset_id": 122973037,
+      "xpi_name": "zbatch@www.mineshp.com.xpi",
+      "xpi_download_url": "https://github.com/mpatelh/zbatch/releases/download/v0.1.1/zbatch%40www.mineshp.com.xpi",
+      "addon_id": "zbatch@mineshp.com",
+      "addon_name": "zbatch Tools for Zotero",
+      "addon_version": "0.1.1",
+      "addon_description": "Batch field editing plugin.",
+      "min_zotero_version": "5.0.24",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.0",
+      "published_at": "2023-07-20T20:08:59Z",
+      "xpi_asset_id": 117886678,
+      "xpi_name": "zbatch@www.mineshp.com.xpi",
+      "xpi_download_url": "https://github.com/mpatelh/zbatch/releases/download/v0.1.0/zbatch%40www.mineshp.com.xpi",
+      "addon_id": "zbatch@mineshp.com",
+      "addon_name": "zbatch Tools for Zotero",
+      "addon_version": "0.1.0",
+      "addon_description": "Batch field editing plugin.",
+      "min_zotero_version": "5.0.24",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    }
+  ]
+}

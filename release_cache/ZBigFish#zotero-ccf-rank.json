@@ -1,0 +1,44 @@
+{
+  "last_checked": "2026-09-15T05:54:14.071669+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.1",
+      "published_at": "2026-09-14T10:44:56Z",
+      "xpi_asset_id": 563185631,
+      "xpi_name": "zotero-ccf-rank.xpi",
+      "xpi_download_url": "https://github.com/ZBigFish/zotero-ccf-rank/releases/download/v1.0.1/zotero-ccf-rank.xpi",
+      "addon_id": "ccfrank@timetrapzz.site",
+      "addon_name": "Zotero CCF Rank",
+      "addon_version": "1.0.1",
+      "addon_description": "Zotero plugin for computer science papers: identifies the CCF rank and the CAS (中科院) journal zone, writes a one-line venue summary, and shows it in a dedicated column.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "10.*",
+      "update_url": "https://github.com/ZBigFish/zotero-ccf-rank/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.0.0",
+      "published_at": "2026-09-14T09:34:28Z",
+      "xpi_asset_id": 563064868,
+      "xpi_name": "zotero-ccf-rank.xpi",
+      "xpi_download_url": "https://github.com/ZBigFish/zotero-ccf-rank/releases/download/v1.0.0/zotero-ccf-rank.xpi",
+      "addon_id": "ccfrank@timetrapzz.site",
+      "addon_name": "Zotero CCF Rank",
+      "addon_version": "1.0.0",
+      "addon_description": "Zotero plugin for computer science papers: identifies the CCF rank and the CAS (中科院) journal zone, writes a one-line venue summary, and shows it in a dedicated column.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "10.*",
+      "update_url": "https://github.com/ZBigFish/zotero-ccf-rank/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-09-14T10:44:58Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    }
+  ]
+}
