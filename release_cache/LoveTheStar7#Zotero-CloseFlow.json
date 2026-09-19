@@ -1,0 +1,50 @@
+{
+  "last_checked": "2026-06-05T13:43:06.575436+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.2.5",
+      "published_at": "2026-06-05T02:33:13Z",
+      "xpi_asset_id": 438877658,
+      "xpi_name": "closeflow-1.2.5.xpi",
+      "xpi_download_url": "https://github.com/LoveTheStar7/Zotero-CloseFlow/releases/download/v1.2.5/closeflow-1.2.5.xpi",
+      "addon_id": "zotero-close-to-tray@example.com",
+      "addon_name": "CloseFlow",
+      "addon_version": "1.2.5",
+      "addon_description": "控制 Zotero 关闭按钮行为：最小化到系统托盘或直接退出。",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://raw.githubusercontent.com/LoveTheStar7/Zotero-CloseFlow/main/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.2.4",
+      "published_at": "2026-06-05T02:14:16Z",
+      "xpi_asset_id": 438865028,
+      "xpi_name": "closeflow-1.2.4.xpi",
+      "xpi_download_url": "https://github.com/LoveTheStar7/Zotero-CloseFlow/releases/download/v1.2.4/closeflow-1.2.4.xpi",
+      "addon_id": "zotero-close-to-tray@example.com",
+      "addon_name": "CloseFlow",
+      "addon_version": "1.2.4",
+      "addon_description": "Control whether Zotero closes or minimizes to the Windows system tray.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://raw.githubusercontent.com/LoveTheStar7/Zotero-CloseFlow/main/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.0.0",
+      "published_at": "2026-05-12T06:35:44Z",
+      "xpi_asset_id": 418130703,
+      "xpi_name": "closeflow-1.0.0.xpi",
+      "xpi_download_url": "https://github.com/LoveTheStar7/Zotero-CloseFlow/releases/download/v1.0.0/closeflow-1.0.0.xpi",
+      "addon_id": "zotero-close-to-tray@example.com",
+      "addon_name": "CloseFlow",
+      "addon_version": "1.0.0",
+      "addon_description": "Control whether Zotero closes or flows into the Windows system tray.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://raw.githubusercontent.com/LoveTheStar7/Zotero-CloseFlow/main/update.json",
+      "parse_success": true
+    }
+  ]
+}
