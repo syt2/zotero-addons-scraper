@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-09-15T05:54:03.507620+00:00",
+  "checked_releases": [
+    {
+      "tag": "zotero-paper-chat-v0.1.2",
+      "published_at": "2026-09-14T12:21:45Z",
+      "xpi_asset_id": 563343137,
+      "xpi_name": "zotero-paper-chat-0.1.2.xpi",
+      "xpi_download_url": "https://github.com/HDU-OrangeS/zotero-paper-chat/releases/download/zotero-paper-chat-v0.1.2/zotero-paper-chat-0.1.2.xpi",
+      "addon_id": "paper-chat@cui-zhihao.local",
+      "addon_name": "Paper Chat · 论文问答",
+      "addon_version": "0.1.2",
+      "addon_description": "在 Zotero 阅读侧栏向当前 PDF 提问，支持通用 AI API 和页码引用。",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://127.0.0.1:65535/paper-chat-updates.json",
+      "parse_success": true
+    }
+  ]
+}
