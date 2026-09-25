@@ -1,0 +1,50 @@
+{
+  "last_checked": "2026-09-25T01:09:51.567421+00:00",
+  "checked_releases": [
+    {
+      "tag": "v5.4.1",
+      "published_at": "2026-09-23T14:16:20Z",
+      "xpi_asset_id": 586334645,
+      "xpi_name": "ZotRadar-5.4.1-zotero10.xpi",
+      "xpi_download_url": "https://github.com/poesein/ZotRadar/releases/download/v5.4.1/ZotRadar-5.4.1-zotero10.xpi",
+      "addon_id": "zotradar@poesein",
+      "addon_name": "ZotRadar",
+      "addon_version": "5.4.1",
+      "addon_description": "ZotRadar native Dashboard with papers, subscriptions, scoring, feedback, system diagnostics, and legacy migration.",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://raw.githubusercontent.com/poesein/ZotRadar/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v5.3.1",
+      "published_at": "2026-09-20T10:23:16Z",
+      "xpi_asset_id": 576610375,
+      "xpi_name": "ZotRadar-5.3.1-zotero10.xpi",
+      "xpi_download_url": "https://github.com/poesein/ZotRadar/releases/download/v5.3.1/ZotRadar-5.3.1-zotero10.xpi",
+      "addon_id": "zotradar@poesein",
+      "addon_name": "ZotRadar",
+      "addon_version": "5.3.1",
+      "addon_description": "ZotRadar native Dashboard with papers, subscriptions, scoring, feedback, system diagnostics, and legacy migration.",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://raw.githubusercontent.com/poesein/ZotRadar/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v5.2.21",
+      "published_at": "2026-09-20T06:51:42Z",
+      "xpi_asset_id": 576504789,
+      "xpi_name": "ZotRadar-5.2.21-zotero10.xpi",
+      "xpi_download_url": "https://github.com/poesein/ZotRadar/releases/download/v5.2.21/ZotRadar-5.2.21-zotero10.xpi",
+      "addon_id": "zotradar@poesein",
+      "addon_name": "ZotRadar",
+      "addon_version": "5.2.21",
+      "addon_description": "ZotRadar 5.2 native Dashboard with papers, subscriptions, scoring, feedback, system diagnostics, and legacy migration.",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://raw.githubusercontent.com/poesein/ZotRadar/main/updates.json",
+      "parse_success": true
+    }
+  ]
+}

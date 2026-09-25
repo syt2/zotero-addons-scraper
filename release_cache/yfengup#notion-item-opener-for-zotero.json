@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-08-09T14:00:04.302013+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.1.0",
+      "published_at": "2026-08-09T13:08:13Z",
+      "xpi_asset_id": 507521115,
+      "xpi_name": "notion-item-opener-1.1.0.xpi",
+      "xpi_download_url": "https://github.com/yfengup/notion-item-opener-for-zotero/releases/download/v1.1.0/notion-item-opener-1.1.0.xpi",
+      "addon_id": "notion-item-opener@yfeng.local",
+      "addon_name": "Notion Item Opener",
+      "addon_version": "1.1.0",
+      "addon_description": "Opens Zotero items from trusted Notion links by native Item Key.",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://raw.githubusercontent.com/yfengup/notion-item-opener-for-zotero/main/updates.json",
+      "parse_success": true
+    }
+  ]
+}
