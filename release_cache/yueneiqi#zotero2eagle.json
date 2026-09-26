@@ -1,0 +1,59 @@
+{
+  "last_checked": "2026-01-07T10:03:54.031932+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.0.4",
+      "published_at": "2025-10-03T03:39:56Z",
+      "xpi_asset_id": 299993768,
+      "xpi_name": "zotero-2-eagle.xpi",
+      "xpi_download_url": "https://github.com/yueneiqi/zotero2eagle/releases/download/v0.0.4/zotero-2-eagle.xpi",
+      "addon_id": "zotero2eagle@euclpts.com",
+      "addon_name": "Zotero2Eagle",
+      "addon_version": "0.0.4",
+      "addon_description": "Zotero to Eagle integration plugin",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/your-github-name/zotero2eagle/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.0.3",
+      "published_at": "2025-09-29T05:53:23Z",
+      "xpi_asset_id": 298386621,
+      "xpi_name": "zotero-2-eagle.xpi",
+      "xpi_download_url": "https://github.com/yueneiqi/zotero2eagle/releases/download/v0.0.3/zotero-2-eagle.xpi",
+      "addon_id": "zotero2eagle@euclpts.com",
+      "addon_name": "Zotero2Eagle",
+      "addon_version": "0.0.3",
+      "addon_description": "Zotero to Eagle integration plugin",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/your-github-name/zotero2eagle/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.0.5",
+      "published_at": "2026-01-07T09:27:42Z",
+      "xpi_asset_id": 337357872,
+      "xpi_name": "zotero-2-eagle.xpi",
+      "xpi_download_url": "https://github.com/yueneiqi/zotero2eagle/releases/download/v0.0.5/zotero-2-eagle.xpi",
+      "addon_id": "zotero2eagle@euclpts.com",
+      "addon_name": "Zotero2Eagle",
+      "addon_version": "0.0.5",
+      "addon_description": "Zotero to Eagle integration plugin",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/yueneiqi/zotero2eagle/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-01-07T09:27:45Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    }
+  ]
+}

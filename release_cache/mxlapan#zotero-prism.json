@@ -1,0 +1,44 @@
+{
+  "last_checked": "2026-09-23T04:11:23.389552+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.0",
+      "published_at": "2026-09-22T15:53:42Z",
+      "xpi_asset_id": 581726124,
+      "xpi_name": "zotero-prism.xpi",
+      "xpi_download_url": "https://github.com/mxlapan/zotero-prism/releases/download/v1.0.0/zotero-prism.xpi",
+      "addon_id": "prism@zotero-prism.org",
+      "addon_name": "Zotero Prism",
+      "addon_version": "1.0.0",
+      "addon_description": "Reading analytics, an AI copilot and full-text translation for Zotero. Free and open source — github.com/mxlapan/zotero-prism · 免费开源，发布和使用均不收取任何费用。",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "11.*",
+      "update_url": "https://github.com/mxlapan/zotero-prism/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-09-22T15:53:44Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "v1.0.1",
+      "published_at": "2026-09-23T02:07:38Z",
+      "xpi_asset_id": 582739581,
+      "xpi_name": "zotero-prism.xpi",
+      "xpi_download_url": "https://github.com/mxlapan/zotero-prism/releases/download/v1.0.1/zotero-prism.xpi",
+      "addon_id": "prism@zotero-prism.org",
+      "addon_name": "Zotero Prism",
+      "addon_version": "1.0.1",
+      "addon_description": "Reading analytics, an AI copilot and full-text translation for Zotero. Free and open source — github.com/mxlapan/zotero-prism · 免费开源，发布和使用均不收取任何费用。",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "11.*",
+      "update_url": "https://github.com/mxlapan/zotero-prism/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}
