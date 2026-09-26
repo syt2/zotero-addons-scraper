@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-07-16T02:24:57.543741+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.2.0",
+      "published_at": "2026-07-14T11:53:40Z",
+      "xpi_asset_id": 476646909,
+      "xpi_name": "zotero-pdf-deduplicator.xpi",
+      "xpi_download_url": "https://github.com/heimi98/zotero-deduplicator/releases/download/v1.2.0/zotero-pdf-deduplicator.xpi",
+      "addon_id": "zotero-pdf-deduplicator@xuan.dev",
+      "addon_name": "PDF Deduplicator",
+      "addon_version": "1.2.0",
+      "addon_description": "Detect duplicate Zotero PDF attachments by SHA-256 and remove them after confirmation.",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.*",
+      "update_url": "https://raw.githubusercontent.com/heimi98/zotero-deduplicator/main/update.json",
+      "parse_success": true
+    }
+  ]
+}
