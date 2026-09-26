@@ -1,0 +1,80 @@
+{
+  "last_checked": "2026-09-02T09:00:11.229881+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.2.1",
+      "published_at": "2026-08-26T11:42:39Z",
+      "xpi_asset_id": 530725826,
+      "xpi_name": "zotero-wallpaper-0.2.1.xpi",
+      "xpi_download_url": "https://github.com/endoretic/zotero-wallpaper/releases/download/v0.2.1/zotero-wallpaper-0.2.1.xpi",
+      "addon_id": "zotero-wallpaper@endoretic.github.io",
+      "addon_name": "Zotero Wallpaper",
+      "addon_version": "0.2.1",
+      "addon_description": "Use local wallpapers across Zotero 10's main library panes.",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://github.com/endoretic/zotero-wallpaper/releases/latest/download/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.2.0",
+      "published_at": "2026-08-25T15:53:16Z",
+      "xpi_asset_id": 529423984,
+      "xpi_name": "zotero-wallpaper-0.2.0.xpi",
+      "xpi_download_url": "https://github.com/endoretic/zotero-wallpaper/releases/download/v0.2.0/zotero-wallpaper-0.2.0.xpi",
+      "addon_id": "zotero-wallpaper@endoretic.github.io",
+      "addon_name": "Zotero Wallpaper",
+      "addon_version": "0.2.0",
+      "addon_description": "Use local wallpapers across Zotero 10's main library panes.",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://github.com/endoretic/zotero-wallpaper/releases/latest/download/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.2.2",
+      "published_at": "2026-08-26T13:42:37Z",
+      "xpi_asset_id": 530866460,
+      "xpi_name": "zotero-wallpaper-0.2.2.xpi",
+      "xpi_download_url": "https://github.com/endoretic/zotero-wallpaper/releases/download/v0.2.2/zotero-wallpaper-0.2.2.xpi",
+      "addon_id": "zotero-wallpaper@endoretic.github.io",
+      "addon_name": "Zotero Wallpaper",
+      "addon_version": "0.2.2",
+      "addon_description": "Wallpaper & UI optimization for Zotero 10",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://github.com/endoretic/zotero-wallpaper/releases/latest/download/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.3.0",
+      "published_at": "2026-09-02T08:05:03Z",
+      "xpi_asset_id": 540834804,
+      "xpi_name": "zotero-wallpaper-0.3.0.xpi",
+      "xpi_download_url": "https://github.com/endoretic/zotero-wallpaper/releases/download/v0.3.0/zotero-wallpaper-0.3.0.xpi",
+      "addon_id": "zotero-wallpaper@endoretic.github.io",
+      "addon_name": "Zotero Wallpaper",
+      "addon_version": "0.3.0",
+      "addon_description": "Wallpaper & UI optimization for Zotero 10",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://github.com/endoretic/zotero-wallpaper/releases/latest/download/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.2.3",
+      "published_at": "2026-09-02T04:13:08Z",
+      "xpi_asset_id": 540596555,
+      "xpi_name": "zotero-wallpaper-0.2.3.xpi",
+      "xpi_download_url": "https://github.com/endoretic/zotero-wallpaper/releases/download/v0.2.3/zotero-wallpaper-0.2.3.xpi",
+      "addon_id": "zotero-wallpaper@endoretic.github.io",
+      "addon_name": "Zotero Wallpaper",
+      "addon_version": "0.2.3",
+      "addon_description": "Wallpaper & UI optimization for Zotero 10",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://github.com/endoretic/zotero-wallpaper/releases/latest/download/updates.json",
+      "parse_success": true
+    }
+  ]
+}
