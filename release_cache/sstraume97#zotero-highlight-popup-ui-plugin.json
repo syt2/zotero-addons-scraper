@@ -1,0 +1,50 @@
+{
+  "last_checked": "2026-09-17T15:07:42.703451+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.8.0",
+      "published_at": "2026-09-15T15:47:25Z",
+      "xpi_asset_id": 565999977,
+      "xpi_name": "streamline-highlight-popup-v0.8.0.xpi",
+      "xpi_download_url": "https://github.com/sstraume97/zotero-highlight-popup-ui-plugin/releases/download/v0.8.0/streamline-highlight-popup-v0.8.0.xpi",
+      "addon_id": "streamline-highlight-popup@sondre.local",
+      "addon_name": "Streamline Highlight Popup",
+      "addon_version": "0.8.0",
+      "addon_description": "Merges colour and style into a single click in Zotero’s text selection popup: one row of colours for highlights and one for underlines. Settings in English and Norwegian.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://example.invalid/streamline-highlight-popup/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.7.3",
+      "published_at": "2026-09-15T15:27:27Z",
+      "xpi_asset_id": 565964905,
+      "xpi_name": "streamline-highlight-popup-v0.7.3.xpi",
+      "xpi_download_url": "https://github.com/sstraume97/zotero-highlight-popup-ui-plugin/releases/download/v0.7.3/streamline-highlight-popup-v0.7.3.xpi",
+      "addon_id": "streamline-highlight-popup@sondre.local",
+      "addon_name": "Streamline Highlight Popup",
+      "addon_version": "0.7.3",
+      "addon_description": "Slår sammen farge- og stil-valg (highlight/underline) i tekstmarkerings-popupen til én rad per stil, slik at du velger farge+stil med ett klikk.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://example.invalid/streamline-highlight-popup/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.6",
+      "published_at": "2026-08-24T13:53:49Z",
+      "xpi_asset_id": 527676052,
+      "xpi_name": "streamline-highlight-popup-v0.6.xpi",
+      "xpi_download_url": "https://github.com/sstraume97/zotero-highlight-popup-ui-plugin/releases/download/v0.6/streamline-highlight-popup-v0.6.xpi",
+      "addon_id": "streamline-highlight-popup@sondre.local",
+      "addon_name": "Streamline Highlight Popup",
+      "addon_version": "0.3.0",
+      "addon_description": "Slår sammen farge- og stil-valg (highlight/underline) i tekstmarkerings-popupen til én rad per stil, slik at du velger farge+stil med ett klikk.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://example.invalid/streamline-highlight-popup/updates.json",
+      "parse_success": true
+    }
+  ]
+}
