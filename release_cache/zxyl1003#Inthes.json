@@ -1,0 +1,35 @@
+{
+  "last_checked": "2026-09-24T05:50:55.079053+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.10.49",
+      "published_at": "2026-09-24T04:25:43Z",
+      "xpi_asset_id": 585139940,
+      "xpi_name": "inthes-0.10.49.xpi",
+      "xpi_download_url": "https://github.com/zxyl1003/Inthes/releases/download/v0.10.49/inthes-0.10.49.xpi",
+      "addon_id": "inthes@zxyl1003.github.io",
+      "addon_name": "Inthes",
+      "addon_version": "0.10.49",
+      "addon_description": "在文献旁思考。单篇问答、多篇总结，以及由你决定保存的笔记。",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.*",
+      "update_url": "https://raw.githubusercontent.com/zxyl1003/Inthes/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.10.48",
+      "published_at": "2026-09-24T04:19:46Z",
+      "xpi_asset_id": 585131499,
+      "xpi_name": "inthes-0.10.48.xpi",
+      "xpi_download_url": "https://github.com/zxyl1003/Inthes/releases/download/v0.10.48/inthes-0.10.48.xpi",
+      "addon_id": "inthes@zxyl1003.github.io",
+      "addon_name": "Inthes",
+      "addon_version": "0.10.48",
+      "addon_description": "在文献旁思考。单篇问答、多篇总结，以及由你决定保存的笔记。",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.*",
+      "update_url": "https://raw.githubusercontent.com/zxyl1003/Inthes/main/updates.json",
+      "parse_success": true
+    }
+  ]
+}
