@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-06-05T13:45:00.073947+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.0",
+      "published_at": "2026-06-05T09:40:01Z",
+      "xpi_asset_id": 439163649,
+      "xpi_name": "zotero-ai-la-te-x.xpi",
+      "xpi_download_url": "https://github.com/Huoyuuu/zotero-ai-latex/releases/download/v1.0.0/zotero-ai-la-te-x.xpi",
+      "addon_id": "ai-latex@huoyuuu.github.io",
+      "addon_name": "Zotero AI LaTeX",
+      "addon_version": "1.0.0",
+      "addon_description": "Convert dragged or pasted formula images to LaTeX in Zotero item pane using an OpenAI-compatible vision model.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "9.*",
+      "update_url": "https://github.com/huoyuuu/zotero-ai-latex/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}
