@@ -1,0 +1,19 @@
+{
+  "last_checked": "2026-10-03T14:51:46.785150+00:00",
+  "checked_releases": [
+    {
+      "tag": "V1.0.0",
+      "published_at": "2026-10-03T13:24:22Z",
+      "xpi_asset_id": 607852050,
+      "xpi_name": "translate-for-readingmode-1.0.0.xpi",
+      "xpi_download_url": "https://github.com/bionux-th/Zotero-Translate-for-ReadingMode/releases/download/V1.0.0/translate-for-readingmode-1.0.0.xpi",
+      "addon_id": "zotero-readtrans@github.com",
+      "addon_name": "Translate for ReadingMode",
+      "addon_version": "1.0.0",
+      "addon_description": "Translate Zotero PDF reading mode with local and online translation services",
+      "min_zotero_version": "9.999",
+      "max_zotero_version": "10.*",
+      "parse_success": true
+    }
+  ]
+}
