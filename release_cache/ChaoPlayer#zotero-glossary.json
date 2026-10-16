@@ -1,0 +1,44 @@
+{
+  "last_checked": "2026-08-30T21:56:56.343347+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.2.2",
+      "published_at": "2026-08-16T01:42:06Z",
+      "xpi_asset_id": 516289091,
+      "xpi_name": "zotero-glossary.xpi",
+      "xpi_download_url": "https://github.com/ChaoPlayer/zotero-glossary/releases/download/v0.2.2/zotero-glossary.xpi",
+      "addon_id": "glossary@zotero.local",
+      "addon_name": "Zotero Glossary",
+      "addon_version": "0.2.2",
+      "addon_description": "Select a term while reading to look it up via an LLM (DeepSeek by default), and build your own bilingual glossary of technical terms (EN/CN).",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "10.9.9",
+      "update_url": "https://raw.githubusercontent.com/ChaoPlayer/zotero-glossary/main/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.2.14",
+      "published_at": "2026-08-21T12:42:14Z",
+      "xpi_asset_id": 523729251,
+      "xpi_name": "zotero-glossary.xpi",
+      "xpi_download_url": "https://github.com/ChaoPlayer/zotero-glossary/releases/download/v0.2.14/zotero-glossary.xpi",
+      "parse_success": false,
+      "parse_error": "Parse failed or no addon ID"
+    },
+    {
+      "tag": "v0.2.16",
+      "published_at": "2026-08-30T15:07:17Z",
+      "xpi_asset_id": 536736403,
+      "xpi_name": "zotero-glossary.xpi",
+      "xpi_download_url": "https://github.com/ChaoPlayer/zotero-glossary/releases/download/v0.2.16/zotero-glossary.xpi",
+      "addon_id": "glossary@zotero.local",
+      "addon_name": "Zotero Glossary",
+      "addon_version": "0.2.16",
+      "addon_description": "Select a term while reading to look it up via an LLM (DeepSeek by default), and build your own bilingual glossary of technical terms (EN/CN).",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://raw.githubusercontent.com/ChaoPlayer/zotero-glossary/main/update.json",
+      "parse_success": true
+    }
+  ]
+}
