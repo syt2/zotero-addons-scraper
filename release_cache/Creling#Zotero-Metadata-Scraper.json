@@ -1,0 +1,29 @@
+{
+  "last_checked": "2025-12-23T11:29:20.493981+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.0",
+      "published_at": "2025-02-06T18:03:49Z",
+      "xpi_asset_id": 226920908,
+      "xpi_name": "zotero-metadata-scraper.xpi",
+      "xpi_download_url": "https://github.com/Creling/Zotero-Metadata-Scraper/releases/download/v1.0.0/zotero-metadata-scraper.xpi",
+      "addon_id": "metadatascraper@creling",
+      "addon_name": "Zotero Metadata Scraper",
+      "addon_version": "1.0.0",
+      "addon_description": "A Zotero plugin to fetch metadata from multiple sources",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "7.*",
+      "update_url": "https://github.com/creling/zotero-metadata-scraper/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2025-02-06T18:03:52Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    }
+  ]
+}
