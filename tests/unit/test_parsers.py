@@ -44,6 +44,31 @@ class TestJsonManifestParser:
         assert manifest is not None
         assert manifest["name"] == sample_manifest_json["name"]
 
+    def test_parse_jsonc_from_directory(self, parser, temp_dir):
+        """Test parsing a manifest containing comments and trailing commas."""
+        manifest_path = temp_dir / "manifest.json"
+        manifest_path.write_text(
+            """
+            {
+              // Zotero manifests may be edited as JSONC.
+              "name": "JSONC Addon",
+              "version": "1.0.0",
+              "applications": {
+                "zotero": {
+                  "id": "jsonc@addon.com",
+                },
+              },
+            }
+            """,
+            encoding="utf-8",
+        )
+
+        manifest = parser.parse(temp_dir)
+
+        assert manifest is not None
+        assert manifest["name"] == "JSONC Addon"
+        assert manifest["applications"]["zotero"]["id"] == "jsonc@addon.com"
+
     def test_parse_nonexistent(self, parser, temp_dir):
         """Test parsing from nonexistent path."""
         manifest = parser.parse(temp_dir / "nonexistent.xpi")

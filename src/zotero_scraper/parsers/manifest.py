@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any, Optional, Union
 from xml.dom import minidom
 
-import commentjson as json
+import json5 as json
 
 from ..config.constants import ZoteroApp
 from ..utils.logging import get_logger
