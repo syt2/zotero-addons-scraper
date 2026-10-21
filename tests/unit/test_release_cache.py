@@ -280,6 +280,53 @@ def test_release_page_observation_is_transient(temp_dir):
     assert cache.get_observed_release_tags("owner/repo") == {"v0.2"}
 
 
+def test_builder_prunes_cache_files_for_unconfigured_repos(temp_dir):
+    """Renamed or removed addons must not leave orphaned cache files behind."""
+    cache_dir = temp_dir / "release_cache"
+    cache = ReleaseCache(cache_dir)
+    for repo in ["owner/keep", "old-owner/removed"]:
+        cache.add_release(
+            repo, make_release("v0.1", "0.1", "2026-08-29T00:00:00Z")
+        )
+    cache.save()
+    builder = make_builder(temp_dir, cache, [])
+    input_dir = temp_dir / "addons"
+    input_dir.mkdir()
+    (input_dir / "owner@keep").write_text("", encoding="utf-8")
+    builder.config = ScraperConfig(
+        input_dir=input_dir,
+        cache=builder.config.cache,
+    )
+    builder._process_repo = Mock(
+        return_value={"new_releases": 0, "refreshed_releases": 0}
+    )
+
+    builder.build_cache(repos=["owner/keep"])
+
+    assert (cache_dir / "owner#keep.json").exists()
+    assert not (cache_dir / "old-owner#removed.json").exists()
+    assert cache.get_repos() == ["owner/keep"]
+
+
+def test_builder_skips_cache_pruning_without_configured_repos(temp_dir):
+    """An empty or failed addon scan must not erase the persistent cache."""
+    cache_dir = temp_dir / "release_cache"
+    cache = ReleaseCache(cache_dir)
+    cache.add_release(
+        "owner/repo", make_release("v0.1", "0.1", "2026-08-29T00:00:00Z")
+    )
+    cache.save()
+    builder = make_builder(temp_dir, cache, [])
+    builder.config = ScraperConfig(
+        input_dir=temp_dir / "empty-addons",
+        cache=builder.config.cache,
+    )
+
+    builder.build_cache(repos=[])
+
+    assert (cache_dir / "owner#repo.json").exists()
+
+
 def test_save_failure_preserves_existing_cache_and_propagates(temp_dir):
     """A partial write cannot replace the last valid cache or look successful."""
     repo = "owner/repo"

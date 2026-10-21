@@ -424,6 +424,30 @@ class ReleaseCache:
             repos.append(repo)
         return repos
 
+    def prune_unconfigured_repos(self, configured_repos: set[str]) -> list[str]:
+        """Remove cache files for repositories no longer in the addon config."""
+        if not self.cache_dir.exists():
+            return []
+
+        removed = []
+        for cache_file in self.cache_dir.glob("*.json"):
+            repo = self._filename_to_repo(cache_file.name)
+            if repo in configured_repos:
+                continue
+
+            try:
+                cache_file.unlink()
+            except OSError as exc:
+                logger.warning(f"Failed to remove orphaned cache for {repo}: {exc}")
+                continue
+
+            self._cache.pop(repo, None)
+            self._dirty.discard(repo)
+            self._observed_release_tags.pop(repo, None)
+            removed.append(repo)
+
+        return sorted(removed)
+
     def get_stats(self) -> dict[str, Any]:
         """Get cache statistics."""
         repos = self.get_repos()

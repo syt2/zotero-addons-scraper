@@ -54,9 +54,11 @@ class ReleaseCacheBuilder:
         Returns:
             Statistics about the build process.
         """
+        configured_repos = self._load_repos_from_input()
         if repos is None:
-            repos = self._load_repos_from_input()
+            repos = configured_repos
 
+        self._prune_unconfigured_repos(configured_repos)
         logger.info(f"Building cache for {len(repos)} repositories")
 
         stats = {
@@ -118,9 +120,11 @@ class ReleaseCacheBuilder:
         Returns:
             Statistics about the build process.
         """
+        configured_repos = self._load_repos_from_input()
         if repos is None:
-            repos = self._load_repos_from_input()
+            repos = configured_repos
 
+        self._prune_unconfigured_repos(configured_repos)
         logger.info(f"Building cache for {len(repos)} repos with {max_workers} workers")
 
         stats = {
@@ -192,6 +196,18 @@ class ReleaseCacheBuilder:
                     repos.append(repo)
 
         return repos
+
+    def _prune_unconfigured_repos(self, repos: list[str]) -> None:
+        """Remove cache files for addons that are no longer configured."""
+        if not repos:
+            logger.warning(
+                "No repositories configured; skipping orphaned cache cleanup"
+            )
+            return
+
+        removed = self.cache.prune_unconfigured_repos(set(repos))
+        if removed:
+            logger.info(f"Removed {len(removed)} orphaned repository caches")
 
     def _process_repo(
         self,
