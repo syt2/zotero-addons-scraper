@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-10-19T11:56:15.771159+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.2",
+      "published_at": "2026-10-19T09:57:20Z",
+      "xpi_asset_id": 656080084,
+      "xpi_name": "zotero-excel-column-resize-0.1.2.xpi",
+      "xpi_download_url": "https://github.com/Ning703/zotero-excel-column-resize/releases/download/v0.1.2/zotero-excel-column-resize-0.1.2.xpi",
+      "addon_id": "excel-like-column-resize@local.codex",
+      "addon_name": "Excel-like Column Resize",
+      "addon_version": "0.1.2",
+      "addon_description": "Resize a library column while keeping the intervening columns unchanged and using the last resizable column to absorb the width change.",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://raw.githubusercontent.com/Ning703/zotero-excel-column-resize/main/updates.json",
+      "parse_success": true
+    }
+  ]
+}
