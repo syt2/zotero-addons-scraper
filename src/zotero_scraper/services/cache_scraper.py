@@ -12,6 +12,10 @@ from ..models.addon import AddonInfo, AddonRelease, Author, XpiDownloadUrls
 from ..utils.logging import get_logger
 from .fallback import FallbackService
 from .publisher import PublisherService
+from .version_outputs import (
+    split_addon_infos_by_zotero_version,
+    version_output_path,
+)
 
 logger = get_logger("services.cache_scraper")
 
@@ -26,15 +30,25 @@ class CacheScraper:
         self,
         config: ScraperConfig,
         release_cache: ReleaseCache,
+        target_zotero_versions: list[str] | None = None,
     ):
         """Initialize cache-based scraper.
 
         Args:
             config: Scraper configuration.
             release_cache: Release cache instance.
+            target_zotero_versions: Zotero major versions to generate.
+                Defaults to ``TARGET_ZOTERO_VERSIONS``.
         """
         self.config = config
         self.cache = release_cache
+        configured_versions = (
+            target_zotero_versions
+            if target_zotero_versions is not None
+            else TARGET_ZOTERO_VERSIONS
+        )
+        self.target_zotero_versions = list(dict.fromkeys(configured_versions))
+        self.version_output_files: dict[str, Path] = {}
         self.github = GitHubClient(config.github)
         self.fallback = FallbackService()
         self.publisher = PublisherService(self.github, config.github)
@@ -54,8 +68,7 @@ class CacheScraper:
 
         with ThreadPoolExecutor(max_workers=self.config.max_workers) as executor:
             futures = {
-                executor.submit(self._process_repo, repo): repo
-                for repo in repos
+                executor.submit(self._process_repo, repo): repo for repo in repos
             }
 
             for future in as_completed(futures):
@@ -80,9 +93,26 @@ class CacheScraper:
 
         # Save output
         self._save_output(result)
+        self._save_version_outputs(result)
         self.cache.save()
 
         return result
+
+    def _save_version_outputs(self, data: list[dict[str, Any]]) -> None:
+        """Save one filtered info file for each target Zotero version."""
+        version_data = split_addon_infos_by_zotero_version(
+            data,
+            self.target_zotero_versions,
+        )
+
+        self.version_output_files = {}
+        for zotero_version, filtered_addons in version_data.items():
+            output_file = version_output_path(
+                self.config.output_file,
+                zotero_version,
+            )
+            self._write_output(filtered_addons, output_file)
+            self.version_output_files[zotero_version] = output_file
 
     def _load_repos_from_input(self) -> list[str]:
         """Load repository list from input directory.
@@ -143,7 +173,7 @@ class CacheScraper:
 
         # Find best release for each Zotero version
         releases: list[AddonRelease] = []
-        for zotero_version in TARGET_ZOTERO_VERSIONS:
+        for zotero_version in self.target_zotero_versions:
             cached_release = self._get_available_release(
                 repo, owner, name, zotero_version
             )
@@ -220,9 +250,7 @@ class CacheScraper:
         if not cached.parse_success:
             return None
 
-        xpi_download_url = XpiDownloadUrls.from_github_url(
-            cached.xpi_download_url
-        )
+        xpi_download_url = XpiDownloadUrls.from_github_url(cached.xpi_download_url)
 
         return AddonRelease(
             targetZoteroVersion=zotero_version,
@@ -246,9 +274,7 @@ class CacheScraper:
                 avatar=user_info.avatar_url,
             )
 
-    def _fetch_repo_info(
-        self, addon_info: AddonInfo, owner: str, name: str
-    ) -> None:
+    def _fetch_repo_info(self, addon_info: AddonInfo, owner: str, name: str) -> None:
         """Fetch repository info from GitHub."""
         if repo_info := self.github.get_repo(owner, name):
             if not addon_info.description and repo_info.description:
@@ -257,9 +283,13 @@ class CacheScraper:
 
     def _save_output(self, data: list[dict[str, Any]]) -> None:
         """Save output to file."""
-        self.config.output_file.parent.mkdir(parents=True, exist_ok=True)
+        self._write_output(data, self.config.output_file)
 
-        with open(self.config.output_file, "w", encoding="utf-8") as f:
+    def _write_output(self, data: list[dict[str, Any]], output_file: Path) -> None:
+        """Write addon info data to a JSON file."""
+        output_file.parent.mkdir(parents=True, exist_ok=True)
+
+        with open(output_file, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False)
 
-        logger.info(f"Saved {len(data)} addons to {self.config.output_file}")
+        logger.info(f"Saved {len(data)} addons to {output_file}")

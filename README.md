@@ -14,6 +14,14 @@ including the following steps:
 - Parse add-on information into JSON data
 - Publish the JSON data to the [`publish`](https://github.com/syt2/zotero-addons-scraper/blob/publish/addon_infos.json) branch and the [latest release](https://github.com/syt2/zotero-addons-scraper/releases/latest)
 
+### Addon info files
+
+- `addon_infos.json` contains every addon release, including multiple Zotero
+  versions for the same addon.
+- `addon_infos_<zotero-version>.json` contains only addons with a matching
+  `targetZoteroVersion`, for example `addon_infos_6.json` or
+  `addon_infos_13.json`.
+
 ## Contributing
 Adding a new add-on entry `{owner}@{repo}` in the [addons](addons) folder.
 

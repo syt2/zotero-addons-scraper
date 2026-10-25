@@ -206,7 +206,13 @@ def main() -> int:
     # Step 3: Publish to GitHub release (if requested)
     if args.create_release and args.github_repository:
         logger.info("Step 3: Publishing to GitHub release...")
-        scraper.publisher.publish(config.output_file)
+        published = scraper.publisher.publish(
+            config.output_file,
+            scraper.version_output_files.values(),
+        )
+        if not published:
+            logger.error("Publishing addon info files failed")
+            return 1
         scraper.publisher.cleanup_caches(keep_count=1)
     else:
         logger.info("Step 3: Skipped (--create_release is False or no repository)")

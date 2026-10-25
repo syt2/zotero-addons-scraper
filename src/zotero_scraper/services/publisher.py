@@ -1,7 +1,7 @@
 """Publisher service for releasing addon information."""
 
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Optional
 
 from ..clients.github import GitHubClient
 from ..config.settings import GitHubConfig
@@ -23,21 +23,29 @@ class PublisherService:
         self.github = github_client
         self.config = config
 
-    def publish(self, output_file: Path) -> bool:
-        """Publish addon info file to GitHub release.
+    def publish(
+        self,
+        output_file: Path,
+        version_output_files: Iterable[Path] | None = None,
+    ) -> bool:
+        """Publish addon info files to a GitHub release.
 
         Args:
-            output_file: Path to addon_infos.json file.
+            output_file: Path to the complete addon_infos.json file.
+            version_output_files: Additional per-Zotero-version info files.
 
         Returns:
-            True if successful.
+            True if every file was uploaded successfully.
         """
         if not self.config.owner or not self.config.repo_name:
             logger.error("GitHub repository not configured")
             return False
 
-        if not output_file.exists():
-            logger.error(f"Output file not found: {output_file}")
+        output_files = [output_file, *(version_output_files or [])]
+        missing_files = [path for path in output_files if not path.exists()]
+        if missing_files:
+            for path in missing_files:
+                logger.error(f"Output file not found: {path}")
             return False
 
         owner = self.config.owner
@@ -55,20 +63,23 @@ class PublisherService:
             logger.error("Failed to create release")
             return False
 
-        # Upload file
-        logger.info(f"Uploading {output_file.name}...")
-        success = self.github.upload_release_asset(
-            owner=owner,
-            repo=repo,
-            release_id=release_id,
-            filename="addon_infos.json",
-            filepath=str(output_file),
-        )
+        # Upload complete and per-version files
+        success = True
+        for path in output_files:
+            logger.info(f"Uploading {path.name}...")
+            uploaded = self.github.upload_release_asset(
+                owner=owner,
+                repo=repo,
+                release_id=release_id,
+                filename=path.name,
+                filepath=str(path),
+            )
+            if not uploaded:
+                logger.error(f"Failed to upload release asset {path.name}")
+                success = False
 
         if success:
             logger.info("Published successfully")
-        else:
-            logger.error("Failed to upload release asset")
 
         return success
 
@@ -92,7 +103,7 @@ class PublisherService:
         self,
         title: str,
         body: str,
-        check_id: Optional[str] = None,
+        check_id: str | None = None,
     ) -> bool:
         """Report an issue to GitHub.
 
