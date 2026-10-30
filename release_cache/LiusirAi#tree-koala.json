@@ -1,0 +1,35 @@
+{
+  "last_checked": "2026-10-27T09:57:40.898211+00:00",
+  "checked_releases": [
+    {
+      "tag": "v2.0.1",
+      "published_at": "2026-10-26T09:09:16Z",
+      "xpi_asset_id": 677550015,
+      "xpi_name": "tree-koala-2.0.1.xpi",
+      "xpi_download_url": "https://github.com/LiusirAi/tree-koala/releases/download/v2.0.1/tree-koala-2.0.1.xpi",
+      "addon_id": "treekoala@liusir",
+      "addon_name": "树袋熊",
+      "addon_version": "2.0.1",
+      "addon_description": "Readable PDF reader translation overlay for Zotero.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.*",
+      "update_url": "https://gitee.com/LiusirDD/liusir-ai/raw/master/zotero/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v2.0.4",
+      "published_at": "2026-10-27T09:20:10Z",
+      "xpi_asset_id": 681074252,
+      "xpi_name": "tree-koala-2.0.4.xpi",
+      "xpi_download_url": "https://github.com/LiusirAi/tree-koala/releases/download/v2.0.4/tree-koala-2.0.4.xpi",
+      "addon_id": "treekoala@liusir",
+      "addon_name": "树袋熊",
+      "addon_version": "2.0.4",
+      "addon_description": "Readable PDF reader translation overlay for Zotero.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.*",
+      "update_url": "https://gitee.com/LiusirDD/liusir-ai/raw/master/zotero/updates.json",
+      "parse_success": true
+    }
+  ]
+}
