@@ -1,0 +1,19 @@
+{
+  "last_checked": "2026-09-25T04:45:14.184218+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.3.2",
+      "published_at": "2026-09-25T03:34:54Z",
+      "xpi_asset_id": 587435844,
+      "xpi_name": "zone-1.3.2-zotero10.xpi",
+      "xpi_download_url": "https://github.com/TomYU2023/Zone/releases/download/v1.3.2/zone-1.3.2-zotero10.xpi",
+      "addon_id": "zone@zotero.local",
+      "addon_name": "Zone",
+      "addon_version": "1.3.2",
+      "addon_description": "自动下载并附加 PDF，支持 ResearchGate 搜索与科研通 DOI 求助预填",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.0.*",
+      "parse_success": true
+    }
+  ]
+}

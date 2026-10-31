@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-10-25T12:23:48.783102+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.0",
+      "published_at": "2026-10-25T08:33:47Z",
+      "xpi_asset_id": 674514002,
+      "xpi_name": "zotero-keep-window-1.0.0.xpi",
+      "xpi_download_url": "https://github.com/Luke-Evan/zotero-keep-window/releases/download/v1.0.0/zotero-keep-window-1.0.0.xpi",
+      "addon_id": "zotero-keep-window@luke-evan",
+      "addon_name": "Zotero Keep Window",
+      "addon_version": "1.0.0",
+      "addon_description": "点击关闭按钮或 Alt+F4 只最小化窗口，不退出 Zotero。Minimize Zotero instead of quitting.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "*",
+      "update_url": "https://raw.githubusercontent.com/Luke-Evan/zotero-keep-window/main/update.json",
+      "parse_success": true
+    }
+  ]
+}
