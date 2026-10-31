@@ -1,0 +1,35 @@
+{
+  "last_checked": "2026-08-29T15:24:42.661575+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.3.1",
+      "published_at": "2026-08-29T06:11:37Z",
+      "xpi_asset_id": 534841552,
+      "xpi_name": "journal-tags.xpi",
+      "xpi_download_url": "https://github.com/chen7447/journal-tags/releases/download/v0.3.1/journal-tags.xpi",
+      "addon_id": "journaltags@chen7447",
+      "addon_name": "Journal Tags",
+      "addon_version": "0.3.1",
+      "addon_description": "EasyScholar journal tags and impact factor columns for Zotero",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.*",
+      "update_url": "https://raw.githubusercontent.com/chen7447/journal-tags/main/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.3.0",
+      "published_at": "2026-08-29T05:39:02Z",
+      "xpi_asset_id": 534812985,
+      "xpi_name": "journal-tags.xpi",
+      "xpi_download_url": "https://github.com/chen7447/journal-tags/releases/download/v0.3.0/journal-tags.xpi",
+      "addon_id": "journaltags@chen7447",
+      "addon_name": "Journal Tags",
+      "addon_version": "0.3.0",
+      "addon_description": "EasyScholar journal tags and impact factor columns for Zotero",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.*",
+      "update_url": "https://github.com/chen7447/journal-tags/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "last_checked": "2026-09-16T12:56:04.844202+00:00",
+  "checked_releases": [
+    {
+      "tag": "1.0.1",
+      "published_at": "2026-09-16T10:00:52Z",
+      "xpi_asset_id": 567692063,
+      "xpi_name": "book-group.xpi",
+      "xpi_download_url": "https://github.com/justanotherjurastudent/zotero_Book-Group/releases/download/1.0.1/book-group.xpi",
+      "addon_id": "bookgroup@justanotherjurastudent.github.io",
+      "addon_name": "Book Group",
+      "addon_version": "1.0.1",
+      "addon_description": "Groups book sections and encyclopedia articles visually under their edited volume, based on Zotero's related-item relations.",
+      "min_zotero_version": "9.999",
+      "max_zotero_version": "10.*",
+      "update_url": "https://github.com/justanotherjurastudent/zotero_Book-Group/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "1.0.0",
+      "published_at": "2026-09-15T13:26:04Z",
+      "xpi_asset_id": 565749302,
+      "xpi_name": "book-group.xpi",
+      "xpi_download_url": "https://github.com/justanotherjurastudent/zotero_Book-Group/releases/download/1.0.0/book-group.xpi",
+      "addon_id": "bookgroup@justanotherjurastudent.github.io",
+      "addon_name": "Book Group",
+      "addon_version": "1.0.0",
+      "addon_description": "Groups book sections and encyclopedia articles visually under their edited volume, based on Zotero's related-item relations.",
+      "min_zotero_version": "9.999",
+      "max_zotero_version": "10.*",
+      "update_url": "https://github.com/justanotherjurastudent/zotero_SortPartsToBooks/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}
