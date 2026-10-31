@@ -1,0 +1,35 @@
+{
+  "last_checked": "2026-09-11T09:39:13.655209+00:00",
+  "checked_releases": [
+    {
+      "tag": "1.0.6",
+      "published_at": "2026-09-11T07:14:57Z",
+      "xpi_asset_id": 556713967,
+      "xpi_name": "zotero-pick2anki.xpi",
+      "xpi_download_url": "https://github.com/soyami/zotero-pick2anki/releases/download/1.0.6/zotero-pick2anki.xpi",
+      "addon_id": "zoteropick2anki@soyami.github.io",
+      "addon_name": "Pick2anki",
+      "addon_version": "1.0.6",
+      "addon_description": "Zotero 划词词典插件：PDF/EPub 阅读器里选中英文单词 → 5 个在线词典源聚合释义 → 一键通过 AnkiConnect 写入 Anki 生词卡",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "10.9.9",
+      "update_url": "https://github.com/soyami/zotero-pick2anki/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-09-11T07:14:59Z",
+      "xpi_asset_id": 556760551,
+      "xpi_name": "zotero-pick2anki.xpi",
+      "xpi_download_url": "https://github.com/soyami/zotero-pick2anki/releases/download/release/zotero-pick2anki.xpi",
+      "addon_id": "zoteropick2anki@soyami.github.io",
+      "addon_name": "Pick2anki",
+      "addon_version": "1.0.6",
+      "addon_description": "Zotero 划词词典插件：PDF/EPub 阅读器里选中英文单词 → 5 个在线词典源聚合释义 → 一键通过 AnkiConnect 写入 Anki 生词卡",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "10.9.9",
+      "update_url": "https://github.com/soyami/zotero-pick2anki/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}

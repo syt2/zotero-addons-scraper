@@ -1,0 +1,65 @@
+{
+  "last_checked": "2026-08-18T11:19:37.163684+00:00",
+  "checked_releases": [
+    {
+      "tag": "zoteromedimpact-v0.4.18",
+      "published_at": "2026-06-06T07:23:16Z",
+      "xpi_asset_id": 440030412,
+      "xpi_name": "zotero-med-impact-0.4.18.xpi",
+      "xpi_download_url": "https://github.com/digitalartificialint-cmd/Zotero-Med-Impact/releases/download/zoteromedimpact-v0.4.18/zotero-med-impact-0.4.18.xpi",
+      "addon_id": "zotero-med-impact@local",
+      "addon_name": "Zotero Med-Impact",
+      "addon_version": "0.4.18",
+      "addon_description": "Fetch citation metrics, JCR/Scopus journal metrics, and local quartile data for selected Zotero items.",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://example.com/zotero-med-impact/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "zoteromedimpact-v0.4.17",
+      "published_at": "2026-04-30T18:49:55Z",
+      "xpi_asset_id": 409282406,
+      "xpi_name": "zotero-med-impact-0.4.17.xpi",
+      "xpi_download_url": "https://github.com/digitalartificialint-cmd/Zotero-Med-Impact/releases/download/zoteromedimpact-v0.4.17/zotero-med-impact-0.4.17.xpi",
+      "addon_id": "zotero-med-impact@local",
+      "addon_name": "Zotero Med-Impact",
+      "addon_version": "0.4.17",
+      "addon_description": "Fetch citation metrics, JCR/Scopus journal metrics, and local quartile data for selected Zotero items.",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "8.*",
+      "update_url": "https://example.com/zotero-med-impact/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "zoteromedimpact-v0.4.0",
+      "published_at": "2026-04-23T15:50:58Z",
+      "xpi_asset_id": 403555455,
+      "xpi_name": "zotero-med-impact-0.4.0.xpi",
+      "xpi_download_url": "https://github.com/digitalartificialint-cmd/Zotero-Med-Impact/releases/download/zoteromedimpact-v0.4.0/zotero-med-impact-0.4.0.xpi",
+      "addon_id": "zotero-med-impact@local",
+      "addon_name": "Zotero Med-Impact",
+      "addon_version": "0.4.0",
+      "addon_description": "Fetch citation metrics, JCR/Scopus journal metrics, and local quartile data for selected Zotero items.",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "8.*",
+      "update_url": "https://example.com/zotero-med-impact/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "zoteromedimpact",
+      "published_at": "2026-02-07T12:36:04Z",
+      "xpi_asset_id": 352173705,
+      "xpi_name": "zotero-med-impact-0.3.14.xpi",
+      "xpi_download_url": "https://github.com/digitalartificialint-cmd/Zotero-Med-Impact/releases/download/zoteromedimpact/zotero-med-impact-0.3.14.xpi",
+      "addon_id": "zotero-med-impact@local",
+      "addon_name": "Zotero Med-Impact",
+      "addon_version": "0.3.14",
+      "addon_description": "Fetch citation metrics for selected items and tag them.",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "8.*",
+      "update_url": "https://example.com/zotero-med-impact/updates.json",
+      "parse_success": true
+    }
+  ]
+}

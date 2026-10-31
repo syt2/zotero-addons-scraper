@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-10-30T01:32:49.663837+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.5",
+      "published_at": "2026-10-27T09:27:10Z",
+      "xpi_asset_id": 681094386,
+      "xpi_name": "equalang.xpi",
+      "xpi_download_url": "https://github.com/equalang/equalang-zotero-plugin/releases/download/v0.1.5/equalang.xpi",
+      "addon_id": "zotero@equalang.com",
+      "addon_name": "Equalang",
+      "addon_version": "0.1.5",
+      "addon_description": "Equalang translation for Zotero: selections, titles and abstracts, and whole PDFs with their layout kept.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://equalang.com/downloads/zotero/update.json",
+      "parse_success": true
+    }
+  ]
+}
