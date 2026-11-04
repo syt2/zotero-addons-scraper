@@ -66,6 +66,12 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="GitHub API token",
     )
+    parser.add_argument(
+        "--gitlab_token",
+        type=str,
+        default=None,
+        help="Optional GitLab API token for GitLab-hosted addons",
+    )
 
     # Input/Output options
     parser.add_argument(

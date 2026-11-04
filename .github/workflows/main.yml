@@ -93,9 +93,11 @@ jobs:
           --release-cache-dir release_cache \
           --github_repository "${GITHUB_REPOSITORY}" \
           --github_token "${GITHUB_TOKEN}" \
+          --gitlab_token "${GITLAB_TOKEN}" \
           --create_release True
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         PYTHONPATH: src
 
     - name: Copy release_cache to published folder
