@@ -1,19 +1,19 @@
 """Service for building and updating release cache."""
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from pathlib import Path
 from typing import Any, Optional
 
 import requests
 
 from ..cache.release_cache import CachedRelease, ReleaseCache
 from ..clients.downloader import XPIDownloader
-from ..clients.github import GitHubClient, ReleaseAsset
+from ..clients.github import GitHubClient
 from ..config.constants import ContentTypes
 from ..config.settings import ScraperConfig
 from ..parsers.xpi_parser import XPIParser
 from ..utils.logging import get_logger
 from ..utils.version import compare_versions
+from .source import RepoSource, SourceClient
 
 logger = get_logger("services.cache_builder")
 
@@ -35,6 +35,7 @@ class ReleaseCacheBuilder:
         self.config = config
         self.cache = release_cache
         self.github = GitHubClient(config.github)
+        self.sources = SourceClient(config, self.github)
         self.downloader = XPIDownloader(config.cache)
         self.xpi_parser = XPIParser()
 
@@ -229,22 +230,23 @@ class ReleaseCacheBuilder:
         if len(parts) != 2:
             raise ValueError(f"Invalid repo format: {repo}")
 
-        owner, name = parts
+        source = self.sources.get(repo)
 
-        # Get all releases from GitHub
+        # Get all releases from the hosting platform
         self.cache.clear_observed_release_tags(repo)
-        releases = self.github.get_releases(owner, name)
+        releases = self.sources.get_releases(source)
         if releases is None:
             logger.warning(f"Failed to retrieve releases for {repo}")
             return {"new_releases": 0, "refreshed_releases": 0}
 
-        # GitHub returns at most one release page. Remember those tags so output
-        # generation can verify a selected cached tag only when it was not seen.
+        # The platform returns at most one release page. Remember those tags
+        # so output generation can verify a selected cached tag only when it
+        # was not seen.
         current_tags: set[str] = {
             release["tag_name"] for release in releases
         }
         self.cache.set_observed_release_tags(repo, current_tags)
-        self._remove_missing_releases(repo, owner, name, current_tags, releases)
+        self._remove_missing_releases(repo, source, current_tags, releases)
 
         # Get tags to process
         tags_to_process: list[str]
@@ -353,8 +355,7 @@ class ReleaseCacheBuilder:
     def _remove_missing_releases(
         self,
         repo: str,
-        owner: str,
-        name: str,
+        source: RepoSource,
         current_tags: set[str],
         releases: list[dict[str, Any]],
     ) -> None:
@@ -371,7 +372,7 @@ class ReleaseCacheBuilder:
                 for cached in repo_cache.checked_releases
                 if isinstance(cached.tag, str) and cached.tag
             }
-            self._remove_confirmed_deleted_releases(repo, owner, name, candidates)
+            self._remove_confirmed_deleted_releases(repo, source, candidates)
             return
 
         published_times = []
@@ -390,19 +391,18 @@ class ReleaseCacheBuilder:
             and isinstance(cached.published_at, str)
             and cached.published_at >= cutoff
         }
-        self._remove_confirmed_deleted_releases(repo, owner, name, candidates)
+        self._remove_confirmed_deleted_releases(repo, source, candidates)
 
     def _remove_confirmed_deleted_releases(
         self,
         repo: str,
-        owner: str,
-        name: str,
+        source: RepoSource,
         tags: set[str],
     ) -> list[str]:
-        """Remove tags only after their individual GitHub endpoint returns 404."""
+        """Remove tags only after their individual release endpoint returns 404."""
         deleted_tags = set()
         for tag in sorted(tags):
-            if self.github.release_exists(owner, name, tag) is False:
+            if self.sources.release_exists(source, tag) is False:
                 deleted_tags.add(tag)
         if not deleted_tags:
             return []
