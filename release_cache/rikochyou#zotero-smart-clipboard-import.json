@@ -1,0 +1,29 @@
+{
+  "last_checked": "2026-05-26T02:41:25.758652+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.38",
+      "published_at": "2026-05-26T02:16:02Z",
+      "xpi_asset_id": 429823560,
+      "xpi_name": "smart-clipboard-import.xpi",
+      "xpi_download_url": "https://github.com/rikochyou/zotero-smart-clipboard-import/releases/download/v0.1.38/smart-clipboard-import.xpi",
+      "addon_id": "smart-clipboard-import@zotero",
+      "addon_name": "Smart Clipboard Import",
+      "addon_version": "0.1.38",
+      "addon_description": "Smart clipboard import for Zotero with LLM-powered citation parsing",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "*",
+      "update_url": "https://github.com/user/zotero-smart-clipboard-import/releases/latest/download/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-05-26T02:16:05Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    }
+  ]
+}

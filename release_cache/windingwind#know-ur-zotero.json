@@ -1,0 +1,89 @@
+{
+  "last_checked": "2025-12-23T11:24:49.619921+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.0.6",
+      "published_at": "2025-08-01T13:24:48Z",
+      "xpi_asset_id": 278453986,
+      "xpi_name": "know-ur-zotero.xpi",
+      "xpi_download_url": "https://github.com/windingwind/know-ur-zotero/releases/download/v0.0.6/know-ur-zotero.xpi",
+      "addon_id": "know-ur-zotero@euclpts.com",
+      "addon_name": "Know Ur Zotero",
+      "addon_version": "0.0.6",
+      "addon_description": "Status monitoring and analysis tool for Zotero.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/windingwind/know-ur-zotero/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.0.4",
+      "published_at": "2025-05-31T19:00:35Z",
+      "xpi_asset_id": 259751404,
+      "xpi_name": "know-ur-zotero.xpi",
+      "xpi_download_url": "https://github.com/windingwind/know-ur-zotero/releases/download/v0.0.6/know-ur-zotero.xpi",
+      "addon_id": "know-ur-zotero@euclpts.com",
+      "addon_name": "Know Ur Zotero",
+      "addon_version": "0.0.6",
+      "addon_description": "Status monitoring and analysis tool for Zotero.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/windingwind/know-ur-zotero/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.0.3",
+      "published_at": "2025-03-28T21:21:13Z",
+      "xpi_asset_id": 241683711,
+      "xpi_name": "know-ur-zotero.xpi",
+      "xpi_download_url": "https://github.com/windingwind/know-ur-zotero/releases/download/v0.0.6/know-ur-zotero.xpi",
+      "addon_id": "know-ur-zotero@euclpts.com",
+      "addon_name": "Know Ur Zotero",
+      "addon_version": "0.0.6",
+      "addon_description": "Status monitoring and analysis tool for Zotero.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/windingwind/know-ur-zotero/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.0.2",
+      "published_at": "2025-03-23T16:51:51Z",
+      "xpi_asset_id": 240068200,
+      "xpi_name": "know-ur-zotero.xpi",
+      "xpi_download_url": "https://github.com/windingwind/know-ur-zotero/releases/download/v0.0.6/know-ur-zotero.xpi",
+      "addon_id": "know-ur-zotero@euclpts.com",
+      "addon_name": "Know Ur Zotero",
+      "addon_version": "0.0.6",
+      "addon_description": "Status monitoring and analysis tool for Zotero.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/windingwind/know-ur-zotero/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.0.1",
+      "published_at": "2025-03-15T21:54:42Z",
+      "xpi_asset_id": 237810126,
+      "xpi_name": "know-ur-zotero.xpi",
+      "xpi_download_url": "https://github.com/windingwind/know-ur-zotero/releases/download/v0.0.6/know-ur-zotero.xpi",
+      "addon_id": "know-ur-zotero@euclpts.com",
+      "addon_name": "Know Ur Zotero",
+      "addon_version": "0.0.6",
+      "addon_description": "Status monitoring and analysis tool for Zotero.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "8.*",
+      "update_url": "https://github.com/windingwind/know-ur-zotero/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2025-03-15T21:54:45Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    }
+  ]
+}

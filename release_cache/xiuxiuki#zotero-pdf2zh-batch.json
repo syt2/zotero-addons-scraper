@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-11-04T15:19:14.890403+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.5pre",
+      "published_at": "2026-11-02T14:07:58Z",
+      "xpi_asset_id": 701964263,
+      "xpi_name": "zotero-pdf2zh-batch-1.0.5pre.xpi",
+      "xpi_download_url": "https://github.com/xiuxiuki/zotero-pdf2zh-batch/releases/download/v1.0.5pre/zotero-pdf2zh-batch-1.0.5pre.xpi",
+      "addon_id": "pdf2zh-batch@local.tools",
+      "addon_name": "Zotero 双语 PDF 自动补齐",
+      "addon_version": "1.0.5pre",
+      "addon_description": "配合 Zotero PDF2zh 使用，扫描个人文库、补齐缺失双语 PDF，支持永久排除、停止续跑与去重。",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://raw.githubusercontent.com/xiuxiuki/zotero-pdf2zh-batch/main/updates-beta.json",
+      "parse_success": true
+    }
+  ]
+}
