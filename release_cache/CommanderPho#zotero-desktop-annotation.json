@@ -1,0 +1,29 @@
+{
+  "last_checked": "2026-11-07T02:29:25.543024+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-11-07T01:24:56Z",
+      "xpi_asset_id": 719197941,
+      "xpi_name": "zotero-desktop-annotation.xpi",
+      "xpi_download_url": "https://github.com/CommanderPho/zotero-desktop-annotation/releases/download/v0.1.0/zotero-desktop-annotation.xpi",
+      "addon_id": "desktopannotation@commanderpho.github.io",
+      "addon_name": "Zotero Desktop Annotation",
+      "addon_version": "0.1.0",
+      "addon_description": "Desktop refinements for Zotero 7 PDF reader annotations: tool hotkeys, text style memory, copy/paste, and smaller note icons.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://github.com/CommanderPho/zotero-desktop-annotation/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-11-07T01:24:58Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    }
+  ]
+}

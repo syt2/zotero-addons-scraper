@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-11-06T13:12:09.523097+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.8.0",
+      "published_at": "2026-11-06T11:16:07Z",
+      "xpi_asset_id": 716868748,
+      "xpi_name": "zotero-fulltext-assistant-0.8.0.xpi",
+      "xpi_download_url": "https://github.com/zhangyehao/zotero-fulltext-assistant/releases/download/v0.8.0/zotero-fulltext-assistant-0.8.0.xpi",
+      "addon_id": "fulltext-assistant@local.invalid",
+      "addon_name": "全文助手",
+      "addon_version": "0.8.0",
+      "addon_description": "批量从论文网页获取全文，跟踪科研通文献求助并将 PDF 保存到原条目。",
+      "min_zotero_version": "10.0.7",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://github.com/zhangyehao/zotero-fulltext-assistant/releases/latest/download/updates.json",
+      "parse_success": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-10-03T23:14:13.082122+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.3.1",
+      "published_at": "2026-10-03T22:36:23Z",
+      "xpi_asset_id": 608654947,
+      "xpi_name": "zotero-openalex-pdf-0.3.1.xpi",
+      "xpi_download_url": "https://github.com/Littview/zotero-openalex-pdf/releases/download/v0.3.1/zotero-openalex-pdf-0.3.1.xpi",
+      "addon_id": "openalex-pdf@littview.com",
+      "addon_name": "Zotero OpenAlex PDF Finder",
+      "addon_version": "0.3.1",
+      "addon_description": "Find and attach open-access PDFs for your Zotero items using OpenAlex.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "*",
+      "update_url": "https://raw.githubusercontent.com/Littview/zotero-openalex-pdf/main/update.json",
+      "parse_success": true
+    }
+  ]
+}
