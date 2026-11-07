@@ -1,0 +1,20 @@
+{
+  "last_checked": "2025-12-23T11:28:42.897138+00:00",
+  "checked_releases": [
+    {
+      "tag": "v2.0",
+      "published_at": "2023-11-11T18:23:44Z",
+      "xpi_asset_id": 135071798,
+      "xpi_name": "zoterocitationcountsmanager-2.0.xpi",
+      "xpi_download_url": "https://github.com/FrLars21/ZoteroCitationCountsManager/releases/download/v2.0/zoterocitationcountsmanager-2.0.xpi",
+      "addon_id": "frlars21@github.com",
+      "addon_name": "Zotero Citation Counts Manager",
+      "addon_version": "2.0",
+      "addon_description": "Enhanced Citation Counts Manager for Zotero 7",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "7.0.*",
+      "update_url": "https://www.zotero.org/download/plugins/make-it-red/updates.json",
+      "parse_success": true
+    }
+  ]
+}

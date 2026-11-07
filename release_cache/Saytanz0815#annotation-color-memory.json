@@ -1,0 +1,19 @@
+{
+  "last_checked": "2026-09-23T04:12:01.798955+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.4",
+      "published_at": "2026-09-22T11:41:03Z",
+      "xpi_asset_id": 581328171,
+      "xpi_name": "annotation-color-memory-1.0.4.xpi",
+      "xpi_download_url": "https://github.com/Saytanz0815/annotation-color-memory/releases/download/v1.0.4/annotation-color-memory-1.0.4.xpi",
+      "addon_id": "annotation-color-memory@zotero-plugin",
+      "addon_name": "Annotation Color Memory",
+      "addon_version": "1.0.4",
+      "addon_description": "记住 Zotero PDF 标注颜色（高亮 / 下划线 / 笔记 / 图片），重启后自动恢复上次使用的颜色，不锁死原生取色器。",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.999",
+      "parse_success": true
+    }
+  ]
+}
