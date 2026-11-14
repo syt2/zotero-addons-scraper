@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-11-10T08:46:52.824213+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.2.0",
+      "published_at": "2026-10-19T15:44:52Z",
+      "xpi_asset_id": 656695641,
+      "xpi_name": "zotero-putongdoc.xpi",
+      "xpi_download_url": "https://github.com/lemos1235/zotero-putongdoc/releases/download/v0.2.0/zotero-putongdoc.xpi",
+      "addon_id": "zotero-putongdoc@lemos1235",
+      "addon_name": "PutongDoc",
+      "addon_version": "0.2.0",
+      "addon_description": "PutongDoc PDF translation plugin for Zotero.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://raw.githubusercontent.com/lemos1235/zotero-putongdoc/main/update.json",
+      "parse_success": true
+    }
+  ]
+}

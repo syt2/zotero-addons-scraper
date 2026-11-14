@@ -1,0 +1,33 @@
+{
+  "last_checked": "2025-12-23T11:29:45.994874+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.1",
+      "published_at": "2022-05-03T06:40:40Z",
+      "xpi_asset_id": 64322708,
+      "xpi_name": "zotero-literature-manager.xpi",
+      "xpi_download_url": "https://github.com/AlbertShenC/Zotero-Literature-Manager/releases/download/v1.0.1/zotero-literature-manager.xpi",
+      "addon_id": "shenhuawen@iie.ac.cn",
+      "addon_name": "Zotero Literature Data Manager",
+      "addon_version": "1.0.0",
+      "addon_description": "Automatically fetch and update literature data",
+      "min_zotero_version": "6.0",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.0.0",
+      "published_at": "2022-04-29T03:33:28Z",
+      "xpi_asset_id": 63972511,
+      "xpi_name": "zotero-literature-manager.xpi",
+      "xpi_download_url": "https://github.com/AlbertShenC/Zotero-Literature-Manager/releases/download/v1.0.0/zotero-literature-manager.xpi",
+      "addon_id": "shenhuawen@iie.ac.cn",
+      "addon_name": "Zotero Literature Data Manager",
+      "addon_version": "1.0.0",
+      "addon_description": "Automatically fetch and update literature data",
+      "min_zotero_version": "6.0",
+      "max_zotero_version": "6.*",
+      "parse_success": true
+    }
+  ]
+}
