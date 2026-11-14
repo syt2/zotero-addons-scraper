@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-10-16T12:49:29.014347+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.1",
+      "published_at": "2026-10-16T07:08:19Z",
+      "xpi_asset_id": 646477155,
+      "xpi_name": "zotero-row-colors-1.0.1.xpi",
+      "xpi_download_url": "https://github.com/wangzikai01/zotero-row-colors/releases/download/v1.0.1/zotero-row-colors-1.0.1.xpi",
+      "addon_id": "literature-row-colors@local.example",
+      "addon_name": "文献行颜色 · Row Colors",
+      "addon_version": "1.0.1",
+      "addon_description": "为文献列表整行设置颜色，提供已读、重要、没用及更多自选颜色。",
+      "min_zotero_version": "10.0.6",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://github.com/wangzikai01/zotero-row-colors/releases/latest/download/updates.json",
+      "parse_success": true
+    }
+  ]
+}
