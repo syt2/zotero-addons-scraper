@@ -30,6 +30,13 @@ Optionally, add up to two tags by writing JSON content to the file:
 {"tags": ["reader", "utility"]}
 ```
 
+Repositories hosted on a GitLab instance (gitlab.com, Jihu GitLab or
+self-hosted) are supported by setting `repo_url` to the project web URL;
+the filename stays `{owner}@{repo}`:
+```json
+{"tags": ["metadata"], "repo_url": "https://jihulab.com/group/project"}
+```
+
 Available tags:
 
 | Tag | Description |

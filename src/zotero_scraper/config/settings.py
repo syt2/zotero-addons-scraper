@@ -30,6 +30,15 @@ class GitHubConfig:
 
 
 @dataclass(frozen=True)
+class GitLabConfig:
+    """GitLab API configuration."""
+
+    token: Optional[str] = None
+    timeout: int = 30
+    max_retries: int = 3
+    retry_delay: float = 1.0
+
+@dataclass(frozen=True)
 class CacheConfig:
     """Cache configuration."""
 
@@ -44,6 +53,7 @@ class ScraperConfig:
     input_dir: Path = field(default_factory=lambda: Path("addons"))
     output_file: Path = field(default_factory=lambda: Path("addon_infos.json"))
     github: GitHubConfig = field(default_factory=GitHubConfig)
+    gitlab: GitLabConfig = field(default_factory=GitLabConfig)
     cache: CacheConfig = field(default_factory=CacheConfig)
     previous_info_urls: list[str] = field(default_factory=list)
     create_release: bool = True
@@ -66,6 +76,7 @@ class ScraperConfig:
                 token=args.github_token,
                 repository=args.github_repository or "",
             ),
+            gitlab=GitLabConfig(token=args.gitlab_token),
             cache=CacheConfig(
                 cache_dir=Path(args.cache_directory),
                 runtime_xpi_dir=Path(args.runtime_xpi_directory),
