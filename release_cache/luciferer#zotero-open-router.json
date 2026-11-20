@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-11-01T05:52:07.626448+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-11-01T05:40:43Z",
+      "xpi_asset_id": 697443069,
+      "xpi_name": "zotero-open-router-0.1.0.xpi",
+      "xpi_download_url": "https://github.com/luciferer/zotero-open-router/releases/download/v0.1.0/zotero-open-router-0.1.0.xpi",
+      "addon_id": "zotero-open-router@luciferer.github.io",
+      "addon_name": "Zotero Open Router",
+      "addon_version": "0.1.0",
+      "addon_description": "Customize default double-click vs. Option+Double-Click attachment routing, prioritize main article PDFs over supplementary PDFs, preview .md/.csv/.tsv/.json/.txt/.zip in internal Zotero tabs, and open attachments in dedicated external apps.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "11.*",
+      "update_url": "https://github.com/luciferer/zotero-open-router/releases/latest/download/update.json",
+      "parse_success": true
+    }
+  ]
+}

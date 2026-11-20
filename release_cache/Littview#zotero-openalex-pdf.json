@@ -1,0 +1,50 @@
+{
+  "last_checked": "2026-11-11T21:27:52.639331+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.3.1",
+      "published_at": "2026-10-03T22:36:23Z",
+      "xpi_asset_id": 608654947,
+      "xpi_name": "zotero-openalex-pdf-0.3.1.xpi",
+      "xpi_download_url": "https://github.com/Littview/zotero-openalex-pdf/releases/download/v0.3.1/zotero-openalex-pdf-0.3.1.xpi",
+      "addon_id": "openalex-pdf@littview.com",
+      "addon_name": "Zotero OpenAlex PDF Finder",
+      "addon_version": "0.3.1",
+      "addon_description": "Find and attach open-access PDFs for your Zotero items using OpenAlex.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "*",
+      "update_url": "https://raw.githubusercontent.com/Littview/zotero-openalex-pdf/main/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.4.1",
+      "published_at": "2026-11-11T21:03:11Z",
+      "xpi_asset_id": 736902749,
+      "xpi_name": "zotero-openalex-pdf-0.4.1.xpi",
+      "xpi_download_url": "https://github.com/Littview/zotero-openalex-pdf/releases/download/v0.4.1/zotero-openalex-pdf-0.4.1.xpi",
+      "addon_id": "openalex-pdf@littview.com",
+      "addon_name": "Zotero OpenAlex PDF Finder",
+      "addon_version": "0.4.1",
+      "addon_description": "Find and attach open-access PDFs for your Zotero items using OpenAlex.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "*",
+      "update_url": "https://raw.githubusercontent.com/Littview/zotero-openalex-pdf/main/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.4.0",
+      "published_at": "2026-11-11T17:00:28Z",
+      "xpi_asset_id": 736229713,
+      "xpi_name": "zotero-openalex-pdf-0.4.0.xpi",
+      "xpi_download_url": "https://github.com/Littview/zotero-openalex-pdf/releases/download/v0.4.0/zotero-openalex-pdf-0.4.0.xpi",
+      "addon_id": "openalex-pdf@littview.com",
+      "addon_name": "Zotero OpenAlex PDF Finder",
+      "addon_version": "0.4.0",
+      "addon_description": "Find and attach open-access PDFs for your Zotero items using OpenAlex.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "*",
+      "update_url": "https://raw.githubusercontent.com/Littview/zotero-openalex-pdf/main/update.json",
+      "parse_success": true
+    }
+  ]
+}

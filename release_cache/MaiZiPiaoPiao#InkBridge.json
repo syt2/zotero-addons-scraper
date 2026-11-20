@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-10-04T09:14:17.598414+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.1.1",
+      "published_at": "2026-10-04T03:48:38Z",
+      "xpi_asset_id": 609069239,
+      "xpi_name": "inkbridge.xpi",
+      "xpi_download_url": "https://github.com/MaiZiPiaoPiao/InkBridge/releases/download/v1.1.1/inkbridge.xpi",
+      "addon_id": "inkbridge@maipeng.com",
+      "addon_name": "墨桥·InkBridge",
+      "addon_version": "1.1.1",
+      "addon_description": "Zotero PDF 阅读器内的中英学术互译：选词查词、含公式的截图翻译与朗读，模型全部在本地运行。",
+      "min_zotero_version": "7.9.9",
+      "max_zotero_version": "10.*",
+      "update_url": "https://github.com/MaiZiPiaoPiao/InkBridge/releases/latest/download/update.json",
+      "parse_success": true
+    }
+  ]
+}
