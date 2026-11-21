@@ -1,0 +1,80 @@
+{
+  "last_checked": "2026-11-21T12:52:31.193595+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.1",
+      "published_at": "2026-11-17T12:41:16Z",
+      "xpi_asset_id": 759022509,
+      "xpi_name": "readin-yidu-0.1.1.xpi",
+      "xpi_download_url": "https://github.com/phoenix8701-ctrl/readin-yidu/releases/download/v0.1.1/readin-yidu-0.1.1.xpi",
+      "addon_id": "yidu@readin.cc",
+      "addon_name": "ReadIN 译读",
+      "addon_version": "0.1.1",
+      "addon_description": "Read your papers in ReadIN, then send highlights and notes back. 在 ReadIN 里读论文，高亮和笔记送回文献库。",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.*",
+      "update_url": "https://readin.cc/yidu/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-11-16T11:11:31Z",
+      "xpi_asset_id": 754545111,
+      "xpi_name": "readin-yidu-0.1.0.xpi",
+      "xpi_download_url": "https://github.com/phoenix8701-ctrl/readin-yidu/releases/download/v0.1.0/readin-yidu-0.1.0.xpi",
+      "addon_id": "yidu@readin.cc",
+      "addon_name": "ReadIN 译读",
+      "addon_version": "0.1.0",
+      "addon_description": "Read your papers in ReadIN, then send highlights and notes back. 在 ReadIN 里读论文，高亮和笔记送回文献库。",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "10.*",
+      "update_url": "https://readin.cc/yidu/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.2",
+      "published_at": "2026-11-18T07:35:17Z",
+      "xpi_asset_id": 762407667,
+      "xpi_name": "readin-yidu-0.1.2.xpi",
+      "xpi_download_url": "https://github.com/phoenix8701-ctrl/readin-yidu/releases/download/v0.1.2/readin-yidu-0.1.2.xpi",
+      "addon_id": "yidu@readin.cc",
+      "addon_name": "ReadIN 译读",
+      "addon_version": "0.1.2",
+      "addon_description": "Read your papers in ReadIN, then send highlights and notes back. 在 ReadIN 里读论文，高亮和笔记送回文献库。",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.*",
+      "update_url": "https://readin.cc/yidu/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.2.0",
+      "published_at": "2026-11-20T19:12:33Z",
+      "xpi_asset_id": 773022218,
+      "xpi_name": "readin-yidu-0.2.0.xpi",
+      "xpi_download_url": "https://github.com/phoenix8701-ctrl/readin-yidu/releases/download/v0.2.0/readin-yidu-0.2.0.xpi",
+      "addon_id": "yidu@readin.cc",
+      "addon_name": "ReadIN 译读",
+      "addon_version": "0.2.0",
+      "addon_description": "Read your papers in ReadIN, then send highlights and notes back. 在 ReadIN 里读论文，高亮和笔记送回文献库。",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.*",
+      "update_url": "https://readin.cc/yidu/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.3.0",
+      "published_at": "2026-11-21T08:22:45Z",
+      "xpi_asset_id": 774916498,
+      "xpi_name": "readin-yidu-0.3.0.xpi",
+      "xpi_download_url": "https://github.com/phoenix8701-ctrl/readin-yidu/releases/download/v0.3.0/readin-yidu-0.3.0.xpi",
+      "addon_id": "yidu@readin.cc",
+      "addon_name": "ReadIN 译读",
+      "addon_version": "0.3.0",
+      "addon_description": "Read your papers in ReadIN, then send highlights and notes back. 在 ReadIN 里读论文，高亮和笔记送回文献库。",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.*",
+      "update_url": "https://readin.cc/yidu/update.json",
+      "parse_success": true
+    }
+  ]
+}

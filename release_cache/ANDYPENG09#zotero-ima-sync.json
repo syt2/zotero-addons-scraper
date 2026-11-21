@@ -1,0 +1,19 @@
+{
+  "last_checked": "2026-08-03T02:46:27.217095+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.0.1",
+      "published_at": "2026-08-02T14:19:44Z",
+      "xpi_asset_id": 499001630,
+      "xpi_name": "zotero-ima-sync-0.0.1.xpi",
+      "xpi_download_url": "https://github.com/ANDYPENG09/zotero-ima-sync/releases/download/v0.0.1/zotero-ima-sync-0.0.1.xpi",
+      "addon_id": "zotero-ima-sync@andypeng",
+      "addon_name": "Zotero IMA Sync",
+      "addon_version": "0.0.1",
+      "addon_description": "将 Zotero 条目及其 PDF 附件同步到腾讯 ima 知识库（ima.qq.com），构建可检索的文献 RAG 知识库。适配 Zotero 7/8/9。",
+      "min_zotero_version": "7.0.0",
+      "max_zotero_version": "9.*",
+      "parse_success": true
+    }
+  ]
+}

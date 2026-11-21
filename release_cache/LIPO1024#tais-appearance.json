@@ -1,0 +1,65 @@
+{
+  "last_checked": "2026-11-15T15:27:25.315547+00:00",
+  "checked_releases": [
+    {
+      "tag": "v2.4.1",
+      "published_at": "2026-11-14T06:08:18Z",
+      "xpi_asset_id": 746504666,
+      "xpi_name": "TAIS_Appearance-2.4.1.xpi",
+      "xpi_download_url": "https://github.com/LIPO1024/tais-appearance/releases/download/v2.4.1/TAIS_Appearance-2.4.1.xpi",
+      "addon_id": "tais-zotero-glass@tais.local",
+      "addon_name": "TAIS Appearance",
+      "addon_version": "2.4.1",
+      "addon_description": "TAIS Appearance by Theatre AI Studio. A multilingual Glass appearance and reading environment for Zotero.",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://raw.githubusercontent.com/LIPO1024/tais-appearance/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v2.4.0",
+      "published_at": "2026-11-13T17:26:57Z",
+      "xpi_asset_id": 744527145,
+      "xpi_name": "TAIS_Appearance-2.4.0.xpi",
+      "xpi_download_url": "https://github.com/LIPO1024/tais-appearance/releases/download/v2.4.0/TAIS_Appearance-2.4.0.xpi",
+      "addon_id": "tais-zotero-glass@tais.local",
+      "addon_name": "TAIS Appearance",
+      "addon_version": "2.4.0",
+      "addon_description": "TAIS Appearance by Theatre AI Studio. A multilingual Glass appearance and reading environment for Zotero.",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://raw.githubusercontent.com/LIPO1024/tais-appearance/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v2.3.2",
+      "published_at": "2026-11-13T16:49:57Z",
+      "xpi_asset_id": 744408529,
+      "xpi_name": "TAIS_Appearance-2.3.2.xpi",
+      "xpi_download_url": "https://github.com/LIPO1024/tais-appearance/releases/download/v2.3.2/TAIS_Appearance-2.3.2.xpi",
+      "addon_id": "tais-zotero-glass@tais.local",
+      "addon_name": "TAIS Appearance",
+      "addon_version": "2.3.2",
+      "addon_description": "TAIS Appearance by Theatre AI Studio. A multilingual Glass appearance and reading environment for Zotero.",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://raw.githubusercontent.com/LIPO1024/tais-appearance/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v2.3.1",
+      "published_at": "2026-11-13T15:43:24Z",
+      "xpi_asset_id": 744194094,
+      "xpi_name": "TAIS_Appearance-2.3.1.xpi",
+      "xpi_download_url": "https://github.com/LIPO1024/tais-appearance/releases/download/v2.3.1/TAIS_Appearance-2.3.1.xpi",
+      "addon_id": "tais-zotero-glass@tais.local",
+      "addon_name": "TAIS Appearance",
+      "addon_version": "2.3.1",
+      "addon_description": "TAIS Appearance by Theatre AI Studio. A multilingual Glass appearance and reading environment for Zotero.",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://raw.githubusercontent.com/LIPO1024/tais-appearance/main/updates.json",
+      "parse_success": true
+    }
+  ]
+}

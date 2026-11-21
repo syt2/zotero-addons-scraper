@@ -1,0 +1,35 @@
+{
+  "last_checked": "2026-08-11T11:29:20.150781+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.1.7",
+      "published_at": "2026-08-10T14:48:08Z",
+      "xpi_asset_id": 508871362,
+      "xpi_name": "ZoteroHideFields-1.1.7.xpi",
+      "xpi_download_url": "https://github.com/XoYaPeng/zotero-hide-fields/releases/download/v1.1.7/ZoteroHideFields-1.1.7.xpi",
+      "addon_id": "hidefields@pengxoya.github.io",
+      "addon_name": "Hide Info Fields",
+      "addon_version": "1.1.7",
+      "addon_description": "按条目类型隐藏并排序信息面板字段。",
+      "min_zotero_version": "7.0.0",
+      "max_zotero_version": "10.*",
+      "update_url": "https://raw.githubusercontent.com/XoYaPeng/zotero-hide-fields/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.1.6",
+      "published_at": "2026-08-10T13:58:40Z",
+      "xpi_asset_id": 508821527,
+      "xpi_name": "ZoteroHideFields-1.1.6.xpi",
+      "xpi_download_url": "https://github.com/XoYaPeng/zotero-hide-fields/releases/download/v1.1.6/ZoteroHideFields-1.1.6.xpi",
+      "addon_id": "hidefields@pengxoya.github.io",
+      "addon_name": "Hide Info Fields",
+      "addon_version": "1.1.6",
+      "addon_description": "按条目类型隐藏并排序信息面板字段。",
+      "min_zotero_version": "7.0.0",
+      "max_zotero_version": "10.*",
+      "update_url": "https://example.com/hidefields/updates.json",
+      "parse_success": true
+    }
+  ]
+}

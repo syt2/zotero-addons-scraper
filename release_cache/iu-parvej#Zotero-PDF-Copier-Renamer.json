@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-06-11T14:03:05.532473+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.0",
+      "published_at": "2026-06-10T17:17:37Z",
+      "xpi_asset_id": 443893171,
+      "xpi_name": "zotero-pdf-copier-renamer.xpi",
+      "xpi_download_url": "https://github.com/iu-parvej/Zotero-PDF-Copier-Renamer/releases/download/v1.0.0/zotero-pdf-copier-renamer.xpi",
+      "addon_id": "zotero-pdf-copier-renamer@parvej.me",
+      "addon_name": "Zotero PDF Copier & Renamer",
+      "addon_version": "1.0.0",
+      "addon_description": "Copy and rename PDF attachments of selected references",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.*",
+      "update_url": "https://github.com/windingwind/zotero-plugin-template/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}
