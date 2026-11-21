@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-08-24T03:47:51.011743+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.2.3",
+      "published_at": "2026-08-23T14:15:03Z",
+      "xpi_asset_id": 526288244,
+      "xpi_name": "zotero-pdf2zh-0.2.3.xpi",
+      "xpi_download_url": "https://github.com/Yuriyagn/zotero-pdf2zh/releases/download/v0.2.3/zotero-pdf2zh-0.2.3.xpi",
+      "addon_id": "zotero-pdf2zh@yuriyagn.github.io",
+      "addon_name": "Zotero PDF 中文翻译",
+      "addon_version": "0.2.3",
+      "addon_description": "在 Zotero 中使用 BabelDOC 将选中的 PDF 文献翻译为简体中文。",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://github.com/Yuriyagn/zotero-pdf2zh/releases/latest/download/updates.json",
+      "parse_success": true
+    }
+  ]
+}
