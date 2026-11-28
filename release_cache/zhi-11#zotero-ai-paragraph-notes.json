@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-08-13T14:59:19.380006+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.01",
+      "published_at": "2026-08-13T14:10:53Z",
+      "xpi_asset_id": 513070968,
+      "xpi_name": "ai-paragraph-notes-0.01.xpi",
+      "xpi_download_url": "https://github.com/zhi-11/zotero-ai-paragraph-notes/releases/download/v0.01/ai-paragraph-notes-0.01.xpi",
+      "addon_id": "ai-paragraph-notes@local.zotero",
+      "addon_name": "AI 逐段解读便签",
+      "addon_version": "0.01",
+      "addon_description": "管理并批量解读 Zotero PDF 正文与图注，在对应页面写入原生便签批注。",
+      "min_zotero_version": "9.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://raw.githubusercontent.com/zhi-11/zotero-ai-paragraph-notes/main/update.json",
+      "parse_success": true
+    }
+  ]
+}

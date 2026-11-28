@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-11-28T13:20:59.170068+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.1.0",
+      "published_at": "2026-11-28T03:42:08Z",
+      "xpi_asset_id": 803088841,
+      "xpi_name": "renota-zotero-1.1.0.xpi",
+      "xpi_download_url": "https://github.com/colin4k/renota-zotero/releases/download/v1.1.0/renota-zotero-1.1.0.xpi",
+      "addon_id": "renota@colin4k.github.io",
+      "addon_name": "Renota",
+      "addon_version": "1.1.0",
+      "addon_description": "Context-aware reading assistant for books in the Zotero reader: explain, analyze, challenge, translate and recap with chapter context, in-book search and your personal knowledge.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.*",
+      "update_url": "https://www.werenota.com/downloads/renota-zotero-update.json",
+      "parse_success": true
+    }
+  ]
+}

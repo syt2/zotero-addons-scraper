@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-11-10T08:44:53.733244+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.2.0",
+      "published_at": "2026-11-10T07:02:20Z",
+      "xpi_asset_id": 730508039,
+      "xpi_name": "zotero-auto-classify.xpi",
+      "xpi_download_url": "https://github.com/lynneguo930-prog/zotero-auto-classify/releases/download/v1.2.0/zotero-auto-classify.xpi",
+      "addon_id": "auto-classify@example.com",
+      "addon_name": "Auto Classify",
+      "addon_version": "1.2.0",
+      "addon_description": "Auto-label references with a short category, add a Type column, and group items into same-named collections. Compatible with Zotero 8, 9 and 10.",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "10.999",
+      "update_url": "https://example.com/zotero-auto-classify/updates.json",
+      "parse_success": true
+    }
+  ]
+}
