@@ -1,0 +1,44 @@
+{
+  "last_checked": "2026-11-24T15:05:09.935109+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-11-23T21:39:42Z",
+      "xpi_asset_id": 784640078,
+      "xpi_name": "sidebrowser.xpi",
+      "xpi_download_url": "https://github.com/00sapo/zotero-sidebrowser/releases/download/v0.1.0/sidebrowser.xpi",
+      "addon_id": "sidebrowser@00sapo.dev",
+      "addon_name": "Side Browser",
+      "addon_version": "0.1.0",
+      "addon_description": "A web browser in Zotero's right sidebar, with paper context for AI assistants.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.*",
+      "update_url": "https://github.com/00sapo/zotero-sidebrowser/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-11-23T21:39:45Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "v0.2.0",
+      "published_at": "2026-11-24T12:54:20Z",
+      "xpi_asset_id": 787197655,
+      "xpi_name": "sidebrowser.xpi",
+      "xpi_download_url": "https://github.com/00sapo/zotero-sidebrowser/releases/download/v0.2.0/sidebrowser.xpi",
+      "addon_id": "sidebrowser@00sapo.dev",
+      "addon_name": "Side Browser",
+      "addon_version": "0.2.0",
+      "addon_description": "A web browser in Zotero's right sidebar, with paper context for AI assistants.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.*",
+      "update_url": "https://github.com/00sapo/zotero-sidebrowser/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}

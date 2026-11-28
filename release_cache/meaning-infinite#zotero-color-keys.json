@@ -1,0 +1,44 @@
+{
+  "last_checked": "2026-10-25T12:23:24.066497+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.0",
+      "published_at": "2026-10-23T14:09:41Z",
+      "xpi_asset_id": 669322575,
+      "xpi_name": "zotero-color-keys.xpi",
+      "xpi_download_url": "https://github.com/meaning-infinite/zotero-color-keys/releases/download/v0.1.0/zotero-color-keys.xpi",
+      "addon_id": "color-keys@meaning-infinite",
+      "addon_name": "Zotero Color Keys",
+      "addon_version": "0.1.0",
+      "addon_description": "Customizable keyboard shortcuts for text color and highlight color in Zotero notes",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "10.*",
+      "update_url": "https://github.com/meaning-infinite/zotero-color-keys/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-10-23T14:09:55Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    },
+    {
+      "tag": "v0.1.1",
+      "published_at": "2026-10-25T12:09:43Z",
+      "xpi_asset_id": 674951785,
+      "xpi_name": "zotero-color-keys.xpi",
+      "xpi_download_url": "https://github.com/meaning-infinite/zotero-color-keys/releases/download/v0.1.1/zotero-color-keys.xpi",
+      "addon_id": "color-keys@meaning-infinite",
+      "addon_name": "Zotero Color Keys",
+      "addon_version": "0.1.1",
+      "addon_description": "Customizable keyboard shortcuts for text color and highlight color in Zotero notes",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "10.*",
+      "update_url": "https://github.com/meaning-infinite/zotero-color-keys/releases/download/release/update.json",
+      "parse_success": true
+    }
+  ]
+}
