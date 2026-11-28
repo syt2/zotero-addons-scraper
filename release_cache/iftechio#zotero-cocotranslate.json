@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-11-28T05:54:39.917406+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.1",
+      "published_at": "2026-11-26T13:12:01Z",
+      "xpi_asset_id": 795960209,
+      "xpi_name": "cocotranslate.xpi",
+      "xpi_download_url": "https://github.com/iftechio/zotero-cocotranslate/releases/download/v1.0.1/cocotranslate.xpi",
+      "addon_id": "cocotranslate@cocotranslate.com",
+      "addon_name": "CocoTranslate",
+      "addon_version": "1.0.1",
+      "addon_description": "Translates PDFs in Zotero into layout-preserving bilingual or translation-only PDFs, saved under the original item.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.*",
+      "update_url": "https://coco-download.cocotranslate.com/zotero-release/updates.json",
+      "parse_success": true
+    }
+  ]
+}

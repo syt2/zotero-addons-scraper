@@ -1,0 +1,50 @@
+{
+  "last_checked": "2026-11-05T12:35:47.309229+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.1.0",
+      "published_at": "2026-11-04T08:24:45Z",
+      "xpi_asset_id": 708794132,
+      "xpi_name": "quick-copy-pdf-1.1.0.xpi",
+      "xpi_download_url": "https://github.com/Huaisure/zotero-quick-copy-pdf/releases/download/v1.1.0/quick-copy-pdf-1.1.0.xpi",
+      "addon_id": "quick-copy-pdf@huaisure",
+      "addon_name": "Quick Copy PDF",
+      "addon_version": "1.1.0",
+      "addon_description": "在文献条目和 PDF 标签页的右键菜单中复制原始 PDF 文件。",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://raw.githubusercontent.com/Huaisure/zotero-quick-copy-pdf/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.0.0",
+      "published_at": "2026-11-04T08:07:24Z",
+      "xpi_asset_id": 708749754,
+      "xpi_name": "quick-copy-pdf-1.0.0.xpi",
+      "xpi_download_url": "https://github.com/Huaisure/zotero-quick-copy-pdf/releases/download/v1.0.0/quick-copy-pdf-1.0.0.xpi",
+      "addon_id": "quick-copy-pdf@huaisure",
+      "addon_name": "Quick Copy PDF",
+      "addon_version": "1.0.0",
+      "addon_description": "在文献条目和 PDF 标签页的右键菜单中复制原始 PDF 文件。",
+      "min_zotero_version": "10.0.7",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://raw.githubusercontent.com/Huaisure/zotero-quick-copy-pdf/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v1.2.0",
+      "published_at": "2026-11-05T07:45:11Z",
+      "xpi_asset_id": 712525422,
+      "xpi_name": "quick-copy-pdf-1.2.0.xpi",
+      "xpi_download_url": "https://github.com/Huaisure/zotero-quick-copy-pdf/releases/download/v1.2.0/quick-copy-pdf-1.2.0.xpi",
+      "addon_id": "quick-copy-pdf@huaisure",
+      "addon_name": "Quick Copy PDF",
+      "addon_version": "1.2.0",
+      "addon_description": "在文献条目和 PDF 标签页的右键菜单中复制原始 PDF 文件。",
+      "min_zotero_version": "8.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://raw.githubusercontent.com/Huaisure/zotero-quick-copy-pdf/main/updates.json",
+      "parse_success": true
+    }
+  ]
+}

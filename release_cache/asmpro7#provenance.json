@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-11-26T12:42:17.116853+00:00",
+  "checked_releases": [
+    {
+      "tag": "v1.0.0",
+      "published_at": "2026-11-26T10:08:29Z",
+      "xpi_asset_id": 795295132,
+      "xpi_name": "provenance-1.0.0.xpi",
+      "xpi_download_url": "https://github.com/asmpro7/provenance/releases/download/v1.0.0/provenance-1.0.0.xpi",
+      "addon_id": "provenance@example.com",
+      "addon_name": "Provenance",
+      "addon_version": "1.0.0",
+      "addon_description": "Provenance is a local plagiarism and citation checker for Zotero. Pick a paper or draft file and it compares the text with the PDFs in your library. It finds copied and lightly reworded passages and says whether each one has a citation. It can also fetch a paper's reference list into a collection so you can check against what it cites. Checking runs fully on your computer. Reports are a single file you can filter, save as PDF or export as CSV.",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://raw.githubusercontent.com/asmpro7/provenance/main/updates.json",
+      "parse_success": true
+    }
+  ]
+}
