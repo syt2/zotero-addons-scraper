@@ -1,0 +1,50 @@
+{
+  "last_checked": "2026-11-22T20:49:10.091531+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.5",
+      "published_at": "2026-10-27T09:27:10Z",
+      "xpi_asset_id": 681094386,
+      "xpi_name": "equalang.xpi",
+      "xpi_download_url": "https://equalang-files-prod-1303007683.cos.ap-hongkong.myqcloud.com/releases/zotero/0.1.9/equalang-0.1.9.xpi",
+      "addon_id": "zotero@equalang.com",
+      "addon_name": "Equalang",
+      "addon_version": "0.1.9",
+      "addon_description": "Equalang translation for Zotero: selections, titles and abstracts, and whole PDFs with their layout kept.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://equalang.com/downloads/zotero/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.9",
+      "published_at": "2026-11-22T03:21:12Z",
+      "xpi_asset_id": 777725347,
+      "xpi_name": "equalang.xpi",
+      "xpi_download_url": "https://github.com/equalang/equalang-zotero-plugin/releases/download/v0.1.9/equalang.xpi",
+      "addon_id": "zotero@equalang.com",
+      "addon_name": "Equalang",
+      "addon_version": "0.1.9",
+      "addon_description": "Equalang translation for Zotero: selections, titles and abstracts, and whole PDFs with their layout kept.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://equalang.com/downloads/zotero/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.10",
+      "published_at": "2026-11-22T18:44:36Z",
+      "xpi_asset_id": 780076177,
+      "xpi_name": "equalang.xpi",
+      "xpi_download_url": "https://github.com/equalang/equalang-zotero-plugin/releases/download/v0.1.10/equalang.xpi",
+      "addon_id": "zotero@equalang.com",
+      "addon_name": "Equalang",
+      "addon_version": "0.1.10",
+      "addon_description": "Equalang translation for Zotero: selections, titles and abstracts, and whole PDFs with their layout kept.",
+      "min_zotero_version": "6.999",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://equalang.com/downloads/zotero/update.json",
+      "parse_success": true
+    }
+  ]
+}

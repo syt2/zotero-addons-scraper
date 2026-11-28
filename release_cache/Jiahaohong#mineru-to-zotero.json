@@ -1,0 +1,80 @@
+{
+  "last_checked": "2026-08-17T05:02:46.229640+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.23",
+      "published_at": "2026-08-15T15:00:52Z",
+      "xpi_asset_id": 515791084,
+      "xpi_name": "mineru-to-zotero-0.1.23.xpi",
+      "xpi_download_url": "https://github.com/Jiahaohong/mineru-to-zotero/releases/download/v0.1.23/mineru-to-zotero-0.1.23.xpi",
+      "addon_id": "mineru-to-zotero@example.com",
+      "addon_name": "Document Parser for Zotero",
+      "addon_version": "0.1.23",
+      "addon_description": "Parse Zotero attachments into Markdown with MinerU, markitdown, docling, vision OCR, Baidu OCR, TextIn, or Doc2X",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://raw.githubusercontent.com/Jiahaohong/mineru-to-zotero/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.22",
+      "published_at": "2026-08-15T14:30:49Z",
+      "xpi_asset_id": 515768847,
+      "xpi_name": "mineru-to-zotero-0.1.22.xpi",
+      "xpi_download_url": "https://github.com/Jiahaohong/mineru-to-zotero/releases/download/v0.1.22/mineru-to-zotero-0.1.22.xpi",
+      "addon_id": "mineru-to-zotero@example.com",
+      "addon_name": "Document Parser for Zotero",
+      "addon_version": "0.1.22",
+      "addon_description": "Parse Zotero attachments into Markdown with MinerU, markitdown, docling, vision OCR, Baidu OCR, TextIn, or Doc2X",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://raw.githubusercontent.com/Jiahaohong/mineru-to-zotero/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.21",
+      "published_at": "2026-08-15T12:44:50Z",
+      "xpi_asset_id": 515685535,
+      "xpi_name": "mineru-to-zotero-0.1.21.xpi",
+      "xpi_download_url": "https://github.com/Jiahaohong/mineru-to-zotero/releases/download/v0.1.21/mineru-to-zotero-0.1.21.xpi",
+      "addon_id": "mineru-to-zotero@example.com",
+      "addon_name": "Document Parser for Zotero",
+      "addon_version": "0.1.21",
+      "addon_description": "Parse Zotero attachments into Markdown with MinerU, markitdown, docling, vision OCR, Baidu OCR, TextIn, or Doc2X",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://raw.githubusercontent.com/Jiahaohong/mineru-to-zotero/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.20",
+      "published_at": "2026-08-15T08:24:15Z",
+      "xpi_asset_id": 515497904,
+      "xpi_name": "mineru-to-zotero-0.1.20.xpi",
+      "xpi_download_url": "https://github.com/Jiahaohong/mineru-to-zotero/releases/download/v0.1.20/mineru-to-zotero-0.1.20.xpi",
+      "addon_id": "mineru-to-zotero@example.com",
+      "addon_name": "Document Parser for Zotero",
+      "addon_version": "0.1.20",
+      "addon_description": "Parse Zotero attachments into Markdown with MinerU, markitdown, docling, vision OCR, Baidu OCR, TextIn, or Doc2X",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://raw.githubusercontent.com/Jiahaohong/mineru-to-zotero/main/updates.json",
+      "parse_success": true
+    },
+    {
+      "tag": "v0.1.24",
+      "published_at": "2026-08-17T04:28:12Z",
+      "xpi_asset_id": 517618957,
+      "xpi_name": "mineru-to-zotero-0.1.24.xpi",
+      "xpi_download_url": "https://github.com/Jiahaohong/mineru-to-zotero/releases/download/v0.1.24/mineru-to-zotero-0.1.24.xpi",
+      "addon_id": "mineru-to-zotero@example.com",
+      "addon_name": "Document Parser for Zotero",
+      "addon_version": "0.1.24",
+      "addon_description": "Parse Zotero attachments into Markdown with MinerU, markitdown, docling, vision OCR, Baidu OCR, TextIn, or Doc2X",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "9.0.*",
+      "update_url": "https://raw.githubusercontent.com/Jiahaohong/mineru-to-zotero/main/updates.json",
+      "parse_success": true
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "last_checked": "2026-10-08T04:07:11.216945+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.9.0",
+      "published_at": "2026-10-07T14:46:40Z",
+      "xpi_asset_id": 618984162,
+      "xpi_name": "zotero-timeline.xpi",
+      "xpi_download_url": "https://github.com/oekeur/zotero-timeline/releases/download/v0.9.0/zotero-timeline.xpi",
+      "addon_id": "zoterotimeline@oekeur.github.io",
+      "addon_name": "Zotero Timeline",
+      "addon_version": "0.9.0",
+      "addon_description": "Zotero 8-10 plugin for authoring research timelines and chronologies, where every event cites sources from your own library.",
+      "min_zotero_version": "7.999",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://github.com/oekeur/zotero-timeline/releases/download/release/update.json",
+      "parse_success": true
+    },
+    {
+      "tag": "release",
+      "published_at": "2026-10-07T14:46:42Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    }
+  ]
+}

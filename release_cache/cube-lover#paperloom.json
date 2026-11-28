@@ -1,0 +1,28 @@
+{
+  "last_checked": "2026-11-02T00:57:52.524930+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.9.6",
+      "published_at": "2026-10-17T11:20:59Z",
+      "xpi_asset_id": 650283558,
+      "xpi_name": "paperloom-0.9.6.xpi",
+      "xpi_download_url": "https://github.com/cube-lover/paperloom/releases/download/v0.9.6/paperloom-0.9.6.xpi",
+      "addon_id": "paperloom@local.research",
+      "addon_name": "Cube Translation · Cube 翻译",
+      "addon_version": "0.9.6",
+      "addon_description": "正文与图表一体翻译：后台识别、双语对照、术语一致性、质量检查与人工校订。",
+      "min_zotero_version": "7.0",
+      "max_zotero_version": "9.*",
+      "parse_success": true
+    },
+    {
+      "tag": "ocr-runtime-1.0.0",
+      "published_at": "2026-10-14T15:49:05Z",
+      "xpi_asset_id": 0,
+      "xpi_name": "",
+      "xpi_download_url": "",
+      "parse_success": false,
+      "parse_error": "No XPI found or parse failed"
+    }
+  ]
+}

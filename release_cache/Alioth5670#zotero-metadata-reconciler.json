@@ -1,0 +1,20 @@
+{
+  "last_checked": "2026-11-12T12:48:27.690925+00:00",
+  "checked_releases": [
+    {
+      "tag": "v0.1.22",
+      "published_at": "2026-11-11T07:04:04Z",
+      "xpi_asset_id": 734511796,
+      "xpi_name": "metadata-reconciler-zotero10-0.1.22.xpi",
+      "xpi_download_url": "https://github.com/Alioth5670/zotero-metadata-reconciler/releases/download/v0.1.22/metadata-reconciler-zotero10-0.1.22.xpi",
+      "addon_id": "metadata-reconciler@example.com",
+      "addon_name": "Metadata Reconciler for Zotero 10",
+      "addon_version": "0.1.22",
+      "addon_description": "Find versions of a paper, verify publication type and metadata, and preview changes in Zotero.",
+      "min_zotero_version": "10.0",
+      "max_zotero_version": "10.0.*",
+      "update_url": "https://raw.githubusercontent.com/Alioth5670/zotero-metadata-reconciler/main/updates.json",
+      "parse_success": true
+    }
+  ]
+}
