@@ -11,6 +11,9 @@ from zotero_scraper.config.constants import GitHubAPI
 from zotero_scraper.config.settings import CacheConfig, GitHubConfig, ScraperConfig
 from zotero_scraper.services.cache_builder import ReleaseCacheBuilder
 from zotero_scraper.services.cache_scraper import CacheScraper
+from zotero_scraper.services.source import RepoSource
+
+GITHUB_SOURCE = RepoSource(repo="owner/repo", platform="github", path="owner/repo")
 
 
 def make_release(tag: str, version: str, published_at: str | None) -> CachedRelease:
@@ -61,7 +64,9 @@ def make_builder(
     """Create a builder focused on release-list cleanup rather than XPI parsing."""
     builder = ReleaseCacheBuilder(make_config(temp_dir), cache)
     builder.github = Mock()
-    builder.github.get_releases.return_value = releases
+    builder.sources = Mock()
+    builder.sources.get.return_value = GITHUB_SOURCE
+    builder.sources.get_releases.return_value = releases
     builder._check_latest_release_update_url = Mock(return_value=False)
     cache.get_unchecked_tags = Mock(return_value=[])
     return builder
@@ -171,13 +176,13 @@ def test_builder_checks_only_missing_tags_at_or_after_page_cutoff(
     ]:
         cache.add_release("owner/repo", release)
     builder = make_builder(temp_dir, cache, releases)
-    builder.github.release_exists.return_value = False
+    builder.sources.release_exists.return_value = False
 
     builder._process_repo("owner/repo")
 
-    assert builder.github.release_exists.call_args_list == [
-        call("owner", "repo", "at-cutoff"),
-        call("owner", "repo", "newer"),
+    assert builder.sources.release_exists.call_args_list == [
+        call(GITHUB_SOURCE, "at-cutoff"),
+        call(GITHUB_SOURCE, "newer"),
     ]
     assert {
         release.tag for release in cache.get_repo_cache("owner/repo").checked_releases
@@ -193,16 +198,16 @@ def test_builder_empty_page_checks_every_cached_tag_and_deletes_only_404(temp_di
         )
     builder = make_builder(temp_dir, cache, [])
     results = {"deleted": False, "exists": True, "unknown": None}
-    builder.github.release_exists.side_effect = (
-        lambda owner, repo, tag: results[tag]
+    builder.sources.release_exists.side_effect = (
+        lambda source, tag: results[tag]
     )
 
     builder._process_repo("owner/repo")
 
-    assert builder.github.release_exists.call_args_list == [
-        call("owner", "repo", "deleted"),
-        call("owner", "repo", "exists"),
-        call("owner", "repo", "unknown"),
+    assert builder.sources.release_exists.call_args_list == [
+        call(GITHUB_SOURCE, "deleted"),
+        call(GITHUB_SOURCE, "exists"),
+        call(GITHUB_SOURCE, "unknown"),
     ]
     assert {
         release.tag for release in cache.get_repo_cache("owner/repo").checked_releases
@@ -224,7 +229,7 @@ def test_builder_preserves_cache_when_release_request_fails(temp_dir):
         release.tag for release in cache.get_repo_cache("owner/repo").checked_releases
     ] == ["keep"]
     assert cache.get_observed_release_tags("owner/repo") is None
-    builder.github.release_exists.assert_not_called()
+    builder.sources.release_exists.assert_not_called()
 
 
 def test_builder_skips_cleanup_without_a_string_publication_cutoff(temp_dir):
@@ -241,7 +246,7 @@ def test_builder_skips_cleanup_without_a_string_publication_cutoff(temp_dir):
 
     builder._process_repo("owner/repo")
 
-    builder.github.release_exists.assert_not_called()
+    builder.sources.release_exists.assert_not_called()
     assert cache.get_repo_cache("owner/repo").get_release_by_tag("keep") is not None
 
 
@@ -256,11 +261,11 @@ def test_builder_ignores_non_string_times_when_a_valid_cutoff_exists(temp_dir):
         {"tag_name": "numeric-time", "published_at": 123},
     ]
     builder = make_builder(temp_dir, cache, releases)
-    builder.github.release_exists.return_value = False
+    builder.sources.release_exists.return_value = False
 
     builder._process_repo("owner/repo")
 
-    builder.github.release_exists.assert_called_once_with("owner", "repo", "deleted")
+    builder.sources.release_exists.assert_called_once_with(GITHUB_SOURCE, "deleted")
     assert cache.get_repo_cache("owner/repo").checked_releases == []
 
 
@@ -372,14 +377,15 @@ def test_selected_tag_absent_from_page_is_confirmed_before_output(temp_dir):
     cache.add_release("owner/repo", make_release("v0.1", "0.1", "2026-08-29T00:00:00Z"))
     cache.set_observed_release_tags("owner/repo", {"v0.1"})
     scraper = CacheScraper(make_config(temp_dir), cache)
-    scraper.github = Mock()
-    scraper.github.release_exists.return_value = False
+    scraper.sources = Mock()
+    scraper.sources.get.return_value = GITHUB_SOURCE
+    scraper.sources.release_exists.return_value = False
 
-    selected = scraper._get_available_release("owner/repo", "owner", "repo", "10")
+    selected = scraper._get_available_release("owner/repo", GITHUB_SOURCE, "10")
 
     assert selected is not None
     assert selected.tag == "v0.1"
-    scraper.github.release_exists.assert_called_once_with("owner", "repo", "deleted")
+    scraper.sources.release_exists.assert_called_once_with(GITHUB_SOURCE, "deleted")
 
 
 def test_selected_tag_is_not_checked_without_same_run_page_observation(temp_dir):
@@ -389,15 +395,16 @@ def test_selected_tag_is_not_checked_without_same_run_page_observation(temp_dir)
         "owner/repo", make_release("keep", "0.2", "2026-08-30T00:00:00Z")
     )
     scraper = CacheScraper(make_config(temp_dir), cache)
-    scraper.github = Mock()
-    scraper.github.release_exists.return_value = False
+    scraper.sources = Mock()
+    scraper.sources.get.return_value = GITHUB_SOURCE
+    scraper.sources.release_exists.return_value = False
 
-    selected = scraper._get_available_release("owner/repo", "owner", "repo", "10")
+    selected = scraper._get_available_release("owner/repo", GITHUB_SOURCE, "10")
 
     assert selected is not None
     assert selected.tag == "keep"
     assert cache.get_repo_cache("owner/repo").get_release_by_tag("keep") is not None
-    scraper.github.release_exists.assert_not_called()
+    scraper.sources.release_exists.assert_not_called()
 
 
 def test_release_existence_memo_is_reset_for_each_scrape(temp_dir):

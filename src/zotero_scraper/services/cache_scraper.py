@@ -12,6 +12,7 @@ from ..models.addon import AddonInfo, AddonRelease, Author, XpiDownloadUrls
 from ..utils.logging import get_logger
 from .fallback import FallbackService
 from .publisher import PublisherService
+from .source import RepoSource, SourceClient
 from .version_outputs import (
     split_addon_infos_by_zotero_version,
     version_output_path,
@@ -50,6 +51,7 @@ class CacheScraper:
         self.target_zotero_versions = list(dict.fromkeys(configured_versions))
         self.version_output_files: dict[str, Path] = {}
         self.github = GitHubClient(config.github)
+        self.sources = SourceClient(config, self.github)
         self.fallback = FallbackService()
         self.publisher = PublisherService(self.github, config.github)
         self._release_existence: dict[tuple[str, str], Optional[bool]] = {}
@@ -169,13 +171,14 @@ class CacheScraper:
             logger.warning(f"Invalid repo format: {repo}")
             return None
 
-        owner, name = parts
+        source = self.sources.get(repo)
+        name = parts[1]
 
         # Find best release for each Zotero version
         releases: list[AddonRelease] = []
         for zotero_version in self.target_zotero_versions:
             cached_release = self._get_available_release(
-                repo, owner, name, zotero_version
+                repo, source, zotero_version
             )
             if cached_release:
                 release = self._cached_to_addon_release(cached_release, zotero_version)
@@ -197,10 +200,10 @@ class CacheScraper:
         )
 
         # Fetch author info
-        self._fetch_author_info(addon_info, owner)
+        self._fetch_author_info(addon_info, source)
 
         # Fetch repository info
-        self._fetch_repo_info(addon_info, owner, name)
+        self._fetch_repo_info(addon_info, source)
 
         # Use addon info from first release
         first_release = releases[0]
@@ -212,9 +215,9 @@ class CacheScraper:
         return addon_info
 
     def _get_available_release(
-        self, repo: str, owner: str, name: str, zotero_version: str
+        self, repo: str, source: RepoSource, zotero_version: str
     ) -> Optional[CachedRelease]:
-        """Choose a compatible release, dropping only tags GitHub confirms deleted."""
+        """Choose a compatible release, dropping only tags the host confirms deleted."""
         repo_cache = self.cache.get_repo_cache(repo)
         observed_tags = self.cache.get_observed_release_tags(repo)
 
@@ -224,8 +227,8 @@ class CacheScraper:
 
             cache_key = (repo, cached_release.tag)
             if cache_key not in self._release_existence:
-                self._release_existence[cache_key] = self.github.release_exists(
-                    owner, name, cached_release.tag
+                self._release_existence[cache_key] = self.sources.release_exists(
+                    source, cached_release.tag
                 )
 
             if self._release_existence[cache_key] is not False:
@@ -265,18 +268,18 @@ class CacheScraper:
             maxZoteroVersion=cached.max_zotero_version,
         )
 
-    def _fetch_author_info(self, addon_info: AddonInfo, owner: str) -> None:
-        """Fetch author info from GitHub."""
-        if user_info := self.github.get_user(owner):
+    def _fetch_author_info(self, addon_info: AddonInfo, source: RepoSource) -> None:
+        """Fetch author info from the hosting platform."""
+        if user_info := self.sources.get_author(source):
             addon_info.author = Author(
                 name=user_info.name,
                 url=user_info.html_url,
                 avatar=user_info.avatar_url,
             )
 
-    def _fetch_repo_info(self, addon_info: AddonInfo, owner: str, name: str) -> None:
-        """Fetch repository info from GitHub."""
-        if repo_info := self.github.get_repo(owner, name):
+    def _fetch_repo_info(self, addon_info: AddonInfo, source: RepoSource) -> None:
+        """Fetch repository info from the hosting platform."""
+        if repo_info := self.sources.get_repo_info(source):
             if not addon_info.description and repo_info.description:
                 addon_info.description = repo_info.description
             addon_info.stars = repo_info.stargazers_count

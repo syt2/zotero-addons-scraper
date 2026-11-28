@@ -74,7 +74,16 @@ class XPIProxy:
 
     @classmethod
     def urls_for(cls, github_url: str) -> dict[str, str]:
-        """Build all configured proxy URLs for a GitHub download URL."""
+        """Build all configured proxy URLs for a GitHub download URL.
+
+        URLs hosted outside github.com (e.g. GitLab releases) are returned
+        without proxies.
+        """
+        from urllib.parse import urlsplit
+
+        host = (urlsplit(github_url).hostname or "").lower()
+        if host != "github.com":
+            return {}
         return {
             name: build_url(github_url)
             for name, build_url in cls.URL_BUILDERS.items()
